@@ -3,8 +3,8 @@ title: Job Search
 weight: 0
 excerpt: tracking my job search
 seo:
-  title: ''
-  description: ''
+  title: ""
+  description: ""
   robots: []
   extra: []
 template: docs
@@ -14,5 +14,5 @@ template: docs
 
 Lorem ipsum dolor sit amet, **consectetur adipiscing elit**, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
--   Lorem ipsum
--   dolor sit amet
+- Lorem ipsum
+- dolor sit amet

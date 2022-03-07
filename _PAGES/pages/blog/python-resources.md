@@ -1,32 +1,32 @@
 ---
-date: '2021-06-03'
+date: "2021-06-03"
 image: images/best-zebra.gif
 seo:
-    title: Python Practice
-    description: Commodo ante vis placerat interdum massa massa primis
-    extra:
-        - name: 'og:type'
-          value: article
-          keyName: property
-        - name: 'og:title'
-          value: Python Practice
-          keyName: property
-        - name: 'og:description'
-          value: Commodo ante vis placerat interdum massa massa primis
-          keyName: property
-        - name: 'og:image'
-          value: images/2.jpg
-          keyName: property
-          relativeUrl: true
-        - name: 'twitter:card'
-          value: summary_large_image
-        - name: 'twitter:title'
-          value: Python Practice
-        - name: 'twitter:description'
-          value: Commodo ante vis placerat interdum massa massa primis
-        - name: 'twitter:image'
-          value: images/2.jpg
-          relativeUrl: true
+  title: Python Practice
+  description: Commodo ante vis placerat interdum massa massa primis
+  extra:
+    - name: "og:type"
+      value: article
+      keyName: property
+    - name: "og:title"
+      value: Python Practice
+      keyName: property
+    - name: "og:description"
+      value: Commodo ante vis placerat interdum massa massa primis
+      keyName: property
+    - name: "og:image"
+      value: images/2.jpg
+      keyName: property
+      relativeUrl: true
+    - name: "twitter:card"
+      value: summary_large_image
+    - name: "twitter:title"
+      value: Python Practice
+    - name: "twitter:description"
+      value: Commodo ante vis placerat interdum massa massa primis
+    - name: "twitter:image"
+      value: images/2.jpg
+      relativeUrl: true
 template: post
 title: Python Resources
 thumb_image: images/superb-amaranth.png
@@ -39,7 +39,7 @@ thumb_image_alt: python logo
 
 My favorite language for maintainability is Python. It has simple, clean syntax, object encapsulation, good library support, and optional named parameters.
 
--   Bram Cohen
+- Bram Cohen
 
 Article on basic web development setup… it is geared towards web but VSCode is an incredibly versitile editor and this stack really could suit just about anyone working in the field of computer science.
 
@@ -49,11 +49,11 @@ Article on basic web development setup… it is geared towards web but VSCode is
 
 [Python enables programs to be written compactly and readably. Programs written in Python are typically much shorter than equivalent C, C++, or Java programs, for several reasons:](https://docs.python.org/3/tutorial/appetite.html)
 
--   the high-level data types allow you to express complex operations in a single statement;
+- the high-level data types allow you to express complex operations in a single statement;
 
--   statement grouping is done by indentation instead of beginning and ending brackets;
+- statement grouping is done by indentation instead of beginning and ending brackets;
 
--   no variable or argument declarations are necessary.
+- no variable or argument declarations are necessary.
 
 ### Installing Python:
 
@@ -69,7 +69,7 @@ To determine if your Windows computer already has Python 3:
 
 python --version
 
-1.  Running python --version may not return a value, or may return an error message stating *'python' is not recognized as an internal or external command, operable program or batch file.* This indicates Python is not installed on your Windows system.
+1.  Running python --version may not return a value, or may return an error message stating _'python' is not recognized as an internal or external command, operable program or batch file._ This indicates Python is not installed on your Windows system.
 
 2.  If you see the word Python with a set of numbers separated by . characters, some version of Python is installed.
 
@@ -113,7 +113,7 @@ Python syntax was made for readability, and easy editing. For example, the pytho
 
 ### First Program
 
-Lets create a [python 3](https://repl.it/languages/python3) repl, and call it *Hello World*. Now you have a blank file called *main.py*. Now let us write our first line of code:
+Lets create a [python 3](https://repl.it/languages/python3) repl, and call it _Hello World_. Now you have a blank file called _main.py_. Now let us write our first line of code:
 
 > _Brian Kernighan actually wrote the first "Hello, World!" program as part of the documentation for the BCPL programming language developed by Martin Richards._
 
@@ -137,7 +137,7 @@ If you have a huge comment, do **not** comment all the 350 lines, just put ''' b
 
 Unlike many other languages, there is no var, let, or const to declare a variable in python. You simply go name = 'value'.
 
-Remember, there is a difference between integers and strings. *Remember: String = "".* To convert between these two, you can put an int in a str() function, and a string in a int() function. There is also a less used one, called a float. Mainly, these are integers with decimals. Change them using the float() command.
+Remember, there is a difference between integers and strings. _Remember: String = ""._ To convert between these two, you can put an int in a str() function, and a string in a int() function. There is also a less used one, called a float. Mainly, these are integers with decimals. Change them using the float() command.
 
 <https://repl.it/@bgoonz/second-scr?lite=true&referrer=https%3A%2F%2Fbryanguner.medium.com>
 
@@ -147,15 +147,15 @@ Instead of using the , in the print function, you can put a + to combine the var
 
 There are many operators in python:
 
--   \+
+- \+
 
--   \-
+- \-
 
--   /
+- /
 
--   \*
-    These operators are the same in most languages, and allow for addition, subtraction, division, and multiplicaiton.
-    Now, we can look at a few more complicated ones:
+- \*
+  These operators are the same in most languages, and allow for addition, subtraction, division, and multiplicaiton.
+  Now, we can look at a few more complicated ones:
 
 _simpleops.py_
 
@@ -188,17 +188,17 @@ The first number stands for how far in you go from the front, and the second sta
 
 Here is a list of functions/methods we will go over:
 
--   .strip()
+- .strip()
 
--   len()
+- len()
 
--   .lower()
+- .lower()
 
--   .upper()
+- .upper()
 
--   .replace()
+- .replace()
 
--   .split()
+- .split()
 
 ### New: Input()
 

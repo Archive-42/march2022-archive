@@ -2,11 +2,11 @@
 title: Getting Started W Create React App
 excerpt: lorem-ipsum
 seo:
-    title: ''
-    description: ''
-    robots: []
-    extra: []
-    type: stackbit_page_meta
+  title: ""
+  description: ""
+  robots: []
+  extra: []
+  type: stackbit_page_meta
 template: docs
 ---
 

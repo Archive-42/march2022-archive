@@ -3,15 +3,15 @@ title: Introduction to npm
 weight: 0
 excerpt: npm is the standard package manager for nodejs
 seo:
-    title: npm
-    description: >
-        npm is the standard package manager for Node.js.
+  title: npm
+  description: >
+    npm is the standard package manager for Node.js.
 
-        In January 2017 over 350000 packages were reported being listed in the npm
-        registry.
-    robots: []
-    extra: []
-    type: stackbit_page_meta
+    In January 2017 over 350000 packages were reported being listed in the npm
+    registry.
+  robots: []
+  extra: []
+  type: stackbit_page_meta
 template: docs
 ---
 
@@ -51,8 +51,8 @@ npm install <package-name>
 
 Often you'll see more flags added to this command:
 
--   `--save` installs and adds the entry to the `package.json` file _dependencies_
--   `--save-dev` installs and adds the entry to the `package.json` file _devDependencies_
+- `--save` installs and adds the entry to the `package.json` file _dependencies_
+- `--save-dev` installs and adds the entry to the `package.json` file _devDependencies_
 
 The difference is mainly that devDependencies are usually development tools, like a testing library, while `dependencies` are bundled with the app in production.
 
@@ -96,10 +96,10 @@ For example:
 
 ```json
 {
-    "scripts": {
-        "start-dev": "node lib/server-development",
-        "start": "node lib/server-production"
-    }
+  "scripts": {
+    "start-dev": "node lib/server-development",
+    "start": "node lib/server-production"
+  }
 }
 ```
 
@@ -107,11 +107,11 @@ It's very common to use this feature to run Webpack:
 
 ```json
 {
-    "scripts": {
-        "watch": "webpack --watch --progress --colors --config webpack.conf.js",
-        "dev": "webpack --progress --colors --config webpack.conf.js",
-        "prod": "NODE_ENV=production webpack -p --config webpack.conf.js"
-    }
+  "scripts": {
+    "watch": "webpack --watch --progress --colors --config webpack.conf.js",
+    "dev": "webpack --progress --colors --config webpack.conf.js",
+    "prod": "NODE_ENV=production webpack -p --config webpack.conf.js"
+  }
 }
 ```
 

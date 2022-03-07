@@ -2,32 +2,31 @@
 title: Resume
 weight: 0
 seo:
-    title: Resume
-    description: >-
-        Successfully completed and delivered a platform to digitize a guitar signal
-        and perform filtering before executing frequency & time domain analysis to
-        track a current performance against prerecorded performance.
-    extra:
-        - name: 'og:type'
-          value: website
-          keyName: property
-        - name: 'og:title'
-          value: Resume
-          keyName: property
-        - name: 'og:description'
-          value: This is the Resume page
-          keyName: property
-        - name: 'twitter:card'
-          value: summary
-        - name: 'twitter:title'
-          value: Resume
-        - name: 'twitter:description'
-          value: This is the Resume page
+  title: Resume
+  description: >-
+    Successfully completed and delivered a platform to digitize a guitar signal
+    and perform filtering before executing frequency & time domain analysis to
+    track a current performance against prerecorded performance.
+  extra:
+    - name: "og:type"
+      value: website
+      keyName: property
+    - name: "og:title"
+      value: Resume
+      keyName: property
+    - name: "og:description"
+      value: This is the Resume page
+      keyName: property
+    - name: "twitter:card"
+      value: summary
+    - name: "twitter:title"
+      value: Resume
+    - name: "twitter:description"
+      value: This is the Resume page
 template: docs
 ---
 
 # _**Resume**_
-
 
 <div align="center">
 
@@ -36,7 +35,6 @@ template: docs
 ## _551-254-5505 | [bryan.guner@gmail.com](mailto:bryan.guner@gmail.com)_
 
 </div>
-
 
 ## ➤Skills
 
@@ -49,7 +47,6 @@ template: docs
 | Hosting:                | Heroku, Netlify, Vercel, Wordpress, Cloudfare, AWS, Firebase, Digital Ocean                                                |
 | Operating Systems:      | Linux, Windows (WSL), IOS                                                                                                  |
 
-
 ## ➤Projects
 
 **Gatsby** **GraphQL-Blog** **[Live Site |](https://bgoonz-blog.netlify.app/)[GitHub](https://github.com/bgoonz/BGOONZ_BLOG_2.0)**
@@ -61,7 +58,6 @@ _**A**_[_**web development blog**_](https://bgoonz-blog.netlify.app/)_**featurin
 - Implemented 4 Gatsby page models and GraphQL schema to fetch markdown content and feed it into react components.
 - Designed and integrated a set of convenient web-hosted [developer tools](https://bgoonz-blog.netlify.app/docs/tools/) and GUI interfaces.
 - Added interactive content including comments, [video conferencing](https://bgoonz-blog.netlify.app/docs/interact/video-chat/), [data-structure visualization](https://bgoonz-blog.netlify.app/docs/interact/other-sites/), [games](https://bgoonz-blog.netlify.app/docs/interact/) and full text search.
-
 
 **Autonomously Triggered Guitar Effects Platform\*\*** [Live Site](https://bgoonz.github.io/Revamped-Automatic-Guitar-Effect-Triggering/)| [GitHub](https://github.com/bgoonz/Revamped-Automatic-Guitar-Effect-Triggering/tree/master/Triggered-Guitar-Effects-Platform)\*\*
 
@@ -134,4 +130,3 @@ Six-month immersive software development course with a focus on [full stack web 
 _**References &amp; further work experience available upon request.**_
 
 </div>
-    

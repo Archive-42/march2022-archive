@@ -3,12 +3,13 @@ title: lorem-ipsum
 weight: 0
 excerpt: lorem-ipsum
 seo:
-  title: ''
-  description: ''
+  title: ""
+  description: ""
   robots: []
   extra: []
 template: docs
 ---
+
 ## CSS POSITION:&#xA;
 
 To start we are going to cover the easiest position value which you probably have never heard of but use all the time and that is the static position. static is the default value for the position property and essentially just means that an element will follow the normal document flow and will position itself based on the standard positioning rules.

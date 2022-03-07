@@ -3,10 +3,10 @@ title: Markdown Dropdown
 weight: 0
 excerpt: Markdown Dropdown
 seo:
-    title: ''
-    description: ''
-    robots: []
-    extra: []
+  title: ""
+  description: ""
+  robots: []
+  extra: []
 template: docs
 ---
 

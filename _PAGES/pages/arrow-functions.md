@@ -3,10 +3,10 @@ title: JS Fat Arrow Functions
 weight: 0
 excerpt: JS Fat Arrow Functions
 seo:
-    title: ''
-    description: ''
-    robots: []
-    extra: []
+  title: ""
+  description: ""
+  robots: []
+  extra: []
 template: docs
 ---
 
@@ -180,5 +180,5 @@ Fat arrow functions can't be used as generators. That's it -- no exceptions, no 
 
 Fat arrow functions are one of my favorite additions to JavaScript. It might be very tempting to just start using `=>` instead of `function` everywhere. I've seen whole libraries written just using `=>` and I don't think it's the right thing to do because of the special features that `=>` introduces. I recommend using arrow functions only in places where you explicitly want to use the new features:
 
--   Single statement functions that immediately return (lambdas)
--   Functions that need to work with parent scope `this`
+- Single statement functions that immediately return (lambdas)
+- Functions that need to work with parent scope `this`
