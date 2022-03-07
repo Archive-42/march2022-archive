@@ -5,8 +5,8 @@
 React's philosophy in the beginning was to align with the browser DOM API rather than HTML, since that more closely represents how elements are created. Setting a `class` on an element meant using the `className` API:
 
 ```js
-const element = document.createElement("div")
-element.className = "hello"
+const element = document.createElement("div");
+element.className = "hello";
 ```
 
 Additionally, before ES5, reserved words could not be used in objects:
@@ -14,9 +14,9 @@ Additionally, before ES5, reserved words could not be used in objects:
 ```js
 const element = {
   attributes: {
-    class: "hello"
-  }
-}
+    class: "hello",
+  },
+};
 ```
 
 In IE8, this will throw an error.

@@ -21,9 +21,9 @@ We initially considered tying backups to an opened folder so that once VS Code w
 
 ## Restricting to entire application shutdown
 
-It was due to this fear of having backups persisted but not be discoverable that we decided to add a restriction to when a hot exit occurs: Hot exit will only occur when *all* VS Code windows are being closed, or in the case of Mac, the application is quit (`kbstyle(Cmd+Q)`).
+It was due to this fear of having backups persisted but not be discoverable that we decided to add a restriction to when a hot exit occurs: Hot exit will only occur when _all_ VS Code windows are being closed, or in the case of Mac, the application is quit (`kbstyle(Cmd+Q)`).
 
-While this may seem restricting at first, particularly when you frequently work on multiple folders, the great thing is that *all* of the workspaces with backups will be presented when you relaunch VS Code and so there is no ambiguity as to what else could be backed up.
+While this may seem restricting at first, particularly when you frequently work on multiple folders, the great thing is that _all_ of the workspaces with backups will be presented when you relaunch VS Code and so there is no ambiguity as to what else could be backed up.
 
 The important exception to this restriction is that when a window is reloaded then hot exit will always trigger. This means no more annoying Save dialog when installing extensions!
 

@@ -25,9 +25,9 @@ screenshots of react components to their source:
 
 This feature can be used in many ways:
 
--   for documentation
--   for quick code navigation (like visual bookmarks)
--   for diagram based code tours
+- for documentation
+- for quick code navigation (like visual bookmarks)
+- for diagram based code tours
 
 ## Thank You
 

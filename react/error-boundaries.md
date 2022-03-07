@@ -9,38 +9,38 @@ Class components become error boundaries if they define either (or both) of the 
 ```js
 class ErrorBoundary extends React.Component {
   constructor(props) {
-    super(props)
-    this.state = { hasError: false }
+    super(props);
+    this.state = { hasError: false };
   }
 
   // Use componentDidCatch to log the error
   componentDidCatch(error, info) {
     // You can also log the error to an error reporting service
-    logErrorToMyService(error, info)
+    logErrorToMyService(error, info);
   }
-  
+
   // use getDerivedStateFromError to update state
   static getDerivedStateFromError(error) {
     // Display fallback UI
-     return { hasError: true };
+    return { hasError: true };
   }
-
 
   render() {
     if (this.state.hasError) {
       // You can render any custom fallback UI
-      return <h1>Something went wrong.</h1>
+      return <h1>Something went wrong.</h1>;
     }
-    return this.props.children
+    return this.props.children;
   }
 }
 ```
 
 #### Good to hear
 
-* Error boundaries only catch errors in the components below them in the tree. An error boundary can’t catch an error within itself.
+- Error boundaries only catch errors in the components below them in the tree. An error boundary can’t catch an error within itself.
 
 ##### Additional links
+
 https://reactjs.org/docs/error-boundaries.html
 
 <!-- tags: (react) -->

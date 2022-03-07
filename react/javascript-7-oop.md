@@ -37,7 +37,6 @@ Virtually all companies will use object-oriented programming in their code. For 
 
 - The software development lifecycle has to go through many different stages. Writing clean, organized, reusable code is essential for developers to maintain projects. Hence, the five principles of SOLID applied in JavaScript are important to master the ability to write clean and professional code. Here are a few resources on SOLID principles and the importance of OOP in JS:
 
-
 [SOLID - the first 5 principles of OOD with JS](https://medium.com/@cramirez92/s-o-l-i-d-the-first-5-priciples-of-object-oriented-design-with-javascript-790f6ac9b9fa)
 
 [SOLID principles in JS](https://dev.to/francescoxx/solid-principles-in-javascript-3pek)
@@ -80,10 +79,10 @@ If you recall from [JavaScript 6 - Object Literals](./javascript-6-object-litera
 
 ```js
 const book = {
-  id: '827392838',
-  authorFirstName: 'Jane',
-  authorLastName: 'Doe',
-  title: 'The Wonderful World of JavaScript'
+  id: "827392838",
+  authorFirstName: "Jane",
+  authorLastName: "Doe",
+  title: "The Wonderful World of JavaScript",
 };
 ```
 
@@ -91,11 +90,11 @@ const book = {
 
 ```js
 const borrower = {
-  id: '9002',
-  firstName: 'Syma',
-  middleInitial: 'N',
-  lastName: 'Tec',
-  phoneNumber: '(415) 123-1234'
+  id: "9002",
+  firstName: "Syma",
+  middleInitial: "N",
+  lastName: "Tec",
+  phoneNumber: "(415) 123-1234",
 };
 ```
 
@@ -116,11 +115,11 @@ class Book {
   summary() {
     return (
       this.title +
-      ' (' +
+      " (" +
       this.authorLastName +
-      ', ' +
+      ", " +
       this.authorFirstName +
-      ')'
+      ")"
     );
   }
 }
@@ -217,11 +216,11 @@ As stated above, because the `checkOut()` method is encapsulated in the borrower
 
 ```js
 let MaryCrowley = new Borrower(
-  '1234567',
-  'Mary',
-  'E',
-  'Crowley',
-  '(555)123-4567'
+  "1234567",
+  "Mary",
+  "E",
+  "Crowley",
+  "(555)123-4567"
 );
 MaryCrowley.checkOut(myBook);
 ```
@@ -260,9 +259,9 @@ class AudioBook extends Book {
 
 let myAudioBook = new AudioBook(
   55234,
-  'Principles of OO Design',
-  'Barbara',
-  'Liskov',
+  "Principles of OO Design",
+  "Barbara",
+  "Liskov",
   206
 );
 ```

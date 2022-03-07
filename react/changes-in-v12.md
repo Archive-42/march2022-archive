@@ -1,6 +1,6 @@
 # Updating from v11 to v12
 
-After a long time in development, Discord.js v12 has been formally released, meaning it's time to update from v11 to get new features for your bots!  However, with those new features comes a lot of changes to the library that will break code written for v11.  This guide will serve as a handy reference for updating your code, covering the most commonly-used methods that have been changed, new topics such as partials and internal sharding, and will also include a comprehensive list of the method and property changes at the end.
+After a long time in development, Discord.js v12 has been formally released, meaning it's time to update from v11 to get new features for your bots! However, with those new features comes a lot of changes to the library that will break code written for v11. This guide will serve as a handy reference for updating your code, covering the most commonly-used methods that have been changed, new topics such as partials and internal sharding, and will also include a comprehensive list of the method and property changes at the end.
 
 :::tip
 This guide has two versions! Make sure to select `v12 (stable)` in the drop down selection in the header bar to get code snippets and explanations for the new version across the guide.
@@ -8,7 +8,7 @@ This guide has two versions! Make sure to select `v12 (stable)` in the drop down
 
 ## Before You Start
 
-v12 requires Node 12.x or higher to  use, so make sure you're up-to-date.  To check your Node version, use `node -v` in your terminal or command prompt, and if it's not high enough, update it!  There are many resources online to help you with this step based on your host system.
+v12 requires Node 12.x or higher to use, so make sure you're up-to-date. To check your Node version, use `node -v` in your terminal or command prompt, and if it's not high enough, update it! There are many resources online to help you with this step based on your host system.
 
 Once you got Node up-to-date you can install v12 by running `npm install discord.js` in your terminal or command prompt for text-only use, or `npm install discord.js @discordjs/opus` for voice support.
 
@@ -16,9 +16,9 @@ You can check your discord.js version with `npm list discord.js`. Should it stil
 
 ## Commonly Used Methods That Changed
 
-* All section headers are named in the following convention: `Class#methodOrProperty`.
-* The use of parenthesis designates optional inclusion. For example, `TextChannel#fetch(Pinned)Message(s)` means that this section will include changes for `TextChannel#fetchPinnedMessages`, `TextChannel#fetchMessages`, and `TextChannel#fetchMessage`.
-* The use of asterisks designates a wildcard. For example, `TextChannel#send***` means that this section will include changes for `TextChannel#sendMessage`, `TextChannel#sendFile`, `TextChannel#sendEmbed`, and so forth.
+- All section headers are named in the following convention: `Class#methodOrProperty`.
+- The use of parenthesis designates optional inclusion. For example, `TextChannel#fetch(Pinned)Message(s)` means that this section will include changes for `TextChannel#fetchPinnedMessages`, `TextChannel#fetchMessages`, and `TextChannel#fetchMessage`.
+- The use of asterisks designates a wildcard. For example, `TextChannel#send***` means that this section will include changes for `TextChannel#sendMessage`, `TextChannel#sendFile`, `TextChannel#sendEmbed`, and so forth.
 
 :::danger
 
@@ -33,7 +33,7 @@ You can check your discord.js version with `npm list discord.js`. Should it stil
 
 ### Managers/ Cache
 
-v12 introduces the concept of managers, you will no longer be able to directly use collection methods such as `Collection#get` on data structures like `Client#users`. You will now have to directly ask for cache on a manager before trying to use collection methods. Any method that is called directly on a manager will call the API, such as `GuildMemberManager#fetch` and `MessageManager#delete`. 
+v12 introduces the concept of managers, you will no longer be able to directly use collection methods such as `Collection#get` on data structures like `Client#users`. You will now have to directly ask for cache on a manager before trying to use collection methods. Any method that is called directly on a manager will call the API, such as `GuildMemberManager#fetch` and `MessageManager#delete`.
 
 ```diff
 - client.users.get('123456789012345678');
@@ -132,7 +132,7 @@ All the `.send***()` methods have been removed in favor of one general `.send()`
 
 ### Roles
 
-The `GuildMember.roles` Collection has been changed to a Manager in v12, so a lot of the associated methods for interacting with a member's roles have changed as well.  They're no longer on the GuildMember object itself, but instead now on the `GuildMemberRoleManager`. The Manager holds API methods and cache for the roles, in the form of `GuildMemberRoleManager#cache` which is a plain Collection.
+The `GuildMember.roles` Collection has been changed to a Manager in v12, so a lot of the associated methods for interacting with a member's roles have changed as well. They're no longer on the GuildMember object itself, but instead now on the `GuildMemberRoleManager`. The Manager holds API methods and cache for the roles, in the form of `GuildMemberRoleManager#cache` which is a plain Collection.
 
 ```diff
 - guildMember.addRole('123456789012345678');
@@ -179,7 +179,7 @@ The method to ban members and users have been moved to the `GuildMemberManager`.
 
 ### Image URLs
 
-Some image-related properties like `user.avatarURL` are now a method in v12, so that you can apply some options to them, eg. to affect their display size. 
+Some image-related properties like `user.avatarURL` are now a method in v12, so that you can apply some options to them, eg. to affect their display size.
 
 ```diff
 - user.avatarURL;
@@ -200,7 +200,7 @@ Some image-related properties like `user.avatarURL` are now a method in v12, so 
 Version 12 now allows you to dynamically set the file type for images. If the `dynamic` option is provided you will receive a `.gif` URL if the image is animated, otherwise it will fall back to the specified `format` or its default `.webp` if none is provided.
 
 ```js
-user.avatarURL({ format: 'png', dynamic: true, size: 1024 });
+user.avatarURL({ format: "png", dynamic: true, size: 1024 });
 ```
 
 ### RichEmbed Constructor
@@ -248,8 +248,8 @@ v12 has a new voice system that improves stability but also comes with some chan
 You can now also play Ogg Opus files or WebM Opus files directly without the need for FFmpeg in v12:
 
 ```js
-connection.play(fs.createReadStream('file.ogg'), { type: 'ogg/opus' });
-connection.play(fs.createReadStream('file.webm'), { type: 'webm/opus' });
+connection.play(fs.createReadStream("file.ogg"), { type: "ogg/opus" });
+connection.play(fs.createReadStream("file.webm"), { type: "webm/opus" });
 ```
 
 It is also possible to define initial values for `plp`, `fec` and `bitrate` when playing a stream. Minus bitrate, these are new configurable options in v12 that can help when playing audio on unstable network connections.
@@ -276,11 +276,13 @@ The internal voice system in v12 now uses streams where possible, and as such St
 ```
 
 You can manually control how many audio packets should be queued before playing audio for more consistent playback using the `highWaterMark` option (defaults to 12)
+
 ```js
 connection.play(stream, { highWaterMark: 512 });
 ```
 
 If you're frequently pausing/resuming an audio stream, you can enable playing silence packets while paused to prevent audio glitches on the Discord client
+
 ```js
 // Passing true plays silence
 dispatcher.pause(true);
@@ -304,78 +306,78 @@ Broadcasts themselves now contain a `BroadcastDispatcher` that shares a similar 
 
 The section headers for breaking changes will be named after the v11 classes/methods/properties and will be in alphabetical order, so that you can easily find what you're looking for. The section headers for additions will be named after the v12 classes/methods/properties, to reflect their current syntax appropriately.
 
-"Difference" code blocks will be used to display the old methods vs the newer ones—the red being what's been removed and the green being its replacement. Some bits may have more than one version of being handled. Regular JavaScript syntax code blocks will be used to display the additions. 
+"Difference" code blocks will be used to display the old methods vs the newer ones—the red being what's been removed and the green being its replacement. Some bits may have more than one version of being handled. Regular JavaScript syntax code blocks will be used to display the additions.
 
 ::: danger
 While this list has been carefully crafted, it may be incomplete! If you notice pieces of missing or inaccurate data, we encourage you to [submit a pull request](https://github.com/discordjs/guide/compare)!
 :::
 
-* Activity [(additions)](/additional-info/changes-in-v12.md#activity)
-* ActivityFlags [(additions)](/additional-info/changes-in-v12.md#activityflags)
-* APIMessage [(additions)](/additional-info/changes-in-v12.md#apimessage)
-* Base [(additions)](/additional-info/changes-in-v12.md#base)
-* BaseClient [(additions)](/additional-info/changes-in-v12.md#baseclient)
-* BitField [(additions)](/additional-info/changes-in-v12.md#bitfield)
-* BroadcastDispatcher [(additions)](/additional-info/changes-in-v12.md#broadcastdispatcher)
-* Channel (changed send/fetch to TextChannel) [(additions)](/additional-info/changes-in-v12.md#channel)
-* ClientApplication [(additions)](/additional-info/changes-in-v12.md#clientapplication)
-* Client [(changes)](/additional-info/changes-in-v12.md#client) [(additions)](/additional-info/changes-in-v12.md#client-2)
-* ClientOptions [(changes)](/additional-info/changes-in-v12.md#clientoptions) [(additions)](/additional-info/changes-in-v12.md#clientoptions-2)
-* ClientUser [(changes)](/additional-info/changes-in-v12.md#clientuser)
-* Collection [(changes)](/additional-info/changes-in-v12.md#collection)
-* Collector [(changes)](/additional-info/changes-in-v12.md#collector) [(additions)](/additional-info/changes-in-v12.md#collector-2)
-* CollectorOptions [(additions)](/additional-info/changes-in-v12.md#collectoroptions)
-* DMChannel [(changes)](/additional-info/changes-in-v12.md#dmchannel) [(additions)](/additional-info/changes-in-v12.md#dmchannel-2)
-* Emoji [(changes)](/additional-info/changes-in-v12.md#emoji)
-* EvaluatedPermissions [(changes)](/additional-info/changes-in-v12.md#evaluatedpermissions)
-* Game [(changes)](/additional-info/changes-in-v12.md#game)
-* GroupDMChannel [(changes)](/additional-info/changes-in-v12.md#groupdmchannel)
-* Guild [(changes)](/additional-info/changes-in-v12.md#guild) [(additions)](/additional-info/changes-in-v12.md#guild-2)
-* GuildChannel [(changes)](/additional-info/changes-in-v12.md#guildchannel) [(additions)](/additional-info/changes-in-v12.md#guildchannel-2)
-* GuildMember [(changes)](/additional-info/changes-in-v12.md#guildmember)
-* HTTPError [(additions)](/additional-info/changes-in-v12.md#httperror)
-* Invite [(changes)](/additional-info/changes-in-v12.md#invite)
-* Message [(changes)](/additional-info/changes-in-v12.md#message) [(additions)](/additional-info/changes-in-v12.md#message-2)
-* MessageAttachment [(changes)](/additional-info/changes-in-v12.md#messageattachment) [(additions)](/additional-info/changes-in-v12.md#messageattachment-2)
-* MessageCollectorOptions [(changes)](/additional-info/changes-in-v12.md#messagecollectoroptions)
-* MessageEmbed [(changes)](/additional-info/changes-in-v12.md#messageembed) [(additions)](/additional-info/changes-in-v12.md#messageembed-2)
-* MessageMentions [(changes)](/additional-info/changes-in-v12.md#messagementions)
-* MessageReaction [(changes)](/additional-info/changes-in-v12.md#messagereaction)
-* OAuth2Application [(changes)](/additional-info/changes-in-v12.md#oauth2application)
-* PartialGuild [(changes)](/additional-info/changes-in-v12.md#partialguild-channel)
-* PartialGuildChannel [(changes)](/additional-info/changes-in-v12.md#partialguild-channel)
-* Permissions [(changes)](/additional-info/changes-in-v12.md#permissions) [(additions)](/additional-info/changes-in-v12.md#permissions-2)
-* Presence [(changes)](/additional-info/changes-in-v12.md#presence) [(additions)](/additional-info/changes-in-v12.md#presence-2)
-* ReactionCollector [(additions)](/additional-info/changes-in-v12.md#reactioncollector)
-* ReactionEmoji [(changes)](/additional-info/changes-in-v12.md#)
-* RichEmbed [(changes)](/additional-info/changes-in-v12.md#richembed)
-* RichPresenceAssets [(changes)](/additional-info/changes-in-v12.md#richpresenceassets)
-* Role [(changes)](/additional-info/changes-in-v12.md#role)
-* Shard [(changes)](/additional-info/changes-in-v12.md#shard)
-* ShardClientUtil [(changes)](/additional-info/changes-in-v12.md#shardclientutil)
-* ShardingManager [(changes)](/additional-info/changes-in-v12.md#shardingmanager)
-* StreamDispatcher [(changes)](/additional-info/changes-in-v12.md#streamdispatcher)
-* TextChannel [(changes)](/additional-info/changes-in-v12.md#textchannel) [(additions)](/additional-info/changes-in-v12.md#textchannel-2)
-* User [(changes)](/additional-info/changes-in-v12.md#user) [(additions)](/additional-info/changes-in-v12.md#user-2)
-* Util [(changes)](/additional-info/changes-in-v12.md#util)
-* VoiceBroadcast [(changes)](/additional-info/changes-in-v12.md#voicebroadcast) [(additions)](/additional-info/changes-in-v12.md#voicebroadcast-2)
-* VoiceChannel [(additions)](/additional-info/changes-in-v12.md#voicechannel)
-* VoiceConnection [(changes)](/additional-info/changes-in-v12.md#voiceconnection)
-* VoiceReceiver [(changes)](/additional-info/changes-in-v12.md#voicereceiver) [(additions)](/additional-info/changes-in-v12.md#voicereceiver-2)
-* VoiceRegion [(changes)](/additional-info/changes-in-v12.md#voiceregion)
-* VoiceState [(additions)](/additional-info/changes-in-v12.md#voicestate)
-* VolumeInterface [(changes)](/additional-info/changes-in-v12.md#volumeinterface)
-* Webhook [(changes)](/additional-info/changes-in-v12.md#webhook) [(additions)](/additional-info/changes-in-v12.md#webhook-2)
-* WebhookClient [(changes)](/additional-info/changes-in-v12.md#webhookclient)
-* WebSocketManager [(additions)](/additional-info/changes-in-v12.md#websocketmanager)
-* WebsocketOptions [(additions)](/additional-info/changes-in-v12.md#websocketoptions)
-* WebSocketShard [(additions)](/additional-info/changes-in-v12.md#websocketshard)
+- Activity [(additions)](/additional-info/changes-in-v12.md#activity)
+- ActivityFlags [(additions)](/additional-info/changes-in-v12.md#activityflags)
+- APIMessage [(additions)](/additional-info/changes-in-v12.md#apimessage)
+- Base [(additions)](/additional-info/changes-in-v12.md#base)
+- BaseClient [(additions)](/additional-info/changes-in-v12.md#baseclient)
+- BitField [(additions)](/additional-info/changes-in-v12.md#bitfield)
+- BroadcastDispatcher [(additions)](/additional-info/changes-in-v12.md#broadcastdispatcher)
+- Channel (changed send/fetch to TextChannel) [(additions)](/additional-info/changes-in-v12.md#channel)
+- ClientApplication [(additions)](/additional-info/changes-in-v12.md#clientapplication)
+- Client [(changes)](/additional-info/changes-in-v12.md#client) [(additions)](/additional-info/changes-in-v12.md#client-2)
+- ClientOptions [(changes)](/additional-info/changes-in-v12.md#clientoptions) [(additions)](/additional-info/changes-in-v12.md#clientoptions-2)
+- ClientUser [(changes)](/additional-info/changes-in-v12.md#clientuser)
+- Collection [(changes)](/additional-info/changes-in-v12.md#collection)
+- Collector [(changes)](/additional-info/changes-in-v12.md#collector) [(additions)](/additional-info/changes-in-v12.md#collector-2)
+- CollectorOptions [(additions)](/additional-info/changes-in-v12.md#collectoroptions)
+- DMChannel [(changes)](/additional-info/changes-in-v12.md#dmchannel) [(additions)](/additional-info/changes-in-v12.md#dmchannel-2)
+- Emoji [(changes)](/additional-info/changes-in-v12.md#emoji)
+- EvaluatedPermissions [(changes)](/additional-info/changes-in-v12.md#evaluatedpermissions)
+- Game [(changes)](/additional-info/changes-in-v12.md#game)
+- GroupDMChannel [(changes)](/additional-info/changes-in-v12.md#groupdmchannel)
+- Guild [(changes)](/additional-info/changes-in-v12.md#guild) [(additions)](/additional-info/changes-in-v12.md#guild-2)
+- GuildChannel [(changes)](/additional-info/changes-in-v12.md#guildchannel) [(additions)](/additional-info/changes-in-v12.md#guildchannel-2)
+- GuildMember [(changes)](/additional-info/changes-in-v12.md#guildmember)
+- HTTPError [(additions)](/additional-info/changes-in-v12.md#httperror)
+- Invite [(changes)](/additional-info/changes-in-v12.md#invite)
+- Message [(changes)](/additional-info/changes-in-v12.md#message) [(additions)](/additional-info/changes-in-v12.md#message-2)
+- MessageAttachment [(changes)](/additional-info/changes-in-v12.md#messageattachment) [(additions)](/additional-info/changes-in-v12.md#messageattachment-2)
+- MessageCollectorOptions [(changes)](/additional-info/changes-in-v12.md#messagecollectoroptions)
+- MessageEmbed [(changes)](/additional-info/changes-in-v12.md#messageembed) [(additions)](/additional-info/changes-in-v12.md#messageembed-2)
+- MessageMentions [(changes)](/additional-info/changes-in-v12.md#messagementions)
+- MessageReaction [(changes)](/additional-info/changes-in-v12.md#messagereaction)
+- OAuth2Application [(changes)](/additional-info/changes-in-v12.md#oauth2application)
+- PartialGuild [(changes)](/additional-info/changes-in-v12.md#partialguild-channel)
+- PartialGuildChannel [(changes)](/additional-info/changes-in-v12.md#partialguild-channel)
+- Permissions [(changes)](/additional-info/changes-in-v12.md#permissions) [(additions)](/additional-info/changes-in-v12.md#permissions-2)
+- Presence [(changes)](/additional-info/changes-in-v12.md#presence) [(additions)](/additional-info/changes-in-v12.md#presence-2)
+- ReactionCollector [(additions)](/additional-info/changes-in-v12.md#reactioncollector)
+- ReactionEmoji [(changes)](/additional-info/changes-in-v12.md#)
+- RichEmbed [(changes)](/additional-info/changes-in-v12.md#richembed)
+- RichPresenceAssets [(changes)](/additional-info/changes-in-v12.md#richpresenceassets)
+- Role [(changes)](/additional-info/changes-in-v12.md#role)
+- Shard [(changes)](/additional-info/changes-in-v12.md#shard)
+- ShardClientUtil [(changes)](/additional-info/changes-in-v12.md#shardclientutil)
+- ShardingManager [(changes)](/additional-info/changes-in-v12.md#shardingmanager)
+- StreamDispatcher [(changes)](/additional-info/changes-in-v12.md#streamdispatcher)
+- TextChannel [(changes)](/additional-info/changes-in-v12.md#textchannel) [(additions)](/additional-info/changes-in-v12.md#textchannel-2)
+- User [(changes)](/additional-info/changes-in-v12.md#user) [(additions)](/additional-info/changes-in-v12.md#user-2)
+- Util [(changes)](/additional-info/changes-in-v12.md#util)
+- VoiceBroadcast [(changes)](/additional-info/changes-in-v12.md#voicebroadcast) [(additions)](/additional-info/changes-in-v12.md#voicebroadcast-2)
+- VoiceChannel [(additions)](/additional-info/changes-in-v12.md#voicechannel)
+- VoiceConnection [(changes)](/additional-info/changes-in-v12.md#voiceconnection)
+- VoiceReceiver [(changes)](/additional-info/changes-in-v12.md#voicereceiver) [(additions)](/additional-info/changes-in-v12.md#voicereceiver-2)
+- VoiceRegion [(changes)](/additional-info/changes-in-v12.md#voiceregion)
+- VoiceState [(additions)](/additional-info/changes-in-v12.md#voicestate)
+- VolumeInterface [(changes)](/additional-info/changes-in-v12.md#volumeinterface)
+- Webhook [(changes)](/additional-info/changes-in-v12.md#webhook) [(additions)](/additional-info/changes-in-v12.md#webhook-2)
+- WebhookClient [(changes)](/additional-info/changes-in-v12.md#webhookclient)
+- WebSocketManager [(additions)](/additional-info/changes-in-v12.md#websocketmanager)
+- WebsocketOptions [(additions)](/additional-info/changes-in-v12.md#websocketoptions)
+- WebSocketShard [(additions)](/additional-info/changes-in-v12.md#websocketshard)
 
 ### Dependencies
 
 #### Snekfetch
 
-Please note that `snekfetch` has been removed as a dependency, and has been replaced by `node-fetch`.  `snekfetch` has been deprecated by its developer and is no longer maintained.
+Please note that `snekfetch` has been removed as a dependency, and has been replaced by `node-fetch`. `snekfetch` has been deprecated by its developer and is no longer maintained.
 
 ### Attachment
 
@@ -453,7 +455,7 @@ The `speaking` parameter has been changed from a `boolean` value to a read-only 
 
 #### Client#pings
 
-`client.pings` has been moved to the `WebSocketShard` class to make use of internal sharding.  The `Client` class has a `Collection` of `WebSocketShard`s available via `client.ws.shards`; alternatively, the `WebSocketShard` can be found as a property of other structures, eg `guild.shard`.
+`client.pings` has been moved to the `WebSocketShard` class to make use of internal sharding. The `Client` class has a `Collection` of `WebSocketShard`s available via `client.ws.shards`; alternatively, the `WebSocketShard` can be found as a property of other structures, eg `guild.shard`.
 
 ```diff
 - client.pings;
@@ -493,7 +495,7 @@ The `client.resume` event has been removed in favor of the `client.shardResume` 
 
 #### Client#status
 
-The `client.status` property has been removed and is now in the `WebSocketManager` class.  In addition, it is no longer a getter.
+The `client.status` property has been removed and is now in the `WebSocketManager` class. In addition, it is no longer a getter.
 
 ```diff
 - client.status;
@@ -518,7 +520,7 @@ The `client.userNoteUpdate` event has been removed entirely, along with all othe
 
 #### Client#voiceConnections
 
-`client.voiceConnections` has been removed and is now in the `ClientVoiceManager` class.  In addition, the `Collection` is no longer a getter.
+`client.voiceConnections` has been removed and is now in the `ClientVoiceManager` class. In addition, the `Collection` is no longer a getter.
 
 ```diff
 - client.voiceConnections;
@@ -748,7 +750,7 @@ The `amount` parameter of these methods now allows a negative number which will 
 
 #### Collection#tap
 
-`collection.tap` runs a specific function over the collection instead of mimicking `<array>.forEach()`, this functionality was moved to `collection.each()`. 
+`collection.tap` runs a specific function over the collection instead of mimicking `<array>.forEach()`, this functionality was moved to `collection.each()`.
 
 ### Collector
 
@@ -776,7 +778,7 @@ The `amount` parameter of these methods now allows a negative number which will 
 
 #### DMChannel#fetch(Pinned)Message(s)
 
-`dmChannel.fetchMessage(s)` has been transformed in the shape of a Manager.  See the [TextChannel#fetch(Pinned)Message(s)](/additional-info/changes-inv-v12.md#channel) section for more information.
+`dmChannel.fetchMessage(s)` has been transformed in the shape of a Manager. See the [TextChannel#fetch(Pinned)Message(s)](/additional-info/changes-inv-v12.md#channel) section for more information.
 
 #### DMChannel#search
 
@@ -835,7 +837,7 @@ The `Game` class has been removed in favor of the `Activity` class to be consist
 
 ### GroupDMChannel
 
-The `GroupDMChannel` class has been deprecated from the Discord API.  While it's still available through Gamebridge for now, that will also be removed in the future.  In addition, group DM's has always been unreliable and hacky to work with a bot.
+The `GroupDMChannel` class has been deprecated from the Discord API. While it's still available through Gamebridge for now, that will also be removed in the future. In addition, group DM's has always been unreliable and hacky to work with a bot.
 
 ### Guild
 
@@ -849,7 +851,7 @@ The `GroupDMChannel` class has been deprecated from the Discord API.  While it's
 
 #### Guild#ban
 
-`guild.ban()` has been moved to the `GuildMemberManager`.  In addition, the second parameter in `guild.members.ban()` has been changed. The `options` parameter no longer accepts a number, nor a string.
+`guild.ban()` has been moved to the `GuildMemberManager`. In addition, the second parameter in `guild.members.ban()` has been changed. The `options` parameter no longer accepts a number, nor a string.
 
 ```diff
 - guild.ban(user, 7);
@@ -865,7 +867,7 @@ The `GroupDMChannel` class has been deprecated from the Discord API.  While it's
 
 #### Guild#createChannel
 
-`guild.createChannel()` has been transformed in the shape of a Manager.  The second, third and fourth parameters in `guild.createChannel()` have been changed/removed, leaving it with a total of two parameters, the second one being an object with all of the options available in `ChannelData`.
+`guild.createChannel()` has been transformed in the shape of a Manager. The second, third and fourth parameters in `guild.createChannel()` have been changed/removed, leaving it with a total of two parameters, the second one being an object with all of the options available in `ChannelData`.
 
 ```diff
 - guild.createChannel('new-channel', 'text', permissionOverwriteArray, 'New channel added for fun!');
@@ -874,7 +876,7 @@ The `GroupDMChannel` class has been deprecated from the Discord API.  While it's
 
 #### Guild#createEmoji
 
-`guild.createEmoji()` has been transformed in the shape of a Manager.  The third and fourth parameters in `guild.createEmoji()` have been changed/removed, leaving it with a total of three parameters. The `roles` and `reason` parameters from v11 have been merged into an object as the third parameter.
+`guild.createEmoji()` has been transformed in the shape of a Manager. The third and fourth parameters in `guild.createEmoji()` have been changed/removed, leaving it with a total of three parameters. The `roles` and `reason` parameters from v11 have been merged into an object as the third parameter.
 
 ```diff
 - guild.createEmoji('./path/to/file.png', 'NewEmoji', collectionOfRoles, 'New emoji added for fun!');
@@ -883,7 +885,7 @@ The `GroupDMChannel` class has been deprecated from the Discord API.  While it's
 
 #### Guild#createRole
 
-`guild.createRole()` has been transformed in the shape of a Manager.  The first and second parameters in `guild.createRole()` have been changed/removed, leaving it with a total of one parameter. The `data` and `reason` parameters from v11 have been moved into an object as the first parameter.
+`guild.createRole()` has been transformed in the shape of a Manager. The first and second parameters in `guild.createRole()` have been changed/removed, leaving it with a total of one parameter. The `data` and `reason` parameters from v11 have been moved into an object as the first parameter.
 
 ```diff
 - guild.createRole(roleData, 'New staff role!');
@@ -982,7 +984,7 @@ Not sure how to set up a database? Check out [this page](/sequelize/)!
 
 #### Guild#pruneMembers
 
-`guild.pruneMembers()` has been transformed in the shape of a Manager.  In addition, the first, second, and third parameters in the method have been changed or removed, leaving it with a total of one parameter. The `days`, `dry`, and `reason` parameters from v11 have been merged into an object as the first parameter.
+`guild.pruneMembers()` has been transformed in the shape of a Manager. In addition, the first, second, and third parameters in the method have been changed or removed, leaving it with a total of one parameter. The `days`, `dry`, and `reason` parameters from v11 have been merged into an object as the first parameter.
 
 ```diff
 - guild.pruneMembers(7, true, 'Scheduled pruning');
@@ -1040,7 +1042,7 @@ Not sure how to set up a database? Check out [this page](/sequelize/)!
 
 #### Guild#unban
 
-`guild.unban()` has been transformed in the shape of a Manager and is now a method on `GuildMemberManager`.  In addition, it also now optionally accepts a string as a second parameter for `reason`.
+`guild.unban()` has been transformed in the shape of a Manager and is now a method on `GuildMemberManager`. In addition, it also now optionally accepts a string as a second parameter for `reason`.
 
 ```diff
 - guild.unban('123456789012345678');
@@ -1053,7 +1055,7 @@ Not sure how to set up a database? Check out [this page](/sequelize/)!
 
 ### GuildChannel
 
-The properties of a channel relating to its position have been renamed.  `guildChannel.calculatedPosition` is now `guildChannel.position`.  `guildChannel.position` is now more clearly named `guildChannel.rawPosition` to denote that it's directly from the API without any sorting.
+The properties of a channel relating to its position have been renamed. `guildChannel.calculatedPosition` is now `guildChannel.position`. `guildChannel.position` is now more clearly named `guildChannel.rawPosition` to denote that it's directly from the API without any sorting.
 
 ```diff
 - channel.calculatedPosition;
@@ -1065,7 +1067,7 @@ The properties of a channel relating to its position have been renamed.  `guildC
 
 #### GuildChannel#clone
 
-The first, second, third, and fourth parameters in `channel.clone()` have been changed/removed, leaving it with a total of one parameter. The `name`, `withPermissions`, `withTopic`, and `reason` parameters from v11 have been merged into an object as the first parameter.  Several other parameters have also been added to the options object.
+The first, second, third, and fourth parameters in `channel.clone()` have been changed/removed, leaving it with a total of one parameter. The `name`, `withPermissions`, `withTopic`, and `reason` parameters from v11 have been merged into an object as the first parameter. Several other parameters have also been added to the options object.
 
 #### GuildChannel#createInvite
 
@@ -1161,7 +1163,7 @@ All of the methods to modify a member's roles have been moved to the `GuildMembe
 
 #### GuildMember#ban
 
-`guildMember.ban()` has been transformed in the shape of a Manager and is now a method on `GuildMemberManager`. The second parameter has been changed from a string or an object to only accept an object.  The `reason` and `days` parameters are keys in the `options` object.
+`guildMember.ban()` has been transformed in the shape of a Manager and is now a method on `GuildMemberManager`. The second parameter has been changed from a string or an object to only accept an object. The `reason` and `days` parameters are keys in the `options` object.
 
 ```diff
 - member.ban(user, 7);
@@ -1203,7 +1205,7 @@ All of the methods to modify a member's roles have been moved to the `GuildMembe
 
 #### GuildMember#hasPermission
 
-The `explicit` parameter has been removed entirely.  The `checkAdmin` and `checkOwner` parameters have been changed into a single `options` object with those values as keys.
+The `explicit` parameter has been removed entirely. The `checkAdmin` and `checkOwner` parameters have been changed into a single `options` object with those values as keys.
 
 ```diff
 - guildMember.hasPermission('MANAGE_MESSAGES', true, false, false);
@@ -1315,7 +1317,7 @@ Along with the rest of the voice-related methods and properties, the methods for
 
 #### Message#delete
 
-The first parameter in `message.delete()` has been changed. The `timeout` parameter from v11 have been merged into an object as the first parameter.  In addition, there is now another optional key in the object, `reason`.
+The first parameter in `message.delete()` has been changed. The `timeout` parameter from v11 have been merged into an object as the first parameter. In addition, there is now another optional key in the object, `reason`.
 
 ```diff
 - message.delete(5000);
@@ -1367,7 +1369,7 @@ The `MessageAttachment` class constructor parameters have changed to reflect tha
 
 ### MessageCollector
 
-See the `Collector` section for most of the changes to `MessageCollector`, such as the new `dispose` method and event.  Changes to the `MessageCollector` constructor in particular are as follows:
+See the `Collector` section for most of the changes to `MessageCollector`, such as the new `dispose` method and event. Changes to the `MessageCollector` constructor in particular are as follows:
 
 #### MessageCollector#channel
 
@@ -1415,7 +1417,7 @@ The `max` and `maxMatches` properties of the `MessageCollector` class have been 
 
 #### MessageMentions#has
 
-`mentions.has()` has been added, replacing `message.isMentioned()` and `message.isMemberMentioned()`.  It has two paramets: the first is `data` representing a `User`, `GuildMember`, `Role`, or `GuildChannel` and an optional `options` object.
+`mentions.has()` has been added, replacing `message.isMentioned()` and `message.isMemberMentioned()`. It has two paramets: the first is `data` representing a `User`, `GuildMember`, `Role`, or `GuildChannel` and an optional `options` object.
 
 ```diff
 - message.isMentioned('123456789012345678');
@@ -1428,7 +1430,7 @@ The `max` and `maxMatches` properties of the `MessageCollector` class have been 
 
 #### MessageReaction#fetchUsers
 
-`messageReaction.fetchUsers()` has been transformed in the shape of a Manager.  In addition, the first parameter has been removed in favor of an object.
+`messageReaction.fetchUsers()` has been transformed in the shape of a Manager. In addition, the first parameter has been removed in favor of an object.
 
 ```diff
 - reaction.fetchUsers(50);
@@ -1488,7 +1490,7 @@ The `PartialGuild` and `PartialGuildChannel` classes for use with invites have b
 
 ### Permissions
 
-#### Permissions#_member
+#### Permissions#\_member
 
 `permissions._member` has been removed entirely.
 
@@ -1496,13 +1498,13 @@ The `PartialGuild` and `PartialGuildChannel` classes for use with invites have b
 
 The following permission flags have been renamed:
 
-* `READ_MESSAGES` -> `VIEW_CHANNEL`
-* `EXTERNAL_EMOJIS` -> `USE_EXTERNAL_EMOJIS`
-* `MANAGE_ROLES_OR_PERMISSIONS` -> `MANAGE_ROLES`
+- `READ_MESSAGES` -> `VIEW_CHANNEL`
+- `EXTERNAL_EMOJIS` -> `USE_EXTERNAL_EMOJIS`
+- `MANAGE_ROLES_OR_PERMISSIONS` -> `MANAGE_ROLES`
 
 #### Permissions#hasPermission(s)
 
-`permissions.hasPermission()` and `permissions.hasPermissions()` have been removed entirely in favor of `permissions.has()`.  This change reduces extraneous helper methods.
+`permissions.hasPermission()` and `permissions.hasPermissions()` have been removed entirely in favor of `permissions.has()`. This change reduces extraneous helper methods.
 
 #### Permissions#missingPermissions
 
@@ -1571,7 +1573,7 @@ Both properties relating to the rich presence's image URL have been changed to b
 
 ### Role
 
-The properties of a role relating to its position have been renamed.  `role.calculatedPosition` is now `role.position`.  `role.position` is now more clearly named `role.rawPosition` to denote that it's directly from the API without any sorting.
+The properties of a role relating to its position have been renamed. `role.calculatedPosition` is now `role.position`. `role.position` is now more clearly named `role.rawPosition` to denote that it's directly from the API without any sorting.
 
 ```diff
 - role.calculatedPosition;
@@ -1643,7 +1645,7 @@ In order to make use of workers introduced in Node v10.5.0, a new `mode` paramet
 
 ### ShardingManager
 
-#### ShardingManger#_spawn
+#### ShardingManger#\_spawn
 
 The private method `shardingManager._spawn()` has been removed entirely.
 
@@ -1687,7 +1689,7 @@ The `end` method is now inherited from `WritableStream` as documented [here](htt
 
 #### StreamDispatcher#pause
 
-The `streamDispatcher.pause` method now takes an optional parameter `silence`, to specify whether to play silence while paused to prevent audio glitches.  Its value is a `boolean` and defaults to `false`.
+The `streamDispatcher.pause` method now takes an optional parameter `silence`, to specify whether to play silence while paused to prevent audio glitches. Its value is a `boolean` and defaults to `false`.
 
 ```diff
 - dispatcher.pause();
@@ -1941,6 +1943,7 @@ The `VoiceConnection` class is now accessed via the respective `VoiceState` clas
 The `VoiceConnection` class also implements the new `PlayInterface` class in addition to extending `EventEmitter` from Node.
 
 #### VoiceConnection#createReceiver
+
 `voiceconnection.createReceiver()` has been removed, there is now a single receiver that be accessed from `voiceConnection.receiver`
 
 #### VoiceConnection#play\*\*\*
@@ -2085,7 +2088,7 @@ Similar to `TextChannel#members` and `VoiceChannel#members`, `CategoryChannel#me
 
 ### ClientApplication
 
-This is a not a new class; it was formerly called `OAuth2Application` in v11.  Changes and deletions to methods and properties are covered above (link needed).  Additions are as follow:
+This is a not a new class; it was formerly called `OAuth2Application` in v11. Changes and deletions to methods and properties are covered above (link needed). Additions are as follow:
 
 #### ClientApplication#cover(Image)
 
@@ -2139,6 +2142,7 @@ ClientApplication.coverImage({ width: 1024, height: 1024 });
 ### Manager
 
 The Manager class was added in order to store various data types. Uses include
+
 - RoleManager
 - UserManager
 - GuildManager
@@ -2157,13 +2161,13 @@ The Manager class was added in order to store various data types. Uses include
 
 #### DiscordAPIError#httpStatus
 
-The `DiscordAPIError#httpStatus` has been added with the 4xx status code that the error returns.  See [the MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#Client_error_responses) for more details.
+The `DiscordAPIError#httpStatus` has been added with the 4xx status code that the error returns. See [the MDN docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#Client_error_responses) for more details.
 
 ### DMChannel
 
 #### DMChannel#lastMessage
 
-The message object of the last message in the channel, if one was sent.  It is a read-only property.
+The message object of the last message in the channel, if one was sent. It is a read-only property.
 
 #### DMChannel#lastPin\*\*\*
 
@@ -2185,7 +2189,7 @@ Two properties have been added, `dmChannel#lastPinAt` (read-only) and `dmChannel
 
 #### Guild#fetchVanityCode
 
-`guild.fetchVanityCode()` has been added. 
+`guild.fetchVanityCode()` has been added.
 
 #### Guild#setEmbed
 
@@ -2209,11 +2213,11 @@ Two properties have been added, `dmChannel#lastPinAt` (read-only) and `dmChannel
 
 #### GuildChannel#createOverwrite
 
-Creates or update an existing overwrite for a user or role.  The second parameter is a `PermissionOverwriteOption` object; the third, optional parameter is `reason`, a string.
+Creates or update an existing overwrite for a user or role. The second parameter is a `PermissionOverwriteOption` object; the third, optional parameter is `reason`, a string.
 
 ```js
 channel.createOverwrite(message.author, {
-	SEND_MESSAGES: false,
+  SEND_MESSAGES: false,
 });
 ```
 
@@ -2223,11 +2227,11 @@ channel.createOverwrite(message.author, {
 
 #### GuildChannel#updateOverwrite
 
-Creates or update an existing overwrite for a user or role.  The second parameter is a `PermissionOverwriteOption` object; the third, optional parameter is `reason`, a string.
+Creates or update an existing overwrite for a user or role. The second parameter is a `PermissionOverwriteOption` object; the third, optional parameter is `reason`, a string.
 
 ```js
 channel.updateOverwrite(message.author, {
-	SEND_MESSAGES: false,
+  SEND_MESSAGES: false,
 });
 ```
 
@@ -2279,11 +2283,12 @@ channel.updateOverwrite(message.author, {
 
 #### MessageEmbed#length
 
-`MessageEmbed.length` has been added.  It returns a `number` equal to all of the fields, title, description, and footer.
+`MessageEmbed.length` has been added. It returns a `number` equal to all of the fields, title, description, and footer.
 
 ### Permissions
 
 #### Permissions#flags
+
 `PRIORITY_SPEAKER` has been added.
 
 ### PlayInterface
@@ -2294,7 +2299,7 @@ This is a new class to play audio over `VoiceConnection`s and `VoiceBroadcast`s.
 
 #### Presence#clientStatus
 
-The new `presence.clientStatus` property returns an object with three keys: `web`, `mobile` and `desktop`; their values are a `PresenceStatus` string.  This property allows you to check which client the member or user is using to access Discord.
+The new `presence.clientStatus` property returns an object with three keys: `web`, `mobile` and `desktop`; their values are a `PresenceStatus` string. This property allows you to check which client the member or user is using to access Discord.
 
 #### Presence#guild
 
@@ -2306,7 +2311,7 @@ The new `presence.clientStatus` property returns an object with three keys: `web
 
 #### Presence#user(ID)
 
-`presence.user` (read-only) and `presence.userID` are properties to represent a `User` and its ID that the presence belongs to.  The former can be null if the `User` is not cached.
+`presence.user` (read-only) and `presence.userID` are properties to represent a `User` and its ID that the presence belongs to. The former can be null if the `User` is not cached.
 
 ### ReactionCollector
 
@@ -2322,11 +2327,11 @@ The new `remove` event emits when a collected reaction is un-reacted, if the `di
 
 ### Shard
 
-#### Shard#_evals
+#### Shard#\_evals
 
 The private property `_evals` has been added to map ongoing promises for calls to `shard.eval()`.
 
-#### Shard#_fetches
+#### Shard#\_fetches
 
 The private property `_fetches` has been added to map ongoing promises for calls to `shard.fetchClientValues()`.
 
@@ -2342,7 +2347,7 @@ The message port for the primary process, if the mode of the `ShardClientUtil` i
 
 #### ShardClientUtil#respawnAll
 
-`shardClientUtil.respawnAll()` will request a respawn of all shards.  It has three parameters, all of which are optional: `shardDelay`, how to long to wait in milliseconds between each shard; `respawnDelay`, how long to wait between killing the shard's process or worker and restarting it; and `spawnTimeout`, how long to wait in milliseconds for a shard to become ready before moving to the next shard.
+`shardClientUtil.respawnAll()` will request a respawn of all shards. It has three parameters, all of which are optional: `shardDelay`, how to long to wait in milliseconds between each shard; `respawnDelay`, how long to wait between killing the shard's process or worker and restarting it; and `spawnTimeout`, how long to wait in milliseconds for a shard to become ready before moving to the next shard.
 
 ### Speaking
 
@@ -2358,7 +2363,7 @@ Two new properties have been added, `pausedSince` and `pausedTime`, to represent
 
 #### StreamDispatcher#set\*\*\*
 
-Several new methods have been added to adjust various aspects of the stream.  Methods marked with a \* denote that they're usable only with a compatible Opus stream.
+Several new methods have been added to adjust various aspects of the stream. Methods marked with a \* denote that they're usable only with a compatible Opus stream.
 
 - `setFEC()`\* - whether to forward error correction or not if using a compatible Opus stream
 - `setPLP()`\* - sets the expected packet loss percentage if using a compatible Opus stream
@@ -2371,8 +2376,8 @@ Several new methods have been added to adjust various aspects of the stream.  Me
 A new event listener, it is emitted when a volume change in the stream is detected.
 
 ```js
-dispatcher.on('volumeChange', (oldVolume, newVolume) => {
-	console.log(`Volume changed from ${oldVolume} to ${newVolume}.`);
+dispatcher.on("volumeChange", (oldVolume, newVolume) => {
+  console.log(`Volume changed from ${oldVolume} to ${newVolume}.`);
 });
 ```
 
@@ -2406,7 +2411,7 @@ This new method sorts a `Collection` by Discord's position and ID.
 
 #### Util#flatten
 
-This new method flattens any object.  Any `Collection`s in the object will be converted to an array of keys.
+This new method flattens any object. Any `Collection`s in the object will be converted to an array of keys.
 
 #### Util#resolveColor
 
@@ -2419,6 +2424,7 @@ THis new method resolves a `StringResolvable` into a string.
 #### Util#Constants
 
 #### Constant.Colors
+
 `WHITE` and `YELLOW` have been added as values.
 
 ### VoiceBroadcast
@@ -2431,7 +2437,7 @@ This new property represents the primary dispatcher - if any - that controls eve
 
 #### VoiceChannel#editable
 
-This new property returns a `boolean` value whether the client can edit the `VoiceChannel` or not, eg. any change to the channel besides moving it via `channel.setPosition()`.  It differs from `channel.manageable` in that it also checks if the client has the `CONNECT` permissions for that particular channel.
+This new property returns a `boolean` value whether the client can edit the `VoiceChannel` or not, eg. any change to the channel besides moving it via `channel.setPosition()`. It differs from `channel.manageable` in that it also checks if the client has the `CONNECT` permissions for that particular channel.
 
 ### VoiceReceiver
 

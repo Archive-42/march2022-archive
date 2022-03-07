@@ -6,7 +6,7 @@
 
 ```js
 function GenericBox({ children }) {
-  return <div className="container">{children}</div>
+  return <div className="container">{children}</div>;
 }
 
 function App() {
@@ -14,18 +14,18 @@ function App() {
     <GenericBox>
       <span>Hello</span> <span>World</span>
     </GenericBox>
-  )
+  );
 }
 ```
 
 #### Good to hear
 
-* Children is a prop that allows components to be passed as data to other components.
-* The React API provides methods to work with this prop.
+- Children is a prop that allows components to be passed as data to other components.
+- The React API provides methods to work with this prop.
 
 ##### Additional links
 
-* [React docs on Children](https://reactjs.org/docs/jsx-in-depth.html#children-in-jsx)
+- [React docs on Children](https://reactjs.org/docs/jsx-in-depth.html#children-in-jsx)
 
 <!-- tags: (react,javascript) -->
 

@@ -22,14 +22,14 @@ Because Immer is itself an abstraction layer, it's important to understand why R
 JavaScript objects and arrays are all mutable by default. If I create an object, I can change the contents of its fields. If I create an array, I can change the contents as well:
 
 ```js
-const obj = { a: 1, b: 2 }
+const obj = { a: 1, b: 2 };
 // still the same object outside, but the contents have changed
-obj.b = 3
+obj.b = 3;
 
-const arr = ['a', 'b']
+const arr = ["a", "b"];
 // In the same way, we can change the contents of this array
-arr.push('c')
-arr[1] = 'd'
+arr.push("c");
+arr[1] = "d";
 ```
 
 This is called _mutating_ the object or array. It's the same object or array reference in memory, but now the contents inside the object have changed.
@@ -45,7 +45,7 @@ const obj = {
     c: 3,
   },
   b: 2,
-}
+};
 
 const obj2 = {
   // copy obj
@@ -57,16 +57,16 @@ const obj2 = {
     // overwrite c
     c: 42,
   },
-}
+};
 
-const arr = ['a', 'b']
+const arr = ["a", "b"];
 // Create a new copy of arr, with "c" appended to the end
-const arr2 = arr.concat('c')
+const arr2 = arr.concat("c");
 
 // or, we can make a copy of the original array:
-const arr3 = arr.slice()
+const arr3 = arr.slice();
 // and mutate the copy:
-arr3.push('c')
+arr3.push("c");
 ```
 
 :::info Want to Know More?
@@ -86,7 +86,7 @@ One of the primary rules of Redux is that **our reducers are _never_ allowed to 
 
 ```js
 // ❌ Illegal - by default, this will mutate the state!
-state.value = 123
+state.value = 123;
 ```
 
 :::
@@ -110,7 +110,7 @@ So if we can't change the originals, how do we return an updated state?
 return {
   ...state,
   value: 123,
-}
+};
 ```
 
 :::
@@ -135,7 +135,7 @@ function handwrittenReducer(state, action) {
         },
       },
     },
-  }
+  };
 }
 ```
 
@@ -150,31 +150,31 @@ Writing immutable update logic by hand _is_ hard, and **accidentally mutating st
 Immer provides a function called `produce`, which accepts two arguments: your original `state`, and a callback function. The callback function is given a "draft" version of that state, and inside the callback, it is safe to write code that mutates the draft value. Immer tracks all attempts to mutate the draft value and then replays those mutations using their immutable equivalents to create a safe, immutably updated result:
 
 ```js
-import produce from 'immer'
+import produce from "immer";
 
 const baseState = [
   {
-    todo: 'Learn typescript',
+    todo: "Learn typescript",
     done: true,
   },
   {
-    todo: 'Try immer',
+    todo: "Try immer",
     done: false,
   },
-]
+];
 
 const nextState = produce(baseState, (draftState) => {
   // "mutate" the draft array
-  draftState.push({ todo: 'Tweet about it' })
+  draftState.push({ todo: "Tweet about it" });
   // "mutate" the nested state
-  draftState[1].done = true
-})
+  draftState[1].done = true;
+});
 
-console.log(baseState === nextState)
+console.log(baseState === nextState);
 // false - the array was copied
-console.log(baseState[0] === nextState[0])
+console.log(baseState[0] === nextState[0]);
 // true - the first item was unchanged, so same reference
-console.log(baseState[1] === nextState[1])
+console.log(baseState[1] === nextState[1]);
 // false - the second item was copied and updated
 ```
 
@@ -184,41 +184,41 @@ Redux Toolkit's [`createReducer` API](../api/createReducer.mdx) uses Immer inter
 
 ```js
 const todosReducer = createReducer([], (builder) => {
-  builder.addCase('todos/todoAdded', (state, action) => {
+  builder.addCase("todos/todoAdded", (state, action) => {
     // "mutate" the array by calling push()
-    state.push(action.payload)
-  })
-})
+    state.push(action.payload);
+  });
+});
 ```
 
 In turn, `createSlice` uses `createReducer` inside, so it's also safe to "mutate" state there as well:
 
 ```js
 const todosSlice = createSlice({
-  name: 'todos',
+  name: "todos",
   initialState: [],
   reducers: {
     todoAdded(state, action) {
-      state.push(action.payload)
+      state.push(action.payload);
     },
   },
-})
+});
 ```
 
 This even applies if the case reducer functions are defined outside of the `createSlice/createReducer` call. For example, you could have a reusable case reducer function that expects to "mutate" its state, and include it as needed:
 
 ```js
 const addItemToArray = (state, action) => {
-  state.push(action.payload)
-}
+  state.push(action.payload);
+};
 
 const todosSlice = createSlice({
-  name: 'todos',
+  name: "todos",
   initialState: [],
   reducers: {
     todoAdded: addItemToArray,
   },
-})
+});
 ```
 
 This works because the "mutating" logic is wrapped in Immer's `produce` method internally when it executes.
@@ -277,7 +277,7 @@ Note that **mutating state in an arrow function with an implicit return breaks t
 
 ```js
 const todosSlice = createSlice({
-  name: 'todos',
+  name: "todos",
   initialState: [],
   reducers: {
     // ❌ ERROR: mutates state, but also returns new array size!
@@ -286,33 +286,33 @@ const todosSlice = createSlice({
     fixedReducer1: (state, action) => void state.push(action.payload),
     // ✅ SAFE: curly braces make this a function body and no return
     fixedReducer2: (state, action) => {
-      state.push(action.payload)
+      state.push(action.payload);
     },
   },
-})
+});
 ```
 
 While writing nested immutable update logic is hard, there are times when it _is_ simpler to do an object spread operation to update multiple fields at once, vs assigning individual fields:
 
 ```js
 function objectCaseReducer1(state, action) {
-  const { a, b, c, d } = action.payload
+  const { a, b, c, d } = action.payload;
   return {
     ...state,
     a,
     b,
     c,
     d,
-  }
+  };
 }
 
 function objectCaseReducer2(state, action) {
-  const { a, b, c, d } = action.payload
+  const { a, b, c, d } = action.payload;
   // This works, but we keep having to repeat `state.x =`
-  state.a = a
-  state.b = b
-  state.c = c
-  state.d = d
+  state.a = a;
+  state.b = b;
+  state.c = c;
+  state.d = d;
 }
 ```
 
@@ -320,8 +320,8 @@ As an alternative, you can use `Object.assign` to mutate multiple fields at once
 
 ```js
 function objectCaseReducer3(state, action) {
-  const { a, b, c, d } = action.payload
-  Object.assign(state, { a, b, c, d })
+  const { a, b, c, d } = action.payload;
+  Object.assign(state, { a, b, c, d });
 }
 ```
 
@@ -338,25 +338,25 @@ Sometimes you may want to replace the entire existing `state`, either because yo
 Instead, to replace the existing state, you should return the new value directly:
 
 ```js
-const initialState = []
+const initialState = [];
 const todosSlice = createSlice({
-  name: 'todos',
+  name: "todos",
   initialState,
   reducers: {
     brokenTodosLoadedReducer(state, action) {
       // ❌ ERROR: does not actually mutate or return anything new!
-      state = action.payload
+      state = action.payload;
     },
     fixedTodosLoadedReducer(state, action) {
       // ✅ CORRECT: returns a new value to replace the old one
-      return action.payload
+      return action.payload;
     },
     correctResetTodosReducer(state, action) {
       // ✅ CORRECT: returns a new value to replace the old one
-      return initialState
+      return initialState;
     },
   },
-})
+});
 ```
 
 ### Debugging and Inspecting Drafted State
@@ -368,20 +368,20 @@ It's common to want to log in-progress state from a reducer to see what it looks
 To work around this, [Immer includes a `current` function that extracts a copy of the wrapped data](https://immerjs.github.io/immer/current), and RTK re-exports `current`. You can use this in your reducers if you need to log or inspect the work-in-progress state:
 
 ```js
-import { current } from '@reduxjs/toolkit'
+import { current } from "@reduxjs/toolkit";
 
 const todosSlice = createSlice({
-  name: 'todos',
+  name: "todos",
   initialState: todosAdapter.getInitialState(),
   reducers: {
     todoToggled(state, action) {
       // ❌ ERROR: logs the Proxy-wrapped data
-      console.log(state)
+      console.log(state);
       // ✅ CORRECT: logs a plain JS copy of the current data
-      console.log(current(state))
+      console.log(current(state));
     },
   },
-})
+});
 ```
 
 The correct output would look like this instead:
@@ -398,26 +398,26 @@ However, this still only applies to objects and arrays. If we pull out a primiti
 
 ```js
 const todosSlice = createSlice({
-  name: 'todos',
+  name: "todos",
   initialState: [],
   reducers: {
     brokenTodoToggled(state, action) {
-      const todo = state.find((todo) => todo.id === action.payload)
+      const todo = state.find((todo) => todo.id === action.payload);
       if (todo) {
         // ❌ ERROR: Immer can't track updates to a primitive value!
-        let { completed } = todo
-        completed = !completed
+        let { completed } = todo;
+        completed = !completed;
       }
     },
     fixedTodoToggled(state, action) {
-      const todo = state.find((todo) => todo.id === action.payload)
+      const todo = state.find((todo) => todo.id === action.payload);
       if (todo) {
         // ✅ CORRECT: This object is still wrapped in a Proxy, so we can "mutate" it
-        todo.completed = !todo.completed
+        todo.completed = !todo.completed;
       }
     },
   },
-})
+});
 ```
 
 There _is_ a gotcha here. [Immer will not wrap objects that are newly inserted into the state](https://immerjs.github.io/immer/pitfalls#data-not-originating-from-the-state-will-never-be-drafted). Most of the time this shouldn't matter, but there may be occasions when you want to insert a value and then make further updates to it.
@@ -428,25 +428,25 @@ Finally, it's worth noting that **Immer does not automatically create nested obj
 
 ```js
 const itemsSlice = createSlice({
-  name: 'items',
+  name: "items",
   initialState: { a: [], b: [] },
   reducers: {
     brokenNestedItemAdded(state, action) {
-      const { id, item } = action.payload
+      const { id, item } = action.payload;
       // ❌ ERROR: will crash if no array exists for `id`!
-      state[id].push(item)
+      state[id].push(item);
     },
     fixedNestedItemAdded(state, action) {
-      const { id, item } = action.payload
+      const { id, item } = action.payload;
       // ✅ CORRECT: ensures the nested array always exists first
       if (!state[id]) {
-        state[id] = []
+        state[id] = [];
       }
 
-      state[id].push(item)
+      state[id].push(item);
     },
   },
-})
+});
 ```
 
 ### Linting State Mutations

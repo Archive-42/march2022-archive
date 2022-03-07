@@ -26,30 +26,30 @@ means family... and family means no one gets left behind or forgotten...
 
 **Table of Contents**
 
-* 1\. Install and run Jest
-* 2\. Transpile modules with babel in Jest tests
-* 3\. Configure Jest's test environment for testing node or browser code
-* 4\. Support importing CSS files with Jest's moduleNameMapper
-* 5\. Support using webpack CSS modules with Jest
-* 6\. Generate a Serializable Value with Jest Snapshots
-* 7\. Test an Emotion Styled UI with Custom Jest Snapshot Serializers
-* 8\. Handle Dynamic Imports using Babel with Jest
-* 9\. Setup an afterEach Test Hook for all tests with Jest setupTestFrameworkScriptFile
-* 10\. Support custom module resolution with Jest moduleDirectories
-* 11\. Support a test utilities file with Jest moduleDirectories
-* 12\. Step through Code in Jest using the Node.js Debugger and Chrome DevTools
-* 13\. Configure Jest to report code coverage on project files
-* 14\. Analyze Jest Code Coverage Reports
-* 15\. Set a code coverage threshold in Jest to maintain code coverage levels
-* 16\. Report Jest Test Coverage to Codecov through TavisCI
-* 17\. Use Jest Watch Mode to speed up development
-* 18\. Run Jest Watch Mode by default locally with is-ci-cli
-* 19\. Filter which Tests are Run with Typeahead Support in Jest Watch Mode
-* 20\. Run tests with a different configuration using Jest's `--config` flag and testMatch option
-* 21\. Support Running Multiple Configurations with Jest's Projects Feature
-* 22\. Test specific projects in Jest Watch Mode with jest-watch-select-projects
-* 23\. Run ESLint with Jest using jest-runner-eslint
-* 24\. Run only relevant Jest tests on git commit to avoid breakages
+- 1\. Install and run Jest
+- 2\. Transpile modules with babel in Jest tests
+- 3\. Configure Jest's test environment for testing node or browser code
+- 4\. Support importing CSS files with Jest's moduleNameMapper
+- 5\. Support using webpack CSS modules with Jest
+- 6\. Generate a Serializable Value with Jest Snapshots
+- 7\. Test an Emotion Styled UI with Custom Jest Snapshot Serializers
+- 8\. Handle Dynamic Imports using Babel with Jest
+- 9\. Setup an afterEach Test Hook for all tests with Jest setupTestFrameworkScriptFile
+- 10\. Support custom module resolution with Jest moduleDirectories
+- 11\. Support a test utilities file with Jest moduleDirectories
+- 12\. Step through Code in Jest using the Node.js Debugger and Chrome DevTools
+- 13\. Configure Jest to report code coverage on project files
+- 14\. Analyze Jest Code Coverage Reports
+- 15\. Set a code coverage threshold in Jest to maintain code coverage levels
+- 16\. Report Jest Test Coverage to Codecov through TavisCI
+- 17\. Use Jest Watch Mode to speed up development
+- 18\. Run Jest Watch Mode by default locally with is-ci-cli
+- 19\. Filter which Tests are Run with Typeahead Support in Jest Watch Mode
+- 20\. Run tests with a different configuration using Jest's `--config` flag and testMatch option
+- 21\. Support Running Multiple Configurations with Jest's Projects Feature
+- 22\. Test specific projects in Jest Watch Mode with jest-watch-select-projects
+- 23\. Run ESLint with Jest using jest-runner-eslint
+- 24\. Run only relevant Jest tests on git commit to avoid breakages
 
 ### 1. Install and run Jest
 
@@ -193,7 +193,7 @@ This, however, will not work in Jest by default, because a module import will fa
 
 To address this, one can use `moduleDirectories` in the Jest config. `moduleDirectories` is isomorphic to Webpack's `resolve.modules`, allowing module imports to resolve for local files.
 
-***
+---
 
 `loadable` has a `preloadAll` method which can be used in async tests to load all dynamic modules. Without preloading the dynamic imports our components with dynamic imports will output the loading content.
 
@@ -215,7 +215,7 @@ Furthermore, we can make the test utility file accessible by adding the path con
 
 On top of that, we can export all of `react-testing-library` from that file, mititigating the need to import both the utility and `react-testing-library` into our test, and can override `react-testing-library`s `render` function so that our tests look the same, while benefitting from being wrapped in Providers automatically.
 
-***
+---
 
 Using Jest's `moduleDirectories` will result in eslint not being able to lint files, and catch errors like typos in imports.
 
@@ -267,7 +267,7 @@ Running the generated files with a server will allow one to inspect exactly wher
 $ npx jest --coverage && cd coverage/lcov-report && npx serve
 ```
 
-***
+---
 
 Be default Jest will run coverage only for files included in our tests, and including tests.
 
@@ -289,7 +289,7 @@ We can ocnfigure Jest to enforce code coverage levels. This is useful in CI to p
 
 In Jest's config we use the `coverageThreshold` property to configure our thresholds.
 
-***
+---
 
 Not all lines are as valuable to have coverage for as others. To address this we can add globs as properties to the `coverageThreshold` property with fine-grained thresholds.
 
@@ -307,18 +307,18 @@ Jest watches for files that have been modified in Git, and runs tests against ch
 
 Interactive mode commands:
 
-* `u` update all failed snapshots
-* `i` interactively update failed snapshots
-  * `u` update the current snapshot
-  * `s` skip the current snapshot
-  * `q` quit interactive snapshot updating
-* `f` run only failing tests
-* `a` run all tests
-* `o` run tests only for files that are modified
-* `p` filter by filename regex pattern
-  * `c` clear filters
-* `t` filter by test name regex pattern. This behaves in a similar way to using `test.only` to run only specified tests
-* `Enter` rerun the current tests
+- `u` update all failed snapshots
+- `i` interactively update failed snapshots
+  - `u` update the current snapshot
+  - `s` skip the current snapshot
+  - `q` quit interactive snapshot updating
+- `f` run only failing tests
+- `a` run all tests
+- `o` run tests only for files that are modified
+- `p` filter by filename regex pattern
+  - `c` clear filters
+- `t` filter by test name regex pattern. This behaves in a similar way to using `test.only` to run only specified tests
+- `Enter` rerun the current tests
 
 ### 18. Run Jest Watch Mode by default locally with is-ci-cli
 

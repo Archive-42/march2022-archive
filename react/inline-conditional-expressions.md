@@ -37,7 +37,7 @@ function App({ messages, isVisible }) {
       )}
       {isVisible && <p>I am visible.</p>}
     </div>
-  )
+  );
 }
 ```
 
@@ -45,7 +45,7 @@ function App({ messages, isVisible }) {
 
 ##### Additional links
 
-* [React docs on Conditional Rendering](https://reactjs.org/docs/conditional-rendering.html)
+- [React docs on Conditional Rendering](https://reactjs.org/docs/conditional-rendering.html)
 
 <!-- tags: (react,javascript) -->
 

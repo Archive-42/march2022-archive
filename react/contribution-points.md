@@ -235,7 +235,6 @@ Not supported in the configuration section are:
 
 - `$ref` and `definition`: The configuration schemas needs to be self-contained and can not make assumptions how the aggregated settings JSON schema document looks like.
 
-
 For more details on these and other features, see the [JSON Schema Reference](https://json-schema.org/understanding-json-schema/reference/index.html).
 
 **scope**
@@ -281,7 +280,7 @@ You can see that `git.alwaysSignOff` has `resource` scope and can be set per use
 
 **Linking to settings**
 
-You can insert a link to another setting, which will be rendered as a clickable link in the settings UI, by using this special syntax in the markdown-type properties: ``` `#target.setting.id#` ```. This will work in `markdownDescription`, `markdownEnumDescriptions`, and `markdownDeprecationMessage`. Example:
+You can insert a link to another setting, which will be rendered as a clickable link in the settings UI, by using this special syntax in the markdown-type properties: `` `#target.setting.id#` ``. This will work in `markdownDescription`, `markdownEnumDescriptions`, and `markdownDeprecationMessage`. Example:
 
 ```json
   "files.autoSaveDelay": {
@@ -293,7 +292,6 @@ You can insert a link to another setting, which will be rendered as a clickable 
 In the settings UI, this is rendered as:
 
 ![setting link example](images/contribution-points/setting-link.png)
-
 
 ## contributes.configurationDefaults
 
@@ -599,7 +597,12 @@ Contribute a debugger to VS Code. A debugger contribution has the following prop
         "program": "./out/node/nodeDebug.js",
         "runtime": "node",
 
-        "languages": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
+        "languages": [
+          "javascript",
+          "typescript",
+          "javascriptreact",
+          "typescriptreact"
+        ],
 
         "configurationAttributes": {
           "launch": {
@@ -731,13 +734,13 @@ You must specify an id (used in the settings), a label and the path to the file 
 ```json
 {
   "contributes": {
-		"iconThemes": [
-			{
-				"id": "metro",
-				"label": "Metro File Icons",
-				"path": "./fileicons/metro-file-icon-theme.json"
-			}
-		]
+    "iconThemes": [
+      {
+        "id": "metro",
+        "label": "Metro File Icons",
+        "path": "./fileicons/metro-file-icon-theme.json"
+      }
+    ]
   }
 }
 ```
@@ -757,13 +760,13 @@ You must specify an id (used in the settings), a label and the path to the icon 
 ```json
 {
   "contributes": {
-		"productIconThemes": [
-			{
-				"id": "elegant",
-				"label": "Elegant Icon Theme",
-				"path": "./producticons/elegant-product-icon-theme.json"
-			}
-		]
+    "productIconThemes": [
+      {
+        "id": "elegant",
+        "label": "Elegant Icon Theme",
+        "path": "./producticons/elegant-product-icon-theme.json"
+      }
+    ]
   }
 }
 ```
@@ -1102,7 +1105,9 @@ Extensions can send configuration data to contributed TypeScript plugins through
 
 export async function activate(context: vscode.ExtensionContext) {
   // Get the TS extension
-  const tsExtension = vscode.extensions.getExtension('vscode.typescript-language-features');
+  const tsExtension = vscode.extensions.getExtension(
+    "vscode.typescript-language-features"
+  );
   if (!tsExtension) {
     return;
   }
@@ -1120,8 +1125,8 @@ export async function activate(context: vscode.ExtensionContext) {
   }
 
   // Configure the 'my-typescript-plugin-id' plugin
-  api.configurePlugin('my-typescript-plugin-id', {
-    someValue: process.env['SOME_VALUE']
+  api.configurePlugin("my-typescript-plugin-id", {
+    someValue: process.env["SOME_VALUE"],
   });
 }
 ```
@@ -1131,7 +1136,7 @@ The TypeScript server plugin receives the configuration data through an `onConfi
 ```ts
 // In your TypeScript plugin
 
-import * as ts_module from 'typescript/lib/tsserverlibrary';
+import * as ts_module from "typescript/lib/tsserverlibrary";
 
 export = function init({ typescript }: { typescript: typeof ts_module }) {
   return {
@@ -1140,7 +1145,7 @@ export = function init({ typescript }: { typescript: typeof ts_module }) {
     },
     onConfigurationChanged(config: any) {
       // Receive configuration changes sent from VS Code
-    }
+    },
   };
 };
 ```

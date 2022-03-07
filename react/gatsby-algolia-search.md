@@ -223,8 +223,8 @@ At the top, we import `InstantSearch` from [`react-instantsearch-dom`](https://c
 We then import the styled components that make up the UI and the `Input` component into which the user enters the query.
 
 ```js
-import { Root, SearchBox, HitsWrapper, PoweredBy } from './styles'
-import Input from './Input'
+import { Root, SearchBox, HitsWrapper, PoweredBy } from "./styles";
+import Input from "./Input";
 ```
 
 `PoweredBy` renders the string "Powered by Algolia" with a small logo and link. If you're using Algolia's generous free tier, they ask you to acknowledge them in this way below the search results. `react-instantsearch-dom` also provides a [`PoweredBy` component](https://community.algolia.com/react-instantsearch/widgets/PoweredBy.html) specifically for this purpose but I preferred to build my own. We'll get back to these styled components once we're done with `index.js`. For now, let's move on.
@@ -232,7 +232,7 @@ import Input from './Input'
 The last thing we need for the `Search` component to work is a hit component for every type of result we want to display to the user. It determines how attributes of matching results (such as author, date, tags and title in the case of a blog post) are displayed to the user.
 
 ```js
-import Hits from './Hits'
+import Hits from "./Hits";
 ```
 
 Next, we define two connected components. `Results` informs the user that no matches could be found for a query unless the number of hits is positive, i.e. `searchResults.nbHits > 0`. `Stats` just displays `searchResults.nbHits`.
@@ -242,42 +242,43 @@ const Results = connectStateResults(
   ({ searching, searchState: state, searchResults: res }) =>
     (searching && <div>Searching...</div>) ||
     (res?.nbHits === 0 && <div>No results for &apos;{state.query}&apos;</div>)
-)
+);
 
 const Stats = connectStateResults(
   ({ searchResults: res }) =>
     res?.nbHits > 0 && `${res.nbHits} result${res.nbHits > 1 ? `s` : ``}`
-)
+);
 ```
 
 Now comes the actual `Search` component. It starts off with some state initialization, defining handler functions and event listeners to trigger them. All they do is make the search input slide out when the user clicks a search icon and disappear again when the user clicks or touches (on mobile) anywhere.
 
 ```js
 const useOnClickOutside = (ref, handler, events) => {
-  if (!events) events = [`mousedown`, `touchstart`]
-  const detectClickOutside = event =>
-    !ref.current.contains(event.target) && handler()
+  if (!events) events = [`mousedown`, `touchstart`];
+  const detectClickOutside = (event) =>
+    !ref.current.contains(event.target) && handler();
   useEffect(() => {
-    for (const event of events) document.addEventListener(event, detectClickOutside)
+    for (const event of events)
+      document.addEventListener(event, detectClickOutside);
     return () => {
       for (const event of events)
-        document.removeEventListener(event, detectClickOutside)
-    }
-  })
-}
+        document.removeEventListener(event, detectClickOutside);
+    };
+  });
+};
 
-const appId = process.env.GATSBY_ALGOLIA_APP_ID
-const searchKey = process.env.GATSBY_ALGOLIA_SEARCH_KEY
+const appId = process.env.GATSBY_ALGOLIA_APP_ID;
+const searchKey = process.env.GATSBY_ALGOLIA_SEARCH_KEY;
 
 export default function Search({ indices, collapse = true, size, ...rest }) {
-  const ref = createRef()
-  const [query, setQuery] = useState(``)
-  const [focus, setFocus] = useState(false)
+  const ref = createRef();
+  const [query, setQuery] = useState(``);
+  const [focus, setFocus] = useState(false);
   // useMemo prevents the searchClient from being recreated on every render.
   // Avoids unnecessary XHR requests (see https://tinyurl.com/yyj93r2s).
-  const searchClient = useMemo(() => algoliasearch(appId, searchKey), [])
-  useOnClickOutside(ref, () => setFocus(false))
-  return // ...
+  const searchClient = useMemo(() => algoliasearch(appId, searchKey), []);
+  useOnClickOutside(ref, () => setFocus(false));
+  return; // ...
 }
 ```
 
@@ -307,7 +308,7 @@ return (
       </HitsWrapper>
     </InstantSearch>
   </Root>
-)
+);
 ```
 
 Passing this `indices` array as a prop allows you to reuse the same `Search` component in different parts of your site and have each of them query different indices. As an example, besides a primary search box in the header used for finding pages and/or posts, your site might have a wiki and you want to offer your visitors a second search box that displays only wiki articles.
@@ -317,10 +318,10 @@ Note that we fed `algoliasearch` with the same app ID we specified in our `.env`
 ## `input.js`
 
 ```js
-import React from 'react'
-import { connectSearchBox } from 'react-instantsearch-dom'
+import React from "react";
+import { connectSearchBox } from "react-instantsearch-dom";
 
-import { SearchIcon, Form, Input } from './styles'
+import { SearchIcon, Form, Input } from "./styles";
 
 export default connectSearchBox(({ refine, ...rest }) => (
   <Form>
@@ -328,14 +329,14 @@ export default connectSearchBox(({ refine, ...rest }) => (
       type="text"
       placeholder="Search"
       aria-label="Search"
-      onChange={e => refine(e.target.value)}
+      onChange={(e) => refine(e.target.value)}
       // iOS Safari doesn't blur input automatically on tap outside.
-      onMouseLeave={e => e.target.blur()}
+      onMouseLeave={(e) => e.target.blur()}
       {...rest}
     />
     <SearchIcon />
   </Form>
-))
+));
 ```
 
 The `Input` component is where the user enters the search string. It is quite short since the grunt work is done by Algolia's [`connectSearchBox`](https://community.algolia.com/react-instantsearch/connectors/connectSearchBox.html) function.

@@ -10,7 +10,7 @@ Author: Wade Anderson
 
 # Goodbye User Voice, Hello GitHub Reactions!
 
-August 23, 2016 by Wade Anderson, [@waderyan_](https://twitter.com/waderyan_)
+August 23, 2016 by Wade Anderson, [@waderyan\_](https://twitter.com/waderyan_)
 
 ## Feedback Channels
 
@@ -26,7 +26,7 @@ Recently, GitHub introduced the ability to [add reactions to issues](https://git
 
 ## Retiring User Voice
 
-As a result, we are "retiring" the [VS Code User Voice site](https://visualstudio.uservoice.com/forums/293070-visual-studio-code) and asking the community to submit and vote on issues in GitHub.  To ease the transition, we've decided to migrate the current [top 50 User Voice requests](https://github.com/microsoft/vscode/issues/10715), as of 08/18/2016, to GitHub. We will triage these requests and migrate them to the appropriate repositories. If a feature request is more closely aligned with an extension and not the core VS Code product, we'll move the request to an existing extension's repository or label it as an ["*extension-candidate"](https://github.com/microsoft/vscode/labels/*extension-candidate).
+As a result, we are "retiring" the [VS Code User Voice site](https://visualstudio.uservoice.com/forums/293070-visual-studio-code) and asking the community to submit and vote on issues in GitHub. To ease the transition, we've decided to migrate the current [top 50 User Voice requests](https://github.com/microsoft/vscode/issues/10715), as of 08/18/2016, to GitHub. We will triage these requests and migrate them to the appropriate repositories. If a feature request is more closely aligned with an extension and not the core VS Code product, we'll move the request to an existing extension's repository or label it as an ["\*extension-candidate"](https://github.com/microsoft/vscode/labels/*extension-candidate).
 
 If your request is not on this list or if you have a new request, please open a new GitHub issue following these [guidelines](https://github.com/microsoft/vscode/blob/master/CONTRIBUTING.md). After you create an issue, we will run it through our [issue tracking](https://github.com/microsoft/vscode/wiki/Issue-Tracking) workflow. The inbox tracker for the week assigns your issue to the team member who owns the relevant area of code. The owner will then assign the correct labels and ask for more information if necessary. During milestone planning, we review the open issues and assign the ones we plan to work on to a milestone.
 
@@ -35,4 +35,4 @@ Thank you again for your continuing feedback and hopefully this change will let 
 Happy Coding.
 
 Wade Anderson, VS Code Team Member <br>
-[@waderyan_](https://twitter.com/waderyan_)
+[@waderyan\_](https://twitter.com/waderyan_)

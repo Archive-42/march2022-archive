@@ -10,14 +10,14 @@
 
 Profile Last Updated: Today
 
-* [Profile](https://www.dice.com/dashboard/profiles)
-* [Jobs](https://www.dice.com/dashboard/jobs)
-* [Alerts](https://www.dice.com/dashboard/alerts)
-* [IntelliSearch Jobs](https://www.dice.com/dashboard/intellisearch-jobs)
+- [Profile](https://www.dice.com/dashboard/profiles)
+- [Jobs](https://www.dice.com/dashboard/jobs)
+- [Alerts](https://www.dice.com/dashboard/alerts)
+- [IntelliSearch Jobs](https://www.dice.com/dashboard/intellisearch-jobs)
 
 ### RESUME
 
-[bryan\_guner\_resume\_2021-V8.pdf](https://www.dice.com/dashboard/profiles/active#)[Upload New](https://www.dice.com/dashboard/profiles/active#)
+[bryan_guner_resume_2021-V8.pdf](https://www.dice.com/dashboard/profiles/active#)[Upload New](https://www.dice.com/dashboard/profiles/active#)
 
 ### ABOUT YOU
 
@@ -97,7 +97,7 @@ See all 54 Skills
 
 ### WORK EXPERIENCE
 
-* Add work experience
+- Add work experience
 
 #### Full Stack Web Developer
 
@@ -133,16 +133,16 @@ Biagios and The Terrace
 
 ＋ Add education
 
-* Lambda School\
+- Lambda School\
   Vocational School\
   Weehawken, New Jersey
-* The College Of New Jersey\
+- The College Of New Jersey\
   Bachelors\
   Ewing Township, New Jersey
 
 ### SOCIAL PROFILES
 
-* [![](https://ui.prod.candidate-prod.dhiaws.com/social-links-assets/social-links-linkedin.png)Linkedin](https://www.linkedin.com/in/bryan-guner-046199128/)
-* [![](https://ui.prod.candidate-prod.dhiaws.com/social-links-assets/social-links-twitter.png)Twitter](https://twitter.com/bgooonz)
-* [![](https://ui.prod.candidate-prod.dhiaws.com/social-links-assets/social-links-facebook.png)Facebook](https://www.facebook.com/bryan.guner)
-* [![](https://ui.prod.candidate-prod.dhiaws.com/social-links-assets/social-links-blog.png)Other](https://bgoonz-blog.netlify.app)
+- [![](https://ui.prod.candidate-prod.dhiaws.com/social-links-assets/social-links-linkedin.png)Linkedin](https://www.linkedin.com/in/bryan-guner-046199128/)
+- [![](https://ui.prod.candidate-prod.dhiaws.com/social-links-assets/social-links-twitter.png)Twitter](https://twitter.com/bgooonz)
+- [![](https://ui.prod.candidate-prod.dhiaws.com/social-links-assets/social-links-facebook.png)Facebook](https://www.facebook.com/bryan.guner)
+- [![](https://ui.prod.candidate-prod.dhiaws.com/social-links-assets/social-links-blog.png)Other](https://bgoonz-blog.netlify.app)

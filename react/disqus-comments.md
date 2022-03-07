@@ -77,7 +77,7 @@ Here are the steps for adding Disqus comments to your own blog:
    const disqusConfig = {
      shortname: process.env.GATSBY_DISQUS_NAME,
      config: { identifier: slug, title },
-   }
+   };
    ```
 
    where `identifier` must be a string or number that uniquely identifies the post. Finally, add `DiscussionEmbed` near the end of the JSX of your post template.

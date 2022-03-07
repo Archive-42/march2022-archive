@@ -8,13 +8,14 @@ Date: 2018-07-12
 ShortDescription: Introducing Logpoints and auto-attach to make debugging easier and simpler to use
 Author: Kenneth Auchenberg
 ---
+
 # Introducing Logpoints and auto-attach
 
 July 12, 2018 Kenneth Auchenberg, [@auchenberg](https://twitter.com/auchenberg)
 
 Over the past few months we have been busy improving the debugging experience in Visual Studio Code, and in this post, I'm going to talk about how we think about debugging, present the feedback we heard from our users, and explain the steps we are taking to make debugging easier and simpler in VS Code.
 
-Since the start of VS Code, we have shipped with an integrated debugging experience as we believe debugging should be an integral part of where you write and edit your source code  ––  your editor.
+Since the start of VS Code, we have shipped with an integrated debugging experience as we believe debugging should be an integral part of where you write and edit your source code  –– your editor.
 
 ![VS Code debugger](debugger.png)
 
@@ -120,7 +121,7 @@ Logpoints are based on the observation that in many cases, you don't want to sto
 
 Logpoints allows you to "inject" on-demand logging statements into your application logic, just like if you had added logging statements into your application before starting it. Logpoints are injected at execution time and not persisted in the source code, so you don't have to plan ahead but can inject Logpoints as you need them. Another nice benefit is that you don't have to worry about cleaning up your source code after you are finished debugging.
 
-For JavaScript developers, this means that you don't have to worry about leaving `console.log`s behind anymore  ––  just use Logpoints! Even better, you can combine `console.log` and Logpoints. If you insert a Logpoint into a block of source code that already has `console.log`s, you'll see both types of logging statements inside the Debug Console.
+For JavaScript developers, this means that you don't have to worry about leaving `console.log`s behind anymore  –– just use Logpoints! Even better, you can combine `console.log` and Logpoints. If you insert a Logpoint into a block of source code that already has `console.log`s, you'll see both types of logging statements inside the Debug Console.
 
 ### Logpoints in cloud contexts
 

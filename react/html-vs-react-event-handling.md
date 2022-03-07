@@ -22,18 +22,18 @@ In HTML, `false` can be returned to prevent default behavior, whereas in React `
 
 ```js
 function handleClick(e) {
-  e.preventDefault()
-  console.log("The link was clicked.")
+  e.preventDefault();
+  console.log("The link was clicked.");
 }
 ```
 
 #### Good to hear
 
-* HTML uses lowercase, React uses camelCase.
+- HTML uses lowercase, React uses camelCase.
 
 ##### Additional links
 
-* [React docs on Handling Events](https://reactjs.org/docs/handling-events.html)
+- [React docs on Handling Events](https://reactjs.org/docs/handling-events.html)
 
 <!-- tags: (react,javascript,html) -->
 

@@ -30,24 +30,24 @@ Checkout individual branches for changes specific to that section of the course.
 
 **Table of Contents**
 
-* 1\. Install and run Cypress
-* 2\. Write the first Cypress Test
-* 3\. Configure Cypress in cypress.json
-* 4\. Installing cypress-testing-library
-* 5\. Scripting Cypress for local development and Continuous Integration
-* 6\. Debug a test with Cypress
-* 7\. Use Cypress to test user registration
-* 8\. Cypress Driven Development
-* 9\. Simulate HTTP Errors in Cypress Tests
-* 10\. Test user login with Cypress
-* 11\. Create a user with cy.request from Cypress
-* 12\. Keep tests isolated and focused with custom Cypress commands
-* 13\. Use custom Cypress command for reusable assertions
-* 14\. Run tests as an authenticated user with Cypress
-* 15\. Use `cy.request` from Cypress to authenticate as a new user
-* 16\. Use a custom Cypress command to login as a user
-* 17\. Combine custom Cypress commands into a single custom command
-* 18\. Install React DevTools with Cypress
+- 1\. Install and run Cypress
+- 2\. Write the first Cypress Test
+- 3\. Configure Cypress in cypress.json
+- 4\. Installing cypress-testing-library
+- 5\. Scripting Cypress for local development and Continuous Integration
+- 6\. Debug a test with Cypress
+- 7\. Use Cypress to test user registration
+- 8\. Cypress Driven Development
+- 9\. Simulate HTTP Errors in Cypress Tests
+- 10\. Test user login with Cypress
+- 11\. Create a user with cy.request from Cypress
+- 12\. Keep tests isolated and focused with custom Cypress commands
+- 13\. Use custom Cypress command for reusable assertions
+- 14\. Run tests as an authenticated user with Cypress
+- 15\. Use `cy.request` from Cypress to authenticate as a new user
+- 16\. Use a custom Cypress command to login as a user
+- 17\. Combine custom Cypress commands into a single custom command
+- 18\. Install React DevTools with Cypress
 
 ### 1. Install and run Cypress
 
@@ -176,18 +176,18 @@ We need to do a few things in order to stub out requests:
 1. indicate to Cypress that we want to use mock server:
 
 ```javascript
-cy.server()
+cy.server();
 ```
 
 1. define which requests Cypress should stub out, and how to respond:
 
 ```javascript
 cy.route({
-  method: 'POST',
+  method: "POST",
   url: requestUrl,
   status: 500,
   response: {},
-})
+});
 ```
 
 With the mock server in place, and our path stubbed, we can evaluate how the UI is handling these different responses.
@@ -215,9 +215,9 @@ Being able to create the new user on `login.js` is convenient, but if other test
 To address this, we can create a custom Cypress command in `cypress/support/commands.js`:
 
 ```javascript
-Cypress.Command.add('myCommand', () => {
-  cy.request(options)
-})
+Cypress.Command.add("myCommand", () => {
+  cy.request(options);
+});
 ```
 
 ### 13. Use custom Cypress command for reusable assertions
@@ -275,7 +275,7 @@ This is `window.__REACT_DEVTOOLS_GLOBAL_HOOK__`. To provide context within the i
 ```javascript
 if (window.Cypres) {
   window.__REACT_DEVTOOLS_GLOBAL_HOOK__ =
-    window.parent.__REACT_DEVTOOLS_GLOBAL_HOOK__
+    window.parent.__REACT_DEVTOOLS_GLOBAL_HOOK__;
 }
 ```
 

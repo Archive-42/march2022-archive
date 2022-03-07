@@ -12,117 +12,117 @@
 
 </div>
 
--   [Home](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki)
+- [Home](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki)
 
--   [add copy to code blocks.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/add-copy-to-code-blocks.md)
+- [add copy to code blocks.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/add-copy-to-code-blocks.md)
 
--   [Add site search w algolia.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/Add-site-search-w-algolia.md)
+- [Add site search w algolia.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/Add-site-search-w-algolia.md)
 
--   [adding mailing list.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/adding-mailing-list.md)
+- [adding mailing list.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/adding-mailing-list.md)
 
--   [Adding search 2 gatsby site.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/Adding-search-2-gatsby-site.md)
+- [Adding search 2 gatsby site.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/Adding-search-2-gatsby-site.md)
 
--   [ajax starter.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/ajax-starter.md)
+- [ajax starter.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/ajax-starter.md)
 
--   [analytics.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/analytics.md)
+- [analytics.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/analytics.md)
 
--   [anatomy of search engine.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/anatomy-of-search-engine.md)
+- [anatomy of search engine.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/anatomy-of-search-engine.md)
 
--   [awesome.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/awesome.md)
+- [awesome.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/awesome.md)
 
--   [BasicWebDevelopmentEnvironmentSetup.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/BasicWebDevelopmentEnvironmentSetup.md)
+- [BasicWebDevelopmentEnvironmentSetup.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/BasicWebDevelopmentEnvironmentSetup.md)
 
--   [broken links.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/broken-links.md)
+- [broken links.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/broken-links.md)
 
--   [config info.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/config-info.md)
+- [config info.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/config-info.md)
 
--   [configure custom domain.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/configure-custom-domain.md)
+- [configure custom domain.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/configure-custom-domain.md)
 
--   [contentauthoring.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/contentauthoring.md)
+- [contentauthoring.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/contentauthoring.md)
 
--   [custom search bar.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/custom-search-bar.md)
+- [custom search bar.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/custom-search-bar.md)
 
--   [Data Structures.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/Data-Structures.md)
+- [Data Structures.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/Data-Structures.md)
 
--   [dependency graph.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/dependency-graph.md)
+- [dependency graph.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/dependency-graph.md)
 
--   [DOM standard.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/DOM-standard.md)
+- [DOM standard.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/DOM-standard.md)
 
--   [full text search w lunar.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/full-text-search-w-lunar.md)
+- [full text search w lunar.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/full-text-search-w-lunar.md)
 
--   [github actions full doc.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/github-actions-full-doc.md)
+- [github actions full doc.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/github-actions-full-doc.md)
 
--   [google custom search.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/google-custom-search.md)
+- [google custom search.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/google-custom-search.md)
 
--   [google search algo.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/google-search-algo.md)
+- [google search algo.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/google-search-algo.md)
 
--   [google webmaster guidelines.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/google-webmaster-guidelines.md)
+- [google webmaster guidelines.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/google-webmaster-guidelines.md)
 
--   [inject 4.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/inject-4.md)
+- [inject 4.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/inject-4.md)
 
--   [inject3.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/inject3.md)
+- [inject3.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/inject3.md)
 
--   [inject4.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/inject4.md)
+- [inject4.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/inject4.md)
 
--   [injected content part2.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/injected-content-part2.md)
+- [injected content part2.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/injected-content-part2.md)
 
--   [injected js part4.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/injected-js-part4.md)
+- [injected js part4.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/injected-js-part4.md)
 
--   [injected part3.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/injected-part3.md)
+- [injected part3.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/injected-part3.md)
 
--   [links 2 embed.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/links-2-embed.md)
+- [links 2 embed.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/links-2-embed.md)
 
--   [links to remember](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/links-to-remember)
+- [links to remember](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/links-to-remember)
 
--   [list of links.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/list-of-links.md)
+- [list of links.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/list-of-links.md)
 
--   [Netlify Injected Content](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/Netlify-Injected-Content)
+- [Netlify Injected Content](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/Netlify-Injected-Content)
 
--   [netlify tips.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/netlify-tips.md)
+- [netlify tips.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/netlify-tips.md)
 
--   [old version of index.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/old-version-of-index.md)
+- [old version of index.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/old-version-of-index.md)
 
--   [optimize vscode.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/optimize-vscode.md)
+- [optimize vscode.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/optimize-vscode.md)
 
--   [possibly useful snippets.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/possibly-useful-snippets.md)
+- [possibly useful snippets.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/possibly-useful-snippets.md)
 
--   [privacy policy.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/privacy-policy.md)
+- [privacy policy.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/privacy-policy.md)
 
--   [random stuff.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/random-stuff.md)
+- [random stuff.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/random-stuff.md)
 
--   [random.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/random.md)
+- [random.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/random.md)
 
--   [ref type](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/ref-type)
+- [ref type](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/ref-type)
 
--   [search engine simulation.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/search-engine-simulation.md)
+- [search engine simulation.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/search-engine-simulation.md)
 
--   [SEO.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/SEO.md)
+- [SEO.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/SEO.md)
 
--   [sourcecode.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/sourcecode.md)
+- [sourcecode.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/sourcecode.md)
 
--   [STABLE_POINTS.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/STABLE_POINTS.md)
+- [STABLE_POINTS.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/STABLE_POINTS.md)
 
--   [stack overflow site search.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/stack-overflow-site-search.md)
+- [stack overflow site search.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/stack-overflow-site-search.md)
 
--   [tech used 2021.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/tech-used-2021.md)
+- [tech used 2021.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/tech-used-2021.md)
 
--   [tech used.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/tech-used.md)
+- [tech used.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/tech-used.md)
 
--   [Technologies Used.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/Technologies-Used.md)
+- [Technologies Used.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/Technologies-Used.md)
 
--   [THINGS TO EMBED.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/THINGS-TO-EMBED.md)
+- [THINGS TO EMBED.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/THINGS-TO-EMBED.md)
 
--   [validation report.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/validation-report.md)
+- [validation report.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/validation-report.md)
 
--   [ways to improve site.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/ways-to-improve-site.md)
+- [ways to improve site.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/ways-to-improve-site.md)
 
--   [web archive.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/web-archive.md)
+- [web archive.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/web-archive.md)
 
--   [webhooks.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/webhooks.md)
+- [webhooks.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/webhooks.md)
 
--   [wordpress vs headless cms.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/wordpress-vs-headless-cms.md)
+- [wordpress vs headless cms.md](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/wordpress-vs-headless-cms.md)
 
-[](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/_Sidebar/_edit 'Edit sidebar')
+[](https://github.com/bgoonz/BGOONZ_BLOG_2.0/wiki/_Sidebar/_edit "Edit sidebar")
 
 # Sitemap:
 
@@ -209,43 +209,43 @@
 
 ##### [stackblitz demo hosted on firebase](https://exploring-firebase-4c023.firebaseapp.com/)
 
--   [/showcase/](https://bgoonz-blog.netlify.app/showcase/)
--   [/repos/](https://bgoonz-blog.netlify.app/repos/)
--   [/blog/](https://bgoonz-blog.netlify.app/blog/)
--   [/docs/jupyter-notebooks/](https://bgoonz-blog.netlify.app/docs/jupyter-notebooks/)
--   [/docs/portfolio-web/](https://bgoonz-blog.netlify.app/docs/portfolio-web/)
--   [/docs/python/](https://bgoonz-blog.netlify.app/docs/python/)
--   [/docs/About/](https://bgoonz-blog.netlify.app/docs/About/)
--   [/docs/About/resume/](https://bgoonz-blog.netlify.app/docs/About/resume/)
--   [/docs/about/](https://bgoonz-blog.netlify.app/docs/about/)
--   [/docs/faq/](https://bgoonz-blog.netlify.app/docs/faq/)
--   [/docs/quick-reference/](https://bgoonz-blog.netlify.app/docs/quick-reference/)
--   [/docs/quick-reference/Emmet/](https://bgoonz-blog.netlify.app/docs/quick-reference/Emmet/)
--   [/docs/quick-reference/new-repo-instructions/](https://bgoonz-blog.netlify.app/docs/quick-reference/new-repo-instructions/)
--   [/docs/links/Social/](https://bgoonz-blog.netlify.app/docs/links/Social/)
--   [/docs/links/](https://bgoonz-blog.netlify.app/docs/links/)
--   [/docs/quick-reference/installation/](https://bgoonz-blog.netlify.app/docs/quick-reference/installation/)
--   [/docs/links/my-websites/](https://bgoonz-blog.netlify.app/docs/links/my-websites/)
--   [/docs/](https://bgoonz-blog.netlify.app/docs/)
--   [/blog/community/](https://bgoonz-blog.netlify.app/blog/community/)
--   [/blog/python/](https://bgoonz-blog.netlify.app/blog/python/)
--   [/docs/resources/](https://bgoonz-blog.netlify.app/docs/resources/)
--   [/docs/react/createReactApp/](https://bgoonz-blog.netlify.app/docs/react/createReactApp/)
--   [/docs/tools/](https://bgoonz-blog.netlify.app/docs/tools/)
--   [/notes-template/](https://bgoonz-blog.netlify.app/notes-template/)
--   [/blog/my-medium/](https://bgoonz-blog.netlify.app/blog/my-medium/)
--   [/docs/tools/default-readme/](https://bgoonz-blog.netlify.app/docs/tools/default-readme/)
--   [/docs/tools/plug-ins/](https://bgoonz-blog.netlify.app/docs/tools/plug-ins/)
--   [/docs/react/react2/](https://bgoonz-blog.netlify.app/docs/react/react2/)
--   [/docs/tools/notes-template/](https://bgoonz-blog.netlify.app/docs/tools/notes-template/)
--   [/review/](https://bgoonz-blog.netlify.app/review/)
--   [/docs/articles/basic-web-dev/](https://bgoonz-blog.netlify.app/docs/articles/basic-web-dev/)
--   [/blog/data-structures/](https://bgoonz-blog.netlify.app/blog/data-structures/)
--   [/docs/About/me/](https://bgoonz-blog.netlify.app/docs/About/me/)
--   [/docs/About/introduction2bg/](https://bgoonz-blog.netlify.app/docs/About/introduction2bg/)
--   [/docs/react/](https://bgoonz-blog.netlify.app/docs/react/)
--   [/docs/tools/Git-Html-Preview/](https://bgoonz-blog.netlify.app/docs/tools/Git-Html-Preview/)
--   [/gallery/](https://bgoonz-blog.netlify.app/gallery/)
+- [/showcase/](https://bgoonz-blog.netlify.app/showcase/)
+- [/repos/](https://bgoonz-blog.netlify.app/repos/)
+- [/blog/](https://bgoonz-blog.netlify.app/blog/)
+- [/docs/jupyter-notebooks/](https://bgoonz-blog.netlify.app/docs/jupyter-notebooks/)
+- [/docs/portfolio-web/](https://bgoonz-blog.netlify.app/docs/portfolio-web/)
+- [/docs/python/](https://bgoonz-blog.netlify.app/docs/python/)
+- [/docs/About/](https://bgoonz-blog.netlify.app/docs/About/)
+- [/docs/About/resume/](https://bgoonz-blog.netlify.app/docs/About/resume/)
+- [/docs/about/](https://bgoonz-blog.netlify.app/docs/about/)
+- [/docs/faq/](https://bgoonz-blog.netlify.app/docs/faq/)
+- [/docs/quick-reference/](https://bgoonz-blog.netlify.app/docs/quick-reference/)
+- [/docs/quick-reference/Emmet/](https://bgoonz-blog.netlify.app/docs/quick-reference/Emmet/)
+- [/docs/quick-reference/new-repo-instructions/](https://bgoonz-blog.netlify.app/docs/quick-reference/new-repo-instructions/)
+- [/docs/links/Social/](https://bgoonz-blog.netlify.app/docs/links/Social/)
+- [/docs/links/](https://bgoonz-blog.netlify.app/docs/links/)
+- [/docs/quick-reference/installation/](https://bgoonz-blog.netlify.app/docs/quick-reference/installation/)
+- [/docs/links/my-websites/](https://bgoonz-blog.netlify.app/docs/links/my-websites/)
+- [/docs/](https://bgoonz-blog.netlify.app/docs/)
+- [/blog/community/](https://bgoonz-blog.netlify.app/blog/community/)
+- [/blog/python/](https://bgoonz-blog.netlify.app/blog/python/)
+- [/docs/resources/](https://bgoonz-blog.netlify.app/docs/resources/)
+- [/docs/react/createReactApp/](https://bgoonz-blog.netlify.app/docs/react/createReactApp/)
+- [/docs/tools/](https://bgoonz-blog.netlify.app/docs/tools/)
+- [/notes-template/](https://bgoonz-blog.netlify.app/notes-template/)
+- [/blog/my-medium/](https://bgoonz-blog.netlify.app/blog/my-medium/)
+- [/docs/tools/default-readme/](https://bgoonz-blog.netlify.app/docs/tools/default-readme/)
+- [/docs/tools/plug-ins/](https://bgoonz-blog.netlify.app/docs/tools/plug-ins/)
+- [/docs/react/react2/](https://bgoonz-blog.netlify.app/docs/react/react2/)
+- [/docs/tools/notes-template/](https://bgoonz-blog.netlify.app/docs/tools/notes-template/)
+- [/review/](https://bgoonz-blog.netlify.app/review/)
+- [/docs/articles/basic-web-dev/](https://bgoonz-blog.netlify.app/docs/articles/basic-web-dev/)
+- [/blog/data-structures/](https://bgoonz-blog.netlify.app/blog/data-structures/)
+- [/docs/About/me/](https://bgoonz-blog.netlify.app/docs/About/me/)
+- [/docs/About/introduction2bg/](https://bgoonz-blog.netlify.app/docs/About/introduction2bg/)
+- [/docs/react/](https://bgoonz-blog.netlify.app/docs/react/)
+- [/docs/tools/Git-Html-Preview/](https://bgoonz-blog.netlify.app/docs/tools/Git-Html-Preview/)
+- [/gallery/](https://bgoonz-blog.netlify.app/gallery/)
 
 ## Dependencies:
 
@@ -253,27 +253,27 @@
 
 > The new home of my blog/resource sharing website. Contribute to bgoonz/BGOONZ_BLOG_2.0 development by creating an account on GitHub.
 
--   Watch
+- Watch
 
-    ### Notifications
+  ### Notifications
 
-    <button>
+  <button>
 
-    <input name="authenticity\_token"> <input name="repository\_id"> <button name="do" value="included"> <button name="do" value="subscribed"> <button name="do" value="ignore">
+  <input name="authenticity\_token"> <input name="repository\_id"> <button name="do" value="included"> <button name="do" value="subscribed"> <button name="do" value="ignore">
 
-    <button>
+  <button>
 
-    [1](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/bgoonz/BGOONZ_BLOG_2.0/watchers)
+  [1](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/bgoonz/BGOONZ_BLOG_2.0/watchers)
 
--   Fork
+- Fork
 
-    If this dialog fails to load, you can visit [the fork page](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/bgoonz/BGOONZ_BLOG_2.0/fork) directly.
+  If this dialog fails to load, you can visit [the fork page](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/bgoonz/BGOONZ_BLOG_2.0/fork) directly.
 
-    [1](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/bgoonz/BGOONZ_BLOG_2.0/network/members)
+  [1](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/bgoonz/BGOONZ_BLOG_2.0/network/members)
 
 ## Dependency graph
 
-These dependencies are defined in **BGOONZ_BLOG_2.0**'s manifest files, such as [package.json](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/bgoonz/BGOONZ_BLOG_2.0/network/dependencies#package.json 'package.json'), […/backup/package-lock.json](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/bgoonz/BGOONZ_BLOG_2.0/network/dependencies#notes%252Fbackup%252Fpackage-lock.json 'notes/backup/package-lock.json'), and […/backup/package.json](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/bgoonz/BGOONZ_BLOG_2.0/network/dependencies#notes%252Fbackup%252Fpackage.json 'notes/backup/package.json').
+These dependencies are defined in **BGOONZ_BLOG_2.0**'s manifest files, such as [package.json](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/bgoonz/BGOONZ_BLOG_2.0/network/dependencies#package.json "package.json"), […/backup/package-lock.json](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/bgoonz/BGOONZ_BLOG_2.0/network/dependencies#notes%252Fbackup%252Fpackage-lock.json "notes/backup/package-lock.json"), and […/backup/package.json](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/bgoonz/BGOONZ_BLOG_2.0/network/dependencies#notes%252Fbackup%252Fpackage.json "notes/backup/package.json").
 
 <button> [![@babel](https://avatars.githubusercontent.com/u/9637642?s=40&v=4) ](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/babel) [ babel / babel ](chrome-extension://cjedbglnccaioiolemnfhjncicchinao/babel/babel) @babel/helper-builder-binary-assignment-operator-visitor
 
@@ -317,65 +317,65 @@ These dependencies are defined in **BGOONZ_BLOG_2.0**'s manifest files, such as 
 
 ## Blog
 
--   [introductory-react-part-2](https://bryanguner.medium.com/introductory-react-part-2-cda01615a186?source=your_stories_page-------------------------------------)
+- [introductory-react-part-2](https://bryanguner.medium.com/introductory-react-part-2-cda01615a186?source=your_stories_page-------------------------------------)
 
--   [a-very-quick-guide-to-calculating-big-o-computational-complexity](https://bryanguner.medium.com/a-very-quick-guide-to-calculating-big-o-computational-complexity-eb1557e85fa3?source=your_stories_page-------------------------------------)
+- [a-very-quick-guide-to-calculating-big-o-computational-complexity](https://bryanguner.medium.com/a-very-quick-guide-to-calculating-big-o-computational-complexity-eb1557e85fa3?source=your_stories_page-------------------------------------)
 
--   [introduction-to-react-for-complete-beginners](https://javascript.plainenglish.io/introduction-to-react-for-complete-beginners-8021738aa1ad?source=your_stories_page-------------------------------------)
+- [introduction-to-react-for-complete-beginners](https://javascript.plainenglish.io/introduction-to-react-for-complete-beginners-8021738aa1ad?source=your_stories_page-------------------------------------)
 
--   [scheduling-settimeout-and-setinterval](https://javascript.plainenglish.io/scheduling-settimeout-and-setinterval-fcb2f40d16f7?source=your_stories_page-------------------------------------)
+- [scheduling-settimeout-and-setinterval](https://javascript.plainenglish.io/scheduling-settimeout-and-setinterval-fcb2f40d16f7?source=your_stories_page-------------------------------------)
 
--   [css-animations](https://bryanguner.medium.com/css-animations-d196a20099a5?source=your_stories_page-------------------------------------)
+- [css-animations](https://bryanguner.medium.com/css-animations-d196a20099a5?source=your_stories_page-------------------------------------)
 
--   [these-are-the-bash-shell-commands-that-stand-between-me-and-insanity](https://bryanguner.medium.com/these-are-the-bash-shell-commands-that-stand-between-me-and-insanity-984865ba5d1b?source=your_stories_page-------------------------------------)
+- [these-are-the-bash-shell-commands-that-stand-between-me-and-insanity](https://bryanguner.medium.com/these-are-the-bash-shell-commands-that-stand-between-me-and-insanity-984865ba5d1b?source=your_stories_page-------------------------------------)
 
--   [how-to-implement-native-es6-data-structures-using-arrays-objects](https://bryanguner.medium.com/how-to-implement-native-es6-data-structures-using-arrays-objects-ce953b9f6a07?source=your_stories_page-------------------------------------)
+- [how-to-implement-native-es6-data-structures-using-arrays-objects](https://bryanguner.medium.com/how-to-implement-native-es6-data-structures-using-arrays-objects-ce953b9f6a07?source=your_stories_page-------------------------------------)
 
--   [objects-in-javascript](https://medium.com/codex/objects-in-javascript-cc578a781e1d?source=your_stories_page-------------------------------------)
+- [objects-in-javascript](https://medium.com/codex/objects-in-javascript-cc578a781e1d?source=your_stories_page-------------------------------------)
 
--   [absolute-beginners-guide-to-javascript-part1](https://javascript.plainenglish.io/absolute-beginners-guide-to-javascript-part-1-e222d166b6e1?source=your_stories_page-------------------------------------)
+- [absolute-beginners-guide-to-javascript-part1](https://javascript.plainenglish.io/absolute-beginners-guide-to-javascript-part-1-e222d166b6e1?source=your_stories_page-------------------------------------)
 
--   [web-developer-resource-list-part-4](https://medium.com/star-gazers/web-developer-resource-list-part-4-fd686892b9eb?source=your_stories_page-------------------------------------)
+- [web-developer-resource-list-part-4](https://medium.com/star-gazers/web-developer-resource-list-part-4-fd686892b9eb?source=your_stories_page-------------------------------------)
 
--   [vscode-extensions-specifically-for-javascript-development](https://medium.com/codex/vscode-extensions-specifically-for-javascript-development-ea91305cbd4a?source=your_stories_page-------------------------------------)
+- [vscode-extensions-specifically-for-javascript-development](https://medium.com/codex/vscode-extensions-specifically-for-javascript-development-ea91305cbd4a?source=your_stories_page-------------------------------------)
 
--   [a-list-of-all-of-my-articles-to-link-to-future-posts](https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b?source=your_stories_page-------------------------------------)
+- [a-list-of-all-of-my-articles-to-link-to-future-posts](https://bryanguner.medium.com/a-list-of-all-of-my-articles-to-link-to-future-posts-1f6f88ebdf5b?source=your_stories_page-------------------------------------)
 
--   [lists-stacks-and-queues-in-javascript](https://javascript.plainenglish.io/lists-stacks-and-queues-in-javascript-88466fae0fbb?source=your_stories_page-------------------------------------)
+- [lists-stacks-and-queues-in-javascript](https://javascript.plainenglish.io/lists-stacks-and-queues-in-javascript-88466fae0fbb?source=your_stories_page-------------------------------------)
 
--   [web-development-resources-part-3](https://bryanguner.medium.com/web-development-resources-part-3-f862ceb2b82a?source=your_stories_page-------------------------------------)
+- [web-development-resources-part-3](https://bryanguner.medium.com/web-development-resources-part-3-f862ceb2b82a?source=your_stories_page-------------------------------------)
 
--   [web-development-interview-part-3](https://medium.com/codex/web-development-interview-part-3-826ae81a9107?source=your_stories_page-------------------------------------)
+- [web-development-interview-part-3](https://medium.com/codex/web-development-interview-part-3-826ae81a9107?source=your_stories_page-------------------------------------)
 
--   [running-list-of-interesting-articles-tools](https://bryanguner.medium.com/running-list-of-interesting-articles-tools-and-ideas-as-i-explore-them-b87a2f04d9a6?source=your_stories_page-------------------------------------)
+- [running-list-of-interesting-articles-tools](https://bryanguner.medium.com/running-list-of-interesting-articles-tools-and-ideas-as-i-explore-them-b87a2f04d9a6?source=your_stories_page-------------------------------------)
 
--   [the-best-cloud-based-code-playgrounds-of-2021-part-1](https://bryanguner.medium.com/the-best-cloud-based-code-playgrounds-of-2021-part-1-cdae9448db24?source=your_stories_page-------------------------------------)
+- [the-best-cloud-based-code-playgrounds-of-2021-part-1](https://bryanguner.medium.com/the-best-cloud-based-code-playgrounds-of-2021-part-1-cdae9448db24?source=your_stories_page-------------------------------------)
 
--   [front-end-interview-questions-part-2](https://medium.com/codex/front-end-interview-questions-part-2-86ddc0e91443?source=your_stories_page-------------------------------------)
+- [front-end-interview-questions-part-2](https://medium.com/codex/front-end-interview-questions-part-2-86ddc0e91443?source=your_stories_page-------------------------------------)
 
--   [web-developer-resource-list-part-2](https://medium.com/star-gazers/web-developer-resource-list-part-2-9c5cb56ab263?source=your_stories_page-------------------------------------)
+- [web-developer-resource-list-part-2](https://medium.com/star-gazers/web-developer-resource-list-part-2-9c5cb56ab263?source=your_stories_page-------------------------------------)
 
--   [http-basics](https://levelup.gitconnected.com/http-basics-8f02a96a834a?source=your_stories_page-------------------------------------)
+- [http-basics](https://levelup.gitconnected.com/http-basics-8f02a96a834a?source=your_stories_page-------------------------------------)
 
--   [javascript-frameworks-libraries](https://javascript.plainenglish.io/javascript-frameworks-libraries-35931e187a35?source=your_stories_page-------------------------------------)
+- [javascript-frameworks-libraries](https://javascript.plainenglish.io/javascript-frameworks-libraries-35931e187a35?source=your_stories_page-------------------------------------)
 
--   [my-take-on-awesome-javascript](https://javascript.plainenglish.io/my-take-on-awesome-javascript-243255451e74?source=your_stories_page-------------------------------------)
+- [my-take-on-awesome-javascript](https://javascript.plainenglish.io/my-take-on-awesome-javascript-243255451e74?source=your_stories_page-------------------------------------)
 
--   [get-started-with-vscode-extensions](https://levelup.gitconnected.com/everything-you-need-to-get-started-with-vscode-extensions-resources-b9f4c8d91931?source=your_stories_page-------------------------------------)
+- [get-started-with-vscode-extensions](https://levelup.gitconnected.com/everything-you-need-to-get-started-with-vscode-extensions-resources-b9f4c8d91931?source=your_stories_page-------------------------------------)
 
--   [my-favorite-vscode-themes](https://levelup.gitconnected.com/my-favorite-vscode-themes-9bab65af3f0f?source=your_stories_page-------------------------------------)
+- [my-favorite-vscode-themes](https://levelup.gitconnected.com/my-favorite-vscode-themes-9bab65af3f0f?source=your_stories_page-------------------------------------)
 
--   [object-oriented-programming-in-javascript](https://levelup.gitconnected.com/object-oriented-programming-in-javascript-d45007d06333?source=your_stories_page-------------------------------------)
+- [object-oriented-programming-in-javascript](https://levelup.gitconnected.com/object-oriented-programming-in-javascript-d45007d06333?source=your_stories_page-------------------------------------)
 
--   [javascript-rotate-array-problemwalkthrough](https://medium.com/codex/javascript-rotate-array-problemwalkthrough-31deb19ebba1?source=your_stories_page-------------------------------------)
+- [javascript-rotate-array-problemwalkthrough](https://medium.com/codex/javascript-rotate-array-problemwalkthrough-31deb19ebba1?source=your_stories_page-------------------------------------)
 
--   [super-simple-intro-to-html-651d695f9bc](https://levelup.gitconnected.com/super-simple-intro-to-html-651d695f9bc?source=your_stories_page-------------------------------------)
+- [super-simple-intro-to-html-651d695f9bc](https://levelup.gitconnected.com/super-simple-intro-to-html-651d695f9bc?source=your_stories_page-------------------------------------)
 
--   [everything-you-need-to-know-about-relational-databases-sql-postgresql](https://medium.com/codex/everything-you-need-to-know-about-relational-databases-sql-postgresql-and-sequelize-to-build-8acb68284a98?source=your_stories_page-------------------------------------)
+- [everything-you-need-to-know-about-relational-databases-sql-postgresql](https://medium.com/codex/everything-you-need-to-know-about-relational-databases-sql-postgresql-and-sequelize-to-build-8acb68284a98?source=your_stories_page-------------------------------------)
 
--   [understanding-git-a-beginners-guide-containing-cheat-sheets-resources-b50c9c01a107](https://levelup.gitconnected.com/understanding-git-a-beginners-guide-containing-cheat-sheets-resources-b50c9c01a107?source=your_stories_page-------------------------------------)
+- [understanding-git-a-beginners-guide-containing-cheat-sheets-resources-b50c9c01a107](https://levelup.gitconnected.com/understanding-git-a-beginners-guide-containing-cheat-sheets-resources-b50c9c01a107?source=your_stories_page-------------------------------------)
 
--   [complete-javascript-reference-guide-64306cd6b0db](https://javascript.plainenglish.io/complete-javascript-reference-guide-64306cd6b0db?source=your_stories_page-------------------------------------)- [
+- [complete-javascript-reference-guide-64306cd6b0db](https://javascript.plainenglish.io/complete-javascript-reference-guide-64306cd6b0db?source=your_stories_page-------------------------------------)- [
 
 </div>
 
@@ -472,15 +472,15 @@ These dependencies are defined in **BGOONZ_BLOG_2.0**'s manifest files, such as 
 
 > I write articles for:
 
--   CodeX
--   Analytics Vidhya
--   Star Gazers
--   JavaScript in Plain English
--   Geek Culture
--   Level Up Coding
--   <a href="https://dev.to/bgoonz">
-      <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Bryan C Guner's DEV Community Profile" height="30px" width="30px">
-    </a>
+- CodeX
+- Analytics Vidhya
+- Star Gazers
+- JavaScript in Plain English
+- Geek Culture
+- Level Up Coding
+- <a href="https://dev.to/bgoonz">
+    <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Bryan C Guner's DEV Community Profile" height="30px" width="30px">
+  </a>
 
 <a href="https://dev.to/bgoonz">
 
@@ -506,23 +506,23 @@ These dependencies are defined in **BGOONZ_BLOG_2.0**'s manifest files, such as 
 
 <h3 align="center">A passionate Web Developer, Electrical Engineer, Musician & Producer</h3>
 
--   🔭 Contract Web Development **Relational Concepts**
+- 🔭 Contract Web Development **Relational Concepts**
 
--   🌱 I'm currently learning **React/Redux, Python, Java, Express, jQuery**
+- 🌱 I'm currently learning **React/Redux, Python, Java, Express, jQuery**
 
--   👯 I'm looking to collaborate on [Any web audio or open source educational tools.](https://goofy-euclid-1cd736.netlify.app/core-site/index.html)
+- 👯 I'm looking to collaborate on [Any web audio or open source educational tools.](https://goofy-euclid-1cd736.netlify.app/core-site/index.html)
 
--   🤝 I'm looking for help with [Learning React](https://github.com/bgoonz/React-Practice)
+- 🤝 I'm looking for help with [Learning React](https://github.com/bgoonz/React-Practice)
 
--   👨‍💻 All of my projects are available at [https://bgoonz.github.io/](https://bgoonz.github.io/)
+- 👨‍💻 All of my projects are available at [https://bgoonz.github.io/](https://bgoonz.github.io/)
 
--   📝 I regularly write articles on [medium](https://bryanguner.medium.com/) && [Web-Dev-Resource-Hub](https://web-dev-resource-hub.netlify.app/)
+- 📝 I regularly write articles on [medium](https://bryanguner.medium.com/) && [Web-Dev-Resource-Hub](https://web-dev-resource-hub.netlify.app/)
 
--   💬 Ask me about **Anything:**
+- 💬 Ask me about **Anything:**
 
--   📫 How to reach me **bryan.guner@gmail.com**
+- 📫 How to reach me **bryan.guner@gmail.com**
 
--   ⚡ Fun fact **I played Bamboozle Music Festival at the Meadowlands Stadium Complex when I was 14.**
+- ⚡ Fun fact **I played Bamboozle Music Festival at the Meadowlands Stadium Complex when I was 14.**
 
 ### i really like music :headphones:
 
@@ -626,15 +626,15 @@ Creating things that change my every day life.
 | **Front End Web Developer**                   |
 |                                               |
 
--   Responsible for front-end development for a custom real estate application which provides sophisticated and fully customizable filtering to allow investors and real estate professionals to narrow in on exact search targets.
--   Designed mock-up screens, wireframes, and workflows for intuitive user experience.
--   Migrated existing multi-page user experience into singular page interfaces using React components.
--   Participated in every stage of the design from conception through development and iterative improvement.
--   Produced user stories and internal documentation for future site development and maintenance.
--   Implemented modern frameworks including Bootstrap and Font-Awesome to give the site an aesthetic overhaul.
--   Managed all test deployments using a combination of Digital Ocean and Netlify.
--   Produced unit tests using a combination of Mocha and Chai.
--   Injected Google Analytics to capture pertinent usage data to produce an insightful dashboard experience.
+- Responsible for front-end development for a custom real estate application which provides sophisticated and fully customizable filtering to allow investors and real estate professionals to narrow in on exact search targets.
+- Designed mock-up screens, wireframes, and workflows for intuitive user experience.
+- Migrated existing multi-page user experience into singular page interfaces using React components.
+- Participated in every stage of the design from conception through development and iterative improvement.
+- Produced user stories and internal documentation for future site development and maintenance.
+- Implemented modern frameworks including Bootstrap and Font-Awesome to give the site an aesthetic overhaul.
+- Managed all test deployments using a combination of Digital Ocean and Netlify.
+- Produced unit tests using a combination of Mocha and Chai.
+- Injected Google Analytics to capture pertinent usage data to produce an insightful dashboard experience.
 
 | **Environment:** | **JavaScript, JQuery, React, HTML5 &amp; CSS, Bootstrap, DOJO, Google Cloud, Bash Script** |
 | ---------------- | ------------------------------------------------------------------------------------------ |
@@ -644,11 +644,11 @@ Creating things that change my every day life.
 | **Product Development Engineer** |
 |                                  |
 
--   Converted client&#39;s product needs into technical specs to be sent to the development team in Italy.
--   Reorganized internal file server structure.
--   Conducted remote / in person system integration and product demonstrations.
--   Presided over internal and end user software trainings in addition to producing the corresponding documentation.
--   Served as the primary point of contact for troubleshooting railroad hardware and software in the North America.
+- Converted client&#39;s product needs into technical specs to be sent to the development team in Italy.
+- Reorganized internal file server structure.
+- Conducted remote / in person system integration and product demonstrations.
+- Presided over internal and end user software trainings in addition to producing the corresponding documentation.
+- Served as the primary point of contact for troubleshooting railroad hardware and software in the North America.
 
 | **Environment:** | **Excel, AutoCAD, PowerPoint, Word** |
 | ---------------- | ------------------------------------ |
@@ -664,8 +664,8 @@ Creating things that change my every day life.
 
 **Capstone Project - Team Lead**
 
--   Successfully completed and delivered a platform to digitize a guitar signal and perform filtering before executing frequency &amp; time domain analysis to track a current performance against prerecorded performance.
--   Implemented the Dynamic Time Warping algorithm in C++ and Python to autonomously activate or adjust guitar effect at multiple pre-designated section of performance.
+- Successfully completed and delivered a platform to digitize a guitar signal and perform filtering before executing frequency &amp; time domain analysis to track a current performance against prerecorded performance.
+- Implemented the Dynamic Time Warping algorithm in C++ and Python to autonomously activate or adjust guitar effect at multiple pre-designated section of performance.
 
 | **Environment:** | **C++, Python, MATLAB, PureData** |
 | ---------------- | --------------------------------- |
@@ -974,10 +974,10 @@ $(document).ready(function() {
 
 ```js
 //APPEND-DIR.js
-const fs = require('fs');
-let cat = require('child_process').execSync('cat *').toString('UTF-8');
-fs.writeFile('output.md', cat, (err) => {
-    if (err) throw err;
+const fs = require("fs");
+let cat = require("child_process").execSync("cat *").toString("UTF-8");
+fs.writeFile("output.md", cat, (err) => {
+  if (err) throw err;
 });
 ```
 
@@ -1004,22 +1004,22 @@ passing in an array (secondArr) it returns a new array containing the elements
 common to both firstArr and secondArr.
 */
 function intersection(firstArr) {
-    return (secondArr) => {
-        let common = [];
-        for (let i = 0; i < firstArr.length; i++) {
-            let el = firstArr[i];
-            if (secondArr.indexOf(el) > -1) {
-                common.push(el);
-            }
-        }
-        return common;
-    };
+  return (secondArr) => {
+    let common = [];
+    for (let i = 0; i < firstArr.length; i++) {
+      let el = firstArr[i];
+      if (secondArr.indexOf(el) > -1) {
+        common.push(el);
+      }
+    }
+    return common;
+  };
 }
-let abc = intersection(['a', 'b', 'c']); // returns a function
-console.log(abc(['b', 'd', 'c'])); // returns [ 'b', 'c' ]
+let abc = intersection(["a", "b", "c"]); // returns a function
+console.log(abc(["b", "d", "c"])); // returns [ 'b', 'c' ]
 
-let fame = intersection(['f', 'a', 'm', 'e']); // returns a function
-console.log(fame(['a', 'f', 'z', 'b'])); // returns [ 'f', 'a' ]
+let fame = intersection(["f", "a", "m", "e"]); // returns a function
+console.log(fame(["a", "f", "z", "b"])); // returns [ 'f', 'a' ]
 ```
 
 ---
@@ -1038,24 +1038,33 @@ Second is partrecurSum() that recursively concatenates the required sum into an 
 //                            start                           end
 
 function recurSum(arr, start = 0, sum = 0) {
-    if (start < arr.length) {
-        return recurSum(arr, start + 1, sum + arr[start]);
-    }
+  if (start < arr.length) {
+    return recurSum(arr, start + 1, sum + arr[start]);
+  }
 
-    return sum;
+  return sum;
 }
 
 function rPartSumsArr(arr, partSum = [], start = 0, end = arr.length - 1) {
-    if (start <= end) {
-        return rPartSumsArr(arr, partSum.concat(recurSum(arr, start)), ++start, end);
-    }
-    return partSum.reverse();
+  if (start <= end) {
+    return rPartSumsArr(
+      arr,
+      partSum.concat(recurSum(arr, start)),
+      ++start,
+      end
+    );
+  }
+  return partSum.reverse();
 }
 
-console.log('------------------------------------------------rPartSumArr------------------------------------------------');
-console.log('rPartSumsArr(arr)=[ 1, 1, 5, 2, 6, 10 ]: ', rPartSumsArr(arr));
-console.log('rPartSumsArr(arr1)=[ 1, 7, 12, 6, 5, 10 ]: ', rPartSumsArr(arr1));
-console.log('------------------------------------------------rPartSumArr------------------------------------------------');
+console.log(
+  "------------------------------------------------rPartSumArr------------------------------------------------"
+);
+console.log("rPartSumsArr(arr)=[ 1, 1, 5, 2, 6, 10 ]: ", rPartSumsArr(arr));
+console.log("rPartSumsArr(arr1)=[ 1, 7, 12, 6, 5, 10 ]: ", rPartSumsArr(arr1));
+console.log(
+  "------------------------------------------------rPartSumArr------------------------------------------------"
+);
 /*
 ------------------------------------------------rPartSumArr------------------------------------------------
 rPartSumsArr(arr)=[ 1, 1, 5, 2, 6, 10 ]:  [ 10, 16, 18, 23, 24, 25 ]
@@ -1070,7 +1079,7 @@ rPartSumsArr(arr1)=[ 1, 7, 12, 6, 5, 10 ]:  [ 10, 15, 21, 33, 40, 41 ]
 
 ```js
 function camelToKebab(value) {
-    return value.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+  return value.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase();
 }
 ```
 
@@ -1080,10 +1089,10 @@ function camelToKebab(value) {
 
 ```js
 function camel(str) {
-    return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
-        if (+match === 0) return ''; // or if (/\s+/.test(match)) for white spaces
-        return index === 0 ? match.toLowerCase() : match.toUpperCase();
-    });
+  return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function (match, index) {
+    if (+match === 0) return ""; // or if (/\s+/.test(match)) for white spaces
+    return index === 0 ? match.toLowerCase() : match.toUpperCase();
+  });
 }
 ```
 
@@ -1093,30 +1102,30 @@ function camel(str) {
 
 ```js
 function addTwoNumbers(l1, l2) {
-    let result = new ListNode(0);
-    let currentNode = result;
-    let carryOver = 0;
-    while (l1 != null || l2 != null) {
-        let v1 = 0;
-        let v2 = 0;
-        if (l1 != null) v1 = l1.val;
-        if (l2 != null) v2 = l2.val;
+  let result = new ListNode(0);
+  let currentNode = result;
+  let carryOver = 0;
+  while (l1 != null || l2 != null) {
+    let v1 = 0;
+    let v2 = 0;
+    if (l1 != null) v1 = l1.val;
+    if (l2 != null) v2 = l2.val;
 
-        let sum = v1 + v2 + carryOver;
-        carryOver = Math.floor(sum / 10);
-        sum = sum % 10;
-        currentNode.next = new ListNode(sum);
+    let sum = v1 + v2 + carryOver;
+    carryOver = Math.floor(sum / 10);
+    sum = sum % 10;
+    currentNode.next = new ListNode(sum);
 
-        currentNode = currentNode.next;
-        if (l1 != null) l1 = l1.next;
-        if (l2 != null) l2 = l2.next;
-    }
+    currentNode = currentNode.next;
+    if (l1 != null) l1 = l1.next;
+    if (l2 != null) l2 = l2.next;
+  }
 
-    if (carryOver > 0) {
-        currentNode.next = new ListNode(carryOver);
-    }
+  if (carryOver > 0) {
+    currentNode.next = new ListNode(carryOver);
+  }
 
-    return result.next;
+  return result.next;
 }
 ```
 
@@ -1129,23 +1138,23 @@ function addTwoNumbers(l1, l2) {
 //expression in JavaScript
 
 let isAlphaNumeric = (char) => {
-    char = char.toString();
-    let id = char.charCodeAt(0);
-    if (
-        !(id > 47 && id < 58) && // if not numeric(0-9)
-        !(id > 64 && id < 91) && // if not letter(A-Z)
-        !(id > 96 && id < 123) // if not letter(a-z)
-    ) {
-        return false;
-    }
-    return true;
+  char = char.toString();
+  let id = char.charCodeAt(0);
+  if (
+    !(id > 47 && id < 58) && // if not numeric(0-9)
+    !(id > 64 && id < 91) && // if not letter(A-Z)
+    !(id > 96 && id < 123) // if not letter(a-z)
+  ) {
+    return false;
+  }
+  return true;
 };
 
-console.log(isAlphaNumeric('A')); //true
+console.log(isAlphaNumeric("A")); //true
 console.log(isAlphaNumeric(2)); //true
-console.log(isAlphaNumeric('z')); //true
-console.log(isAlphaNumeric(' ')); //false
-console.log(isAlphaNumeric('!')); //false
+console.log(isAlphaNumeric("z")); //true
+console.log(isAlphaNumeric(" ")); //false
+console.log(isAlphaNumeric("!")); //false
 ```
 
 ---
@@ -1154,16 +1163,16 @@ console.log(isAlphaNumeric('!')); //false
 
 ```js
 function replaceWords(str, before, after) {
-    if (/^[A-Z]/.test(before)) {
-        after = after[0].toUpperCase() + after.substring(1);
-    } else {
-        after = after[0].toLowerCase() + after.substring(1);
-    }
-    return str.replace(before, after);
+  if (/^[A-Z]/.test(before)) {
+    after = after[0].toUpperCase() + after.substring(1);
+  } else {
+    after = after[0].toLowerCase() + after.substring(1);
+  }
+  return str.replace(before, after);
 }
-console.log(replaceWords('Let us go to the store', 'store', 'mall')); //"Let us go to the mall"
-console.log(replaceWords('He is Sleeping on the couch', 'Sleeping', 'sitting')); //"He is Sitting on the couch"
-console.log(replaceWords('His name is Tom', 'Tom', 'john'));
+console.log(replaceWords("Let us go to the store", "store", "mall")); //"Let us go to the mall"
+console.log(replaceWords("He is Sleeping on the couch", "Sleeping", "sitting")); //"He is Sitting on the couch"
+console.log(replaceWords("His name is Tom", "Tom", "john"));
 //"His name is John"
 ```
 
@@ -1173,7 +1182,11 @@ console.log(replaceWords('His name is Tom', 'Tom', 'john'));
 
 ```js
 /*Simple Function to flatten an array into a single layer */
-const flatten = (array) => array.reduce((accum, ele) => accum.concat(Array.isArray(ele) ? flatten(ele) : ele), []);
+const flatten = (array) =>
+  array.reduce(
+    (accum, ele) => accum.concat(Array.isArray(ele) ? flatten(ele) : ele),
+    []
+  );
 ```
 
 ---
@@ -1194,16 +1207,16 @@ console.log(isWeekday(new Date(2021, 0, 10)));
 
 ```js
 function longestCommonPrefix(strs) {
-    let prefix = '';
-    if (strs.length === 0) return prefix;
-    for (let i = 0; i < strs[0].length; i++) {
-        const character = strs[0][i];
-        for (let j = 0; j < strs.length; j++) {
-            if (strs[j][i] !== character) return prefix;
-        }
-        prefix = prefix + character;
+  let prefix = "";
+  if (strs.length === 0) return prefix;
+  for (let i = 0; i < strs[0].length; i++) {
+    const character = strs[0][i];
+    for (let j = 0; j < strs.length; j++) {
+      if (strs[j][i] !== character) return prefix;
     }
-    return prefix;
+    prefix = prefix + character;
+  }
+  return prefix;
 }
 ```
 

@@ -2,7 +2,7 @@
 
 ## Message collectors
 
-Collectors are a useful way to enable your bot to obtain *additional* input after the first command was sent. An example would be initiating a quiz, where the bot will "await" a correct response from somebody.
+Collectors are a useful way to enable your bot to obtain _additional_ input after the first command was sent. An example would be initiating a quiz, where the bot will "await" a correct response from somebody.
 
 ::: tip
 You can read the docs for the Collector class <branch version="11.x" inline>[here](https://discord.js.org/#/docs/main/v11/class/Collector)</branch><branch version="12.x" inline>[here](https://discord.js.org/#/docs/main/stable/class/Collector)</branch>.
@@ -14,27 +14,29 @@ For now, let's take the example that they have provided us:
 
 ```js
 // `m` is a message object that will be passed through the filter function
-const filter = m => m.content.includes('discord');
-const collector = message.channel.createMessageCollector(filter, { time: 15000 });
-
-collector.on('collect', m => {
-	console.log(`Collected ${m.content}`);
+const filter = (m) => m.content.includes("discord");
+const collector = message.channel.createMessageCollector(filter, {
+  time: 15000,
 });
 
-collector.on('end', collected => {
-	console.log(`Collected ${collected.size} items`);
+collector.on("collect", (m) => {
+  console.log(`Collected ${m.content}`);
+});
+
+collector.on("end", (collected) => {
+  console.log(`Collected ${collected.size} items`);
 });
 ```
 
 In the first argument of `.createMessageCollector()`, it specifies that it requires a function. This function should ideally return a boolean, which would indicate whether or not the message should pass through the collector's filter. This filter function includes implicit return, which means that (in this case), it will return the value of `m.content.includes('discord')` without actually specifying `return`. This happens when you use arrow functions without braces.
 
-You can also allow more than one condition, as you would with any function. An alternative could be `m => m.content.includes('discord') && m.author.id === message.author.id`, assuming `message` is the name of what you receive in the `message` event. This function will only allow a message that was sent by the person who triggered the command *and* if the message content included "discord" in it.
+You can also allow more than one condition, as you would with any function. An alternative could be `m => m.content.includes('discord') && m.author.id === message.author.id`, assuming `message` is the name of what you receive in the `message` event. This function will only allow a message that was sent by the person who triggered the command _and_ if the message content included "discord" in it.
 
 After a message passes through, this will trigger the `collect` event for the `collector` you've created, which will then run the provided function. In this case, it will simply log the collected message. Once the collector finishes, one way or another, it will run the `end` event. A collector can end in different ways, such as:
 
-* Time running out
-* A certain number of messages passing the filter
-* A certain number of attempts to go through the filter altogether
+- Time running out
+- A certain number of messages passing the filter
+- A certain number of attempts to go through the filter altogether
 
 Those options you pass as the second argument in `.createMessageCollector()`. The benefit of using this method over `.awaitMessages()` is that you can stop it manually by calling `collector.stop()`, should you have your own reason to interrupt the collecting early.
 
@@ -50,14 +52,14 @@ First, you'll need some questions and answers to choose from, so here's a basic 
 
 ```json
 [
-	{
-		"question": "What color is the sky?",
-		"answers": ["blue"]
-	},
-	{
-		"question": "How many letters are there in the alphabet?",
-		"answers": ["26", "twenty-six", "twenty six", "twentysix"]
-	}
+  {
+    "question": "What color is the sky?",
+    "answers": ["blue"]
+  },
+  {
+    "question": "How many letters are there in the alphabet?",
+    "answers": ["26", "twenty-six", "twenty six", "twentysix"]
+  }
 ]
 ```
 
@@ -66,20 +68,25 @@ The provided set allows for responder error with an array of answers allowed. Id
 <branch version="11.x">
 
 ```js
-const quiz = require('./quiz.json');
+const quiz = require("./quiz.json");
 const item = quiz[Math.floor(Math.random() * quiz.length)];
-const filter = response => {
-	return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+const filter = (response) => {
+  return item.answers.some(
+    (answer) => answer.toLowerCase() === response.content.toLowerCase()
+  );
 };
 
 message.channel.send(item.question).then(() => {
-	message.channel.awaitMessages(filter, { maxMatches: 1, time: 30000, errors: ['time'] })
-		.then(collected => {
-			message.channel.send(`${collected.first().author} got the correct answer!`);
-		})
-		.catch(collected => {
-			message.channel.send('Looks like nobody got the answer this time.');
-		});
+  message.channel
+    .awaitMessages(filter, { maxMatches: 1, time: 30000, errors: ["time"] })
+    .then((collected) => {
+      message.channel.send(
+        `${collected.first().author} got the correct answer!`
+      );
+    })
+    .catch((collected) => {
+      message.channel.send("Looks like nobody got the answer this time.");
+    });
 });
 ```
 
@@ -87,20 +94,25 @@ message.channel.send(item.question).then(() => {
 <branch version="12.x">
 
 ```js
-const quiz = require('./quiz.json');
+const quiz = require("./quiz.json");
 const item = quiz[Math.floor(Math.random() * quiz.length)];
-const filter = response => {
-	return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+const filter = (response) => {
+  return item.answers.some(
+    (answer) => answer.toLowerCase() === response.content.toLowerCase()
+  );
 };
 
 message.channel.send(item.question).then(() => {
-	message.channel.awaitMessages(filter, { max: 1, time: 30000, errors: ['time'] })
-		.then(collected => {
-			message.channel.send(`${collected.first().author} got the correct answer!`);
-		})
-		.catch(collected => {
-			message.channel.send('Looks like nobody got the answer this time.');
-		});
+  message.channel
+    .awaitMessages(filter, { max: 1, time: 30000, errors: ["time"] })
+    .then((collected) => {
+      message.channel.send(
+        `${collected.first().author} got the correct answer!`
+      );
+    })
+    .catch((collected) => {
+      message.channel.send("Looks like nobody got the answer this time.");
+    });
 });
 ```
 
@@ -128,17 +140,19 @@ You can read the docs for the `.createReactionCollector()` method <branch versio
 
 ```js
 const filter = (reaction, user) => {
-	return reaction.emoji.name === '👍' && user.id === message.author.id;
+  return reaction.emoji.name === "👍" && user.id === message.author.id;
 };
 
 const collector = message.createReactionCollector(filter, { time: 15000 });
 
-collector.on('collect', reaction => {
-	console.log(`Collected ${reaction.emoji.name} from ${reaction.users.last().tag}`);
+collector.on("collect", (reaction) => {
+  console.log(
+    `Collected ${reaction.emoji.name} from ${reaction.users.last().tag}`
+  );
 });
 
-collector.on('end', collected => {
-	console.log(`Collected ${collected.size} items`);
+collector.on("end", (collected) => {
+  console.log(`Collected ${collected.size} items`);
 });
 ```
 
@@ -147,17 +161,17 @@ collector.on('end', collected => {
 
 ```js
 const filter = (reaction, user) => {
-	return reaction.emoji.name === '👍' && user.id === message.author.id;
+  return reaction.emoji.name === "👍" && user.id === message.author.id;
 };
 
 const collector = message.createReactionCollector(filter, { time: 15000 });
 
-collector.on('collect', (reaction, user) => {
-	console.log(`Collected ${reaction.emoji.name} from ${user.tag}`);
+collector.on("collect", (reaction, user) => {
+  console.log(`Collected ${reaction.emoji.name} from ${user.tag}`);
 });
 
-collector.on('end', collected => {
-	console.log(`Collected ${collected.size} items`);
+collector.on("end", (collected) => {
+  console.log(`Collected ${collected.size} items`);
 });
 ```
 
@@ -173,12 +187,13 @@ You can read the docs for the `.awaitReactions()` method <branch version="11.x" 
 
 ```js
 const filter = (reaction, user) => {
-	return reaction.emoji.name === '👍' && user.id === message.author.id;
+  return reaction.emoji.name === "👍" && user.id === message.author.id;
 };
 
-message.awaitReactions(filter, { max: 4, time: 60000, errors: ['time'] })
-	.then(collected => console.log(collected.size))
-	.catch(collected => {
-		console.log(`After a minute, only ${collected.size} out of 4 reacted.`);
-	});
+message
+  .awaitReactions(filter, { max: 4, time: 60000, errors: ["time"] })
+  .then((collected) => console.log(collected.size))
+  .catch((collected) => {
+    console.log(`After a minute, only ${collected.size} out of 4 reacted.`);
+  });
 ```

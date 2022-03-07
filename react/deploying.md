@@ -101,12 +101,12 @@ When we deploy to Heroku, Heroku will choose what port our server runs on.
 
 ```javascript
 // Add this below all your other routes
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === "production") {
   // Serve any static files
-  app.use(express.static(path.join(__dirname, '../client/build')));
+  app.use(express.static(path.join(__dirname, "../client/build")));
   // Handle React routing, return all requests to React app
-  app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+  app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
   });
 }
 ```
@@ -129,12 +129,15 @@ file.
     and searching in the "Add-ons" search box for Postgres.
     Click the "Heroku Postgres" option. Finally, select the free version and click "Provision".
     Or you can create a new Application from the CLI. To create an application with name, install the Heroku CLI and run the following command
-    ```heroku create app_name```
+    `heroku create app_name`
     This command will only be used on an initialized git repository. In that case, the command creates the application as well as a git remote, that you can use to push your code to Heroku:
+
     ```mkdir example
       cd example
       git init
       heroku apps:create app_name
+
+    ```
 
 8.  Install the Heroku CLI: `brew tap heroku/brew && brew install heroku` then use `heroku login`
 

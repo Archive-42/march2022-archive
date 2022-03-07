@@ -2,10 +2,10 @@
 
 ## Legend
 
-* `<client>` is a placeholder for the Client object, such as `const client = new Discord.Client();`.
-* `<message>` is a placeholder for the Message object, such as `client.on('message', message => { ... });`.
-* `<guild>` is a placeholder for the Guild object, such as `<message>.guild` or <branch version="12.x" inline>`<client>.guilds.cache.get('<id>')`</branch><branch version="11.x" inline>`<client>.guilds.get('<id>')`</branch>.
-* `<voiceChannel>` is a placeholder for the VoiceChannel object, such as <branch version="11.x" inline>`<message>.member.voiceChannel`</branch><branch version="12.x" inline>`<message>.member.voice.channel`</branch>
+- `<client>` is a placeholder for the Client object, such as `const client = new Discord.Client();`.
+- `<message>` is a placeholder for the Message object, such as `client.on('message', message => { ... });`.
+- `<guild>` is a placeholder for the Guild object, such as `<message>.guild` or <branch version="12.x" inline>`<client>.guilds.cache.get('<id>')`</branch><branch version="11.x" inline>`<client>.guilds.get('<id>')`</branch>.
+- `<voiceChannel>` is a placeholder for the VoiceChannel object, such as <branch version="11.x" inline>`<message>.member.voiceChannel`</branch><branch version="12.x" inline>`<message>.member.voice.channel`</branch>
 
 For a more detailed explanation on the notations commonly used in this guide, the docs, and the support server, see [here](/additional-info/notation.md).
 
@@ -216,29 +216,31 @@ the `activity` key will only work in v11.3 and above. You can still use the `gam
 ### How do I add a mention prefix to my bot?
 
 ```js
-const Discord = require('discord.js');
+const Discord = require("discord.js");
 
 const client = new Discord.Client();
-const prefix = '!';
+const prefix = "!";
 
-const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
-client.on('message', message => {
-	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
-	if (!prefixRegex.test(message.content)) return;
+client.on("message", (message) => {
+  const prefixRegex = new RegExp(
+    `^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`
+  );
+  if (!prefixRegex.test(message.content)) return;
 
-	const [, matchedPrefix] = message.content.match(prefixRegex);
-	const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
-	const command = args.shift().toLowerCase();
+  const [, matchedPrefix] = message.content.match(prefixRegex);
+  const args = message.content.slice(matchedPrefix.length).trim().split(/ +/);
+  const command = args.shift().toLowerCase();
 
-	if (command === 'ping') {
-		message.channel.send('Pong!');
-	} else if (command === 'prefix') {
-		message.reply(`you can either ping me or use \`${prefix}\` as my prefix.`);
-	}
+  if (command === "ping") {
+    message.channel.send("Pong!");
+  } else if (command === "prefix") {
+    message.reply(`you can either ping me or use \`${prefix}\` as my prefix.`);
+  }
 });
 
-client.login('your-token-goes-here');
+client.login("your-token-goes-here");
 ```
 
 ::: tip
@@ -512,7 +514,7 @@ const ytdl = require('ytdl-core');
 <voiceChannel>.join().then(connection => {
 	const stream = ytdl('<youtubelink>', { filter: 'audioonly' });
 	const dispatcher = connection.playStream(stream);
-	
+
 	dispatcher.on('end', () => voiceChannel.leave());
 })
 
@@ -530,7 +532,7 @@ const ytdl = require('ytdl-core');
 <voiceChannel>.join().then(connection => {
 	const stream = ytdl('<youtubelink>', { filter: 'audioonly' });
 	const dispatcher = connection.play(stream);
-	
+
 	dispatcher.on('finish', () => voiceChannel.leave());
 })
 
@@ -545,17 +547,47 @@ If you've tried using [the usual method of retrieving unicode emojis](/popular-t
 ```js
 // emojiCharacters.js
 module.exports = {
-	a: '🇦', b: '🇧', c: '🇨', d: '🇩',
-	e: '🇪', f: '🇫', g: '🇬', h: '🇭',
-	i: '🇮', j: '🇯', k: '🇰', l: '🇱',
-	m: '🇲', n: '🇳', o: '🇴', p: '🇵',
-	q: '🇶', r: '🇷', s: '🇸', t: '🇹',
-	u: '🇺', v: '🇻', w: '🇼', x: '🇽',
-	y: '🇾', z: '🇿', 0: '0️⃣', 1: '1️⃣',
-	2: '2️⃣', 3: '3️⃣', 4: '4️⃣', 5: '5️⃣',
-	6: '6️⃣', 7: '7️⃣', 8: '8️⃣', 9: '9️⃣',
-	10: '🔟', '#': '#️⃣', '*': '*️⃣',
-	'!': '❗', '?': '❓',
+  a: "🇦",
+  b: "🇧",
+  c: "🇨",
+  d: "🇩",
+  e: "🇪",
+  f: "🇫",
+  g: "🇬",
+  h: "🇭",
+  i: "🇮",
+  j: "🇯",
+  k: "🇰",
+  l: "🇱",
+  m: "🇲",
+  n: "🇳",
+  o: "🇴",
+  p: "🇵",
+  q: "🇶",
+  r: "🇷",
+  s: "🇸",
+  t: "🇹",
+  u: "🇺",
+  v: "🇻",
+  w: "🇼",
+  x: "🇽",
+  y: "🇾",
+  z: "🇿",
+  0: "0️⃣",
+  1: "1️⃣",
+  2: "2️⃣",
+  3: "3️⃣",
+  4: "4️⃣",
+  5: "5️⃣",
+  6: "6️⃣",
+  7: "7️⃣",
+  8: "8️⃣",
+  9: "9️⃣",
+  10: "🔟",
+  "#": "#️⃣",
+  "*": "*️⃣",
+  "!": "❗",
+  "?": "❓",
 };
 ```
 
@@ -563,11 +595,11 @@ module.exports = {
 
 ```js
 // index.js
-const emojiCharacters = require('./emojiCharacters');
+const emojiCharacters = require("./emojiCharacters");
 
 console.log(emojiCharacters.a); // 🇦
 console.log(emojiCharacters[10]); // 🔟
-console.log(emojiCharacters['!']); // ❗
+console.log(emojiCharacters["!"]); // ❗
 ```
 
 ::: tip

@@ -4,7 +4,7 @@
 instructions for:
 
 | [Node](#node) | [PostCSS CLI](#postcss-cli) | [Webpack](#webpack) | [Create React App](#create-react-app) | [Gulp](#gulp) | [Grunt](#grunt) |
-| --- | --- | --- | --- | --- | --- |
+| ------------- | --------------------------- | ------------------- | ------------------------------------- | ------------- | --------------- |
 
 ## Node
 
@@ -17,12 +17,12 @@ npm install postcss @csstools/postcss-hwb-function --save-dev
 Use it as a [PostCSS] plugin:
 
 ```js
-const postcss = require('postcss');
-const postcssHWBFunction = require('@csstools/postcss-hwb-function');
+const postcss = require("postcss");
+const postcssHWBFunction = require("@csstools/postcss-hwb-function");
 
-postcss([
-  postcssHWBFunction(/* pluginOptions */)
-]).process(YOUR_CSS /*, processOptions */);
+postcss([postcssHWBFunction(/* pluginOptions */)]).process(
+  YOUR_CSS /*, processOptions */
+);
 ```
 
 ## PostCSS CLI
@@ -37,13 +37,11 @@ Use [PostCSS HWB Function] in your `postcss.config.js` configuration
 file:
 
 ```js
-const postcssHWBFunction = require('@csstools/postcss-hwb-function');
+const postcssHWBFunction = require("@csstools/postcss-hwb-function");
 
 module.exports = {
-  plugins: [
-    postcssHWBFunction(/* pluginOptions */)
-  ]
-}
+  plugins: [postcssHWBFunction(/* pluginOptions */)],
+};
 ```
 
 ## Webpack
@@ -57,7 +55,7 @@ npm install postcss-loader --save-dev
 Use [PostCSS HWB Function] in your Webpack configuration:
 
 ```js
-const postcssHWBFunction = require('@csstools/postcss-hwb-function');
+const postcssHWBFunction = require("@csstools/postcss-hwb-function");
 
 module.exports = {
   module: {
@@ -65,19 +63,20 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          'style-loader',
-          { loader: 'css-loader', options: { importLoaders: 1 } },
-          { loader: 'postcss-loader', options: {
-            ident: 'postcss',
-            plugins: () => [
-              postcssHWBFunction(/* pluginOptions */)
-            ]
-          } }
-        ]
-      }
-    ]
-  }
-}
+          "style-loader",
+          { loader: "css-loader", options: { importLoaders: 1 } },
+          {
+            loader: "postcss-loader",
+            options: {
+              ident: "postcss",
+              plugins: () => [postcssHWBFunction(/* pluginOptions */)],
+            },
+          },
+        ],
+      },
+    ],
+  },
+};
 ```
 
 ## Create React App
@@ -92,14 +91,13 @@ Use [React App Rewire PostCSS] and [PostCSS HWB Function] in your
 `config-overrides.js` file:
 
 ```js
-const reactAppRewirePostcss = require('react-app-rewire-postcss');
-const postcssHWBFunction = require('@csstools/postcss-hwb-function');
+const reactAppRewirePostcss = require("react-app-rewire-postcss");
+const postcssHWBFunction = require("@csstools/postcss-hwb-function");
 
-module.exports = config => reactAppRewirePostcss(config, {
-  plugins: () => [
-    postcssHWBFunction(/* pluginOptions */)
-  ]
-});
+module.exports = (config) =>
+  reactAppRewirePostcss(config, {
+    plugins: () => [postcssHWBFunction(/* pluginOptions */)],
+  });
 ```
 
 ## Gulp
@@ -113,16 +111,15 @@ npm install gulp-postcss --save-dev
 Use [PostCSS HWB Function] in your Gulpfile:
 
 ```js
-const postcss = require('gulp-postcss');
-const postcssHWBFunction = require('@csstools/postcss-hwb-function');
+const postcss = require("gulp-postcss");
+const postcssHWBFunction = require("@csstools/postcss-hwb-function");
 
-gulp.task('css', () => gulp.src('./src/*.css').pipe(
-  postcss([
-    postcssHWBFunction(/* pluginOptions */)
-  ])
-).pipe(
-  gulp.dest('.')
-));
+gulp.task("css", () =>
+  gulp
+    .src("./src/*.css")
+    .pipe(postcss([postcssHWBFunction(/* pluginOptions */)]))
+    .pipe(gulp.dest("."))
+);
 ```
 
 ## Grunt
@@ -136,29 +133,27 @@ npm install grunt-postcss --save-dev
 Use [PostCSS HWB Function] in your Gruntfile:
 
 ```js
-const postcssHWBFunction = require('@csstools/postcss-hwb-function');
+const postcssHWBFunction = require("@csstools/postcss-hwb-function");
 
-grunt.loadNpmTasks('grunt-postcss');
+grunt.loadNpmTasks("grunt-postcss");
 
 grunt.initConfig({
   postcss: {
     options: {
-      use: [
-       postcssHWBFunction(/* pluginOptions */)
-      ]
+      use: [postcssHWBFunction(/* pluginOptions */)],
     },
     dist: {
-      src: '*.css'
-    }
-  }
+      src: "*.css",
+    },
+  },
 });
 ```
 
-[Gulp PostCSS]: https://github.com/postcss/gulp-postcss
-[Grunt PostCSS]: https://github.com/nDmitry/grunt-postcss
-[PostCSS]: https://github.com/postcss/postcss
-[PostCSS CLI]: https://github.com/postcss/postcss-cli
-[PostCSS Loader]: https://github.com/postcss/postcss-loader
-[PostCSS HWB Function]: https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-hwb-function
-[React App Rewire PostCSS]: https://github.com/csstools/react-app-rewire-postcss
-[React App Rewired]: https://github.com/timarney/react-app-rewired
+[gulp postcss]: https://github.com/postcss/gulp-postcss
+[grunt postcss]: https://github.com/nDmitry/grunt-postcss
+[postcss]: https://github.com/postcss/postcss
+[postcss cli]: https://github.com/postcss/postcss-cli
+[postcss loader]: https://github.com/postcss/postcss-loader
+[postcss hwb function]: https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-hwb-function
+[react app rewire postcss]: https://github.com/csstools/react-app-rewire-postcss
+[react app rewired]: https://github.com/timarney/react-app-rewired

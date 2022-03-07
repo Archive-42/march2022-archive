@@ -20,15 +20,15 @@ But no matter. That just means we have to get a little creative. And indeed, tha
 Rewriting his approach in modern JS shaves off another 4 lines, bringing it down to 9:
 
 ```js
-const numCols = 3
-const colHeights = Array(numCols).fill(0)
-const container = document.getElementById(`container`)
+const numCols = 3;
+const colHeights = Array(numCols).fill(0);
+const container = document.getElementById(`container`);
 Array.from(container.children).forEach((child, i) => {
-  const order = i % numCols
-  child.style.order = order
-  colHeights[order] += parseFloat(child.clientHeight)
-})
-container.style.height = Math.max(...colHeights) + `px`
+  const order = i % numCols;
+  child.style.order = order;
+  colHeights[order] += parseFloat(child.clientHeight);
+});
+container.style.height = Math.max(...colHeights) + `px`;
 ```
 
 However, flexbox gave me some trouble. The `flex` items kept disregarding the parent container width, causing massive overflows. I tried for almost an hour but couldn't get them to behave.
@@ -107,18 +107,18 @@ export const Child = styled.div`
 To create your own masonry with the above implementation, just copy the above two files into your project, change the default props for `rowHeight` and `colWidth` to suit your needs and use the `Masonry` component like so:
 
 ```js
-import React from 'react'
+import React from "react";
 
-import Masonry from './Masonry'
-import PostExcerpt from './PostExcerpt'
+import Masonry from "./Masonry";
+import PostExcerpt from "./PostExcerpt";
 
 const PostList = ({ posts }) => (
   <Masonry>
-    {posts.map(post => (
+    {posts.map((post) => (
       <PostExcerpt key={post.slug} {...post} />
     ))}
   </Masonry>
-)
+);
 
-export default PostList
+export default PostList;
 ```
