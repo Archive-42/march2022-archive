@@ -3,23 +3,23 @@ title: where-is-npm-pack
 weight: 0
 excerpt: How to find out where npm installs the packages
 seo:
-    title: npm packages
-    description: "When you install a package using\_npm\_you can perform 2 types of installation:\na local install\na global install\n\nBy default, when you type an\_npm install\_command, like:\nthe package is installed in the current file tree, under the\_node_modules\_subfolder.\n"
-    robots: []
-    extra:
-        - name: 'og:description'
-          value: "When you install a package using\_npm\_you can perform 2 types of installation:\na local install\na global install\n\nBy default, when you type an\_npm install\_command, like:\nthe package is installed in the current file tree, under the\_node_modules\_subfolder.\n"
-          keyName: property
-          relativeUrl: false
-    type: stackbit_page_meta
+  title: npm packages
+  description: "When you install a package using\_npm\_you can perform 2 types of installation:\na local install\na global install\n\nBy default, when you type an\_npm install\_command, like:\nthe package is installed in the current file tree, under the\_node_modules\_subfolder.\n"
+  robots: []
+  extra:
+    - name: "og:description"
+      value: "When you install a package using\_npm\_you can perform 2 types of installation:\na local install\na global install\n\nBy default, when you type an\_npm install\_command, like:\nthe package is installed in the current file tree, under the\_node_modules\_subfolder.\n"
+      keyName: property
+      relativeUrl: false
+  type: stackbit_page_meta
 template: docs
 ---
 
 When you install a package using npm you can perform 2 types of installation:
 
--   a local install
+- a local install
 
--   a global install
+- a global install
 
 By default, when you type an npm install command, like:
 

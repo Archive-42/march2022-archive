@@ -3,16 +3,12 @@ title: Javascript Practice
 weight: 0
 excerpt: Javascript Practice
 seo:
-    title: 'Javascript Practice'
-    description: ''
-    robots: []
-    extra: []
+  title: "Javascript Practice"
+  description: ""
+  robots: []
+  extra: []
 template: docs
 ---
-
-
-
-
 
 ## Inserting an item into an existing array
 
@@ -227,9 +223,9 @@ Final victor
 Adding items in the middle of an array is easy with splice, and it's the most performant way to do it.
 
 ```javascript
-var items = ['one', 'two', 'three', 'four'];
+var items = ["one", "two", "three", "four"];
 
-items.splice(items.length / 2, 0, 'hello');
+items.splice(items.length / 2, 0, "hello");
 ```
 
 I tried to run these tests in various Browsers and OS and the results were similar. I hope these tips will be useful for you and encourage to perform your own tests!
@@ -252,17 +248,17 @@ How can we improve and make a more efficient nested `if` statement in javascript
 
 ```javascript
 if (color) {
-    if (color === 'black') {
-        printBlackBackground();
-    } else if (color === 'red') {
-        printRedBackground();
-    } else if (color === 'blue') {
-        printBlueBackground();
-    } else if (color === 'green') {
-        printGreenBackground();
-    } else {
-        printYellowBackground();
-    }
+  if (color === "black") {
+    printBlackBackground();
+  } else if (color === "red") {
+    printRedBackground();
+  } else if (color === "blue") {
+    printBlueBackground();
+  } else if (color === "green") {
+    printGreenBackground();
+  } else {
+    printYellowBackground();
+  }
 }
 ```
 
@@ -270,28 +266,28 @@ One way to improve the nested `if` statement would be using the `switch` stateme
 
 ```javascript
 switch (color) {
-    case 'black':
-        printBlackBackground();
+  case "black":
+    printBlackBackground();
 
-        break;
+    break;
 
-    case 'red':
-        printRedBackground();
+  case "red":
+    printRedBackground();
 
-        break;
+    break;
 
-    case 'blue':
-        printBlueBackground();
+  case "blue":
+    printBlueBackground();
 
-        break;
+    break;
 
-    case 'green':
-        printGreenBackground();
+  case "green":
+    printGreenBackground();
 
-        break;
+    break;
 
-    default:
-        printYellowBackground();
+  default:
+    printYellowBackground();
 }
 ```
 
@@ -299,30 +295,30 @@ But what if we have a conditional with several checks in each statement? In this
 
 ```javascript
 switch (true) {
-    case typeof color === 'string' && color === 'black':
-        printBlackBackground();
+  case typeof color === "string" && color === "black":
+    printBlackBackground();
 
-        break;
+    break;
 
-    case typeof color === 'string' && color === 'red':
-        printRedBackground();
+  case typeof color === "string" && color === "red":
+    printRedBackground();
 
-        break;
+    break;
 
-    case typeof color === 'string' && color === 'blue':
-        printBlueBackground();
+  case typeof color === "string" && color === "blue":
+    printBlueBackground();
 
-        break;
+    break;
 
-    case typeof color === 'string' && color === 'green':
-        printGreenBackground();
+  case typeof color === "string" && color === "green":
+    printGreenBackground();
 
-        break;
+    break;
 
-    case typeof color === 'string' && color === 'yellow':
-        printYellowBackground();
+  case typeof color === "string" && color === "yellow":
+    printYellowBackground();
 
-        break;
+    break;
 }
 ```
 
@@ -330,9 +326,9 @@ If refactoring is an option, we can try to simplify the functions themselves. Fo
 
 ```javascript
 function printBackground(color) {
-    if (!color || typeof color !== 'string') {
-        return; // Invalid color, return immediately
-    }
+  if (!color || typeof color !== "string") {
+    return; // Invalid color, return immediately
+  }
 }
 ```
 
@@ -340,19 +336,19 @@ But if refactoring is not an option, we must always avoid having several checks 
 
 ```javascript
 var colorObj = {
-    black: printBlackBackground,
+  black: printBlackBackground,
 
-    red: printRedBackground,
+  red: printRedBackground,
 
-    blue: printBlueBackground,
+  blue: printBlueBackground,
 
-    green: printGreenBackground,
+  green: printGreenBackground,
 
-    yellow: printYellowBackground
+  yellow: printYellowBackground,
 };
 
 if (color in colorObj) {
-    colorObj[color]();
+  colorObj[color]();
 }
 ```
 
@@ -375,7 +371,7 @@ Here you can find more information about [this](http://www.nicoespeon.com/en/201
 Javascript has a native method [**sort**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) that allows sorting arrays. Doing a simple `array.sort()` will treat each array entry as a string and sort it alphabetically. Also you can provide your [own custom sorting](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort#Parameters) function.
 
 ```javascript
-['Shanghai', 'New York', 'Mumbai', 'Buenos Aires'].sort();
+["Shanghai", "New York", "Mumbai", "Buenos Aires"].sort();
 
 // ["Buenos Aires", "Mumbai", "New York", "Shanghai"]
 ```
@@ -387,13 +383,13 @@ See the next example:
 ```javascript
 // Spanish
 
-['único', 'árbol', 'cosas', 'fútbol'].sort();
+["único", "árbol", "cosas", "fútbol"].sort();
 
 // ["cosas", "fútbol", "árbol", "único"] // bad order
 
 // German
 
-['Woche', 'wöchentlich', 'wäre', 'Wann'].sort();
+["Woche", "wöchentlich", "wäre", "Wann"].sort();
 
 // ["Wann", "Woche", "wäre", "wöchentlich"] // bad order
 ```
@@ -405,14 +401,14 @@ Fortunately, there are two ways to overcome this behavior [localeCompare](https:
 #### Using `localeCompare()`
 
 ```javascript
-['único', 'árbol', 'cosas', 'fútbol'].sort(function (a, b) {
-    return a.localeCompare(b);
+["único", "árbol", "cosas", "fútbol"].sort(function (a, b) {
+  return a.localeCompare(b);
 });
 
 // ["árbol", "cosas", "fútbol", "único"]
 
-['Woche', 'wöchentlich', 'wäre', 'Wann'].sort(function (a, b) {
-    return a.localeCompare(b);
+["Woche", "wöchentlich", "wäre", "Wann"].sort(function (a, b) {
+  return a.localeCompare(b);
 });
 
 // ["Wann", "wäre", "Woche", "wöchentlich"]
@@ -421,18 +417,18 @@ Fortunately, there are two ways to overcome this behavior [localeCompare](https:
 #### Using `Intl.Collator()`
 
 ```javascript
-['único', 'árbol', 'cosas', 'fútbol'].sort(Intl.Collator().compare);
+["único", "árbol", "cosas", "fútbol"].sort(Intl.Collator().compare);
 
 // ["árbol", "cosas", "fútbol", "único"]
 
-['Woche', 'wöchentlich', 'wäre', 'Wann'].sort(Intl.Collator().compare);
+["Woche", "wöchentlich", "wäre", "Wann"].sort(Intl.Collator().compare);
 
 // ["Wann", "wäre", "Woche", "wöchentlich"]
 ```
 
--   For each method you can customize the location.
+- For each method you can customize the location.
 
--   According to [Firefox](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare#Performance) Intl.Collator is faster when comparing large numbers of strings.
+- According to [Firefox](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare#Performance) Intl.Collator is faster when comparing large numbers of strings.
 
 ### So when you are working with arrays of strings in a language other than English, remember to use this method to avoid unexpected sorting
 
@@ -448,29 +444,29 @@ Fortunately, there are two ways to overcome this behavior [localeCompare](https:
 
 ---
 
--   `undefined` means a variable has not been declared, or has been declared but has not yet been assigned a value
+- `undefined` means a variable has not been declared, or has been declared but has not yet been assigned a value
 
--   `null` is an assignment value that means "no value"
+- `null` is an assignment value that means "no value"
 
--   Javascript sets unassigned variables with a default value of `undefined`
+- Javascript sets unassigned variables with a default value of `undefined`
 
--   Javascript never sets a value to `null`. It is used by programmers to indicate that a `var` has no value.
+- Javascript never sets a value to `null`. It is used by programmers to indicate that a `var` has no value.
 
--   `undefined` is not valid in JSON while `null` is
+- `undefined` is not valid in JSON while `null` is
 
--   `undefined` typeof is `undefined`
+- `undefined` typeof is `undefined`
 
--   `null` typeof is an `object`. [Why?](http://www.2ality.com/2013/10/typeof-null.html)
+- `null` typeof is an `object`. [Why?](http://www.2ality.com/2013/10/typeof-null.html)
 
--   Both are primitives
+- Both are primitives
 
--   Both are [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) (`Boolean(undefined) // false`, `Boolean(null) // false`)
+- Both are [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) (`Boolean(undefined) // false`, `Boolean(null) // false`)
 
--   You can know if a variable is [undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)
+- You can know if a variable is [undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)
 
-    ```javascript
-    typeof variable === 'undefined';
-    ```
+  ```javascript
+  typeof variable === "undefined";
+  ```
 
 ````
 
@@ -484,13 +480,13 @@ Fortunately, there are two ways to overcome this behavior [localeCompare](https:
 
 ````
 
--   The **equality** operator considers them equal, but the **identity** doesn't
+- The **equality** operator considers them equal, but the **identity** doesn't
 
-    ```javascript
-    null == undefined; // true
+  ```javascript
+  null == undefined; // true
 
-    null === undefined; // false
-    ```
+  null === undefined; // false
+  ```
 
 ````
 
@@ -545,11 +541,11 @@ function printUpperCase(words) {
 `printUpperCase` is now ready to accept a single node or an array of nodes as its parameter. It also avoids the potential `TypeError` that would be thrown if no parameter was passed.
 
 ```javascript
-printUpperCase('cactus');
+printUpperCase("cactus");
 
 // => CACTUS
 
-printUpperCase(['cactus', 'bear', 'potato']);
+printUpperCase(["cactus", "bear", "potato"]);
 
 // => CACTUS
 
@@ -583,7 +579,7 @@ We add this directive either by adding it at the top of a js file:
 ```javascript
 // Whole-script strict mode syntax
 
-'use strict';
+"use strict";
 
 var v = "Hi!  I'm a strict mode script!";
 ```
@@ -592,49 +588,49 @@ or inside a function:
 
 ```javascript
 function f() {
-    // Function-level strict mode syntax
+  // Function-level strict mode syntax
 
-    'use strict';
+  "use strict";
 
-    function nested() {
-        return 'And so am I!';
-    }
+  function nested() {
+    return "And so am I!";
+  }
 
-    return "Hi!  I'm a strict mode function!  " + nested();
+  return "Hi!  I'm a strict mode function!  " + nested();
 }
 
 function f2() {
-    return "I'm not strict.";
+  return "I'm not strict.";
 }
 ```
 
 By including this directive in a JavaScript file or function, we will direct the JavaScript engine to execute in strict mode which disables a bunch of behaviors that are usually undesirable in larger JavaScript projects. Among other things, strict mode changes the following behaviors:
 
--   Variables can only be introduced when they are preceded with "var"
+- Variables can only be introduced when they are preceded with "var"
 
--   Attempting to write to read-only properties generates a noisy error
+- Attempting to write to read-only properties generates a noisy error
 
--   You have to call constructors with the "new" keyword
+- You have to call constructors with the "new" keyword
 
--   "this" is not implicitly bound to the global object
+- "this" is not implicitly bound to the global object
 
--   Very limited use of eval() allowed
+- Very limited use of eval() allowed
 
--   Protects you from using reserved words or future reserved words as variable names
+- Protects you from using reserved words or future reserved words as variable names
 
 Strict mode is great for new projects, but can be challenging to introduce into older projects that don't already use it in most places. It also can be problematic if your build chain concatenates all your js files into one big file, as this may cause all files to execute in strict mode.
 
 It is not a statement, but a literal expression, ignored by earlier versions of JavaScript. Strict mode is supported in:
 
--   Internet Explorer from version 10.
+- Internet Explorer from version 10.
 
--   Firefox from version 4.
+- Firefox from version 4.
 
--   Chrome from version 13.
+- Chrome from version 13.
 
--   Safari from version 5.1.
+- Safari from version 5.1.
 
--   Opera from version 12.
+- Opera from version 12.
 
 ### [See MDN for a fuller description of strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 
@@ -747,11 +743,11 @@ As of ES6, JS now has template strings as an alternative to the classic end quot
 Ex: Normal string
 
 ```javascript
-var firstName = 'Jake';
+var firstName = "Jake";
 
-var lastName = 'Rawr';
+var lastName = "Rawr";
 
-console.log('My name is ' + firstName + ' ' + lastName);
+console.log("My name is " + firstName + " " + lastName);
 
 // My name is Jake Rawr
 ```
@@ -759,9 +755,9 @@ console.log('My name is ' + firstName + ' ' + lastName);
 Template String
 
 ```javascript
-var firstName = 'Jake';
+var firstName = "Jake";
 
-var lastName = 'Rawr';
+var lastName = "Rawr";
 
 console.log(`My name is ${firstName} ${lastName}`);
 
@@ -772,9 +768,9 @@ You can do multi-line strings without , perform simple logic (ie 2+3) or even us
 
 ```javascript
 var val1 = 1,
-    val2 = 2;
+  val2 = 2;
 
-console.log(`${val1} is ${val1 < val2 ? 'less than' : 'greater than'} ${val2}`);
+console.log(`${val1} is ${val1 < val2 ? "less than" : "greater than"} ${val2}`);
 
 // 1 is less than 2
 ```
@@ -819,16 +815,16 @@ That's ok, but you have to know that there are two native ways for this kind of 
 
 ```javascript
 var myObject = {
-    name: '@tips_js'
+  name: "@tips_js",
 };
 
-myObject.hasOwnProperty('name'); // true
+myObject.hasOwnProperty("name"); // true
 
-'name' in myObject; // true
+"name" in myObject; // true
 
-myObject.hasOwnProperty('valueOf'); // false, valueOf is inherited from the prototype chain
+myObject.hasOwnProperty("valueOf"); // false, valueOf is inherited from the prototype chain
 
-'valueOf' in myObject; // true
+"valueOf" in myObject; // true
 ```
 
 Both differ in the depth at which they check the properties. In other words, `hasOwnProperty` will only return true if key is available on that object directly. However, the `in` operator doesn't discriminate between properties created on an object and properties inherited from the prototype chain.
@@ -837,16 +833,16 @@ Here's another example:
 
 ```javascript
 var myFunc = function () {
-    this.name = '@tips_js';
+  this.name = "@tips_js";
 };
 
-myFunc.prototype.age = '10 days';
+myFunc.prototype.age = "10 days";
 
 var user = new myFunc();
 
-user.hasOwnProperty('name'); // true
+user.hasOwnProperty("name"); // true
 
-user.hasOwnProperty('age'); // false, because age is from the prototype chain
+user.hasOwnProperty("age"); // false, because age is from the prototype chain
 ```
 
 Check the [live examples here](https://jsbin.com/tecoqa/edit?js,console)!
@@ -869,47 +865,47 @@ Understanding [hoisting](https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
 ```javascript
 function doTheThing() {
-    // ReferenceError: notDeclared is not defined
+  // ReferenceError: notDeclared is not defined
 
-    console.log(notDeclared);
+  console.log(notDeclared);
 
-    // Outputs: undefined
+  // Outputs: undefined
 
-    console.log(definedLater);
+  console.log(definedLater);
 
-    var definedLater;
+  var definedLater;
 
-    definedLater = 'I am defined!';
+  definedLater = "I am defined!";
 
-    // Outputs: 'I am defined!'
+  // Outputs: 'I am defined!'
 
-    console.log(definedLater);
+  console.log(definedLater);
 
-    // Outputs: undefined
+  // Outputs: undefined
 
-    console.log(definedSimulateneously);
+  console.log(definedSimulateneously);
 
-    var definedSimulateneously = 'I am defined!';
+  var definedSimulateneously = "I am defined!";
 
-    // Outputs: 'I am defined!'
+  // Outputs: 'I am defined!'
 
-    console.log(definedSimulateneously);
+  console.log(definedSimulateneously);
 
-    // Outputs: 'I did it!'
+  // Outputs: 'I did it!'
 
-    doSomethingElse();
+  doSomethingElse();
 
-    function doSomethingElse() {
-        console.log('I did it!');
-    }
+  function doSomethingElse() {
+    console.log("I did it!");
+  }
 
-    // TypeError: undefined is not a function
+  // TypeError: undefined is not a function
 
-    functionVar();
+  functionVar();
 
-    var functionVar = function () {
-        console.log('I did it!');
-    };
+  var functionVar = function () {
+    console.log("I did it!");
+  };
 }
 ```
 
@@ -933,10 +929,11 @@ In many programming languages the parameters of a function are by default mandat
 
 ```javascript
 const _err = function (message) {
-    throw new Error(message);
+  throw new Error(message);
 };
 
-const getSum = (a = _err('a is not defined'), b = _err('b is not defined')) => a + b;
+const getSum = (a = _err("a is not defined"), b = _err("b is not defined")) =>
+  a + b;
 
 getSum(10); // throws Error, b is not defined
 
@@ -960,17 +957,17 @@ getSum(undefined, 10); // throws Error, a is not defined
 For quickly measuring performance of a javascript block, we can use the console functions like [`console.time(label)`](https://developer.chrome.com/devtools/docs/console-api#consoletimelabel) and [`console.timeEnd(label)`](https://developer.chrome.com/devtools/docs/console-api#consoletimeendlabel)
 
 ```javascript
-console.time('Array initialize');
+console.time("Array initialize");
 
 var arr = new Array(100),
-    len = arr.length,
-    i;
+  len = arr.length,
+  i;
 
 for (i = 0; i < len; i++) {
-    arr[i] = new Object();
+  arr[i] = new Object();
 }
 
-console.timeEnd('Array initialize'); // Outputs: Array initialize: 0.711ms
+console.timeEnd("Array initialize"); // Outputs: Array initialize: 0.711ms
 ```
 
 More info: [Console object](https://github.com/DeveloperToolsWG/console-object), [Javascript benchmarking](https://mathiasbynens.be/notes/javascript-benchmarking)
@@ -997,9 +994,9 @@ Introduced as a new feature in ES6, fat arrow functions may come as a handy tool
 
 #### What are the benefits?
 
--   Syntax: fewer LOC; no more typing `function` keyword over and over again
+- Syntax: fewer LOC; no more typing `function` keyword over and over again
 
--   Semantics: capturing the keyword `this` from the surrounding context
+- Semantics: capturing the keyword `this` from the surrounding context
 
 #### Simple syntax example
 
@@ -1069,60 +1066,60 @@ var counterD = new CounterD();
 // bad example
 
 function CounterA() {
-    // CounterA's `this` instance (!! gets ignored here)
+  // CounterA's `this` instance (!! gets ignored here)
 
-    this.i = 0;
+  this.i = 0;
 
-    setInterval(function () {
-        // `this` refers to global object, not to CounterA's `this`
+  setInterval(function () {
+    // `this` refers to global object, not to CounterA's `this`
 
-        // therefore starts counting with 100, not with 0 (local this.i)
+    // therefore starts counting with 100, not with 0 (local this.i)
 
-        this.i++;
+    this.i++;
 
-        document.getElementById('counterA').innerHTML = this.i;
-    }, 500);
+    document.getElementById("counterA").innerHTML = this.i;
+  }, 500);
 }
 
 // manually binding that = this
 
 function CounterB() {
-    this.i = 0;
+  this.i = 0;
 
-    var that = this;
+  var that = this;
 
-    setInterval(function () {
-        that.i++;
+  setInterval(function () {
+    that.i++;
 
-        document.getElementById('counterB').innerHTML = that.i;
-    }, 500);
+    document.getElementById("counterB").innerHTML = that.i;
+  }, 500);
 }
 
 // using .bind(this)
 
 function CounterC() {
-    this.i = 0;
+  this.i = 0;
 
-    setInterval(
-        function () {
-            this.i++;
+  setInterval(
+    function () {
+      this.i++;
 
-            document.getElementById('counterC').innerHTML = this.i;
-        }.bind(this),
-        500
-    );
+      document.getElementById("counterC").innerHTML = this.i;
+    }.bind(this),
+    500
+  );
 }
 
 // fat arrow function
 
 function CounterD() {
-    this.i = 0;
+  this.i = 0;
 
-    setInterval(() => {
-        this.i++;
+  setInterval(() => {
+    this.i++;
 
-        document.getElementById('counterD').innerHTML = this.i;
-    }, 500);
+    document.getElementById("counterD").innerHTML = this.i;
+  }, 500);
 }
 ```
 
@@ -1143,14 +1140,14 @@ function CounterD() {
 JavaScript by default does not have a contains method. And for checking existence of a substring in a string or an item in an array you may do this:
 
 ```javascript
-var someText = 'javascript rules';
+var someText = "javascript rules";
 
-if (someText.indexOf('javascript') !== -1) {
+if (someText.indexOf("javascript") !== -1) {
 }
 
 // or
 
-if (someText.indexOf('javascript') >= 0) {
+if (someText.indexOf("javascript") >= 0) {
 }
 ```
 
@@ -1172,7 +1169,9 @@ for (var key in obj) {
 
 ```javascript
 exports.normalizeType = function (type) {
-    return ~type.indexOf('/') ? acceptParams(type) : { value: mime.lookup(type), params: {} };
+  return ~type.indexOf("/")
+    ? acceptParams(type)
+    : { value: mime.lookup(type), params: {} };
 };
 ```
 
@@ -1181,7 +1180,7 @@ exports.normalizeType = function (type) {
 ```javascript
 // key is invalid
 
-if (!~apiKeys.indexOf(key)) return next(error(401, 'invalid api key'));
+if (!~apiKeys.indexOf(key)) return next(error(401, "invalid api key"));
 ```
 
 The gotcha is the [bitwise operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators) **\~**, "Bitwise operators perform their operations on binary representations, but they return standard JavaScript numerical values."
@@ -1189,15 +1188,15 @@ The gotcha is the [bitwise operator](https://developer.mozilla.org/en-US/docs/We
 It transforms `-1` into `0`, and `0` evaluates to `false` in JavaScript:
 
 ```javascript
-var someText = 'text';
+var someText = "text";
 
-!!~someText.indexOf('tex'); // someText contains "tex" - true
+!!~someText.indexOf("tex"); // someText contains "tex" - true
 
-!~someText.indexOf('tex'); // someText NOT contains "tex" - false
+!~someText.indexOf("tex"); // someText NOT contains "tex" - false
 
-~someText.indexOf('asd'); // someText doesn't contain "asd" - false
+~someText.indexOf("asd"); // someText doesn't contain "asd" - false
 
-~someText.indexOf('ext'); // someText contains "ext" - true
+~someText.indexOf("ext"); // someText contains "ext" - true
 ```
 
 #### String.prototype.includes()
@@ -1205,7 +1204,7 @@ var someText = 'text';
 ES6 introduced the [includes() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes) and you can use it to determine whether or not a string includes another string:
 
 ```javascript
-'something'.includes('thing'); // true
+"something".includes("thing"); // true
 ```
 
 With ECMAScript 2016 (ES7) it is even possible to use these techniques with Arrays:
@@ -1234,25 +1233,25 @@ By default you cannot pass arguments to a callback function. For example:
 
 ```js
 function callback() {
-    console.log('Hi human');
+  console.log("Hi human");
 }
 
-document.getElementById('someelem').addEventListener('click', callback);
+document.getElementById("someelem").addEventListener("click", callback);
 ```
 
 You can take advantage of the closure scope in Javascript to pass arguments to callback functions. Check this example:
 
 ```js
 function callback(a, b) {
-    return function () {
-        console.log('sum = ', a + b);
-    };
+  return function () {
+    console.log("sum = ", a + b);
+  };
 }
 
 var x = 1,
-    y = 2;
+  y = 2;
 
-document.getElementById('someelem').addEventListener('click', callback(x, y));
+document.getElementById("someelem").addEventListener("click", callback(x, y));
 ```
 
 #### What are closures?
@@ -1265,10 +1264,12 @@ Another method to do this is using the `bind` method. For example:
 
 ```js
 var alertText = function (text) {
-    alert(text);
+  alert(text);
 };
 
-document.getElementById('someelem').addEventListener('click', alertText.bind(this, 'hello'));
+document
+  .getElementById("someelem")
+  .addEventListener("click", alertText.bind(this, "hello"));
 ```
 
 There is a very slight difference in performance of both methods, checkout [jsperf](http://jsperf.com/bind-vs-closure-23).
@@ -1291,15 +1292,15 @@ In node, you can tell your program to do two different things depending on wheth
 
 ```js
 if (!module.parent) {
-    // ran with `node something.js`
+  // ran with `node something.js`
 
-    app.listen(8088, function () {
-        console.log('app listening on port 8088');
-    });
+  app.listen(8088, function () {
+    console.log("app listening on port 8088");
+  });
 } else {
-    // used with `require('/.something.js')`
+  // used with `require('/.something.js')`
 
-    module.exports = app;
+  module.exports = app;
 }
 ```
 
@@ -1392,7 +1393,7 @@ However, when dealing with timestamps after 19 Jan 2038 03:14:07 UTC (sometimes 
 ```js
 // epoch timestamp for 1 Jan 2040 00:00:00.123 UTC
 
-epoch = +new Date('2040-01-01') / 1000 + 0.123; // ->  2208988800.123
+epoch = +new Date("2040-01-01") / 1000 + 0.123; // ->  2208988800.123
 
 // back to the future!
 
@@ -1441,11 +1442,11 @@ Avoid where possible. Use sparingly otherwise.
 
 4. Review code to deal with, at minimum:
 
-    - logic bugs where invalid inputs are instead passed to other code modules as valid `0` values
+   - logic bugs where invalid inputs are instead passed to other code modules as valid `0` values
 
-    - range errors on transformed inputs
+   - range errors on transformed inputs
 
-    - fencepost errors due to incorrect rounding direction
+   - fencepost errors due to incorrect rounding direction
 
 ---
 
@@ -1468,9 +1469,9 @@ var one = 1;
 
 var two = 2;
 
-var three = '3';
+var three = "3";
 
-var result = ''.concat(one, two, three); //"123"
+var result = "".concat(one, two, three); //"123"
 ```
 
 This way of concatenting does exactly what you'd expect. In contrast, concatenation with pluses might lead to unexpected results:
@@ -1480,7 +1481,7 @@ var one = 1;
 
 var two = 2;
 
-var three = '3';
+var three = "3";
 
 var result = one + two + three; //"33" instead of "123"
 ```
@@ -1505,24 +1506,24 @@ When creating functions on an object in Object Oriented Javascript, returning th
 
 ```js
 function Person(name) {
+  this.name = name;
+
+  this.sayName = function () {
+    console.log("Hello my name is: ", this.name);
+
+    return this;
+  };
+
+  this.changeName = function (name) {
     this.name = name;
 
-    this.sayName = function () {
-        console.log('Hello my name is: ', this.name);
-
-        return this;
-    };
-
-    this.changeName = function (name) {
-        this.name = name;
-
-        return this;
-    };
+    return this;
+  };
 }
 
-var person = new Person('John');
+var person = new Person("John");
 
-person.sayName().changeName('Timmy').sayName();
+person.sayName().changeName("Timmy").sayName();
 ```
 
 ---
@@ -1543,19 +1544,19 @@ This snippet here uses [Fisher-Yates Shuffling](https://www.wikiwand.com/en/Fish
 
 ```javascript
 function shuffle(arr) {
-    var i, j, temp;
+  var i, j, temp;
 
-    for (i = arr.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
+  for (i = arr.length - 1; i > 0; i--) {
+    j = Math.floor(Math.random() * (i + 1));
 
-        temp = arr[i];
+    temp = arr[i];
 
-        arr[i] = arr[j];
+    arr[i] = arr[j];
 
-        arr[j] = temp;
-    }
+    arr[j] = temp;
+  }
 
-    return arr;
+  return arr;
 }
 ```
 
@@ -1593,9 +1594,9 @@ You define an array and want to empty its contents. Usually, you would do it lik
 var list = [1, 2, 3, 4];
 
 function empty() {
-    //empty your array
+  //empty your array
 
-    list = [];
+  list = [];
 }
 
 empty();
@@ -1609,17 +1610,17 @@ You should use code like this:
 var list = [1, 2, 3, 4];
 
 function empty() {
-    //empty your array
+  //empty your array
 
-    list.length = 0;
+  list.length = 0;
 }
 
 empty();
 ```
 
--   `list = []` assigns a reference to a new array to a variable, while any other references are unaffected. which means that references to the contents of the previous array are still kept in memory, leading to memory leaks.
+- `list = []` assigns a reference to a new array to a variable, while any other references are unaffected. which means that references to the contents of the previous array are still kept in memory, leading to memory leaks.
 
--   `list.length = 0` deletes everything in the array, which does hit other references.
+- `list.length = 0` deletes everything in the array, which does hit other references.
 
 In other words, if you have two references to the same array (`a = [1,2,3]; a2 = a;`), and you delete the array's contents using `list.length = 0`, both references (a and a2) will now point to the same empty array. (So don't use this technique if you don't want a2 to hold an empty array!)
 
@@ -1662,7 +1663,7 @@ Stackoverflow more detail: [difference-between-array-length-0-and-array](http://
 Converting strings to numbers is extremely common. The easiest and fastest ([jsPerf](https://jsperf.com/number-vs-parseint-vs-plus/29)) way to achieve that would be using the `+` (plus) operator.
 
 ```javascript
-var one = '1';
+var one = "1";
 
 var numberOne = +one; // Number 1
 ```
@@ -1670,7 +1671,7 @@ var numberOne = +one; // Number 1
 You can also use the `-` (minus) operator which type-converts the value into number but also negates it.
 
 ```javascript
-var one = '1';
+var one = "1";
 
 var negativeNumberOne = -one; // Number -1
 ```
@@ -1737,7 +1738,7 @@ Called as "Iffy" ( IIFE - immediately invoked function expression) is an anonymo
 
 ```javascript
 (function () {
-    // Do something​
+  // Do something​
 })();
 ```
 
@@ -1789,195 +1790,195 @@ In our example we are going to use the list of **JavaScript reserved keywords** 
 
 ```js
 var keywords = [
-    'do',
-    'if',
-    'in',
-    'for',
-    'new',
-    'try',
-    'var',
-    'case',
-    'else',
-    'enum',
-    'null',
-    'this',
-    'true',
-    'void',
-    'with',
-    'break',
-    'catch',
-    'class',
-    'const',
-    'false',
-    'super',
-    'throw',
-    'while',
-    'delete',
-    'export',
-    'import',
-    'return',
-    'switch',
-    'typeof',
-    'default',
-    'extends',
-    'finally',
-    'continue',
-    'debugger',
-    'function',
-    'do',
-    'if',
-    'in',
-    'for',
-    'int',
-    'new',
-    'try',
-    'var',
-    'byte',
-    'case',
-    'char',
-    'else',
-    'enum',
-    'goto',
-    'long',
-    'null',
-    'this',
-    'true',
-    'void',
-    'with',
-    'break',
-    'catch',
-    'class',
-    'const',
-    'false',
-    'final',
-    'float',
-    'short',
-    'super',
-    'throw',
-    'while',
-    'delete',
-    'double',
-    'export',
-    'import',
-    'native',
-    'public',
-    'return',
-    'static',
-    'switch',
-    'throws',
-    'typeof',
-    'boolean',
-    'default',
-    'extends',
-    'finally',
-    'package',
-    'private',
-    'abstract',
-    'continue',
-    'debugger',
-    'function',
-    'volatile',
-    'interface',
-    'protected',
-    'transient',
-    'implements',
-    'instanceof',
-    'synchronized',
-    'do',
-    'if',
-    'in',
-    'for',
-    'let',
-    'new',
-    'try',
-    'var',
-    'case',
-    'else',
-    'enum',
-    'eval',
-    'null',
-    'this',
-    'true',
-    'void',
-    'with',
-    'break',
-    'catch',
-    'class',
-    'const',
-    'false',
-    'super',
-    'throw',
-    'while',
-    'yield',
-    'delete',
-    'export',
-    'import',
-    'public',
-    'return',
-    'static',
-    'switch',
-    'typeof',
-    'default',
-    'extends',
-    'finally',
-    'package',
-    'private',
-    'continue',
-    'debugger',
-    'function',
-    'arguments',
-    'interface',
-    'protected',
-    'implements',
-    'instanceof',
-    'do',
-    'if',
-    'in',
-    'for',
-    'let',
-    'new',
-    'try',
-    'var',
-    'case',
-    'else',
-    'enum',
-    'eval',
-    'null',
-    'this',
-    'true',
-    'void',
-    'with',
-    'await',
-    'break',
-    'catch',
-    'class',
-    'const',
-    'false',
-    'super',
-    'throw',
-    'while',
-    'yield',
-    'delete',
-    'export',
-    'import',
-    'public',
-    'return',
-    'static',
-    'switch',
-    'typeof',
-    'default',
-    'extends',
-    'finally',
-    'package',
-    'private',
-    'continue',
-    'debugger',
-    'function',
-    'arguments',
-    'interface',
-    'protected',
-    'implements',
-    'instanceof'
+  "do",
+  "if",
+  "in",
+  "for",
+  "new",
+  "try",
+  "var",
+  "case",
+  "else",
+  "enum",
+  "null",
+  "this",
+  "true",
+  "void",
+  "with",
+  "break",
+  "catch",
+  "class",
+  "const",
+  "false",
+  "super",
+  "throw",
+  "while",
+  "delete",
+  "export",
+  "import",
+  "return",
+  "switch",
+  "typeof",
+  "default",
+  "extends",
+  "finally",
+  "continue",
+  "debugger",
+  "function",
+  "do",
+  "if",
+  "in",
+  "for",
+  "int",
+  "new",
+  "try",
+  "var",
+  "byte",
+  "case",
+  "char",
+  "else",
+  "enum",
+  "goto",
+  "long",
+  "null",
+  "this",
+  "true",
+  "void",
+  "with",
+  "break",
+  "catch",
+  "class",
+  "const",
+  "false",
+  "final",
+  "float",
+  "short",
+  "super",
+  "throw",
+  "while",
+  "delete",
+  "double",
+  "export",
+  "import",
+  "native",
+  "public",
+  "return",
+  "static",
+  "switch",
+  "throws",
+  "typeof",
+  "boolean",
+  "default",
+  "extends",
+  "finally",
+  "package",
+  "private",
+  "abstract",
+  "continue",
+  "debugger",
+  "function",
+  "volatile",
+  "interface",
+  "protected",
+  "transient",
+  "implements",
+  "instanceof",
+  "synchronized",
+  "do",
+  "if",
+  "in",
+  "for",
+  "let",
+  "new",
+  "try",
+  "var",
+  "case",
+  "else",
+  "enum",
+  "eval",
+  "null",
+  "this",
+  "true",
+  "void",
+  "with",
+  "break",
+  "catch",
+  "class",
+  "const",
+  "false",
+  "super",
+  "throw",
+  "while",
+  "yield",
+  "delete",
+  "export",
+  "import",
+  "public",
+  "return",
+  "static",
+  "switch",
+  "typeof",
+  "default",
+  "extends",
+  "finally",
+  "package",
+  "private",
+  "continue",
+  "debugger",
+  "function",
+  "arguments",
+  "interface",
+  "protected",
+  "implements",
+  "instanceof",
+  "do",
+  "if",
+  "in",
+  "for",
+  "let",
+  "new",
+  "try",
+  "var",
+  "case",
+  "else",
+  "enum",
+  "eval",
+  "null",
+  "this",
+  "true",
+  "void",
+  "with",
+  "await",
+  "break",
+  "catch",
+  "class",
+  "const",
+  "false",
+  "super",
+  "throw",
+  "while",
+  "yield",
+  "delete",
+  "export",
+  "import",
+  "public",
+  "return",
+  "static",
+  "switch",
+  "typeof",
+  "default",
+  "extends",
+  "finally",
+  "package",
+  "private",
+  "continue",
+  "debugger",
+  "function",
+  "arguments",
+  "interface",
+  "protected",
+  "implements",
+  "instanceof",
 ];
 ```
 
@@ -1988,13 +1989,13 @@ Finally we are going to sort the filtered list using the [`sort`](https://develo
 ```js
 var filteredAndSortedKeywords = keywords
 
-    .filter(function (keyword, index) {
-        return keywords.lastIndexOf(keyword) === index;
-    })
+  .filter(function (keyword, index) {
+    return keywords.lastIndexOf(keyword) === index;
+  })
 
-    .sort(function (a, b) {
-        return a < b ? -1 : 1;
-    });
+  .sort(function (a, b) {
+    return a < b ? -1 : 1;
+  });
 ```
 
 The **ES6** (ECMAScript 2015) version using [arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) looks a little simpler:
@@ -2002,9 +2003,9 @@ The **ES6** (ECMAScript 2015) version using [arrow functions](https://developer.
 ```js
 const filteredAndSortedKeywords = keywords
 
-    .filter((keyword, index) => keywords.lastIndexOf(keyword) === index)
+  .filter((keyword, index) => keywords.lastIndexOf(keyword) === index)
 
-    .sort((a, b) => (a < b ? -1 : 1));
+  .sort((a, b) => (a < b ? -1 : 1));
 ```
 
 And this is the final filtered and sorted list of JavaScript reserved keywords:
@@ -2039,11 +2040,11 @@ For the following `test` condition and `isTrue` and `isFalse` function.
 var test = true;
 
 var isTrue = function () {
-    console.log('Test is true.');
+  console.log("Test is true.");
 };
 
 var isFalse = function () {
-    console.log('Test is false.');
+  console.log("Test is false.");
 };
 ```
 
@@ -2053,7 +2054,7 @@ Using logical AND - `&&`.
 // A normal if statement.
 
 if (test) {
-    isTrue(); // Test is true
+  isTrue(); // Test is true
 }
 
 // Above can be done using '&&' as -
@@ -2067,7 +2068,7 @@ Using logical OR - `||`.
 test = false;
 
 if (!test) {
-    isFalse(); // Test is false.
+  isFalse(); // Test is false.
 }
 
 test || isFalse(); // Test is false.
@@ -2077,23 +2078,23 @@ The logical OR could also be used to set a default value for function argument.
 
 ```js
 function theSameOldFoo(name) {
-    name = name || 'Bar';
+  name = name || "Bar";
 
-    console.log("My best friend's name is " + name);
+  console.log("My best friend's name is " + name);
 }
 
 theSameOldFoo(); // My best friend's name is Bar
 
-theSameOldFoo('Bhaskar'); // My best friend's name is Bhaskar
+theSameOldFoo("Bhaskar"); // My best friend's name is Bhaskar
 ```
 
 The logical AND could be used to avoid exceptions when using properties of undefined. Example:
 
 ```js
 var dog = {
-    bark: function () {
-        console.log('Woof Woof');
-    }
+  bark: function () {
+    console.log("Woof Woof");
+  },
 };
 
 // Calling dog.bark();
@@ -2147,7 +2148,7 @@ For example: Uncurried add()
 
 ```javascript
 function add(x, y) {
-    return x + y;
+  return x + y;
 }
 
 add(3, 5); // returns 8
@@ -2157,9 +2158,9 @@ Curried add()
 
 ```javascript
 function addC(x) {
-    return function (y) {
-        return x + y;
-    };
+  return function (y) {
+    return x + y;
+  };
 }
 
 addC(3)(5); // returns 8
@@ -2175,11 +2176,11 @@ Javascript Code:
 
 ```javascript
 function curry(f) {
-    return function (x) {
-        return function (y) {
-            return f(x, y);
-        };
+  return function (x) {
+    return function (y) {
+      return f(x, y);
     };
+  };
 }
 ```
 
@@ -2199,7 +2200,7 @@ For example: Binding the first argument of function add to 5 produces the functi
 
 ```javascript
 function plus5(y) {
-    return 5 + y;
+  return 5 + y;
 }
 
 plus5(3); // returns 8
@@ -2215,9 +2216,9 @@ Javascript Code:
 
 ```javascript
 function partApply(f, x) {
-    return function (y) {
-        return f(x, y);
-    };
+  return function (y) {
+    return f(x, y);
+  };
 }
 ```
 
@@ -2241,7 +2242,7 @@ Fibonacci sequence is very familiar to everybody. We can write the following fun
 
 ```js
 var fibonacci = function (n) {
-    return n < 2 ? n : fibonacci(n - 1) + fibonacci(n - 2);
+  return n < 2 ? n : fibonacci(n - 1) + fibonacci(n - 2);
 };
 ```
 
@@ -2249,17 +2250,17 @@ It works, but is not efficient. It did lots of duplicate computing works, we can
 
 ```js
 var fibonacci = (function () {
-    var cache = [0, 1]; // cache the value at the n index
+  var cache = [0, 1]; // cache the value at the n index
 
-    return function (n) {
-        if (cache[n] === undefined) {
-            for (var i = cache.length; i <= n; ++i) {
-                cache[i] = cache[i - 1] + cache[i - 2];
-            }
-        }
+  return function (n) {
+    if (cache[n] === undefined) {
+      for (var i = cache.length; i <= n; ++i) {
+        cache[i] = cache[i - 1] + cache[i - 2];
+      }
+    }
 
-        return cache[n];
-    };
+    return cache[n];
+  };
 })();
 ```
 
@@ -2267,13 +2268,15 @@ Also, we can define a higher-order function that accepts a function as its argum
 
 ```js
 var memoize = function (func) {
-    var cache = {};
+  var cache = {};
 
-    return function () {
-        var key = JSON.stringify(Array.prototype.slice.call(arguments));
+  return function () {
+    var key = JSON.stringify(Array.prototype.slice.call(arguments));
 
-        return key in cache ? cache[key] : (cache[key] = func.apply(this, arguments));
-    };
+    return key in cache
+      ? cache[key]
+      : (cache[key] = func.apply(this, arguments));
+  };
 };
 
 fibonacci = memoize(fibonacci);
@@ -2283,13 +2286,13 @@ And this is an ES6 version of the memoize function.
 
 ```js
 var memoize = function (func) {
-    const cache = {};
+  const cache = {};
 
-    return (...args) => {
-        const key = JSON.stringify(args);
+  return (...args) => {
+    const key = JSON.stringify(args);
 
-        return key in cache ? cache[key] : (cache[key] = func(...args));
-    };
+    return key in cache ? cache[key] : (cache[key] = func(...args));
+  };
 };
 
 fibonacci = memoize(fibonacci);
@@ -2297,27 +2300,27 @@ fibonacci = memoize(fibonacci);
 
 we can use `memoize()` in many other situations
 
--   GCD(Greatest Common Divisor)
+- GCD(Greatest Common Divisor)
 
 ```js
 var gcd = memoize(function (a, b) {
-    var t;
+  var t;
 
-    if (a < b) (t = b), (b = a), (a = t);
+  if (a < b) (t = b), (b = a), (a = t);
 
-    while (b != 0) (t = b), (b = a % b), (a = t);
+  while (b != 0) (t = b), (b = a % b), (a = t);
 
-    return a;
+  return a;
 });
 
 gcd(27, 183); //=> 3
 ```
 
--   Factorial calculation
+- Factorial calculation
 
 ```js
 var factorial = memoize(function (n) {
-    return n <= 1 ? 1 : n * factorial(n - 1);
+  return n <= 1 ? 1 : n * factorial(n - 1);
 });
 
 factorial(5); //=> 120
@@ -2325,9 +2328,9 @@ factorial(5); //=> 120
 
 Learn more about memoization:
 
--   [Memoization - Wikipedia](https://en.wikipedia.org/wiki/Memoization)
+- [Memoization - Wikipedia](https://en.wikipedia.org/wiki/Memoization)
 
--   [Implementing Memoization in JavaScript](https://www.sitepoint.com/implementing-memoization-in-javascript/)
+- [Implementing Memoization in JavaScript](https://www.sitepoint.com/implementing-memoization-in-javascript/)
 
 ---
 
@@ -2348,7 +2351,7 @@ converting-truthy-falsy-values-to-boolean/
 You can convert a [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Truthy) or [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy) value to true boolean with the `!!` operator.
 
 ```js
-!!''; // false
+!!""; // false
 
 !!0; // false
 
@@ -2358,7 +2361,7 @@ You can convert a [truthy](https://developer.mozilla.org/en-US/docs/Glossary/Tru
 
 !!NaN; // false
 
-!!'hello'; // true
+!!"hello"; // true
 
 !!1; // true
 
@@ -2409,7 +2412,7 @@ Instead, if you want an array of the arguments that lets you use you need to res
 var args = new Array(arguments.length);
 
 for (var i = 0; i < args.length; ++i) {
-    args[i] = arguments[i];
+  args[i] = arguments[i];
 }
 ```
 
@@ -2589,7 +2592,7 @@ If you actually want the sequence \[1, 2, ..., N], **Solution 1** becomes:
 
 ```js
 Array.apply(null, { length: N }).map(function (value, index) {
-    return index + 1;
+  return index + 1;
 });
 ```
 
@@ -2617,9 +2620,9 @@ Let's try out writing an asynchronous function which prints the value of the loo
 
 ```js
 for (var i = 0; i < 5; i++) {
-    setTimeout(function () {
-        console.log(i);
-    }, 1000 * (i + 1));
+  setTimeout(function () {
+    console.log(i);
+  }, 1000 * (i + 1));
 }
 ```
 
@@ -2649,11 +2652,11 @@ Well , this problem seems easy. An immediate solution that strikes is to cache t
 
 ```js
 for (var i = 0; i < 5; i++) {
-    var temp = i;
+  var temp = i;
 
-    setTimeout(function () {
-        console.log(temp);
-    }, 1000 * (i + 1));
+  setTimeout(function () {
+    console.log(temp);
+  }, 1000 * (i + 1));
 }
 ```
 
@@ -2679,11 +2682,11 @@ So , that doesn't work either , because blocks don't create a scope and variable
 var temp;
 
 for (var i = 0; i < 5; i++) {
-    temp = i;
+  temp = i;
 
-    setTimeout(function () {
-        console.log(temp);
-    }, 1000 * (i + 1));
+  setTimeout(function () {
+    console.log(temp);
+  }, 1000 * (i + 1));
 }
 ```
 
@@ -2693,11 +2696,11 @@ There are a few different ways to copy `i`. The most common way is creating a cl
 
 ```js
 for (var i = 0; i < 5; i++) {
-    (function (num) {
-        setTimeout(function () {
-            console.log(num);
-        }, 1000 * (i + 1));
-    })(i);
+  (function (num) {
+    setTimeout(function () {
+      console.log(num);
+    }, 1000 * (i + 1));
+  })(i);
 }
 ```
 
@@ -2707,9 +2710,9 @@ Another approach for this would be with using `let`. With ES6 the `let` keyword 
 
 ```js
 for (let i = 0; i < 5; i++) {
-    setTimeout(function () {
-        console.log(i);
-    }, 1000 * (i + 1));
+  setTimeout(function () {
+    console.log(i);
+  }, 1000 * (i + 1));
 }
 ```
 
@@ -2806,15 +2809,15 @@ var newValue = value > 10 ? 5 : 2;
 #### Null, Undefined, Empty Checks
 
 ```javascript
-if (variable1 !== null || variable1 !== undefined || variable1 !== '') {
-    var variable2 = variable1;
+if (variable1 !== null || variable1 !== undefined || variable1 !== "") {
+  var variable2 = variable1;
 }
 ```
 
 Shorthand here:
 
 ```javascript
-var variable2 = variable1 || '';
+var variable2 = variable1 || "";
 ```
 
 P.S.: If variable1 is a number, then first check if it is 0.
@@ -2826,15 +2829,15 @@ Instead of using:
 ```javascript
 var a = new Array();
 
-a[0] = 'myString1';
+a[0] = "myString1";
 
-a[1] = 'myString2';
+a[1] = "myString2";
 ```
 
 Use this:
 
 ```javascript
-var a = ['myString1', 'myString2'];
+var a = ["myString1", "myString2"];
 ```
 
 #### Associative array
@@ -2844,18 +2847,18 @@ Instead of using:
 ```javascript
 var skillSet = new Array();
 
-skillSet['Document language'] = 'HTML5';
+skillSet["Document language"] = "HTML5";
 
-skillSet['Styling language'] = 'CSS3';
+skillSet["Styling language"] = "CSS3";
 ```
 
 Use this:
 
 ```javascript
 var skillSet = {
-    'Document language': 'HTML5',
+  "Document language": "HTML5",
 
-    'Styling language': 'CSS3'
+  "Styling language": "CSS3",
 };
 ```
 
@@ -2879,65 +2882,65 @@ observe-dom-changes/
 
 ```js
 const observeConfig = {
-    attributes: true,
+  attributes: true,
 
-    childList: true,
+  childList: true,
 
-    characterData: true,
+  characterData: true,
 
-    subtree: true
+  subtree: true,
 };
 
 function initExtension(rootElement, targetSelector, subTargetSelector) {
-    var rootObserver = new MutationObserver(function (mutations) {
-        console.log('Inside root observer');
+  var rootObserver = new MutationObserver(function (mutations) {
+    console.log("Inside root observer");
 
-        targetElement = rootElement.querySelector(targetSelector);
+    targetElement = rootElement.querySelector(targetSelector);
 
-        if (targetElement) {
-            rootObserver.disconnect();
+    if (targetElement) {
+      rootObserver.disconnect();
 
-            var elementObserver = new MutationObserver(function (mutations) {
-                console.log('Inside element observer');
+      var elementObserver = new MutationObserver(function (mutations) {
+        console.log("Inside element observer");
 
-                subTargetElement = targetElement.querySelector(subTargetSelector);
+        subTargetElement = targetElement.querySelector(subTargetSelector);
 
-                if (subTargetElement) {
-                    elementObserver.disconnect();
+        if (subTargetElement) {
+          elementObserver.disconnect();
 
-                    console.log('subTargetElement found!');
-                }
-            });
-
-            elementObserver.observe(targetElement, observeConfig);
+          console.log("subTargetElement found!");
         }
-    });
+      });
 
-    rootObserver.observe(rootElement, observeConfig);
+      elementObserver.observe(targetElement, observeConfig);
+    }
+  });
+
+  rootObserver.observe(rootElement, observeConfig);
 }
 
 (function () {
-    initExtension(document.body, 'div.target', 'div.subtarget');
+  initExtension(document.body, "div.target", "div.subtarget");
 
-    setTimeout(function () {
-        del = document.createElement('div');
+  setTimeout(function () {
+    del = document.createElement("div");
 
-        del.innerHTML = "<div class='target'>target</div>";
+    del.innerHTML = "<div class='target'>target</div>";
 
-        document.body.appendChild(del);
-    }, 3000);
+    document.body.appendChild(del);
+  }, 3000);
 
-    setTimeout(function () {
-        var el = document.body.querySelector('div.target');
+  setTimeout(function () {
+    var el = document.body.querySelector("div.target");
 
-        if (el) {
-            del = document.createElement('div');
+    if (el) {
+      del = document.createElement("div");
 
-            del.innerHTML = "<div class='subtarget'>subtarget</div>";
+      del.innerHTML = "<div class='subtarget'>subtarget</div>";
 
-            el.appendChild(del);
-        }
-    }, 5000);
+      el.appendChild(del);
+    }
+  }, 5000);
 })();
 ```
 
@@ -2962,8 +2965,8 @@ deduplicate-an-array/
 If an Array only contains primitive values, we can deduplicate it by only using the [`filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) and [`indexOf`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) methods.
 
 ```javascript
-var deduped = [1, 1, 'a', 'a'].filter(function (el, i, arr) {
-    return arr.indexOf(el) === i;
+var deduped = [1, 1, "a", "a"].filter(function (el, i, arr) {
+  return arr.indexOf(el) === i;
 });
 
 console.log(deduped); // [ 1, 'a' ]
@@ -2974,7 +2977,7 @@ console.log(deduped); // [ 1, 'a' ]
 We can write this in a more compact way using an [arrow function](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions).
 
 ```javascript
-var deduped = [1, 1, 'a', 'a'].filter((el, i, arr) => arr.indexOf(el) === i);
+var deduped = [1, 1, "a", "a"].filter((el, i, arr) => arr.indexOf(el) === i);
 
 console.log(deduped); // [ 1, 'a' ]
 ```
@@ -2982,7 +2985,7 @@ console.log(deduped); // [ 1, 'a' ]
 But with the introduction of [Sets](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) and the [`from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from) method, we can achieve the same result in a more concise way.
 
 ```javascript
-var deduped = Array.from(new Set([1, 1, 'a', 'a']));
+var deduped = Array.from(new Set([1, 1, "a", "a"]));
 
 console.log(deduped); // [ 1, 'a' ]
 ```
@@ -3009,15 +3012,15 @@ Therefore we need to change our approach and use a hash table.
 
 ```javascript
 function dedup(arr) {
-    var hashTable = {};
+  var hashTable = {};
 
-    return arr.filter(function (el) {
-        var key = JSON.stringify(el);
+  return arr.filter(function (el) {
+    var key = JSON.stringify(el);
 
-        var match = Boolean(hashTable[key]);
+    var match = Boolean(hashTable[key]);
 
-        return match ? false : (hashTable[key] = true);
-    });
+    return match ? false : (hashTable[key] = true);
+  });
 }
 
 var deduped = dedup([{ a: 1 }, { a: 1 }, [1, 2], [1, 2]]);
@@ -3032,7 +3035,7 @@ var hashTable = {};
 
 hashTable[1] = true;
 
-hashTable['1'] = true;
+hashTable["1"] = true;
 
 console.log(hashTable); // { '1': true }
 ```
@@ -3044,7 +3047,7 @@ var hashTable = {};
 
 hashTable[JSON.stringify(1)] = true;
 
-hashTable[JSON.stringify('1')] = true;
+hashTable[JSON.stringify("1")] = true;
 
 console.log(hashTable); // { '1': true, '\'1\'': true }
 ```
@@ -3052,7 +3055,7 @@ console.log(hashTable); // { '1': true, '\'1\'': true }
 This means duplicate elements of the same value, but of a different type, will still be deduplicated using the same implementation.
 
 ```javascript
-var deduped = dedup([{ a: 1 }, { a: 1 }, [1, 2], [1, 2], 1, 1, '1', '1']);
+var deduped = dedup([{ a: 1 }, { a: 1 }, [1, 2], [1, 2], 1, 1, "1", "1"]);
 
 console.log(deduped); // [ {a: 1}, [1, 2], 1, '1' ]
 ```
@@ -3061,23 +3064,23 @@ console.log(deduped); // [ {a: 1}, [1, 2], 1, '1' ]
 
 ### Methods
 
--   [`filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+- [`filter`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
 
--   [`indexOf`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
+- [`indexOf`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf)
 
--   [`from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
+- [`from`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
 
--   [`JSON.stringify`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
+- [`JSON.stringify`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify)
 
 ### ES2015
 
--   [arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+- [arrow functions](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
--   [Sets](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
+- [Sets](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
 
 ### Stack overflow
 
--   [remove duplicates from array](http://stackoverflow.com/questions/9229645/remove-duplicates-from-javascript-array/9229821#9229821)
+- [remove duplicates from array](http://stackoverflow.com/questions/9229645/remove-duplicates-from-javascript-array/9229821#9229821)
 
 ---
 
@@ -3101,9 +3104,9 @@ Given this array:
 
 ```js
 var myArray = [
-    [1, 2],
-    [3, 4, 5],
-    [6, 7, 8, 9]
+  [1, 2],
+  [3, 4, 5],
+  [6, 7, 8, 9],
 ];
 ```
 
@@ -3125,7 +3128,7 @@ var myNewArray = [].concat.apply([], myArray);
 
 ```js
 var myNewArray = myArray.reduce(function (prev, curr) {
-    return prev.concat(curr);
+  return prev.concat(curr);
 });
 
 // [1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -3137,7 +3140,7 @@ var myNewArray = myArray.reduce(function (prev, curr) {
 var myNewArray3 = [];
 
 for (var i = 0; i < myArray.length; ++i) {
-    for (var j = 0; j < myArray[i].length; ++j) myNewArray3.push(myArray[i][j]);
+  for (var j = 0; j < myArray[i].length; ++j) myNewArray3.push(myArray[i][j]);
 }
 
 console.log(myNewArray3);
@@ -3194,10 +3197,10 @@ To do so, you need to use the method `defineProperty` of the `Object` prototype 
 ```js
 var a = {};
 
-Object.defineProperty(a, 'readonly', {
-    value: 15,
+Object.defineProperty(a, "readonly", {
+  value: 15,
 
-    writable: false
+  writable: false,
 });
 
 a.readonly = 20;
@@ -3215,26 +3218,31 @@ or for multiple definitions:
 
 ```js
 Object.defineProperties(dest, {
-    propA: optionsA,
+  propA: optionsA,
 
-    propB: optionsB //...
+  propB: optionsB, //...
 });
 ```
 
 where options include the following attributes:
 
--   _value_: if the property is not a getter (see below), value is a mandatory attribute. `{a: 12}` === `Object.defineProperty(obj, 'a', {value: 12})`
+- _value_: if the property is not a getter (see below), value is a mandatory attribute. `{a: 12}` === `Object.defineProperty(obj, 'a', {value: 12})`
 
--   _writable_: set the property as readonly. Note that if the property is a nested objects, its properties are still editable.
+- _writable_: set the property as readonly. Note that if the property is a nested objects, its properties are still editable.
 
--   _enumerable_: set the property as hidden. That means that `for ... of` loops and `stringify` will not include the property in their result, but the property is still there. Note: That doesn't mean that the property is private! It can still be accessible from the outside, it just means that it won't be printed.
+- _enumerable_: set the property as hidden. That means that `for ... of` loops and `stringify` will not include the property in their result, but the property is still there. Note: That doesn't mean that the property is private! It can still be accessible from the outside, it just means that it won't be printed.
 
--   _configurable_: set the property as non modifiable, e.g. protected from deletion or redefinition. Again, if the property is a nested object, its properties are still configurable.
+- _configurable_: set the property as non modifiable, e.g. protected from deletion or redefinition. Again, if the property is a nested object, its properties are still configurable.
 
 So in order to create a private constant property, you can define it like so:
 
 ```js
-Object.defineProperty(obj, 'myPrivateProp', { value: val, enumerable: false, writable: false, configurable: false });
+Object.defineProperty(obj, "myPrivateProp", {
+  value: val,
+  enumerable: false,
+  writable: false,
+  configurable: false,
+});
 ```
 
 Besides configuring properties, `defineProperty` allows us to define _dynamic properties_, thanks to the second parameter being a string. For instance, let's say that I want to create properties according to some external configuration:
@@ -3306,10 +3314,10 @@ var obj = { a: { b: { c: [{ d: 10 }, { d: 20 }] } } };
 Now instead of doing `a.b.c[0].d` (where one of the properties can resolve to `undefined` and throw an error), we can instead create an alias:
 
 ```js
-Object.defineProperty(obj, 'firstD', {
-    get: function () {
-        return a && a.b && a.b.c && a.b.c[0] && a.b.c[0].d;
-    }
+Object.defineProperty(obj, "firstD", {
+  get: function () {
+    return a && a.b && a.b.c && a.b.c[0] && a.b.c[0].d;
+  },
 });
 
 console.log(obj.firstD); // 10
@@ -3321,9 +3329,9 @@ If you define a getter without a setter and still try to set a value, you will g
 
 #### Links
 
--   [defineProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
+- [defineProperty](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
 
--   [Defining properties in JavaScript](http://bdadam.com/blog/defining-properties-in-javascript.html)
+- [Defining properties in JavaScript](http://bdadam.com/blog/defining-properties-in-javascript.html)
 
 ---
 
@@ -3345,14 +3353,14 @@ Let's say there is an object with properties "prop1", "prop2", "prop3". We can p
 
 ```javascript
 var obj = {
-    prop1: 'value1',
+  prop1: "value1",
 
-    prop2: 'value2',
+  prop2: "value2",
 
-    prop3: 'value3'
+  prop3: "value3",
 };
 
-var selectedProperties = ['prop1', 'prop2'];
+var selectedProperties = ["prop1", "prop2"];
 
 var str = JSON.stringify(obj, selectedProperties);
 
@@ -3367,24 +3375,24 @@ Instead of array we can pass a function also.
 
 ```javascript
 function selectedProperties(key, val) {
-    // the first val will be the entire object, key is empty string
+  // the first val will be the entire object, key is empty string
 
-    if (!key) {
-        return val;
-    }
+  if (!key) {
+    return val;
+  }
 
-    if (key === 'prop1' || key === 'prop2') {
-        return val;
-    }
+  if (key === "prop1" || key === "prop2") {
+    return val;
+  }
 
-    return;
+  return;
 }
 ```
 
 The last optional param it takes is to modify the way it writes the object to string.
 
 ```javascript
-var str = JSON.stringify(obj, selectedProperties, '\t\t');
+var str = JSON.stringify(obj, selectedProperties, "\t\t");
 
 /* str output with double tabs in every line.
 
@@ -3423,11 +3431,11 @@ let values = [2, 56, 3, 41, 0, 4, 100, 23];
 
 To get the average, we have to sum up numbers and then divide by the number of values. Steps are:
 
--   get the array length
+- get the array length
 
--   sum up values
+- sum up values
 
--   get the average (`sum/length`)
+- get the average (`sum/length`)
 
 ```javascript
 let values = [2, 56, 3, 41, 0, 4, 100, 23];
@@ -3455,9 +3463,9 @@ values /= count;
 
 Now, to get the median steps are:
 
--   sort the array
+- sort the array
 
--   get the arethmic mean of the middle values
+- get the arethmic mean of the middle values
 
 ```javascript
 let values = [2, 56, 3, 41, 0, 4, 100, 23];
@@ -3480,7 +3488,8 @@ let values = [2, 56, 3, 41, 0, 4, 100, 23];
 
 values.sort((a, b) => a - b);
 
-let median = (values[(values.length - 1) >> 1] + values[values.length >> 1]) / 2;
+let median =
+  (values[(values.length - 1) >> 1] + values[values.length >> 1]) / 2;
 
 // median = 13,5
 ```
@@ -3505,31 +3514,31 @@ By overriding the builtin prototypes, external code can cause code to break by r
 // example bind polyfill
 
 function bind(fn) {
-    var prev = Array.prototype.slice.call(arguments, 1);
+  var prev = Array.prototype.slice.call(arguments, 1);
 
-    return function bound() {
-        var curr = Array.prototype.slice.call(arguments, 0);
+  return function bound() {
+    var curr = Array.prototype.slice.call(arguments, 0);
 
-        var args = Array.prototype.concat.apply(prev, curr);
+    var args = Array.prototype.concat.apply(prev, curr);
 
-        return fn.apply(null, args);
-    };
+    return fn.apply(null, args);
+  };
 }
 
 // unapply-attack
 
 function unapplyAttack() {
-    var concat = Array.prototype.concat;
+  var concat = Array.prototype.concat;
 
-    Array.prototype.concat = function replaceAll() {
-        Array.prototype.concat = concat; // restore the correct version
+  Array.prototype.concat = function replaceAll() {
+    Array.prototype.concat = concat; // restore the correct version
 
-        var curr = Array.prototype.slice.call(arguments, 0);
+    var curr = Array.prototype.slice.call(arguments, 0);
 
-        var result = concat.apply([], curr);
+    var result = concat.apply([], curr);
 
-        return result;
-    };
+    return result;
+  };
 }
 ```
 
@@ -3539,15 +3548,15 @@ By using [Object.freeze](https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
 ```js
 (function freezePrototypes() {
-    if (typeof Object.freeze !== 'function') {
-        throw new Error('Missing Object.freeze');
-    }
+  if (typeof Object.freeze !== "function") {
+    throw new Error("Missing Object.freeze");
+  }
 
-    Object.freeze(Object.prototype);
+  Object.freeze(Object.prototype);
 
-    Object.freeze(Array.prototype);
+  Object.freeze(Array.prototype);
 
-    Object.freeze(Function.prototype);
+  Object.freeze(Function.prototype);
 })();
 ```
 
@@ -3571,10 +3580,10 @@ I am sure many of you are already familiar with the [ES6 Destructuring Assignmen
 
 ```js
 var sayHello = function ({ name, surname }) {
-    console.log(`Hello ${name} ${surname}! How are you?`);
+  console.log(`Hello ${name} ${surname}! How are you?`);
 };
 
-sayHello({ name: 'John', surname: 'Smith' });
+sayHello({ name: "John", surname: "Smith" });
 
 // -> Hello John Smith! How are you?
 ```
@@ -3582,8 +3591,8 @@ sayHello({ name: 'John', surname: 'Smith' });
 This is great for functions which accept an options object. For this use case, you can also add [default parameters](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters) to fill in whatever values the caller leaves out, or if the caller forgets to pass one at all:
 
 ```js
-var sayHello2 = function ({ name = 'Anony', surname = 'Moose' } = {}) {
-    console.log(`Hello ${name} ${surname}! How are you?`);
+var sayHello2 = function ({ name = "Anony", surname = "Moose" } = {}) {
+  console.log(`Hello ${name} ${surname}! How are you?`);
 };
 ```
 
@@ -3594,7 +3603,7 @@ sayHello2();
 
 // -> Hello Anony Moose! How are you?
 
-sayHello2({ name: 'Bull' });
+sayHello2({ name: "Bull" });
 
 // -> Hello Bull Moose! How are you?
 ```
@@ -3605,10 +3614,10 @@ With plain destructuring assignment, if the the input parameter can't be matched
 
 ```js
 var sayHelloTimes = function ({ name, surname }, times) {
-    console.log(`Hello ${name} ${surname}! I've seen you ${times} times before.`);
+  console.log(`Hello ${name} ${surname}! I've seen you ${times} times before.`);
 };
 
-sayHelloTimes({ name: 'Pam' }, 5678);
+sayHelloTimes({ name: "Pam" }, 5678);
 
 // -> Hello Pam undefined! I've seen you 5678 times before.
 
@@ -3630,11 +3639,14 @@ It's conceptually similar to accessing a property of an undefined object, just w
 Destructuring assignment with default parameters hides all the above to a certain extent:
 
 ```js
-var sayHelloTimes2 = function ({ name = 'Anony', surname = 'Moose' } = {}, times) {
-    console.log(`Hello ${name} ${surname}! I've seen you ${times} times before.`);
+var sayHelloTimes2 = function (
+  { name = "Anony", surname = "Moose" } = {},
+  times
+) {
+  console.log(`Hello ${name} ${surname}! I've seen you ${times} times before.`);
 };
 
-sayHelloTimes2({ name: 'Pam' }, 5678);
+sayHelloTimes2({ name: "Pam" }, 5678);
 
 // -> Hello Pam Moose! I've seen you 5678 times before.
 
@@ -3650,11 +3662,11 @@ sayHelloTimes2();
 As for `= {}`, it covers the case of a missing _object_, for which individual property defaults won't help at all:
 
 ```js
-var sayHelloTimes2a = function ({ name = 'Anony', surname = 'Moose' }, times) {
-    console.log(`Hello ${name} ${surname}! I've seen you ${times} times before.`);
+var sayHelloTimes2a = function ({ name = "Anony", surname = "Moose" }, times) {
+  console.log(`Hello ${name} ${surname}! I've seen you ${times} times before.`);
 };
 
-sayHelloTimes2a({ name: 'Pam' }, 5678);
+sayHelloTimes2a({ name: "Pam" }, 5678);
 
 // -> Hello Pam Moose! I've seen you 5678 times before.
 
@@ -3691,19 +3703,19 @@ JavaScript is pass-by-value, technically. It is neither pass-by-value nor pass-b
 
 ```js
 var me = {
-    // 1
+  // 1
 
-    partOf: 'A Team'
+  partOf: "A Team",
 };
 
 function myTeam(me) {
-    // 2
+  // 2
 
-    me = {
-        // 3
+  me = {
+    // 3
 
-        belongsTo: 'A Group'
-    };
+    belongsTo: "A Group",
+  };
 }
 
 myTeam(me);
@@ -3719,15 +3731,15 @@ When we assigned a new object at #`3`, we are changing this reference value enti
 
 ```js
 var me = {
-    // 1
+  // 1
 
-    partOf: 'A Team'
+  partOf: "A Team",
 };
 
 function myGroup(me) {
-    // 2
+  // 2
 
-    me.partOf = 'A Group'; // 3
+  me.partOf = "A Group"; // 3
 }
 
 myGroup(me);
@@ -3806,8 +3818,8 @@ This operator causes the values in the array to be expanded, or "spread", into t
 The cross-browser way to check if the document has loaded in pure JavaScript is using [`readyState`](https://developer.mozilla.org/en-US/docs/Web/API/Document/readyState).
 
 ```js
-if (document.readyState === 'complete') {
-    // The page is fully loaded
+if (document.readyState === "complete") {
+  // The page is fully loaded
 }
 ```
 
@@ -3815,11 +3827,11 @@ You can detect when the document is ready...
 
 ```js
 let stateCheck = setInterval(() => {
-    if (document.readyState === 'complete') {
-        clearInterval(stateCheck);
+  if (document.readyState === "complete") {
+    clearInterval(stateCheck);
 
-        // document ready
-    }
+    // document ready
+  }
 }, 100);
 ```
 
@@ -3827,9 +3839,9 @@ or with [onreadystatechange](https://developer.mozilla.org/en-US/docs/Web/Events
 
 ```js
 document.onreadystatechange = () => {
-    if (document.readyState === 'complete') {
-        // document ready
-    }
+  if (document.readyState === "complete") {
+    // document ready
+  }
 };
 ```
 
@@ -3853,9 +3865,9 @@ Below, different ways to declare variables in JavaScript. Comments and console.l
 
 ```js
 var y,
-    x = (y = 1); //== var x; var y; x = y = 1
+  x = (y = 1); //== var x; var y; x = y = 1
 
-console.log('--> 1:', `x = ${x}, y = ${y}`);
+console.log("--> 1:", `x = ${x}, y = ${y}`);
 
 // Will print
 
@@ -3866,12 +3878,12 @@ First, we just set two variables. Nothing much here.
 
 ```js
 (() => {
-    var x = (y = 2); // == var x; x = y = 2;
+  var x = (y = 2); // == var x; x = y = 2;
 
-    console.log('2.0:', `x = ${x}, y = ${y}`);
+  console.log("2.0:", `x = ${x}, y = ${y}`);
 })();
 
-console.log('--> 2.1:', `x = ${x}, y = ${y}`);
+console.log("--> 2.1:", `x = ${x}, y = ${y}`);
 
 // Will print
 
@@ -3884,13 +3896,13 @@ As you can see, the code has only changed the global y, as we haven't declared t
 
 ```js
 (() => {
-    var x,
-        y = 3; // == var x; var y = 3;
+  var x,
+    y = 3; // == var x; var y = 3;
 
-    console.log('3.0:', `x = ${x}, y = ${y}`);
+  console.log("3.0:", `x = ${x}, y = ${y}`);
 })();
 
-console.log('--> 3.1:', `x = ${x}, y = ${y}`);
+console.log("--> 3.1:", `x = ${x}, y = ${y}`);
 
 // Will print
 
@@ -3903,13 +3915,13 @@ Now we declare both variables through var. Meaning they only live in the context
 
 ```js
 (() => {
-    var y,
-        x = (y = 4); // == var x; var y; x = y = 4
+  var y,
+    x = (y = 4); // == var x; var y; x = y = 4
 
-    console.log('4.0:', `x = ${x}, y = ${y}`);
+  console.log("4.0:", `x = ${x}, y = ${y}`);
 })();
 
-console.log('--> 4.1:', `x = ${x}, y = ${y}`);
+console.log("--> 4.1:", `x = ${x}, y = ${y}`);
 
 // Will print
 
@@ -3923,7 +3935,7 @@ Both variables have been declared using var and only after that we've set their 
 ```js
 x = 5; // == x = 5
 
-console.log('--> 5:', `x = ${x}, y = ${y}`);
+console.log("--> 5:", `x = ${x}, y = ${y}`);
 
 // Will print
 
@@ -3958,9 +3970,9 @@ As written in documentation the `reduce()` method applies a function against an 
 
 [reduce()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) function accepts 2 parameters (M: mandatory, O: optional):
 
--   (M) a callback **reducer function** to be applied that deals with a pair of previous (result of previous computation) and next element until end of the list.
+- (M) a callback **reducer function** to be applied that deals with a pair of previous (result of previous computation) and next element until end of the list.
 
--   (O) an **initial value** to be used as the first argument to the first call of the callback.
+- (O) an **initial value** to be used as the first argument to the first call of the callback.
 
 So let's see a common usage and later a more sophisticated one.
 
@@ -3976,7 +3988,7 @@ var items = [{ price: 10 }, { price: 120 }, { price: 1000 }];
 // our reducer function
 
 var reducer = function add(sumSoFar, item) {
-    return sumSoFar + item.price;
+  return sumSoFar + item.price;
 };
 
 // do the job
@@ -4006,47 +4018,47 @@ To illustrate this, let's create a single object literal with some reducers func
 
 ```javascript
 var reducers = {
-    totalInDollar: function (state, item) {
-        // specific statements...
+  totalInDollar: function (state, item) {
+    // specific statements...
 
-        return (state.dollars += item.price);
-    },
+    return (state.dollars += item.price);
+  },
 
-    totalInEuros: function (state, item) {
-        return (state.euros += item.price * 0.897424392);
-    },
+  totalInEuros: function (state, item) {
+    return (state.euros += item.price * 0.897424392);
+  },
 
-    totalInPounds: function (state, item) {
-        return (state.pounds += item.price * 0.692688671);
-    },
+  totalInPounds: function (state, item) {
+    return (state.pounds += item.price * 0.692688671);
+  },
 
-    totalInYen: function (state, item) {
-        return (state.yens += item.price * 113.852);
-    }
+  totalInYen: function (state, item) {
+    return (state.yens += item.price * 113.852);
+  },
 
-    // more...
+  // more...
 };
 ```
 
 Then, we create a new swiss knife function
 
--   responsible for applying each partial reduce functions.
+- responsible for applying each partial reduce functions.
 
--   that will return a new callback reducer function
+- that will return a new callback reducer function
 
 ```javascript
 var combineTotalPriceReducers = function (reducers) {
-    return function (state, item) {
-        return Object.keys(reducers).reduce(
-            function (nextState, key) {
-                reducers[key](state, item);
+  return function (state, item) {
+    return Object.keys(reducers).reduce(
+      function (nextState, key) {
+        reducers[key](state, item);
 
-                return state;
-            },
+        return state;
+      },
 
-            {}
-        );
-    };
+      {}
+    );
+  };
 };
 ```
 
@@ -4107,7 +4119,7 @@ const timestamp = Math.floor(dateTime / 1000);
 To get unix timestamp of a specific date pass `YYYY-MM-DD` or `YYYY-MM-DDT00:00:00Z` as parameter of `Date` constructor. For example
 
 ```js
-const dateTime = new Date('2012-06-08').getTime();
+const dateTime = new Date("2012-06-08").getTime();
 
 const timestamp = Math.floor(dateTime / 1000);
 ```
@@ -4123,22 +4135,22 @@ const timestamp = Math.floor(dateTime / 1000);
 or for specific date
 
 ```js
-const dateTime = +new Date('2012-06-08');
+const dateTime = +new Date("2012-06-08");
 
 const timestamp = Math.floor(dateTime / 1000);
 ```
 
 Under the hood the runtime calls `valueOf` method of the `Date` object. Then the unary `+` operator calls `toNumber()` with that returned value. For detailed explanation please check the following links
 
--   [Date.prototype.valueOf](http://es5.github.io/#x15.9.5.8)
+- [Date.prototype.valueOf](http://es5.github.io/#x15.9.5.8)
 
--   [Unary + operator](http://es5.github.io/#x11.4.6)
+- [Unary + operator](http://es5.github.io/#x11.4.6)
 
--   [toNumber()](http://es5.github.io/#x9.3)
+- [toNumber()](http://es5.github.io/#x9.3)
 
--   [Date Javascript MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Date Javascript MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
--   [Date.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
+- [Date.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
 
 ---
 
@@ -4171,7 +4183,7 @@ Here's how you can set a conditional breakpoint in [Edge](https://dev.windows.co
 Have you ever logged a function variable to the console and weren't able to just view the function's code? The quickest way to see the function's code is to coerce it to a string using concatenation with an empty string.
 
 ```js
-console.log(funcVariable + '');
+console.log(funcVariable + "");
 ```
 
 ---
@@ -4190,11 +4202,11 @@ console.log(funcVariable + '');
 
 Many of us are still doing these things:
 
--   `element.addEventListener('type', obj.method.bind(obj))`
+- `element.addEventListener('type', obj.method.bind(obj))`
 
--   `element.addEventListener('type', function (event) {})`
+- `element.addEventListener('type', function (event) {})`
 
--   `element.addEventListener('type', (event) => {})`
+- `element.addEventListener('type', (event) => {})`
 
 The above examples all create new anonymous event handlers that can't be removed when no longer needed. This may cause performance problems or unexpected logic bugs, when handlers that you no longer need still get accidentally triggered through unexpected user interactions or [event bubbling](http://www.javascripter.net/faq/eventbubbling.htm).
 
@@ -4204,55 +4216,59 @@ Use a reference:
 
 ```js
 const handler = function () {
-    console.log('Tada!');
+  console.log("Tada!");
 };
 
-element.addEventListener('click', handler);
+element.addEventListener("click", handler);
 
 // Later on
 
-element.removeEventListener('click', handler);
+element.removeEventListener("click", handler);
 ```
 
 Named function that removes itself:
 
 ```js
-element.addEventListener('click', function click(e) {
-    if (someCondition) {
-        return e.currentTarget.removeEventListener('click', click);
-    }
+element.addEventListener("click", function click(e) {
+  if (someCondition) {
+    return e.currentTarget.removeEventListener("click", click);
+  }
 });
 ```
 
 A better approach:
 
 ```js
-function handleEvent(eventName, { onElement, withCallback, useCapture = false } = {}, thisArg) {
-    const element = onElement || document.documentElement;
+function handleEvent(
+  eventName,
+  { onElement, withCallback, useCapture = false } = {},
+  thisArg
+) {
+  const element = onElement || document.documentElement;
 
-    function handler(event) {
-        if (typeof withCallback === 'function') {
-            withCallback.call(thisArg, event);
-        }
+  function handler(event) {
+    if (typeof withCallback === "function") {
+      withCallback.call(thisArg, event);
     }
+  }
 
-    handler.destroy = function () {
-        return element.removeEventListener(eventName, handler, useCapture);
-    };
+  handler.destroy = function () {
+    return element.removeEventListener(eventName, handler, useCapture);
+  };
 
-    element.addEventListener(eventName, handler, useCapture);
+  element.addEventListener(eventName, handler, useCapture);
 
-    return handler;
+  return handler;
 }
 
 // Anytime you need
 
-const handleClick = handleEvent('click', {
-    onElement: element,
+const handleClick = handleEvent("click", {
+  onElement: element,
 
-    withCallback: (event) => {
-        console.log('Tada!');
-    }
+  withCallback: (event) => {
+    console.log("Tada!");
+  },
 });
 
 // And anytime you want to remove it
@@ -4280,9 +4296,9 @@ The `new` operator in JavaScript is an operator that, under reasonable circumsta
 
 ```js
 function Thing() {
-    this.one = 1;
+  this.one = 1;
 
-    this.two = 2;
+  this.two = 2;
 }
 
 var myThing = new Thing();
@@ -4302,11 +4318,11 @@ Now that you get that example, here's where things get a little bit wonky. Let's
 
 ```js
 function Thing() {
-    this.one = 1;
+  this.one = 1;
 
-    this.two = 2;
+  this.two = 2;
 
-    return 5;
+  return 5;
 }
 
 var myThing = new Thing();
@@ -4328,15 +4344,15 @@ Let's return a non-primitive type instead, something like an object.
 
 ```js
 function Thing() {
-    this.one = 1;
+  this.one = 1;
 
-    this.two = 2;
+  this.two = 2;
 
-    return {
-        three: 3,
+  return {
+    three: 3,
 
-        four: 4
-    };
+    four: 4,
+  };
 }
 
 var myThing = new Thing();
@@ -4379,16 +4395,16 @@ However, returning a non-primitive, like an `object`, `array`, or `function` wil
 #### Question: How to get the file extension?
 
 ```javascript
-var file1 = '50.xsl';
+var file1 = "50.xsl";
 
-var file2 = '30.doc';
+var file2 = "30.doc";
 
 getFileExtension(file1); //returs xsl
 
 getFileExtension(file2); //returs doc
 
 function getFileExtension(filename) {
-    /*TODO*/
+  /*TODO*/
 }
 ```
 
@@ -4396,7 +4412,7 @@ function getFileExtension(filename) {
 
 ```js
 function getFileExtension1(filename) {
-    return /[.]/.exec(filename) ? /[^.]+$/.exec(filename)[0] : undefined;
+  return /[.]/.exec(filename) ? /[^.]+$/.exec(filename)[0] : undefined;
 }
 ```
 
@@ -4404,7 +4420,7 @@ function getFileExtension1(filename) {
 
 ```js
 function getFileExtension2(filename) {
-    return filename.split('.').pop();
+  return filename.split(".").pop();
 }
 ```
 
@@ -4414,27 +4430,27 @@ Those two solutions couldnot handle some edge cases, here is another more robust
 
 ```js
 function getFileExtension3(filename) {
-    return filename.slice(((filename.lastIndexOf('.') - 1) >>> 0) + 2);
+  return filename.slice(((filename.lastIndexOf(".") - 1) >>> 0) + 2);
 }
 
-console.log(getFileExtension3('')); // ''
+console.log(getFileExtension3("")); // ''
 
-console.log(getFileExtension3('filename')); // ''
+console.log(getFileExtension3("filename")); // ''
 
-console.log(getFileExtension3('filename.txt')); // 'txt'
+console.log(getFileExtension3("filename.txt")); // 'txt'
 
-console.log(getFileExtension3('.hiddenfile')); // ''
+console.log(getFileExtension3(".hiddenfile")); // ''
 
-console.log(getFileExtension3('filename.with.many.dots.ext')); // 'ext'
+console.log(getFileExtension3("filename.with.many.dots.ext")); // 'ext'
 ```
 
 _How does it works?_
 
--   [String.lastIndexOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf) method returns the last occurrence of the specified value (`'.'` in this case). Returns `-1` if the value is not found.
+- [String.lastIndexOf()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/lastIndexOf) method returns the last occurrence of the specified value (`'.'` in this case). Returns `-1` if the value is not found.
 
--   The return values of `lastIndexOf` for parameter `'filename'` and `'.hiddenfile'` are `-1` and `0` respectively. [Zero-fill right shift operator (>>>)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#%3E%3E%3E_%28Zero-fill_right_shift%29) will transform `-1` to `4294967295` and `-2` to `4294967294`, here is one trick to insure the filename unchanged in those edge cases.
+- The return values of `lastIndexOf` for parameter `'filename'` and `'.hiddenfile'` are `-1` and `0` respectively. [Zero-fill right shift operator (>>>)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators#%3E%3E%3E_%28Zero-fill_right_shift%29) will transform `-1` to `4294967295` and `-2` to `4294967294`, here is one trick to insure the filename unchanged in those edge cases.
 
--   [String.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice) extracts file extension from the index that was calculated above. If the index is more than the length of the filename, the result is `""`.
+- [String.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice) extracts file extension from the index that was calculated above. If the index is more than the length of the filename, the result is `""`.
 
 #### Comparison
 
@@ -4482,96 +4498,97 @@ Example function where arguments 2 and 3 are optional
 
 ```javascript
 function example(err, optionalA, optionalB, callback) {
-    // retrieve arguments as array
+  // retrieve arguments as array
 
-    var args = new Array(arguments.length);
+  var args = new Array(arguments.length);
 
-    for (var i = 0; i < args.length; ++i) {
-        args[i] = arguments[i];
-    }
+  for (var i = 0; i < args.length; ++i) {
+    args[i] = arguments[i];
+  }
 
-    // first argument is the error object
+  // first argument is the error object
 
-    // shift() removes the first item from the
+  // shift() removes the first item from the
 
-    // array and returns it
+  // array and returns it
 
-    err = args.shift();
+  err = args.shift();
 
-    // if last argument is a function then its the callback function.
+  // if last argument is a function then its the callback function.
 
-    // pop() removes the last item in the array
+  // pop() removes the last item in the array
 
-    // and returns it
+  // and returns it
 
-    if (typeof args[args.length - 1] === 'function') {
-        callback = args.pop();
-    }
+  if (typeof args[args.length - 1] === "function") {
+    callback = args.pop();
+  }
 
-    // if args still holds items, these are
+  // if args still holds items, these are
 
-    // your optional items which you could
+  // your optional items which you could
 
-    // retrieve one by one like this:
+  // retrieve one by one like this:
 
-    if (args.length > 0) optionalA = args.shift();
-    else optionalA = null;
+  if (args.length > 0) optionalA = args.shift();
+  else optionalA = null;
 
-    if (args.length > 0) optionalB = args.shift();
-    else optionalB = null;
+  if (args.length > 0) optionalB = args.shift();
+  else optionalB = null;
 
-    // continue as usual: check for errors
+  // continue as usual: check for errors
 
-    if (err) {
-        return callback && callback(err);
-    }
+  if (err) {
+    return callback && callback(err);
+  }
 
-    // for tutorial purposes, log the optional parameters
+  // for tutorial purposes, log the optional parameters
 
-    console.log('optionalA:', optionalA);
+  console.log("optionalA:", optionalA);
 
-    console.log('optionalB:', optionalB);
+  console.log("optionalB:", optionalB);
 
-    console.log('callback:', callback);
+  console.log("callback:", callback);
 
-    /* do your thing */
+  /* do your thing */
 }
 
 // ES6 with shorter, more terse code
 
 function example(...args) {
-    // first argument is the error object
+  // first argument is the error object
 
-    const err = args.shift();
+  const err = args.shift();
 
-    // if last argument is a function then its the callback function
+  // if last argument is a function then its the callback function
 
-    const callback = typeof args[args.length - 1] === 'function' ? args.pop() : null;
+  const callback =
+    typeof args[args.length - 1] === "function" ? args.pop() : null;
 
-    // if args still holds items, these are your optional items which you could retrieve one by one like this:
+  // if args still holds items, these are your optional items which you could retrieve one by one like this:
 
-    const optionalA = args.length > 0 ? args.shift() : null;
+  const optionalA = args.length > 0 ? args.shift() : null;
 
-    const optionalB = args.length > 0 ? args.shift() : null;
+  const optionalB = args.length > 0 ? args.shift() : null;
 
-    // ... repeat for more items
+  // ... repeat for more items
 
-    if (err && callback) return callback(err);
+  if (err && callback) return callback(err);
 
-    /* do your thing */
+  /* do your thing */
 }
 
 // invoke example function with and without optional arguments
 
-example(null, 'AA');
+example(null, "AA");
 
 example(null, function (err) {
-    /* do something */
+  /* do something */
 });
 
-example(null, 'AA', function (err) {});
+example(null, "AA", function (err) {});
 
-example(null, 'AAAA', 'BBBB', function (err) {});
+example(null, "AAAA", "BBBB", function (err) {});
 ```
 
 #### How do you determine if optionalA or optionalB is intended?
@@ -4595,44 +4612,44 @@ Design your function to require optionalA in order to accept optionalB
 Sometimes, we need to loop endlessly over an array of items, like a carousel of images or an audio playlist. Here's how to take an array and give it "looping powers":
 
 ```js
-var aList = ['A', 'B', 'C', 'D', 'E'];
+var aList = ["A", "B", "C", "D", "E"];
 
 function make_looper(arr) {
-    arr.loop_idx = 0;
+  arr.loop_idx = 0;
 
-    // return current item
+  // return current item
 
-    arr.current = function () {
-        if (this.loop_idx < 0) {
-            // First verification
+  arr.current = function () {
+    if (this.loop_idx < 0) {
+      // First verification
 
-            this.loop_idx = this.length - 1; // update loop_idx
-        }
+      this.loop_idx = this.length - 1; // update loop_idx
+    }
 
-        if (this.loop_idx >= this.length) {
-            // second verification
+    if (this.loop_idx >= this.length) {
+      // second verification
 
-            this.loop_idx = 0; // update loop_idx
-        }
+      this.loop_idx = 0; // update loop_idx
+    }
 
-        return arr[this.loop_idx]; //return item
-    };
+    return arr[this.loop_idx]; //return item
+  };
 
-    // increment loop_idx AND return new current
+  // increment loop_idx AND return new current
 
-    arr.next = function () {
-        this.loop_idx++;
+  arr.next = function () {
+    this.loop_idx++;
 
-        return this.current();
-    };
+    return this.current();
+  };
 
-    // decrement loop_idx AND return new current
+  // decrement loop_idx AND return new current
 
-    arr.prev = function () {
-        this.loop_idx--;
+  arr.prev = function () {
+    this.loop_idx--;
 
-        return this.current();
-    };
+    return this.current();
+  };
 }
 
 make_looper(aList);
@@ -4665,34 +4682,34 @@ aList.prev(); // -> D
 Using the `%` ( Modulus ) operator is prettier.The modulus return division's rest ( `2 % 5 = 1` and `5 % 5 = 0`):
 
 ```js
-var aList = ['A', 'B', 'C', 'D', 'E'];
+var aList = ["A", "B", "C", "D", "E"];
 
 function make_looper(arr) {
-    arr.loop_idx = 0;
+  arr.loop_idx = 0;
 
-    // return current item
+  // return current item
 
-    arr.current = function () {
-        this.loop_idx = this.loop_idx % this.length; // no verification !!
+  arr.current = function () {
+    this.loop_idx = this.loop_idx % this.length; // no verification !!
 
-        return arr[this.loop_idx];
-    };
+    return arr[this.loop_idx];
+  };
 
-    // increment loop_idx AND return new current
+  // increment loop_idx AND return new current
 
-    arr.next = function () {
-        this.loop_idx++;
+  arr.next = function () {
+    this.loop_idx++;
 
-        return this.current();
-    };
+    return this.current();
+  };
 
-    // decrement loop_idx AND return new current
+  // decrement loop_idx AND return new current
 
-    arr.prev = function () {
-        this.loop_idx += this.length - 1;
+  arr.prev = function () {
+    this.loop_idx += this.length - 1;
 
-        return this.current();
-    };
+    return this.current();
+  };
 }
 
 make_looper(aList);
@@ -4741,9 +4758,9 @@ This is a simple tip, this week I had to create a common "Copy to Clipboard" but
 Also, this command that now is [supported](http://caniuse.com/#search=execCommand) by all the latest version of browsers, allows us to execute another system commands like `copy`, `cut`, `paste`, and make changes like fonts color, size, and much more.
 
 ```js
-document.querySelector('#input').select();
+document.querySelector("#input").select();
 
-document.execCommand('copy');
+document.execCommand("copy");
 ```
 
 **Playground**
@@ -4768,7 +4785,7 @@ Apart from being just a delimiter, the comma operator allows you to put multiple
 
 ```js
 for (var i = 0, j = 0; i < 5; i++, j++, j++) {
-    console.log('i:' + i + ', j:' + j);
+  console.log("i:" + i + ", j:" + j);
 }
 ```
 
@@ -4794,18 +4811,18 @@ Eg:-
 
 ```js
 function a() {
-    console.log('a');
-    return 'a';
+  console.log("a");
+  return "a";
 }
 
 function b() {
-    console.log('b');
-    return 'b';
+  console.log("b");
+  return "b";
 }
 
 function c() {
-    console.log('c');
-    return 'c';
+  console.log("c");
+  return "c";
 }
 
 var x = (a(), b(), c());
@@ -4816,16 +4833,16 @@ console.log(x); // Outputs "c"
 Output:-
 
 ```js
-'a';
+"a";
 
-'b';
+"b";
 
-'c';
+"c";
 
-'c';
+"c";
 ```
 
--   Note: The comma(`,`) operator has the lowest priority of all javascript operators, so without the parenthesis the expression would become: `(x = a()), b(), c();`.
+- Note: The comma(`,`) operator has the lowest priority of all javascript operators, so without the parenthesis the expression would become: `(x = a()), b(), c();`.
 
 **Playground**
 
@@ -4853,11 +4870,11 @@ A common requirement of iteration is cancelation. Using `for` loops we can `brea
 const a = [0, 1, 2, 3, 4];
 
 for (var i = 0; i < a.length; i++) {
-    if (a[i] === 2) {
-        break; // stop the loop
-    }
+  if (a[i] === 2) {
+    break; // stop the loop
+  }
 
-    console.log(a[i]);
+  console.log(a[i]);
 }
 
 //> 0, 1
@@ -4869,13 +4886,13 @@ A quick approach is to use `.forEach` but then we lack the ability to `break`. I
 
 ```javascript
 [0, 1, 2, 3, 4].forEach(function (val, i) {
-    if (val === 2) {
-        // how do we stop?
+  if (val === 2) {
+    // how do we stop?
 
-        return true;
-    }
+    return true;
+  }
 
-    console.log(val); // your code
+  console.log(val); // your code
 });
 
 //> 0, 1, 3, 4
@@ -4897,11 +4914,11 @@ Using `.some` we get iteration functionally similar to `.forEach` but with the a
 
 ```javascript
 [0, 1, 2, 3, 4].some(function (val, i) {
-    if (val === 2) {
-        return true;
-    }
+  if (val === 2) {
+    return true;
+  }
 
-    console.log(val); // your code
+  console.log(val); // your code
 });
 
 //> 0, 1
@@ -4913,9 +4930,9 @@ You keep returning `false` to make it `continue` to next item. When you return `
 // Array contains 2
 
 const isTwoPresent = [0, 1, 2, 3, 4].some(function (val, i) {
-    if (val === 2) {
-        return true; // break
-    }
+  if (val === 2) {
+    return true; // break
+  }
 });
 
 console.log(isTwoPresent);
@@ -4947,63 +4964,63 @@ keyword-var-vs-let/
 
 #### Overview
 
--   The scope of a variable defined with `var` is function scope or declared outside any function, global.
+- The scope of a variable defined with `var` is function scope or declared outside any function, global.
 
--   The scope of a variable defined with `let` is block scope.
+- The scope of a variable defined with `let` is block scope.
 
 ```js
 function varvslet() {
-    console.log(i); // i is undefined due to hoisting
+  console.log(i); // i is undefined due to hoisting
 
-    // console.log(j); // ReferenceError: j is not defined
+  // console.log(j); // ReferenceError: j is not defined
 
-    for (var i = 0; i < 3; i++) {
-        console.log(i); // 0, 1, 2
-    }
+  for (var i = 0; i < 3; i++) {
+    console.log(i); // 0, 1, 2
+  }
 
-    console.log(i); // 3
+  console.log(i); // 3
 
-    // console.log(j); // ReferenceError: j is not defined
+  // console.log(j); // ReferenceError: j is not defined
 
-    for (let j = 0; j < 3; j++) {
-        console.log(j);
-    }
+  for (let j = 0; j < 3; j++) {
+    console.log(j);
+  }
 
-    console.log(i); // 3
+  console.log(i); // 3
 
-    // console.log(j); // ReferenceError: j is not defined
+  // console.log(j); // ReferenceError: j is not defined
 }
 ```
 
 #### Difference Details
 
--   Variable Hoisting
+- Variable Hoisting
 
-    `let` will not hoist to the entire scope of the block they appear in. By contrast, `var` could hoist as below.
+  `let` will not hoist to the entire scope of the block they appear in. By contrast, `var` could hoist as below.
 
 ```js
 {
-    console.log(c); // undefined. Due to hoisting
+  console.log(c); // undefined. Due to hoisting
 
-    var c = 2;
+  var c = 2;
 }
 
 {
-    console.log(b); // ReferenceError: b is not defined
+  console.log(b); // ReferenceError: b is not defined
 
-    let b = 3;
+  let b = 3;
 }
 ```
 
--   Closure in Loop
+- Closure in Loop
 
-    `let` in the loop can re-binds it to each iteration of the loop, making sure to re-assign it the value from the end of the previous loop iteration, so it can be used to avoid issue with closures.
+  `let` in the loop can re-binds it to each iteration of the loop, making sure to re-assign it the value from the end of the previous loop iteration, so it can be used to avoid issue with closures.
 
 ```js
 for (var i = 0; i < 5; ++i) {
-    setTimeout(function () {
-        console.log(i); // output '5' 5 times
-    }, 100);
+  setTimeout(function () {
+    console.log(i); // output '5' 5 times
+  }, 100);
 }
 ```
 
@@ -5013,9 +5030,9 @@ After replacing `var` with `let`
 // print 1, 2, 3, 4, 5
 
 for (let i = 0; i < 5; ++i) {
-    setTimeout(function () {
-        console.log(i); // output 0, 1, 2, 3, 4
-    }, 100);
+  setTimeout(function () {
+    console.log(i); // output 0, 1, 2, 3, 4
+  }, 100);
 }
 ```
 
@@ -5025,9 +5042,9 @@ for (let i = 0; i < 5; ++i) {
 
 #### `let` compatibility
 
--   In server side, such as Node.js, you can safely use the `let` statement now.
+- In server side, such as Node.js, you can safely use the `let` statement now.
 
--   In client side, through a transpiler (like [Traceur](https://github.com/google/traceur-compiler)), you can safely use the `let` statement. Otherwise, please consider the browser support [here](http://caniuse.com/#search=let)
+- In client side, through a transpiler (like [Traceur](https://github.com/google/traceur-compiler)), you can safely use the `let` statement. Otherwise, please consider the browser support [here](http://caniuse.com/#search=let)
 
 #### Playground
 
@@ -5035,11 +5052,11 @@ for (let i = 0; i < 5; ++i) {
 
 #### More info
 
--   [Let keyword vs var keyword](http://stackoverflow.com/questions/762011/let-keyword-vs-var-keyword)
+- [Let keyword vs var keyword](http://stackoverflow.com/questions/762011/let-keyword-vs-var-keyword)
 
--   [For and against let](https://davidwalsh.name/for-and-against-let)
+- [For and against let](https://davidwalsh.name/for-and-against-let)
 
--   [Explanation of `let` and block scoping with for loops](http://stackoverflow.com/questions/30899612/explanation-of-let-and-block-scoping-with-for-loops/30900289#30900289).
+- [Explanation of `let` and block scoping with for loops](http://stackoverflow.com/questions/30899612/explanation-of-let-and-block-scoping-with-for-loops/30900289#30900289).
 
 ---
 
@@ -5079,7 +5096,7 @@ If you have to execute a function just if a condition is `true`, like this:
 
 ```javascript
 if (condition) {
-    dosomething();
+  dosomething();
 }
 ```
 
@@ -5098,11 +5115,11 @@ var a;
 
 console.log(a); //undefined
 
-a = a || 'default value';
+a = a || "default value";
 
 console.log(a); //default value
 
-a = a || 'new value';
+a = a || "new value";
 
 console.log(a); //default value
 ```
@@ -5151,23 +5168,23 @@ A copy of the given function along with the specified `this` value and initial a
 
 ```js
 const myCar = {
-    brand: 'Ford',
+  brand: "Ford",
 
-    type: 'Sedan',
+  type: "Sedan",
 
-    color: 'Red'
+  color: "Red",
 };
 
 const getBrand = function () {
-    console.log(this.brand);
+  console.log(this.brand);
 };
 
 const getType = function () {
-    console.log(this.type);
+  console.log(this.type);
 };
 
 const getColor = function () {
-    console.log(this.color);
+  console.log(this.color);
 };
 
 getBrand(); // object not bind,undefined
@@ -5199,19 +5216,19 @@ In case of established websocket connection, server or firewall could timeout an
 var timerID = 0;
 
 function keepAlive() {
-    var timeout = 20000;
+  var timeout = 20000;
 
-    if (webSocket.readyState == webSocket.OPEN) {
-        webSocket.send('');
-    }
+  if (webSocket.readyState == webSocket.OPEN) {
+    webSocket.send("");
+  }
 
-    timerId = setTimeout(keepAlive, timeout);
+  timerId = setTimeout(keepAlive, timeout);
 }
 
 function cancelKeepAlive() {
-    if (timerId) {
-        clearTimeout(timerId);
-    }
+  if (timerId) {
+    clearTimeout(timerId);
+  }
 }
 ```
 
@@ -5331,9 +5348,9 @@ This little beastie here is tap. A really useful function for quick-debugging ch
 
 ```javascript
 function tap(x) {
-    console.log(x);
+  console.log(x);
 
-    return x;
+  return x;
 }
 ```
 
@@ -5341,11 +5358,13 @@ Why would you use instead of good old `console.log`? Let me show you an example:
 
 ```javascript
 bank_totals_by_client(bank_info(1, banks), table)
-    .filter((c) => c.balance > 25000)
+  .filter((c) => c.balance > 25000)
 
-    .sort((c1, c2) => (c1.balance <= c2.balance ? 1 : -1))
+  .sort((c1, c2) => (c1.balance <= c2.balance ? 1 : -1))
 
-    .map((c) => console.log(`${c.id} | ${c.tax_number} (${c.name}) => ${c.balance}`));
+  .map((c) =>
+    console.log(`${c.id} | ${c.tax_number} (${c.name}) => ${c.balance}`)
+  );
 ```
 
 Now, suppose you're getting nothing from this chain (possibly an error). Where is it failing? Maybe `bank_info` isn't returning anything, so we'll tap it:
@@ -5378,9 +5397,9 @@ Ah! Sweet, we see nothing but `false` printed, so there's no client with >25000,
 
 ```javascript
 function tap(x, fn = (x) => x) {
-    console.log(fn(x));
+  console.log(fn(x));
 
-    return x;
+  return x;
 }
 ```
 
@@ -5408,11 +5427,11 @@ If you've been on the business for some time, you have, most likely, come across
 
 ```javascript
 function factorial(n) {
-    if (n === 0) {
-        return 1;
-    }
+  if (n === 0) {
+    return 1;
+  }
 
-    return n * factorial(n - 1);
+  return n * factorial(n - 1);
 }
 ```
 
@@ -5420,35 +5439,35 @@ The example shown above is but the most naive implementation of the factorial fu
 
 For the sake of completeness, let's look at how this executes for `n = 6`:
 
--   factorial(6)
+- factorial(6)
 
-    -   6 \* factorial(5)
+  - 6 \* factorial(5)
 
-        -   5 \* factorial (4)
+    - 5 \* factorial (4)
 
-            -   4 \* factorial(3)
+      - 4 \* factorial(3)
 
-                -   3 \* factorial(2)
+        - 3 \* factorial(2)
 
-                    -   2 \* factorial(1)
+          - 2 \* factorial(1)
 
-                        -   1 \* factorial(0)
+            - 1 \* factorial(0)
 
-                            -   1
+              - 1
 
-                        -   (resuming previous execution) 1 \* 1 = 1
+            - (resuming previous execution) 1 \* 1 = 1
 
-                    -   (resuming...) 2 \* 1 = 2
+          - (resuming...) 2 \* 1 = 2
 
-                -   (...) 3 \* 2 = 6
+        - (...) 3 \* 2 = 6
 
-            -   ... 4 \* 6 = 24
+      - ... 4 \* 6 = 24
 
-        -   5 \* 24 = 120
+    - 5 \* 24 = 120
 
-    -   6 \* 120 = 720
+  - 6 \* 120 = 720
 
--   factorial(6) = 720
+- factorial(6) = 720
 
 Now, we must be very cautious as to what's happening so we can understand what is to come next.
 
@@ -5462,11 +5481,11 @@ Let's take a look at a second implementation of this function.
 
 ```javascript
 function factorial(n, res) {
-    if (n === 0) {
-        return res;
-    }
+  if (n === 0) {
+    return res;
+  }
 
-    return factorial(n - 1, res * n);
+  return factorial(n - 1, res * n);
 }
 ```
 
@@ -5474,75 +5493,75 @@ We can encapsulate functionality a bit further by defining an inner function.
 
 ```javascript
 function factorial(n) {
-    function inner_factorial(n, res) {
-        if (n === 0) {
-            return res;
-        }
-
-        return inner_factorial(n - 1, res * n);
+  function inner_factorial(n, res) {
+    if (n === 0) {
+      return res;
     }
 
-    return inner_factorial(n, 1);
+    return inner_factorial(n - 1, res * n);
+  }
+
+  return inner_factorial(n, 1);
 }
 ```
 
 Let's take a look at how this gets executed:
 
--   factorial(6)
+- factorial(6)
 
-    -   inner anonymous function (iaf) gets called with (n = 6, res = 1)
+  - inner anonymous function (iaf) gets called with (n = 6, res = 1)
 
-        -   iaf(5, 1 \* 6)
+    - iaf(5, 1 \* 6)
 
-            -   iaf(4, 6 \* 5)
+      - iaf(4, 6 \* 5)
 
-                -   iaf(3, 30 \* 4)
+        - iaf(3, 30 \* 4)
 
-                    -   iaf(2, 120 \* 3)
+          - iaf(2, 120 \* 3)
 
-                        -   iaf(1, 360 \* 2)
+            - iaf(1, 360 \* 2)
 
-                            -   iaf(0, 720)
+              - iaf(0, 720)
 
-                                -   720
+                - 720
 
-                            -   720
+              - 720
 
-                        -   720
+            - 720
 
-                    -   720
+          - 720
 
-                -   720
+        - 720
 
-            -   720
+      - 720
 
-        -   720
+    - 720
 
-    -   iaf (6, 1) = 720
+  - iaf (6, 1) = 720
 
--   factorial(6) = 720
+- factorial(6) = 720
 
 You might notice that we didn't need to perform any calculation after unwinding the stack. We just returned a value. But, according to our rules, we had to save the state as a stack frame, even if it weren't of any use later in the chain.
 
 Our rules, however, are not applied to every language out there. In fact, in Scheme it's mandatory for such chains to be optimized with tail call optimization. This ensures that our stack is not filled with unnecessary frames. Our previous calculation would look, thus, this way:
 
--   factorial(6)
+- factorial(6)
 
--   iaf(6, 1)
+- iaf(6, 1)
 
--   iaf(5, 6)
+- iaf(5, 6)
 
--   iaf(4, 30)
+- iaf(4, 30)
 
--   iaf(3, 120)
+- iaf(3, 120)
 
--   iaf(2, 360)
+- iaf(2, 360)
 
--   iaf(1, 720)
+- iaf(1, 720)
 
--   iaf(0, 720)
+- iaf(0, 720)
 
--   720
+- 720
 
 Which in turns, looks an awfully lot like
 
@@ -5552,9 +5571,9 @@ res = 1;
 n = 6;
 
 while (n > 1) {
-    res = res * n;
+  res = res * n;
 
-    n--;
+  n--;
 }
 ```
 
@@ -5585,11 +5604,10 @@ UPDATE Dec 1, 2017: The only major browser with tail call optimization is Safari
 We all know that JavaScript is loosely typed and in some cases it fall behind specially when it comes to quality comparison with '==', comparing with '==' gives unexpected results due to whats called coercion or casting "converting one of the 2 operands to the other's type then compare".
 
 ```javascript
-0 == ' '; //true
+0 == " "; //true
 
-(null ==
-    undefined[1]) == //true
-    true; //true
+(null == undefined[1]) == //true
+  true; //true
 ```
 
 So they provided us with the triple equal operator '===' which is more strict and does not coerce operands, However comparing with '===' is not the best solution you can get:
@@ -5601,7 +5619,7 @@ NaN === NaN; //false
 The great news that in ES6 there is the new 'Object.is()' which is better and more precise it has the same features as '===' and moreover it behaves well in some special cases:
 
 ```javascript
-Object.is(0, ' '); //false
+Object.is(0, " "); //false
 
 Object.is(null, undefined); //false
 
@@ -5636,25 +5654,28 @@ Sometimes we need to whitelist certain attributes from an object, say we've got 
 
 ```javascript
 function pick(obj, keys) {
-    return keys
-        .map((k) => (k in obj ? { [k]: obj[k] } : {}))
+  return keys
+    .map((k) => (k in obj ? { [k]: obj[k] } : {}))
 
-        .reduce((res, o) => Object.assign(res, o), {});
+    .reduce((res, o) => Object.assign(res, o), {});
 }
 
 const row = {
-    'accounts.id': 1,
+  "accounts.id": 1,
 
-    'client.name': 'John Doe',
+  "client.name": "John Doe",
 
-    'bank.code': 'MDAKW213'
+  "bank.code": "MDAKW213",
 };
 
-const table = [row, { 'accounts.id': 3, 'client.name': 'Steve Doe', 'bank.code': 'STV12JB' }];
+const table = [
+  row,
+  { "accounts.id": 3, "client.name": "Steve Doe", "bank.code": "STV12JB" },
+];
 
-pick(row, ['client.name']); // Get client name
+pick(row, ["client.name"]); // Get client name
 
-table.map((row) => pick(row, ['client.name'])); // Get a list of client names
+table.map((row) => pick(row, ["client.name"])); // Get a list of client names
 ```
 
 There's a bit of skulduggery going on in pick. First, we `map` a function over the keys that will return, each time, an object with only the attribute pointed by the current key (or an empty object if there's no such attribute in the object). Then, we `reduce` this collection of single-attribute objects by merging the objects.
@@ -5663,25 +5684,24 @@ But what if we want to `reject` the attributes? Well, the function changes a bit
 
 ```javascript
 function reject(obj, keys) {
-    return Object.keys(obj)
+  return Object.keys(obj)
 
-        .filter((k) => !keys.includes(k))
+    .filter((k) => !keys.includes(k))
 
-        .map((k) => Object.assign({}, { [k]: obj[k] }))
+    .map((k) => Object.assign({}, { [k]: obj[k] }))
 
-        .reduce((res, o) => Object.assign(res, o), {});
+    .reduce((res, o) => Object.assign(res, o), {});
 }
 
 // or, reusing pick
 
 function reject(obj, keys) {
-    const vkeys = Object.keys(obj)
-    .filter((k) => !keys.includes(k));
+  const vkeys = Object.keys(obj).filter((k) => !keys.includes(k));
 
-    return pick(obj, vkeys);
+  return pick(obj, vkeys);
 }
 
-reject({ a: 2, b: 3, c: 4 }, ['a', 'b']); // => {c: 4}
+reject({ a: 2, b: 3, c: 4 }, ["a", "b"]); // => {c: 4}
 ```
 
 ---
@@ -5706,35 +5726,35 @@ Today we're introducing a feature found in Clojure which allows you to define in
 const protocols = (...ps) => ps.reduce((c, p) => p(c), Object);
 
 const Mappable = (klass) => {
-    return class extends klass {
-        map() {
-            throw 'Not implemented';
-        }
-    };
+  return class extends klass {
+    map() {
+      throw "Not implemented";
+    }
+  };
 };
 
 const Foldable = (klass) => {
-    return class extends klass {
-        fold() {
-            throw 'Not implemented';
-        }
-    };
+  return class extends klass {
+    fold() {
+      throw "Not implemented";
+    }
+  };
 };
 
 class NaturalNumbers extends protocols(Mappable, Foldable) {
-    constructor() {
-        super();
+  constructor() {
+    super();
 
-        this.elements = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    }
+    this.elements = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  }
 
-    map(f) {
-        return this.elements.map(f);
-    }
+  map(f) {
+    return this.elements.map(f);
+  }
 
-    fold(f) {
-        return this.elements.reduce(f, this.elements, 0);
-    }
+  fold(f) {
+    return this.elements.reduce(f, this.elements, 0);
+  }
 }
 ```
 
@@ -5872,13 +5892,13 @@ If you ever come across the likes of
 var funcs = [];
 
 for (var i = 0; i < 3; i++) {
-    funcs[i] = function () {
-        console.log('i value is ' + i);
-    };
+  funcs[i] = function () {
+    console.log("i value is " + i);
+  };
 }
 
 for (var k = 0; k < 3; k++) {
-    funcs[k]();
+  funcs[k]();
 }
 ```
 
@@ -5912,9 +5932,9 @@ To solve this situation you can do as follows:
 
 ```javascript
 for (var i = 0; i < 3; i++) {
-    funcs[i] = (function (value) {
-        console.log('i value is ' + i);
-    })(i);
+  funcs[i] = (function (value) {
+    console.log("i value is " + i);
+  })(i);
 }
 ```
 
@@ -5922,9 +5942,9 @@ Which effectively copies i by value by handing it to our closure or
 
 ```javascript
 for (let i = 0; i < 3; i++) {
-    funcs[i] = function () {
-        console.log('i value is ' + i);
-    };
+  funcs[i] = function () {
+    console.log("i value is " + i);
+  };
 }
 ```
 
@@ -5957,13 +5977,13 @@ If the object is outside your control, you're partly out of luck. This can be ci
 One such library is [pvorb/clone](https://github.com/pvorb/clone), which has a very simple API. To clone an object you only have to
 
 ```javascript
-var clone = require('clone');
+var clone = require("clone");
 
-var a = { foo: { bar: 'baz' } };
+var a = { foo: { bar: "baz" } };
 
 var b = clone(a);
 
-a.foo.bar = 'foo';
+a.foo.bar = "foo";
 
 console.log(a); // {foo: {bar: 'foo'}}
 
@@ -5998,9 +6018,9 @@ let index = 0;
 const array = [1, 2, 3, 4, 5, 6];
 
 while (index < array.length) {
-    console.log(array[index]);
+  console.log(array[index]);
 
-    index++;
+  index++;
 }
 ```
 
@@ -6010,7 +6030,7 @@ while (index < array.length) {
 const array = [1, 2, 3, 4, 5, 6];
 
 for (let index = 0; index < array.length; index++) {
-    console.log(array[index]);
+  console.log(array[index]);
 }
 ```
 
@@ -6020,7 +6040,9 @@ for (let index = 0; index < array.length; index++) {
 const array = [1, 2, 3, 4, 5, 6];
 
 array.forEach(function (current_value, index, array) {
-    console.log(`At index ${index} in array ${array} the value is ${current_value}`);
+  console.log(
+    `At index ${index} in array ${array} the value is ${current_value}`
+  );
 });
 
 // => undefined
@@ -6084,9 +6106,9 @@ const array = [1, 2, 3, 4, 5, 6];
 const under_seven = (x) => x < 7;
 
 if (array.every(under_seven)) {
-    console.log('Every element in the array is less than 7');
+  console.log("Every element in the array is less than 7");
 } else {
-    console.log('At least one element in the array was bigger than 7');
+  console.log("At least one element in the array was bigger than 7");
 }
 ```
 
@@ -6100,9 +6122,9 @@ const array = [1, 2, 3, 9, 5, 6, 4];
 const over_seven = (x) => x > 7;
 
 if (array.some(over_seven)) {
-    console.log('At least one element bigger than 7 was found');
+  console.log("At least one element bigger than 7 was found");
 } else {
-    console.log('No element bigger than 7 was found');
+  console.log("No element bigger than 7 was found");
 }
 ```
 
@@ -6176,9 +6198,9 @@ for(key in cleanMap){
 
 ### Notes
 
--   Object.create() was introduced in ES5: [Compatibility](http://kangax.github.io/compat-table/es5/)
+- Object.create() was introduced in ES5: [Compatibility](http://kangax.github.io/compat-table/es5/)
 
--   ES6 introduced some new structures: [Map](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Map), [WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap), [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) and [Weak Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
+- ES6 introduced some new structures: [Map](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Map), [WeakMap](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap), [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set) and [Weak Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet)
 
 ---
 
@@ -6324,32 +6346,32 @@ Functional mixins are composable factory functions that add properties and behav
 // Base object constructor function
 
 function Animal(data) {
-    var that = {}; // Create an empty object
+  var that = {}; // Create an empty object
 
-    that.name = data.name; // Add it a "name" property
+  that.name = data.name; // Add it a "name" property
 
-    return that; // Return the object
+  return that; // Return the object
 }
 
 // Create achild object, inheriting from the base Animal
 
 function Cat(data) {
-    // Create the Animal object
+  // Create the Animal object
 
-    var that = Animal(data);
+  var that = Animal(data);
 
-    // Extend base object
+  // Extend base object
 
-    that.sayHello = function () {
-        return "Hello, I'm " + that.name;
-    };
+  that.sayHello = function () {
+    return "Hello, I'm " + that.name;
+  };
 
-    return that;
+  return that;
 }
 
 // Usage
 
-var myCat = Cat({ name: 'Rufi' });
+var myCat = Cat({ name: "Rufi" });
 
 console.log(myCat.sayHello());
 
@@ -6376,7 +6398,7 @@ In this way, an n-ary function becomes a unary function, and the last function r
 // Normal definition
 
 function multiply(a, b, c) {
-    return a * b * c;
+  return a * b * c;
 }
 
 console.log(multiply(1, 2, 3));
@@ -6386,11 +6408,11 @@ console.log(multiply(1, 2, 3));
 // Simple curry function definition
 
 function multiply(a) {
-    return (b) => {
-        return (c) => {
-            return a * b * c;
-        };
+  return (b) => {
+    return (c) => {
+      return a * b * c;
     };
+  };
 }
 
 console.log(multiply(1)(2)(3));
@@ -6400,11 +6422,11 @@ console.log(multiply(1)(2)(3));
 
 #### Further readings
 
--   [Currying in JavaScript](https://dev.to/suprabhasupi/currying-in-javascript-1k3l)
+- [Currying in JavaScript](https://dev.to/suprabhasupi/currying-in-javascript-1k3l)
 
--   [Lodash curry](https://lodash.com/docs/#curry)
+- [Lodash curry](https://lodash.com/docs/#curry)
 
--   [JavaScript currying](http://zetcode.com/javascript/currying/)
+- [JavaScript currying](http://zetcode.com/javascript/currying/)
 
 ---
 
@@ -6422,25 +6444,25 @@ Temporal Dead Zone is a JavaScript behavior while using variables declared using
 
 ```javascript
 function myFunc() {
-    console.log(greeting);
+  console.log(greeting);
 
-    var greeting = 'Hello World!';
+  var greeting = "Hello World!";
 }
 
 myFunc(); // Output: undefined
 
 function myFunc() {
-    console.log(greeting);
+  console.log(greeting);
 
-    let greeting = 'Hello World!';
+  let greeting = "Hello World!";
 }
 
 myFunc(); // Output: ReferenceError: greeting is not defined
 
 function myFunc() {
-    console.log(greeting);
+  console.log(greeting);
 
-    const greeting = 'Hello World!';
+  const greeting = "Hello World!";
 }
 
 myFunc(); // Output: ReferenceError: greeting is not defined
@@ -6462,7 +6484,7 @@ myFunc(); // Output: ReferenceError: greeting is not defined
 
 ```html
 <ul class="todo-list">
-    <li class="item">Walk your dog</li>
+  <li class="item">Walk your dog</li>
 </ul>
 ```
 
@@ -6516,7 +6538,7 @@ console.log(newArray);
 
 // Copying array elements
 
-let arr = ['a', 'b', 'c'];
+let arr = ["a", "b", "c"];
 
 let newArray = [...arr];
 
@@ -6526,9 +6548,9 @@ console.log(newArray);
 
 // Expanding arrays
 
-let arr = ['a', 'b'];
+let arr = ["a", "b"];
 
-let newArray = [...arr, 'c', 'd'];
+let newArray = [...arr, "c", "d"];
 
 console.log(newArray);
 
@@ -6537,15 +6559,15 @@ console.log(newArray);
 // Merging objects
 
 const userBasic = {
-    name: 'Jen',
+  name: "Jen",
 
-    age: 22
+  age: 22,
 };
 
 const userMoreInfo = {
-    country: 'Argentina',
+  country: "Argentina",
 
-    city: 'Córdoba'
+  city: "Córdoba",
 };
 
 const user = { ...userBasic, ...userMoreInfo };
@@ -6569,7 +6591,7 @@ The `void` operator returns an `undefined` value from an evaluated expression, o
 
 ```js
 function getYear() {
-    return 2020;
+  return 2020;
 }
 
 console.log(getYear());
@@ -6601,13 +6623,13 @@ All `Promise` instances accept a method as an argument called the executor. This
 
 ```js
 const executor = (resolve, reject) => {
-    setTimeout(() => resolve("I'm done"), 1000);
+  setTimeout(() => resolve("I'm done"), 1000);
 };
 
 new Promise(executor).then((result) => {
-    console.log(result);
+  console.log(result);
 
-    // Output after 1000ms: I'm done
+  // Output after 1000ms: I'm done
 });
 ```
 
@@ -6630,7 +6652,7 @@ let age = 26;
 
 // condition ? expression if true : expression if false
 
-let drink = age >= 21 ? 'Beer' : 'Juice';
+let drink = age >= 21 ? "Beer" : "Juice";
 
 console.log(drink); // "Beer"
 
@@ -6639,9 +6661,9 @@ console.log(drink); // "Beer"
 let drink;
 
 if (age >= 21) {
-    drink = 'Beer';
+  drink = "Beer";
 } else {
-    drink = 'Juice';
+  drink = "Juice";
 }
 
 console.log(drink); // "Beer"

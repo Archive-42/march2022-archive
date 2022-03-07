@@ -1,27 +1,27 @@
 ---
 title: Community
 excerpt: >-
-    We'd love it if you participate in the Libris community. Find out how to get
-    connected.
+  We'd love it if you participate in the Libris community. Find out how to get
+  connected.
 seo:
-    title: 'Connect '
-    description: This is the community page
-    extra:
-        - name: 'og:type'
-          value: website
-          keyName: property
-        - name: 'og:title'
-          value: Where To Get Support
-          keyName: property
-        - name: 'og:description'
-          value: This is the community page
-          keyName: property
-        - name: 'twitter:card'
-          value: summary
-        - name: 'twitter:title'
-          value: Where To Get Support
-        - name: 'twitter:description'
-          value: This is the community page
+  title: "Connect "
+  description: This is the community page
+  extra:
+    - name: "og:type"
+      value: website
+      keyName: property
+    - name: "og:title"
+      value: Where To Get Support
+      keyName: property
+    - name: "og:description"
+      value: This is the community page
+      keyName: property
+    - name: "twitter:card"
+      value: summary
+    - name: "twitter:title"
+      value: Where To Get Support
+    - name: "twitter:description"
+      value: This is the community page
 template: docs
 ---
 
@@ -61,7 +61,4 @@ template: docs
 <br>
 <a class="twitter-timeline" href="https://twitter.com/bgooonz?ref_src=twsrc%5Etfw">Tweets by bgooonz</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-    
-    
-    
-<iframe src="https://discord.com/widget?id=739632674276245685&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>    
+<iframe src="https://discord.com/widget?id=739632674276245685&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
