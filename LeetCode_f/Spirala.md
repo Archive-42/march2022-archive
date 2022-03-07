@@ -4,7 +4,7 @@
 
 ### Problem:
 
-Given a positive integer *n*, generate a square matrix filled with elements from 1 to *n*2 in spiral order.
+Given a positive integer _n_, generate a square matrix filled with elements from 1 to *n*2 in spiral order.
 
 **Example:**
 
@@ -50,4 +50,4 @@ var generateMatrix = function(n) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

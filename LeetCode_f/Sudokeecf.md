@@ -1,4 +1,4 @@
-# 037._Sudoku_Solver
+# 037.\_Sudoku_Solver
 
 ## [37. Sudoku Solver](https://leetcode.com/problems/sudoku-solver/description/)
 

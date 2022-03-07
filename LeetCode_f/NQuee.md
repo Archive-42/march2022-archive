@@ -4,15 +4,15 @@
 
 ### Problem:
 
-The *n*-queens puzzle is the problem of placing *n* queens on an *n*×*n* chessboard such that no two queens attack each other.
+The _n_-queens puzzle is the problem of placing _n_ queens on an *n*×*n* chessboard such that no two queens attack each other.
 
 ![https://leetcode.com/static/images/problemset/8-queens.png](https://leetcode.com/static/images/problemset/8-queens.png)
 
 8-queens.png
 
-Given an integer *n*, return all distinct solutions to the *n*-queens puzzle.
+Given an integer _n_, return all distinct solutions to the _n_-queens puzzle.
 
-Each solution contains a distinct board configuration of the *n*-queens’ placement, where `'Q'` and `'.'` both indicate a queen and an empty space respectively.
+Each solution contains a distinct board configuration of the _n_-queens’ placement, where `'Q'` and `'.'` both indicate a queen and an empty space respectively.
 
 **Example:**
 
@@ -150,4 +150,4 @@ function _genBoard (queens) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

@@ -1,7 +1,9 @@
+---
 
-________________________________________________________________________________
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
-________________________________________________________________________________
+
+---
+
 # Redux Developer Tools
 
 Redux has its own special set of developer tools. They allow you to do things
@@ -72,8 +74,7 @@ of the Fruit Stand application examples. If you haven't already, clone the
 [redux-fruit-stand-examples] repo.
 
 After cloning the repo, open a terminal and browse to the
-`fruit-stand-redux-with-react-official-bindings` folder. Run the command `npm
-install` to install the project's dependencies. Then use the command `npm start`
+`fruit-stand-redux-with-react-official-bindings` folder. Run the command `npm install` to install the project's dependencies. Then use the command `npm start`
 to run the Fruit Stand application.
 
 This Fruit Stand example application is a React application created by the

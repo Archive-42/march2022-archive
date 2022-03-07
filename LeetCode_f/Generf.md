@@ -1,4 +1,4 @@
-# 022._Generate_Parentheses
+# 022.\_Generate_Parentheses
 
 ## [22. Generate Parentheses](https://leetcode.com/problems/generate-parentheses/description/)
 

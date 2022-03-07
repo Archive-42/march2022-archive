@@ -1,7 +1,9 @@
+---
 
-________________________________________________________________________________
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
-________________________________________________________________________________
+
+---
+
 # Container Components
 
 As you saw in an earlier article, there can be quite a bit of code involved in
@@ -13,8 +15,8 @@ components** from their connected counterparts, called **containers**.
 
 When you finish this article, you should be able to:
 
-* Describe how container components differ from presentational components
-* Write a container component to handle all of the Redux store interaction for
+- Describe how container components differ from presentational components
+- Write a container component to handle all of the Redux store interaction for
   one or more presentational components
 
 ## Comparing presentational and container components
@@ -88,8 +90,8 @@ store (using `store.subscribe`) to know when state has been updated and calls
 ```js
 // ./src/components/FruitList.js
 
-import React from 'react';
-import store from '../store';
+import React from "react";
+import store from "../store";
 
 class FruitList extends React.Component {
   componentDidMount() {
@@ -109,10 +111,15 @@ class FruitList extends React.Component {
 
     return (
       <div>
-        {fruit.length > 0
-          ? <ul>{fruit.map((fruitName, index) => <li key={index}>{fruitName}</li>)}</ul>
-          : <span>No fruit currently in stock!</span>
-        }
+        {fruit.length > 0 ? (
+          <ul>
+            {fruit.map((fruitName, index) => (
+              <li key={index}>{fruitName}</li>
+            ))}
+          </ul>
+        ) : (
+          <span>No fruit currently in stock!</span>
+        )}
       </div>
     );
   }
@@ -142,9 +149,9 @@ As a starting point, here's the code for the `FruitManagerContainer` component:
 ```js
 // ./src/components/FruitManagerContainer.js
 
-import React from 'react';
-import store from '../store';
-import FruitManager from './FruitManager';
+import React from "react";
+import store from "../store";
+import FruitManager from "./FruitManager";
 
 class FruitManagerContainer extends React.Component {
   componentDidMount() {
@@ -162,9 +169,7 @@ class FruitManagerContainer extends React.Component {
   render() {
     const { fruit } = store.getState();
 
-    return (
-      <FruitManager fruit={fruit} />
-    );
+    return <FruitManager fruit={fruit} />;
   }
 }
 
@@ -183,11 +188,11 @@ to pass it down to the `FruitList` component:
 ```js
 // ./src/components/FruitManager.js
 
-import React from 'react';
-import FruitList from './FruitList';
-import FruitSeller from './FruitSeller';
-import FruitQuickAdd from './FruitQuickAdd';
-import FruitBulkAdd from './FruitBulkAdd';
+import React from "react";
+import FruitList from "./FruitList";
+import FruitSeller from "./FruitSeller";
+import FruitQuickAdd from "./FruitQuickAdd";
+import FruitBulkAdd from "./FruitBulkAdd";
 
 const FruitManager = ({ fruit }) => {
   return (
@@ -211,15 +216,20 @@ into an unordered list:
 ```js
 // ./src/components/FruitList.js
 
-import React from 'react';
+import React from "react";
 
 const FruitList = ({ fruit }) => {
   return (
     <div>
-      {fruit.length > 0
-        ? <ul>{fruit.map((fruitName, index) => <li key={index}>{fruitName}</li>)}</ul>
-        : <span>No fruit currently in stock!</span>
-      }
+      {fruit.length > 0 ? (
+        <ul>
+          {fruit.map((fruitName, index) => (
+            <li key={index}>{fruitName}</li>
+          ))}
+        </ul>
+      ) : (
+        <span>No fruit currently in stock!</span>
+      )}
     </div>
   );
 };
@@ -245,15 +255,15 @@ Here's the current version of the `FruitQuickAdd` component that dispatches the
 ```js
 // ./src/components/FruitQuickAdd.js
 
-import React from 'react';
-import store from '../store';
-import { addFruit } from '../actions/fruitActions';
+import React from "react";
+import store from "../store";
+import { addFruit } from "../actions/fruitActions";
 
 class FruitQuickAdd extends React.Component {
   addFruitClick = (event) => {
     const fruit = event.target.innerText;
     store.dispatch(addFruit(fruit));
-  }
+  };
 
   render() {
     return (
@@ -261,7 +271,7 @@ class FruitQuickAdd extends React.Component {
         <h3>Quick Add</h3>
         <button onClick={this.addFruitClick}>APPLE</button>
         <button onClick={this.addFruitClick}>ORANGE</button>
-      </div>  
+      </div>
     );
   }
 }
@@ -275,10 +285,10 @@ component, update the `FruitManagerContainer` component to the following code:
 ```js
 // ./src/components/FruitManagerContainer.js
 
-import React from 'react';
-import store from '../store';
-import { addFruit } from '../actions/fruitActions';
-import FruitManager from './FruitManager';
+import React from "react";
+import store from "../store";
+import { addFruit } from "../actions/fruitActions";
+import FruitManager from "./FruitManager";
 
 class FruitManagerContainer extends React.Component {
   componentDidMount() {
@@ -295,16 +305,12 @@ class FruitManagerContainer extends React.Component {
 
   add = (fruit) => {
     store.dispatch(addFruit(fruit));
-  }
+  };
 
   render() {
     const { fruit } = store.getState();
 
-    return (
-      <FruitManager
-        fruit={fruit}
-        add={this.add} />
-    );
+    return <FruitManager fruit={fruit} add={this.add} />;
   }
 }
 
@@ -323,11 +329,11 @@ pass it down to the `FruitQuickAdd` component:
 ```js
 // ./src/components/FruitManager.js
 
-import React from 'react';
-import FruitList from './FruitList';
-import FruitSeller from './FruitSeller';
-import FruitQuickAdd from './FruitQuickAdd';
-import FruitBulkAdd from './FruitBulkAdd';
+import React from "react";
+import FruitList from "./FruitList";
+import FruitSeller from "./FruitSeller";
+import FruitQuickAdd from "./FruitQuickAdd";
+import FruitBulkAdd from "./FruitBulkAdd";
 
 const FruitManager = ({ fruit, add }) => {
   return (
@@ -352,7 +358,7 @@ target button's inner text:
 ```js
 // ./src/components/FruitQuickAdd.js
 
-import React from 'react';
+import React from "react";
 
 const FruitQuickAdd = ({ add }) => {
   const handleClick = (event) => add(event.target.innerText);
@@ -362,7 +368,7 @@ const FruitQuickAdd = ({ add }) => {
       <h3>Quick Add</h3>
       <button onClick={handleClick}>APPLE</button>
       <button onClick={handleClick}>ORANGE</button>
-    </div>  
+    </div>
   );
 };
 
@@ -386,10 +392,15 @@ component:
 ```js
 // ./src/components/FruitManagerContainer.js
 
-import React from 'react';
-import store from '../store';
-import { addFruit, addFruits, sellFruit, sellOut } from '../actions/fruitActions';
-import FruitManager from './FruitManager';
+import React from "react";
+import store from "../store";
+import {
+  addFruit,
+  addFruits,
+  sellFruit,
+  sellOut,
+} from "../actions/fruitActions";
+import FruitManager from "./FruitManager";
 
 class FruitManagerContainer extends React.Component {
   componentDidMount() {
@@ -406,19 +417,19 @@ class FruitManagerContainer extends React.Component {
 
   add = (fruit) => {
     store.dispatch(addFruit(fruit));
-  }
+  };
 
   addBulk = (fruit) => {
     store.dispatch(addFruits(fruit));
-  }
+  };
 
   sell = (fruit) => {
     store.dispatch(sellFruit(fruit));
-  }
+  };
 
   sellAll = () => {
     store.dispatch(sellOut());
-  }
+  };
 
   render() {
     const { fruit } = store.getState();
@@ -431,7 +442,8 @@ class FruitManagerContainer extends React.Component {
         add={this.add}
         addBulk={this.addBulk}
         sell={this.sell}
-        sellAll={this.sellAll} />
+        sellAll={this.sellAll}
+      />
     );
   }
 }

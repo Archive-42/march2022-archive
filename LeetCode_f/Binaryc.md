@@ -39,13 +39,13 @@ Output: 42
 For every `node`, there are six possible ways to get the max path sum:
 
 - With `node.val`
-    1. `node.val` plus the max sum of a path that ends with `node.left`.
-    2. `node.val` plus the max sum of a path that starts with `node.right`.
-    3. `node.val` plus the max sum of both paths.
-    4. Just `node.val` (the max sum of both paths are negative).
+  1. `node.val` plus the max sum of a path that ends with `node.left`.
+  2. `node.val` plus the max sum of a path that starts with `node.right`.
+  3. `node.val` plus the max sum of both paths.
+  4. Just `node.val` (the max sum of both paths are negative).
 - Without`node.val` (disconnected)
-    1. The max-sum path is somewhere under the `node.left` subtree.
-    2. The max-sum path is somewhere under the `node.right` subtree.
+  1. The max-sum path is somewhere under the `node.left` subtree.
+  2. The max-sum path is somewhere under the `node.right` subtree.
 
 There are two ways to implement this.
 
@@ -124,4 +124,4 @@ function _maxPathSum (root, global) {
 }
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

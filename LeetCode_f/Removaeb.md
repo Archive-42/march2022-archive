@@ -1,10 +1,10 @@
-# 019._Remove_Nth_Node_From_End_of_List
+# 019.\_Remove_Nth_Node_From_End_of_List
 
 ## [19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/)
 
 ### Problem:
 
-Given a linked list, remove the *n*-th node from the end of list and return its head.
+Given a linked list, remove the _n_-th node from the end of list and return its head.
 
 **Example:**
 
@@ -16,7 +16,7 @@ After removing the second node from the end, the linked list becomes 1->2->3->5.
 
 **Note:**
 
-Given *n* will always be valid.
+Given _n_ will always be valid.
 
 **Follow up:**
 

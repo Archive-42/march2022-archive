@@ -4,7 +4,7 @@
 
 ### Problem:
 
-Given *n* non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
+Given _n_ non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
 
 ![http://www.leetcode.com/static/images/problemset/rainwatertrap.png](http://www.leetcode.com/static/images/problemset/rainwatertrap.png)
 
@@ -61,4 +61,4 @@ let trap = function(height) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

@@ -4,7 +4,7 @@
 
 ### Problem:
 
-Write an efficient algorithm that searches for a value in an *m* x *n* matrix. This matrix has the following properties:
+Write an efficient algorithm that searches for a value in an _m_ x _n_ matrix. This matrix has the following properties:
 
 - Integers in each row are sorted from left to right.
 - The first integer of each row is greater than the last integer of the previous row.
@@ -39,7 +39,7 @@ Output: false
 
 ### ONE
 
-Search from top-left to bottom-right. O(*n*).
+Search from top-left to bottom-right. O(_n_).
 
 ```
 /**
@@ -108,4 +108,4 @@ var searchMatrix = function(matrix, target) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

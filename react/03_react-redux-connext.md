@@ -1,7 +1,9 @@
+---
 
-________________________________________________________________________________
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
-________________________________________________________________________________
+
+---
+
 # React-Redux: `connect()`
 
 The React-Redux library allows you to access the store `context` set by the
@@ -21,10 +23,7 @@ arguments (plus a couple optional arguments you can read more about in the
 [docs][docs]) and returns a function:
 
 ```js
-const createConnectedComponent = connect(
-  mapStateToProps,
-  mapDispatchToProps
-);
+const createConnectedComponent = connect(mapStateToProps, mapDispatchToProps);
 ```
 
 The returned function (`createConnectedComponent`) then takes the React
@@ -45,7 +44,10 @@ calling the function returned by the `connect` method (similarly to how you
 immediately call a function expression when defining an [IIFE][mdn-iife]):
 
 ```js
-const ConnectedComponent = connect(mapStateToProps, mapDispatchToProps)(MyComponent);
+const ConnectedComponent = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MyComponent);
 
 export default ConnectedComponent;
 ```
@@ -91,7 +93,7 @@ slices of `state` via `ownProps`, a optional second argument to
 ```js
 const mapStateToProps = (state, ownProps) => ({
   firstName: state.name,
-  initials: `${state.name[0]}. ${ownProps.lastName[0]}.`
+  initials: `${state.name[0]}. ${ownProps.lastName[0]}.`,
 });
 
 const ConnectedComponent = connect(mapStateToProps)(MyComponent);
@@ -119,12 +121,12 @@ that can be called to dispatch actions to the store. These action dispatchers
 are then passed as `props` to the component.
 
 ```js
-const deleteTodo = (id) => ({ type: 'DELETE_TODO', id }); // action creators
-const addTodo = (msg) => ({ type: 'ADD_TODO', msg });
+const deleteTodo = (id) => ({ type: "DELETE_TODO", id }); // action creators
+const addTodo = (msg) => ({ type: "ADD_TODO", msg });
 
 const mapDispatchToProps = (dispatch) => ({
   handleDelete: (id) => dispatch(deleteTodo(id)),
-  handleAdd: (msg) => dispatch(addTodo(msg))
+  handleAdd: (msg) => dispatch(addTodo(msg)),
 });
 
 const ConnectedComponent = connect(null, mapDispatchToProps)(MyComponent);
@@ -144,18 +146,15 @@ const MyComponent = ({ firstName, initials, handleAdd, handleDelete }) => {
 
 const mapStateToProps = (state, ownProps) => ({
   firstName: state.name,
-  initials: `${state.name[0]}. ${ownProps.lastName[0]}.`
+  initials: `${state.name[0]}. ${ownProps.lastName[0]}.`,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   handleDelete: (id) => dispatch(deleteTodo(id)),
-  handleAdd: (msg) => dispatch(addTodo(msg))
+  handleAdd: (msg) => dispatch(addTodo(msg)),
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MyComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(MyComponent);
 ```
 
 `MyComponent` will receive `firstName`, `initials`, `handleDelete`, and
@@ -171,8 +170,7 @@ To review and run a completed Fruit Stand example application that utilizes the
 React-Redux library, clone the [redux-fruit-stand-examples] repo.
 
 After cloning the repo, open a terminal and browse to the
-`fruit-stand-redux-with-react-official-bindings` folder. Run the command `npm
-install` to install the project's dependencies. Then use the command `npm start`
+`fruit-stand-redux-with-react-official-bindings` folder. Run the command `npm install` to install the project's dependencies. Then use the command `npm start`
 to run the Fruit Stand application.
 
 This Fruit Stand example application is a React application created by the

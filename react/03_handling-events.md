@@ -1,5 +1,7 @@
 # Handling Events
-________________________________________________________________________________
+
+---
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -14,7 +16,8 @@ ________________________________________________________________________________
 - [What you learned](#what-you-learned)
 
 <!-- /code_chunk_output -->
-________________________________________________________________________________
+
+---
 
 Event handling is a key part of any dynamic application; without it, you
 wouldn't be able to respond to user actions. As with most things in React, how
@@ -27,10 +30,10 @@ components.
 
 When you finish this article, you should be able to:
 
-* Add event listeners to elements;
-* Prevent event default behavior;
-* Safely use the `this` keyword within event handlers; and
-* Describe what the React `SyntheticEvent` object is and the role it plays in
+- Add event listeners to elements;
+- Prevent event default behavior;
+- Safely use the `this` keyword within event handlers; and
+- Describe what the React `SyntheticEvent` object is and the role it plays in
   handling events.
 
 ## Adding event listeners
@@ -41,16 +44,18 @@ associate that method with the element event you want to listen for:
 ```js
 // ./src/AlertButton.js
 
-import React from 'react';
+import React from "react";
 
 class AlertButton extends React.Component {
   showAlert = () => {
-    window.alert('Button clicked!');
-  }
+    window.alert("Button clicked!");
+  };
 
   render() {
     return (
-      <button type='button' onClick={this.showAlert}>Click Me</button>
+      <button type="button" onClick={this.showAlert}>
+        Click Me
+      </button>
     );
   }
 }
@@ -94,12 +99,12 @@ Consider the following example though:
 ```js
 // ./src/NoDefaultSubmitForm.js
 
-import React from 'react';
+import React from "react";
 
 class NoDefaultSubmitForm extends React.Component {
   submitForm = () => {
-    window.alert('Handling form submission...');
-  }
+    window.alert("Handling form submission...");
+  };
 
   render() {
     return (
@@ -131,8 +136,8 @@ be updated to this:
 ```js
 submitForm = (e) => {
   e.preventDefault();
-  window.alert('Handling form submission...');
-}
+  window.alert("Handling form submission...");
+};
 ```
 
 Notice that a parameter named `e` has been added to the anonymous method
@@ -157,16 +162,18 @@ the `showAlert` event handler method:
 ```js
 // ./src/AlertButton.js
 
-import React from 'react';
+import React from "react";
 
 class AlertButton extends React.Component {
   showAlert = () => {
-    window.alert('Button clicked!');
-  }
+    window.alert("Button clicked!");
+  };
 
   render() {
     return (
-      <button type='button' onClick={this.showAlert}>Click Me</button>
+      <button type="button" onClick={this.showAlert}>
+        Click Me
+      </button>
     );
   }
 }
@@ -181,7 +188,7 @@ method to print `this` to the console:
 ```js
 showAlert = () => {
   console.log(this);
-}
+};
 ```
 
 Now when the button is clicked, you'll see the `AlertButton` component printed
@@ -210,7 +217,7 @@ as a class method, take a look at the following example:
 ```js
 class Person {
   constructor() {
-    this.name = 'Jane Smith';
+    this.name = "Jane Smith";
   }
 
   displayName() {
@@ -260,7 +267,9 @@ element event you want to listen for by passing a reference to the event handler
 method:
 
 ```jsx
-<button type='button' onClick={this.showAlert}>Click Me</button>
+<button type="button" onClick={this.showAlert}>
+  Click Me
+</button>
 ```
 
 Passing the reference to the `this.showAlert` class method to the `onClick`
@@ -272,7 +281,7 @@ be used in a React component `constructor` method to explicitly bind event
 handler methods to the component instance:
 
 ```js
-import React from 'react';
+import React from "react";
 
 class AlertButton extends React.Component {
   constructor() {
@@ -287,7 +296,9 @@ class AlertButton extends React.Component {
 
   render() {
     return (
-      <button type='button' onClick={this.showAlert}>Click Me</button>
+      <button type="button" onClick={this.showAlert}>
+        Click Me
+      </button>
     );
   }
 }
@@ -303,7 +314,7 @@ property in combination with an arrow function looks like this:
 ```js
 showAlert = () => {
   console.log(this);
-}
+};
 ```
 
 What's not apparent from this example is that the class property syntax, which
@@ -324,7 +335,8 @@ of JavaScript that's broadly supported. When you run the application using
 following code:
 
 ```js
-class AlertButton extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+class AlertButton extends react__WEBPACK_IMPORTED_MODULE_0___default.a
+  .Component {
   constructor(...args) {
     super(...args);
 
@@ -334,16 +346,20 @@ class AlertButton extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
   }
 
   render() {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-      type: "button",
-      onClick: this.showAlert,
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 24,
-        columnNumber: 7
-      }
-    }, "Click Me");
+    return /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(
+      "button",
+      {
+        type: "button",
+        onClick: this.showAlert,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 24,
+          columnNumber: 7,
+        },
+      },
+      "Click Me"
+    );
   }
 }
 ```
@@ -380,13 +396,13 @@ occurring when handling the `onSubmit` form event:
 ```js
 // ./src/NoDefaultSubmitForm.js
 
-import React from 'react';
+import React from "react";
 
 class NoDefaultSubmitForm extends React.Component {
   submitForm = (e) => {
     e.preventDefault();
-    window.alert('Handling form submission...');
-  }
+    window.alert("Handling form submission...");
+  };
 
   render() {
     return (
@@ -445,10 +461,10 @@ you'll rarely (if ever) need to access it.
 
 In this article, you learned how to:
 
-* Add event listeners to elements;
-* Prevent event default behavior;
-* Safely use the `this` keyword within event handlers; and
-* Describe what the React `SyntheticEvent` object is and the role it plays in
+- Add event listeners to elements;
+- Prevent event default behavior;
+- Safely use the `this` keyword within event handlers; and
+- Describe what the React `SyntheticEvent` object is and the role it plays in
   handling events.
 
 [react events]: https://reactjs.org/docs/events.html#supported-events

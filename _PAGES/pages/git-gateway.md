@@ -1,12 +1,12 @@
 ---
 title: Git Bash
 subtitle: understanding git bsh
-date: '2021-09-02'
+date: "2021-09-02"
 thumb_image_alt: lorem-ipsum
 excerpt: lorem-ipsum
 seo:
-  title: ''
-  description: ''
+  title: ""
+  description: ""
   robots: []
   extra: []
 template: post

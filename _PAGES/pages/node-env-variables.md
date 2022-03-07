@@ -2,21 +2,21 @@
 title: Node Export Module
 weight: 0
 excerpt: >-
-    How to use the module.exports API to expose data to other files in your
-    application, or to other applications as well
+  How to use the module.exports API to expose data to other files in your
+  application, or to other applications as well
 seo:
-    title: 'module.exports API '
-    description: |-
-        When you want to import something you use
+  title: "module.exports API "
+  description: |-
+    When you want to import something you use
 
-        const library = require('./library');
-    robots: []
-    extra:
-        - name: 'og:image'
-          value: images/cool-comet.png
-          keyName: property
-          relativeUrl: true
-    type: stackbit_page_meta
+    const library = require('./library');
+  robots: []
+  extra:
+    - name: "og:image"
+      value: images/cool-comet.png
+      keyName: property
+      relativeUrl: true
+  type: stackbit_page_meta
 template: docs
 ---
 
@@ -38,7 +38,7 @@ When you assign an object or a function as a new exports property, that is the t
 
 You can do so in 2 ways.
 
-The first is to assign an object to module.exports, which is an object provided out of the box by the module system, and this will make your file export *just that object*:
+The first is to assign an object to module.exports, which is an object provided out of the box by the module system, and this will make your file export _just that object_:
 
 The second way is to add the exported object as a property of exports. This way allows you to export multiple objects, functions or data:
 
@@ -50,4 +50,4 @@ or
 
 What's the difference between module.exports and exports?
 
-The first exposes the object it points to. The latter exposes *the properties* of the object it points to.
+The first exposes the object it points to. The latter exposes _the properties_ of the object it points to.

@@ -1,5 +1,7 @@
 # React Class Components
-________________________________________________________________________________
+
+---
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -19,8 +21,8 @@ ________________________________________________________________________________
 - [What you learned](#what-you-learned)
 
 <!-- /code_chunk_output -->
-________________________________________________________________________________
 
+---
 
 As you've learned the fundamentals of React, you've seen how to use functions to
 create components to develop the user interface for a frontend application.
@@ -29,10 +31,10 @@ more than one way to create components in React.
 
 When you finish this article, you should be able to:
 
-* Create a React component using ES2015 class syntax;
-* Describe when it's appropriate to use a class component;
-* Initialize and update state within a class component; and
-* Provide default values for props.
+- Create a React component using ES2015 class syntax;
+- Describe when it's appropriate to use a class component;
+- Initialize and update state within a class component; and
+- Provide default values for props.
 
 ## Hello class components!
 
@@ -41,12 +43,10 @@ Up to this point, you've written components using functions:
 ```js
 // ./src/Message.js
 
-import React from 'react';
+import React from "react";
 
 const Message = (props) => {
-  return (
-    <div>{props.text}</div>
-  );
+  return <div>{props.text}</div>;
 };
 
 export default Message;
@@ -58,13 +58,11 @@ above function component rewritten as a class component:
 ```js
 // ./src/Message.js
 
-import React from 'react';
+import React from "react";
 
 class Message extends React.Component {
   render() {
-    return (
-      <div>{this.props.text}</div>
-    );
+    return <div>{this.props.text}</div>;
   }
 }
 
@@ -79,15 +77,15 @@ Class components are used just like function components:
 ```js
 // ./src/index.js
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Message from './Message';
+import React from "react";
+import ReactDOM from "react-dom";
+import Message from "./Message";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Message text='Hello world!' />
+    <Message text="Hello world!" />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 ```
 
@@ -104,7 +102,7 @@ Notice from this example of using the `Message` class component that props are
 set on class components just like you do with function components:
 
 ```js
-<Message text='Hello world!' />
+<Message text="Hello world!" />
 ```
 
 To access props within a class component, use the `this.props` property:
@@ -112,9 +110,7 @@ To access props within a class component, use the `this.props` property:
 ```js
 class Message extends React.Component {
   render() {
-    return (
-      <div>{this.props.text}</div>
-    );
+    return <div>{this.props.text}</div>;
   }
 }
 ```
@@ -131,9 +127,7 @@ class Message extends React.Component {
   }
 
   render() {
-    return (
-      <div>{this.props.text}</div>
-    );
+    return <div>{this.props.text}</div>;
   }
 }
 ```
@@ -165,10 +159,10 @@ component counterpart. This might leave you wondering why you'd want or need to
 create a class component.
 
 **One of the two reasons why you would use a Class component over a Function
-component is to add and manage local or internal state to your component. The 
+component is to add and manage local or internal state to your component. The
 second main reason to use a Class component is to use a component's
 lifecycle methods.** The following sections will focus on how to add and manage
-a component's state. You'll learn more about a component's lifecycle (and the 
+a component's state. You'll learn more about a component's lifecycle (and the
 associated component lifecycle methods) later in a future reading.
 
 ### What is state?
@@ -212,18 +206,18 @@ method:
 ```js
 // ./src/RandomQuote.js
 
-import React from 'react';
+import React from "react";
 
 class RandomQuote extends React.Component {
   constructor() {
     super();
 
     const quotes = [
-      'May the Force be with you.',
-      'There\'s no place like home.',
-      'I\'m the king of the world!',
-      'My mama always said life was like a box of chocolates.',
-      'I\'ll be back.',
+      "May the Force be with you.",
+      "There's no place like home.",
+      "I'm the king of the world!",
+      "My mama always said life was like a box of chocolates.",
+      "I'll be back.",
     ];
 
     this.state = {
@@ -258,15 +252,15 @@ import and render the `RandomQuote` component:
 ```js
 // ./src/index.js
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import RandomQuote from './RandomQuote';
+import React from "react";
+import ReactDOM from "react-dom";
+import RandomQuote from "./RandomQuote";
 
 ReactDOM.render(
   <React.StrictMode>
     <RandomQuote />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 ```
 
@@ -298,7 +292,9 @@ To do this, add a `<button>` element just below the `<p>` element with the
 following attributes and content:
 
 ```jsx
-<button type='button' onClick={this.changeQuote}>Change Quote</button>
+<button type="button" onClick={this.changeQuote}>
+  Change Quote
+</button>
 ```
 
 Notice the `onClick={this.changeQuote}` bit? This is how you add an event
@@ -320,7 +316,7 @@ changeQuote = () => {
   this.setState({
     currentQuoteIndex: newIndex,
   });
-}
+};
 ```
 
 > Did you notice the slightly odd looking class property syntax (i.e.
@@ -353,18 +349,18 @@ For your reference, here's the updated `RandomQuote` component:
 ```js
 // ./src/RandomQuote.js
 
-import React from 'react';
+import React from "react";
 
 class RandomQuote extends React.Component {
   constructor() {
     super();
 
     const quotes = [
-      'May the Force be with you.',
-      'There\'s no place like home.',
-      'I\'m the king of the world!',
-      'My mama always said life was like a box of chocolates.',
-      'I\'ll be back.',
+      "May the Force be with you.",
+      "There's no place like home.",
+      "I'm the king of the world!",
+      "My mama always said life was like a box of chocolates.",
+      "I'll be back.",
     ];
 
     this.state = {
@@ -379,7 +375,7 @@ class RandomQuote extends React.Component {
     this.setState({
       currentQuoteIndex: newIndex,
     });
-  }
+  };
 
   getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
@@ -390,7 +386,9 @@ class RandomQuote extends React.Component {
       <div>
         <h2>Random Quote</h2>
         <p>{this.state.quotes[this.state.currentQuoteIndex]}</p>
-        <button type='button' onClick={this.changeQuote}>Change Quote</button>
+        <button type="button" onClick={this.changeQuote}>
+          Change Quote
+        </button>
       </div>
     );
   }
@@ -418,7 +416,7 @@ changeQuote = () => {
   this.setState({
     currentQuoteIndex: newIndex,
   });
-}
+};
 ```
 
 Reassigning `this.state` alone won't trigger re-rendering, leaving your
@@ -458,7 +456,7 @@ changeQuote = () => {
   this.setState({
     currentQuoteIndex: newIndex,
   });
-}
+};
 ```
 
 The problem with the above solution is that it doesn't take into account that
@@ -488,7 +486,7 @@ changeQuote = () => {
       currentQuoteIndex: newIndex,
     };
   });
-}
+};
 ```
 
 Now, if you retest your application, clicking the "Change Quote" button will
@@ -528,7 +526,7 @@ of quotes as a prop:
 ```js
 // ./src/RandomQuote.js
 
-import React from 'react';
+import React from "react";
 
 class RandomQuote extends React.Component {
   constructor(props) {
@@ -554,7 +552,7 @@ class RandomQuote extends React.Component {
         currentQuoteIndex: newIndex,
       };
     });
-  }
+  };
 
   getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
@@ -565,7 +563,9 @@ class RandomQuote extends React.Component {
       <div>
         <h2>Random Quote</h2>
         <p>{this.props.quotes[this.state.currentQuoteIndex]}</p>
-        <button type='button' onClick={this.changeQuote}>Change Quote</button>
+        <button type="button" onClick={this.changeQuote}>
+          Change Quote
+        </button>
       </div>
     );
   }
@@ -596,23 +596,23 @@ the `RandomQuote` component:
 ```js
 // ./src/index.js
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import RandomQuote from './RandomQuote';
+import React from "react";
+import ReactDOM from "react-dom";
+import RandomQuote from "./RandomQuote";
 
 const quotes = [
-  'Toto, I\'ve a feeling we\'re not in Kansas anymore.',
-  'Here\'s looking at you, kid.',
-  'There\'s no crying in baseball!',
-  'Elementary, my dear Watson.',
-  'Rosebud.',
+  "Toto, I've a feeling we're not in Kansas anymore.",
+  "Here's looking at you, kid.",
+  "There's no crying in baseball!",
+  "Elementary, my dear Watson.",
+  "Rosebud.",
 ];
 
 ReactDOM.render(
   <React.StrictMode>
     <RandomQuote quotes={quotes} />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 ```
 
@@ -622,7 +622,7 @@ behavior by defining a default value for the `quotes` prop using the
 `defaultProps` static property:
 
 ```js
-import React from 'react';
+import React from "react";
 
 class RandomQuote extends React.Component {
   // Code removed for brevity.
@@ -630,11 +630,11 @@ class RandomQuote extends React.Component {
 
 RandomQuote.defaultProps = {
   quotes: [
-    'May the Force be with you.',
-    'There\'s no place like home.',
-    'I\'m the king of the world!',
-    'My mama always said life was like a box of chocolates.',
-    'I\'ll be back.',
+    "May the Force be with you.",
+    "There's no place like home.",
+    "I'm the king of the world!",
+    "My mama always said life was like a box of chocolates.",
+    "I'll be back.",
   ],
 };
 
@@ -650,15 +650,15 @@ Now the `RandomQuote` component can be used without having to provide the
 ```js
 // ./src/index.js
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import RandomQuote from './RandomQuote';
+import React from "react";
+import ReactDOM from "react-dom";
+import RandomQuote from "./RandomQuote";
 
 ReactDOM.render(
   <React.StrictMode>
     <RandomQuote />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 ```
 
@@ -666,10 +666,10 @@ ReactDOM.render(
 
 In this article, you learned how to:
 
-* Create a React component using ES2015 class syntax;
-* Describe when it's appropriate to use a class component;
-* Initialize and update state within a class component; and
-* Provide default values for props.
+- Create a React component using ES2015 class syntax;
+- Describe when it's appropriate to use a class component;
+- Initialize and update state within a class component; and
+- Provide default values for props.
 
 [create-class]: https://reactjs.org/docs/react-without-es6.html
 [react hooks]: https://reactjs.org/docs/hooks-intro.html

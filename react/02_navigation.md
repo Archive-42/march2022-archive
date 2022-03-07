@@ -1,7 +1,10 @@
 # React Router Navigation
-________________________________________________________________________________
+
+---
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
-________________________________________________________________________________
+
+---
 
 Now that you know how to create front-end routes with React Router, you'll need
 to implement a way for your users to navigate the routes! This is what using
@@ -12,11 +15,11 @@ In this article, you'll be working off of the demo project you built in the
 React Router Intro reading. When you finish this article, you should be able to
 use the following components from the `react-router-dom` library:
 
-* `<Link>` or `<NavLink>` to create links with absolute paths to routes in your
+- `<Link>` or `<NavLink>` to create links with absolute paths to routes in your
   application (like "/users/1"); and,
-* `<Redirect>` to redirect a user to another path (i.e. a login page when the
+- `<Redirect>` to redirect a user to another path (i.e. a login page when the
   user is not logged in); and
-* React Router's `history` prop to update a browser's URL programmatically.
+- React Router's `history` prop to update a browser's URL programmatically.
 
 ## Adding links for navigation
 
@@ -30,7 +33,7 @@ To use it, update your imports from the `react-router-dom` package to include
 `Link`:
 
 ```js
-import { BrowserRouter, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Link } from "react-router-dom";
 ```
 
 Note that `<Link>` can take two props: `to` and `onClick`.
@@ -52,19 +55,20 @@ component:
 
 ```jsx
 // Link with onClick prop
-<Link to="/" onClick={handleClick}>App with click handler</Link>
+<Link to="/" onClick={handleClick}>
+  App with click handler
+</Link>
 ```
 
 ```js
 // Click handler function
 const handleClick = () => {
-  console.log('Thanks for clicking!')
+  console.log("Thanks for clicking!");
 };
 ```
 
 Now, test your routes and links! If you inspect the page, you'll see that your
-links are now rendered as `<a>` elements. Notice that clicking the `App with
-click handler` link logs a message in your console while directing your browser
+links are now rendered as `<a>` elements. Notice that clicking the `App with click handler` link logs a message in your console while directing your browser
 to render the `App` component.
 
 ### NavLink
@@ -77,7 +81,7 @@ hence the name. This styling can be controlled by three extra props:
 your imports from the `react-router-dom` package:
 
 ```js
-import { BrowserRouter, Route, NavLink } from 'react-router-dom';
+import { BrowserRouter, Route, NavLink } from "react-router-dom";
 ```
 
 The `activeClassName` prop of the `NavLink` component allows you to set a CSS
@@ -154,7 +158,9 @@ The `activeStyle` prop is a style object that will be applied inline to the
 file.
 
 ```jsx
-<NavLink to="/" activeStyle={{ fontWeight: "bold" }}>App</NavLink>
+<NavLink to="/" activeStyle={{ fontWeight: "bold" }}>
+  App
+</NavLink>
 ```
 
 The following html is rendered when at the `/` path:
@@ -170,8 +176,7 @@ to this NavLink.
 
 The `exact` prop is a boolean that defaults to `false`. If set to `true`, then
 the `activeStyle` and `activeClassName` props will only be applied when the
-current URL exactly matches the `to` prop. Update your `App` and `App with click
-handler` links with an `exact` prop set. Just like in your routes, you can use
+current URL exactly matches the `to` prop. Update your `App` and `App with click handler` links with an `exact` prop set. Just like in your routes, you can use
 the `exact` flag instead of `exact={true}`.
 
 ```jsx
@@ -210,8 +215,7 @@ match.
 
 Import `Switch` from `react-router-dom` and add `<Switch>` tags around your
 routes to take care of ordering and switching between your routes! Begin by
-adding the following route to the bottom of your routes to render that a `404:
-Page not found` message:
+adding the following route to the bottom of your routes to render that a `404: Page not found` message:
 
 ```jsx
 <Route render={() => <h1>404: Page not found</h1>} />
@@ -221,13 +225,10 @@ This is what your `Root` component should look like at this point:
 
 ```js
 const Root = () => {
-  const users = [
-    { name: 'andrew' },
-    { name: 'raymond' }
-  ];
+  const users = [{ name: "andrew" }, { name: "raymond" }];
 
   const handleClick = () => {
-    console.log('Thanks for clicking!')
+    console.log("Thanks for clicking!");
   };
 
   return (
@@ -235,14 +236,27 @@ const Root = () => {
       <h1>Hi, I'm Root!</h1>
 
       <div>
-        <NavLink to="/" exact={true} activeStyle={{ fontWeight: "bold" }}>App</NavLink>
-        <NavLink activeClassName="red" to="/users">Users</NavLink>
-        <NavLink activeClassName="blue" to="/hello">Hello</NavLink>
-        <NavLink activeClassName="green" to="/users/1">Andrew's Profile</NavLink>
-        <NavLink to="/" exact onClick={handleClick}>App with click handler</NavLink>
+        <NavLink to="/" exact={true} activeStyle={{ fontWeight: "bold" }}>
+          App
+        </NavLink>
+        <NavLink activeClassName="red" to="/users">
+          Users
+        </NavLink>
+        <NavLink activeClassName="blue" to="/hello">
+          Hello
+        </NavLink>
+        <NavLink activeClassName="green" to="/users/1">
+          Andrew's Profile
+        </NavLink>
+        <NavLink to="/" exact onClick={handleClick}>
+          App with click handler
+        </NavLink>
 
         <Switch>
-          <Route path="/users/:userId" component={(props) => <Profile users={users} {...props} />} />
+          <Route
+            path="/users/:userId"
+            component={(props) => <Profile users={users} {...props} />}
+          />
           <Route exact path="/users" render={() => <Users users={users} />} />
           <Route path="/hello" render={() => <h1>Hello!</h1>} />
           <Route exact path="/" component={App} />
@@ -273,7 +287,8 @@ redirect the user to the `/login` path.
 
 ```jsx
 <Route
-  exact path="/"
+  exact
+  path="/"
   render={() => (this.props.currentUser ? <Home /> : <Redirect to="/login" />)}
 />
 ```
@@ -289,10 +304,10 @@ need to redirect users programmatically? You've learned about the React Router's
 
 ```js
 // Pushing a new URL (and adding to the end of history stack):
-const handleClick = () => this.props.history.push('/some/url');
+const handleClick = () => this.props.history.push("/some/url");
 
 // Replacing the current URL (won't be tracked in history stack):
-const redirect = () => this.props.history.replace('/some/other/url');
+const redirect = () => this.props.history.replace("/some/other/url");
 ```
 
 This prop lets you update the URL programmatically. For example, suppose you
@@ -311,9 +326,9 @@ want to push a new URL when the user clicks a button. It has two useful methods:
 
 In this article, you learned how to:
 
-* Create navigation links for your route paths; and
-* Redirect users through using the `<Redirect>` component; and
-* Update a browser's URL programmatically by using React Router's `history`
+- Create navigation links for your route paths; and
+- Redirect users through using the `<Redirect>` component; and
+- Update a browser's URL programmatically by using React Router's `history`
   prop.
 
 [route props]: https://reacttraining.com/react-router/web/api/Route/route-props

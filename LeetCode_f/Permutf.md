@@ -4,9 +4,9 @@
 
 ### Problem:
 
-The set `[1,2,3,...,*n*]` contains a total of *n*! unique permutations.
+The set `[1,2,3,...,*n*]` contains a total of _n_! unique permutations.
 
-By listing and labeling all of the permutations in order, we get the following sequence for *n* = 3:
+By listing and labeling all of the permutations in order, we get the following sequence for _n_ = 3:
 
 1. `"123"`
 2. `"132"`
@@ -15,12 +15,12 @@ By listing and labeling all of the permutations in order, we get the following s
 5. `"312"`
 6. `"321"`
 
-Given *n* and *k*, return the *k*th permutation sequence.
+Given _n_ and _k_, return the *k*th permutation sequence.
 
 **Note:**
 
-- Given *n* will be between 1 and 9 inclusive.
-- Given *k* will be between 1 and *n*! inclusive.
+- Given _n_ will be between 1 and 9 inclusive.
+- Given *k* will be between 1 and _n_! inclusive.
 
 **Example 1:**
 
@@ -72,4 +72,4 @@ var getPermutation = function(n, k) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

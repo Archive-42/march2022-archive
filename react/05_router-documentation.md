@@ -1,7 +1,10 @@
 # React Router Documentation
-________________________________________________________________________________
+
+---
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
-________________________________________________________________________________
+
+---
 
 Now that you've had an introduction to React Router, feel free to explore the
 official documentation to learn more! As you become a full-fledged software

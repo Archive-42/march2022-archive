@@ -1,5 +1,7 @@
 # React Concepts And Features
-________________________________________________________________________________
+
+---
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -14,7 +16,8 @@ ________________________________________________________________________________
 - [What you learned](#what-you-learned)
 
 <!-- /code_chunk_output -->
-________________________________________________________________________________
+
+---
 
 In this article, you will gain insight into why you may want to use React for
 the front-end portion of your application, the part that runs in the browser,
@@ -73,16 +76,17 @@ where the data display or event handling code is.
 You may have come to the conclusion that writing things like
 
 ```js
-el.innerHTML = `
+el.innerHTML =
+  `
   <table>
     <tbody>` +
-      arr.map(item => `<tr><td>${item.name}</td></tr>`)
-    + `</tbody>
+  arr.map((item) => `<tr><td>${item.name}</td></tr>`) +
+  `</tbody>
   </table>
 `;
 ```
 
-is hard to debug, maintain, and use in the long run.  React solves this problem
+is hard to debug, maintain, and use in the long run. React solves this problem
 by providing a virtual DOM (in memory) that acts as an agent between the
 developer and the real DOM. The virtual DOM is a lot more user-friendly for
 developers.
@@ -103,11 +107,11 @@ of days. Happy Reacting!
 You found out that React has a variety of good points that encourage you to
 choose it as the means to build your front-end:
 
-* React encourages modular development
-* React is easy to use, easy to start with, and has some great tools
-* React follows the declarative programming style
-* React encourages reusability in your code
-* React has one way that data flows, which makes it much easier to reason about
+- React encourages modular development
+- React is easy to use, easy to start with, and has some great tools
+- React follows the declarative programming style
+- React encourages reusability in your code
+- React has one way that data flows, which makes it much easier to reason about
   the code
-* React uses a "virtual DOM" to make changes to the real DOM very fast and
+- React uses a "virtual DOM" to make changes to the real DOM very fast and
   efficient

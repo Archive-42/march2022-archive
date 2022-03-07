@@ -3,10 +3,10 @@ title: Do & Don't of Interviewing!
 weight: 0
 excerpt: Do & Don't of Interviewing!
 seo:
-    title: ''
-    description: ''
-    robots: []
-    extra: []
+  title: ""
+  description: ""
+  robots: []
+  extra: []
 template: docs
 ---
 
@@ -14,9 +14,9 @@ template: docs
 
 #### Legend
 
--   ✅ = Do
--   ❌ = Don't
--   ⚠️ = Situational
+- ✅ = Do
+- ❌ = Don't
+- ⚠️ = Situational
 
 ### Before interview
 

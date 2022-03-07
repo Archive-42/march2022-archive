@@ -1,4 +1,4 @@
-# 102._Binary_Tree_Level_Order_Traversal
+# 102.\_Binary_Tree_Level_Order_Traversal
 
 ## [102. Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/description/)
 

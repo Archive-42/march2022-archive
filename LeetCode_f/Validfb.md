@@ -1,4 +1,4 @@
-# 125._Valid_Palindrome
+# 125.\_Valid_Palindrome
 
 ## [125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome/description/)
 

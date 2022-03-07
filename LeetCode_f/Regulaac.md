@@ -1,4 +1,4 @@
-# 010._Regular_Expression_Matching
+# 010.\_Regular_Expression_Matching
 
 ## [10. Regular Expression Matching](https://leetcode.com/problems/regular-expression-matching/description/)
 

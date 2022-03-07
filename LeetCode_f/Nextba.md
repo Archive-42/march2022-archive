@@ -1,4 +1,4 @@
-# 031._Next_Permutation
+# 031.\_Next_Permutation
 
 ## [31. Next Permutation](https://leetcode.com/problems/next-permutation/description/)
 

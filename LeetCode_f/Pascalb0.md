@@ -4,7 +4,7 @@
 
 ### Problem:
 
-Given a non-negative index *k* where *k* ≤ 33, return the *k*th index row of the Pascal's triangle.
+Given a non-negative index *k* where _k_ ≤ 33, return the *k*th index row of the Pascal's triangle.
 
 Note that the row index starts from 0.
 
@@ -23,7 +23,7 @@ Output: [1,3,3,1]
 
 **Follow up:**
 
-Could you optimize your algorithm to use only *O*(*k*) extra space?
+Could you optimize your algorithm to use only _O_(_k_) extra space?
 
 ### Solution:
 
@@ -51,4 +51,4 @@ var getRow = function(rowIndex) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

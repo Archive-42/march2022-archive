@@ -1,7 +1,9 @@
+---
 
-________________________________________________________________________________
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
-________________________________________________________________________________
+
+---
+
 # Flux and Redux
 
 Redux is an evolution of the concepts introduced by Flux. Having a general
@@ -9,9 +11,9 @@ understanding of Flux will assist you in learning Redux.
 
 When you finish this article, you should be able to:
 
-* Describe the relationship between Redux and Flux
-* Describe the three principles that Redux abides by
-* Describe the Redux data cycle
+- Describe the relationship between Redux and Flux
+- Describe the three principles that Redux abides by
+- Describe the Redux data cycle
 
 ## What is Flux?
 
@@ -108,8 +110,11 @@ cycle.
 [pure-functions]: https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976#.lfv7bgqco
 [flux-loop]: https://appacademy-open-assets.s3-us-west-1.amazonaws.com/fullstack/react/assets/flux-loop.png
 [flux]: images/redux-flux.pngimages/redux-flux.png____________________________
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
-________________________________________________________________________________
+
+---
+
 # Flux and Redux
 
 Redux is an evolution of the concepts introduced by Flux. Having a general
@@ -117,9 +122,9 @@ understanding of Flux will assist you in learning Redux.
 
 When you finish this article, you should be able to:
 
-* Describe the relationship between Redux and Flux
-* Describe the three principles that Redux abides by
-* Describe the Redux data cycle
+- Describe the relationship between Redux and Flux
+- Describe the three principles that Redux abides by
+- Describe the Redux data cycle
 
 ## What is Flux?
 

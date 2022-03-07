@@ -1,16 +1,14 @@
 ---
-title:  All the Things You Can Do With GitHub API and Python
+title: All the Things You Can Do With GitHub API and Python
 weight: 0
-excerpt: Most of us use GitHub every day either using CLI or its website. Sometimes however, you need to automate these same tasks like, for example creating Gist, querying repository analytics or just pulling, modifying and pushing new file. 
+excerpt: Most of us use GitHub every day either using CLI or its website. Sometimes however, you need to automate these same tasks like, for example creating Gist, querying repository analytics or just pulling, modifying and pushing new file.
 seo:
-    title: 'All the Things You Can Do With GitHub API and Python'
-    description: 'Most of us use GitHub every day either using CLI or its website. Sometimes however, you need to automate these same tasks like, for example creating Gist, querying repository analytics or just pulling, modifying and pushing new file. All these things and more can be done easily using GitHub API, and Python is here to help with that and make it even easier.'
-    robots: []
-    extra: []
+  title: "All the Things You Can Do With GitHub API and Python"
+  description: "Most of us use GitHub every day either using CLI or its website. Sometimes however, you need to automate these same tasks like, for example creating Gist, querying repository analytics or just pulling, modifying and pushing new file. All these things and more can be done easily using GitHub API, and Python is here to help with that and make it even easier."
+  robots: []
+  extra: []
 template: docs
 ---
-
-
 
 # All the Things You Can Do With GitHub API and Python
 

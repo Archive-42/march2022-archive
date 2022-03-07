@@ -1,4 +1,4 @@
-# 033._Search_in_Rotated_Sorted_Array
+# 033.\_Search_in_Rotated_Sorted_Array
 
 ## [33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/description/)
 

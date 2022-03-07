@@ -1,10 +1,10 @@
-# 052._N-Queens_II
+# 052.\_N-Queens_II
 
 ## [52. N-Queens II](https://leetcode.com/problems/n-queens-ii/description/)
 
 ### Problem:
 
-The *n*-queens puzzle is the problem of placing *n* queens on an *n*×*n* chessboard such that no two queens attack each other.
+The _n_-queens puzzle is the problem of placing _n_ queens on an *n*×*n* chessboard such that no two queens attack each other.
 
 ![https://leetcode.com/static/images/problemset/8-queens.png](https://leetcode.com/static/images/problemset/8-queens.png)
 

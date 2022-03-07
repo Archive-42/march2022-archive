@@ -1,10 +1,10 @@
-# 054._Spiral_Matrix
+# 054.\_Spiral_Matrix
 
 ## [54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/description/)
 
 ### Problem:
 
-Given a matrix of *m* x *n* elements (*m* rows, *n* columns), return all elements of the matrix in spiral order.
+Given a matrix of _m_ x _n_ elements (_m_ rows, _n_ columns), return all elements of the matrix in spiral order.
 
 **Example 1:**
 

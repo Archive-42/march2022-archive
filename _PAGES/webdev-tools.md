@@ -3,10 +3,10 @@ title: Web Developer Tools
 weight: 0
 excerpt: lorem-ipsum
 seo:
-    title: ''
-    description: ''
-    robots: []
-    extra: []
+  title: ""
+  description: ""
+  robots: []
+  extra: []
 template: docs
 ---
 
@@ -16,17 +16,17 @@ template: docs
 
 When people speak about web development tools (or devtools in the biz), they're usually referring to the apps and software that allows web developers to test and debug the code and interface of a website or web application.
 
-Technically, the term doesn't refer to tools that \*actually help you *build a webpage or app*. \*But that distinction isn't helpful. Web developers require a range of tools that go beyond debugging and testing—whether it be a remote collaboration tool like Slack, a design tool like Figma, or even just an online forum like [StackOverflow](https://stackoverflow.com/).
+Technically, the term doesn't refer to tools that \*actually help you _build a webpage or app_. \*But that distinction isn't helpful. Web developers require a range of tools that go beyond debugging and testing—whether it be a remote collaboration tool like Slack, a design tool like Figma, or even just an online forum like [StackOverflow](https://stackoverflow.com/).
 
-For that reason, we've gone beyond the traditional definition of devtools with the aim of giving a  realistic view of the kind of apps and software devs use in their day to day workflows. We think you'll find some familiar favourites, as well as some useful tools to add to your tech stack.
+For that reason, we've gone beyond the traditional definition of devtools with the aim of giving a realistic view of the kind of apps and software devs use in their day to day workflows. We think you'll find some familiar favourites, as well as some useful tools to add to your tech stack.
 
 ## What To Consider When Choosing Web Development Tools
 
-Whether you're [bootstrapping a website](https://www.templatemonster.com/bootstrap-website-templates/) from scratch or developing a simple web application, there are few things to keep in mind. Foremost is something that applies to any tool: pick the *right option for your specific needs.*
+Whether you're [bootstrapping a website](https://www.templatemonster.com/bootstrap-website-templates/) from scratch or developing a simple web application, there are few things to keep in mind. Foremost is something that applies to any tool: pick the _right option for your specific needs._
 
 > _What works for one project might not work for the next. As a web developer, you constantly need to investigate new tools and ways of doing things. Of course, we all have our favourites, but as a general rule, your tech stack should never be stagnant._
 
-There's one other general principle to keep in mind. Tech should simplify your workflow—not complicate it. We know how easy it is to get bogged down in the nerdy details, but when in doubt, ask yourself: *does this tool actually make my job easier?*
+There's one other general principle to keep in mind. Tech should simplify your workflow—not complicate it. We know how easy it is to get bogged down in the nerdy details, but when in doubt, ask yourself: _does this tool actually make my job easier?_
 
 Here are a few things to think about beyond these broader considerations:
 
@@ -50,7 +50,7 @@ Web development is an all-encompassing term that refers to a bunch of roles. You
 
 Most of the time, web developers specialise in one of the two. However, there are a few show-offs that can do both—they're referred to as full-stack developers.
 
-> The term stack is used because the tools that websites and apps use  'stack' on top of each other to build the final product.
+> The term stack is used because the tools that websites and apps use 'stack' on top of each other to build the final product.
 
 Check out this example of Paperform's tech stack for example.
 
@@ -280,7 +280,7 @@ Other notable features include syntax highlighting, a nifty built-in code editor
 
 [Sourcetree](https://www.sourcetreeapp.com/) is a Graphical User Interface (GUI for the cool kids) used to manage Git repository hosts. Built by Atlassian (go Aussies!) it allows you to visualise and manage your repos so you can focus purely on coding.
 
-Whether you're just starting out as a web developer or  are an old pro, Sourcetree has all the tools you need. Leave the command line behind, or delve deeper to review change-sets, stash or cherry-pick between branches—built-in smart branching keeps development clean and efficient.
+Whether you're just starting out as a web developer or are an old pro, Sourcetree has all the tools you need. Leave the command line behind, or delve deeper to review change-sets, stash or cherry-pick between branches—built-in smart branching keeps development clean and efficient.
 
 Sourcetree is available to download for free on both MacOS and Windows. They've got a huge range of [tutorials](https://support.atlassian.com/bitbucket-cloud/docs/tutorial-learn-bitbucket-with-sourcetree/) that'll have you up and running in no time. After some initial hiccups, it's now more powerful and reliable than almost any other Git client.
 
@@ -496,7 +496,7 @@ Whether you're designing a website, putting together a UI or creating a [Canva d
 
 Colour picking tools allow you to identify the Hex codes of elements on the web to gain inspiration or keep designs consistent. There are thousands of tools in this space, but you won't find one easier than [ColorPick Eyedropper for Chrome](https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg?hl=en).
 
-Just click the extension and hover over *any* element on \*any \*webpage. A small box appears with the Hex code and RGB model. These are automatically copied to the clipboard for you to use. If your only experience working with colours was using crayons in kindergarten, Material.io has a great to the [Material Design system](https://material.io/design/color/the-color-system.html#color-usage-and-palettes).
+Just click the extension and hover over _any_ element on \*any \*webpage. A small box appears with the Hex code and RGB model. These are automatically copied to the clipboard for you to use. If your only experience working with colours was using crayons in kindergarten, Material.io has a great to the [Material Design system](https://material.io/design/color/the-color-system.html#color-usage-and-palettes).
 
 ### 48. Google Lighthouse
 
@@ -510,7 +510,7 @@ There are two new features that extend the functionality somewhat too. Stack Pac
 
 ### 49. A Second Monitor
 
-No guide to web development tools would be complete without recommending you treat yourself to a second monitor. The extra screen real estate makes life *so much easier* and development *so much faster.*
+No guide to web development tools would be complete without recommending you treat yourself to a second monitor. The extra screen real estate makes life _so much easier_ and development _so much faster._
 
 Just think of a world where you can have IDE and terminal open on one screen, and the app that you're debugging on the other. Or Slack on the first, your browser and Stack Overflow on the second, maybe Spotify in the corner for some Lo-Fi beats.
 

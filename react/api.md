@@ -30,7 +30,7 @@ ReactDOM.render(
     <MyRootComponent />
   </Provider>,
   rootEl
-)
+);
 ```
 
 #### React Router
@@ -45,8 +45,8 @@ ReactDOM.render(
       </Route>
     </Router>
   </Provider>,
-  document.getElementById('root')
-)
+  document.getElementById("root")
+);
 ```
 
 ## connect
@@ -95,39 +95,39 @@ It does not modify the component class passed to it; instead, it _returns_ a new
 
 ```js
 function mapStateToProps(state) {
-  console.log(state) // state
-  console.log(arguments[1]) // undefined
+  console.log(state); // state
+  console.log(arguments[1]); // undefined
 }
 ```
 
 ```js
 const mapStateToProps = (state, ownProps = {}) => {
-  console.log(state) // state
-  console.log(ownProps) // {}
-}
+  console.log(state); // state
+  console.log(ownProps); // {}
+};
 ```
 
 Functions with no mandatory parameters or two parameters **will receive** `ownProps`.
 
 ```js
 const mapStateToProps = (state, ownProps) => {
-  console.log(state) // state
-  console.log(ownProps) // ownProps
-}
+  console.log(state); // state
+  console.log(ownProps); // ownProps
+};
 ```
 
 ```js
 function mapStateToProps() {
-  console.log(arguments[0]) // state
-  console.log(arguments[1]) // ownProps
+  console.log(arguments[0]); // state
+  console.log(arguments[1]); // ownProps
 }
 ```
 
 ```js
 const mapStateToProps = (...args) => {
-  console.log(args[0]) // state
-  console.log(args[1]) // ownProps
-}
+  console.log(args[0]); // state
+  console.log(args[1]); // ownProps
+};
 ```
 
 #### Optimizing connect when options.pure is true
@@ -155,15 +155,15 @@ A higher-order React component class that passes state and action creators into 
 #### Inject just `dispatch` and don't listen to store
 
 ```js
-export default connect()(TodoApp)
+export default connect()(TodoApp);
 ```
 
 #### Inject all action creators (`addTodo`, `completeTodo`, ...) without subscribing to the store
 
 ```js
-import * as actionCreators from './actionCreators'
+import * as actionCreators from "./actionCreators";
 
-export default connect(null, actionCreators)(TodoApp)
+export default connect(null, actionCreators)(TodoApp);
 ```
 
 #### Inject `dispatch` and every field in the global state
@@ -173,112 +173,112 @@ export default connect(null, actionCreators)(TodoApp)
 > listen to a relevant slice of the state.
 
 ```js
-export default connect((state) => state)(TodoApp)
+export default connect((state) => state)(TodoApp);
 ```
 
 #### Inject `dispatch` and `todos`
 
 ```js
 function mapStateToProps(state) {
-  return { todos: state.todos }
+  return { todos: state.todos };
 }
 
-export default connect(mapStateToProps)(TodoApp)
+export default connect(mapStateToProps)(TodoApp);
 ```
 
 #### Inject `todos` and all action creators
 
 ```js
-import * as actionCreators from './actionCreators'
+import * as actionCreators from "./actionCreators";
 
 function mapStateToProps(state) {
-  return { todos: state.todos }
+  return { todos: state.todos };
 }
 
-export default connect(mapStateToProps, actionCreators)(TodoApp)
+export default connect(mapStateToProps, actionCreators)(TodoApp);
 ```
 
 #### Inject `todos` and all action creators (`addTodo`, `completeTodo`, ...) as `actions`
 
 ```js
-import * as actionCreators from './actionCreators'
-import { bindActionCreators } from 'redux'
+import * as actionCreators from "./actionCreators";
+import { bindActionCreators } from "redux";
 
 function mapStateToProps(state) {
-  return { todos: state.todos }
+  return { todos: state.todos };
 }
 
 function mapDispatchToProps(dispatch) {
-  return { actions: bindActionCreators(actionCreators, dispatch) }
+  return { actions: bindActionCreators(actionCreators, dispatch) };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
+export default connect(mapStateToProps, mapDispatchToProps)(TodoApp);
 ```
 
 #### Inject `todos` and a specific action creator (`addTodo`)
 
 ```js
-import { addTodo } from './actionCreators'
-import { bindActionCreators } from 'redux'
+import { addTodo } from "./actionCreators";
+import { bindActionCreators } from "redux";
 
 function mapStateToProps(state) {
-  return { todos: state.todos }
+  return { todos: state.todos };
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ addTodo }, dispatch)
+  return bindActionCreators({ addTodo }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
+export default connect(mapStateToProps, mapDispatchToProps)(TodoApp);
 ```
 
 #### Inject `todos` and specific action creators (`addTodo` and `deleteTodo`) with shorthand syntax
 
 ```js
-import { addTodo, deleteTodo } from './actionCreators'
+import { addTodo, deleteTodo } from "./actionCreators";
 
 function mapStateToProps(state) {
-  return { todos: state.todos }
+  return { todos: state.todos };
 }
 
 const mapDispatchToProps = {
   addTodo,
   deleteTodo,
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
+export default connect(mapStateToProps, mapDispatchToProps)(TodoApp);
 ```
 
 #### Inject `todos`, todoActionCreators as `todoActions`, and counterActionCreators as `counterActions`
 
 ```js
-import * as todoActionCreators from './todoActionCreators'
-import * as counterActionCreators from './counterActionCreators'
-import { bindActionCreators } from 'redux'
+import * as todoActionCreators from "./todoActionCreators";
+import * as counterActionCreators from "./counterActionCreators";
+import { bindActionCreators } from "redux";
 
 function mapStateToProps(state) {
-  return { todos: state.todos }
+  return { todos: state.todos };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     todoActions: bindActionCreators(todoActionCreators, dispatch),
     counterActions: bindActionCreators(counterActionCreators, dispatch),
-  }
+  };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
+export default connect(mapStateToProps, mapDispatchToProps)(TodoApp);
 ```
 
 #### Inject `todos`, and todoActionCreators and counterActionCreators together as `actions`
 
 ```js
-import * as todoActionCreators from './todoActionCreators'
-import * as counterActionCreators from './counterActionCreators'
-import { bindActionCreators } from 'redux'
+import * as todoActionCreators from "./todoActionCreators";
+import * as counterActionCreators from "./counterActionCreators";
+import { bindActionCreators } from "redux";
 
 function mapStateToProps(state) {
-  return { todos: state.todos }
+  return { todos: state.todos };
 }
 
 function mapDispatchToProps(dispatch) {
@@ -287,62 +287,62 @@ function mapDispatchToProps(dispatch) {
       Object.assign({}, todoActionCreators, counterActionCreators),
       dispatch
     ),
-  }
+  };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
+export default connect(mapStateToProps, mapDispatchToProps)(TodoApp);
 ```
 
 #### Inject `todos`, and all todoActionCreators and counterActionCreators directly as props
 
 ```js
-import * as todoActionCreators from './todoActionCreators'
-import * as counterActionCreators from './counterActionCreators'
-import { bindActionCreators } from 'redux'
+import * as todoActionCreators from "./todoActionCreators";
+import * as counterActionCreators from "./counterActionCreators";
+import { bindActionCreators } from "redux";
 
 function mapStateToProps(state) {
-  return { todos: state.todos }
+  return { todos: state.todos };
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     Object.assign({}, todoActionCreators, counterActionCreators),
     dispatch
-  )
+  );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoApp)
+export default connect(mapStateToProps, mapDispatchToProps)(TodoApp);
 ```
 
 #### Inject `todos` of a specific user depending on props
 
 ```js
-import * as actionCreators from './actionCreators'
+import * as actionCreators from "./actionCreators";
 
 function mapStateToProps(state, ownProps) {
-  return { todos: state.todos[ownProps.userId] }
+  return { todos: state.todos[ownProps.userId] };
 }
 
-export default connect(mapStateToProps)(TodoApp)
+export default connect(mapStateToProps)(TodoApp);
 ```
 
 #### Inject `todos` of a specific user depending on props, and inject `props.userId` into the action
 
 ```js
-import * as actionCreators from './actionCreators'
+import * as actionCreators from "./actionCreators";
 
 function mapStateToProps(state) {
-  return { todos: state.todos }
+  return { todos: state.todos };
 }
 
 function mergeProps(stateProps, dispatchProps, ownProps) {
   return Object.assign({}, ownProps, {
     todos: stateProps.todos[ownProps.userId],
     addTodo: (text) => dispatchProps.addTodo(ownProps.userId, text),
-  })
+  });
 }
 
-export default connect(mapStateToProps, actionCreators, mergeProps)(TodoApp)
+export default connect(mapStateToProps, actionCreators, mergeProps)(TodoApp);
 ```
 
 #### Factory functions
@@ -382,7 +382,7 @@ export default connect(mapStateToPropsFactory, mapDispatchToPropsFactory)(TodoAp
 ## connectAdvanced
 
 ```js
-connectAdvanced(selectorFactory, [connectOptions])
+connectAdvanced(selectorFactory, [connectOptions]);
 ```
 
 Connects a React component to a Redux store. It is the base for `connect()` but is less opinionated about how to combine `state`, `props`, and `dispatch` into your final props. It makes no assumptions about defaults or memoization of results, leaving those responsibilities to the caller.
@@ -442,29 +442,29 @@ Returns the wrapped component instance. Only available if you pass `{ withRef: t
 #### Inject `todos` of a specific user depending on props, and inject `props.userId` into the action
 
 ```js
-import * as actionCreators from './actionCreators'
-import { bindActionCreators } from 'redux'
+import * as actionCreators from "./actionCreators";
+import { bindActionCreators } from "redux";
 
 function selectorFactory(dispatch) {
-  let ownProps = {}
-  let result = {}
-  const actions = bindActionCreators(actionCreators, dispatch)
-  const addTodo = (text) => actions.addTodo(ownProps.userId, text)
+  let ownProps = {};
+  let result = {};
+  const actions = bindActionCreators(actionCreators, dispatch);
+  const addTodo = (text) => actions.addTodo(ownProps.userId, text);
   return (nextState, nextOwnProps) => {
-    const todos = nextState.todos[nextOwnProps.userId]
-    const nextResult = { ...nextOwnProps, todos, addTodo }
-    ownProps = nextOwnProps
-    if (!shallowEqual(result, nextResult)) result = nextResult
-    return result
-  }
+    const todos = nextState.todos[nextOwnProps.userId];
+    const nextResult = { ...nextOwnProps, todos, addTodo };
+    ownProps = nextOwnProps;
+    if (!shallowEqual(result, nextResult)) result = nextResult;
+    return result;
+  };
 }
-export default connectAdvanced(selectorFactory)(TodoApp)
+export default connectAdvanced(selectorFactory)(TodoApp);
 ```
 
 ## createProvider
 
 ```js
-createProvider([storeKey])
+createProvider([storeKey]);
 ```
 
 Creates a new `<Provider>` which will set the Redux Store on the passed key of the context. You probably only need this if you are in the inadvisable position of having multiple stores. You will also need to pass the same `storeKey` to the `options` argument of [`connect`](#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options)
@@ -478,11 +478,11 @@ Creates a new `<Provider>` which will set the Redux Store on the passed key of t
 Before creating multiple stores, please go through this FAQ: [Can or should I create multiple stores?](http://redux.js.org/docs/faq/StoreSetup.html#can-or-should-i-create-multiple-stores-can-i-import-my-store-directly-and-use-it-in-components-myself)
 
 ```js
-import { connect, createProvider } from 'react-redux'
+import { connect, createProvider } from "react-redux";
 
-const STORE_KEY = 'componentStore'
+const STORE_KEY = "componentStore";
 
-export const Provider = createProvider(STORE_KEY)
+export const Provider = createProvider(STORE_KEY);
 
 function connectExtended(
   mapStateToProps,
@@ -490,11 +490,11 @@ function connectExtended(
   mergeProps,
   options = {}
 ) {
-  options.storeKey = STORE_KEY
-  return connect(mapStateToProps, mapDispatchToProps, mergeProps, options)
+  options.storeKey = STORE_KEY;
+  return connect(mapStateToProps, mapDispatchToProps, mergeProps, options);
 }
 
-export { connectExtended as connect }
+export { connectExtended as connect };
 ```
 
 Now you can import the above `Provider` and `connect` and use them.

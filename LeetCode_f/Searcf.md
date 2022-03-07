@@ -1,4 +1,4 @@
-# 035._Search_Insert_Position
+# 035.\_Search_Insert_Position
 
 ## [35. Search Insert Position](https://leetcode.com/problems/search-insert-position/description/)
 

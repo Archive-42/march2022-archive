@@ -1,7 +1,9 @@
+---
 
-________________________________________________________________________________
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
-________________________________________________________________________________
+
+---
+
 # Splitting and Combining Reducers
 
 So far, you've been using a single reducer to manage state in your Redux store.
@@ -10,10 +12,10 @@ use multiple reducers, each managing a slice of state.
 
 When you finish this article, you should be able to:
 
-* Define multiple reducers to manage individual slices of state
-* Use the Redux `combineReducers` method to combine multiple reducers into a
+- Define multiple reducers to manage individual slices of state
+- Use the Redux `combineReducers` method to combine multiple reducers into a
   single root reducer
-* Update a reducer to delegate a state update to a subordinate reducer
+- Update a reducer to delegate a state update to a subordinate reducer
 
 ## Splitting reducers
 
@@ -104,7 +106,7 @@ export default fruitReducer;
 ```js
 // ./src/reducers/farmersReducer.js
 
-import { HIRE_FARMER, PAY_FARMER } from '../actions/farmersActions';
+import { HIRE_FARMER, PAY_FARMER } from "../actions/farmersActions";
 
 const farmersReducer = (state = {}, action) => {
   let nextState = Object.assign({}, state);
@@ -113,7 +115,7 @@ const farmersReducer = (state = {}, action) => {
       const farmerToHire = {
         id: action.id,
         name: action.name,
-        paid: false
+        paid: false,
       };
       nextState[action.id] = farmerToHire;
       return nextState;
@@ -135,8 +137,8 @@ You'll also need to define a module containing the `'HIRE_FARMER'` and
 ```js
 // ./src/actions/farmersActions.js
 
-export const HIRE_FARMER = 'HIRE_FARMER';
-export const PAY_FARMER = 'PAY_FARMER';
+export const HIRE_FARMER = "HIRE_FARMER";
+export const PAY_FARMER = "PAY_FARMER";
 
 export const hireFarmer = (name) => ({
   type: HIRE_FARMER,
@@ -164,21 +166,21 @@ single `rootReducer` that you can use to create your Redux store.
 ```js
 // ./src/reducers/rootReducer.js
 
-import { combineReducers } from 'redux';
-import fruitReducer from './fruitReducer';
-import farmersReducer from './farmersReducer';
+import { combineReducers } from "redux";
+import fruitReducer from "./fruitReducer";
+import farmersReducer from "./farmersReducer";
 
 const rootReducer = combineReducers({
   fruit: fruitReducer,
-  farmers: farmersReducer
+  farmers: farmersReducer,
 });
 
 export default rootReducer;
 ```
 
 ```js
-import { createStore } from 'redux';
-import rootReducer from './reducers/rootReducer';
+import { createStore } from "redux";
+import rootReducer from "./reducers/rootReducer";
 
 const store = createStore(rootReducer);
 
@@ -196,7 +198,7 @@ a farmer has been hired or paid):
 ```js
 // ./src/reducers/farmersReducer.js
 
-import { HIRE_FARMER, PAY_FARMER } from '../actions/farmersActions';
+import { HIRE_FARMER, PAY_FARMER } from "../actions/farmersActions";
 
 const farmerReducer = (state, action) => {
   // State is a farmer object.
@@ -205,11 +207,11 @@ const farmerReducer = (state, action) => {
       return {
         id: action.id,
         name: action.name,
-        paid: false
+        paid: false,
       };
     case PAY_FARMER:
       return Object.assign({}, state, {
-        paid: !state.paid
+        paid: !state.paid,
       });
     default:
       return state;
@@ -247,7 +249,7 @@ const farmersReducer = (state = {}, action) => {
       const farmerToHire = {
         id: action.id,
         name: action.name,
-        paid: false
+        paid: false,
       };
       nextState[action.id] = farmerToHire;
       return nextState;
@@ -305,11 +307,11 @@ const farmerReducer = (state, action) => {
       return {
         id: action.id,
         name: action.name,
-        paid: false
+        paid: false,
       };
     case PAY_FARMER:
       return Object.assign({}, state, {
-        paid: !state.paid
+        paid: !state.paid,
       });
     default:
       return state;
@@ -324,10 +326,12 @@ first place.
 ## Destructuring State in your component
 
 If you try to start your Fruit Stand app now, you will probably get an error that looks something like:
+
 ```
 TypeError: object is not iterable (cannot read property Symbol(Symbol.iterator))
 ```
-That is because there is one last thing that you need to do in order prepare your fruitstand to use these split reducers: make sure that your component is accessing the right slice of state. Back in your `FruitList.js` `render` method, you are currently assigning the return value of your `getState()` call to 'fruit'. 
+
+That is because there is one last thing that you need to do in order prepare your fruitstand to use these split reducers: make sure that your component is accessing the right slice of state. Back in your `FruitList.js` `render` method, you are currently assigning the return value of your `getState()` call to 'fruit'.
 
 ```
 const fruit = store.getState();
@@ -341,6 +345,7 @@ fruit = {
   farmers: {}
 }
 ```
+
 Your state shape changed when you created these reducers! You component is trying to iterate over your new state shape, instead of the fruit slice of that state. To give the component access to the array of fruit, destructure this assignment:
 
 ```
@@ -353,8 +358,7 @@ To review and run a completed Fruit Stand example application that contains
 multiple reducers, clone the [redux-fruit-stand-examples] repo.
 
 After cloning the repo, open a terminal and browse to the
-`fruit-stand-redux-with-react-multiple-reducers` folder. Run the command `npm
-install` to install the project's dependencies. Then use the command `npm start`
+`fruit-stand-redux-with-react-multiple-reducers` folder. Run the command `npm install` to install the project's dependencies. Then use the command `npm start`
 to run the Fruit Stand application.
 
 This Fruit Stand example application is a React application created by the

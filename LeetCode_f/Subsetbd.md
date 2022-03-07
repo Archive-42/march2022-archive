@@ -4,7 +4,7 @@
 
 ### Problem:
 
-Given a set of **distinct** integers, *nums*, return all possible subsets (the power set).
+Given a set of **distinct** integers, _nums_, return all possible subsets (the power set).
 
 **Note:** The solution set must not contain duplicate subsets.
 
@@ -84,4 +84,4 @@ function _subsets(nums, start, path, result) {
 }
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

@@ -4,7 +4,7 @@
 
 ### Problem:
 
-Given a *m* x *n* matrix, if an element is 0, set its entire row and column to 0. Do it **[in-place](https://en.wikipedia.org/wiki/In-place_algorithm)**.
+Given a _m_ x _n_ matrix, if an element is 0, set its entire row and column to 0. Do it **[in-place](https://en.wikipedia.org/wiki/In-place_algorithm)**.
 
 **Example 1:**
 
@@ -42,14 +42,14 @@ Output:
 
 **Follow up:**
 
-- A straight forward solution using O(*m**n*) space is probably a bad idea.
-- A simple improvement uses O(*m* + *n*) space, but still not the best solution.
+- A straight forward solution using O(_m\*\*n_) space is probably a bad idea.
+- A simple improvement uses O(_m_ + _n_) space, but still not the best solution.
 - Could you devise a constant space solution?
 
 ### Solution:
 
-- O(*m**n*) space solution: Copy a new matrix.
-- O(*m* + *n*) space solution: Use extra arrays to store rows and columns that need to be set 0.
+- O(_m\*\*n_) space solution: Copy a new matrix.
+- O(_m_ + _n_) space solution: Use extra arrays to store rows and columns that need to be set 0.
 - Constant space solutions:
 
 ### ONE
@@ -158,4 +158,4 @@ var setZeroes = function(matrix) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

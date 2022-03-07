@@ -3,11 +3,11 @@ title: node-cli-args
 weight: 0
 excerpt: How to accept arguments in a Node.js program passed from the command line
 seo:
-    title: ''
-    description: ''
-    robots: []
-    extra: []
-    type: stackbit_page_meta
+  title: ""
+  description: ""
+  robots: []
+  extra: []
+  type: stackbit_page_meta
 template: docs
 ---
 

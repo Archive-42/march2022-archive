@@ -3,17 +3,16 @@
 Check out the live demo [here][live-demo]!
 
 [live-demo]: http://aa-benchbnb.herokuapp.com
-
 [maps-sf]: https://www.google.com/maps/place/San+Francisco,+CA/
 
 ## Phase 4: `Bench` Backend
 
-* Create a `Bench` model with required `description` (string) , `lat` (float) and `lng` (float) attributes.
-* Make a `BenchesController` to handle your API requests. It will need `index` and `create` actions to start.
-* Add routes for your `BenchesController` actions.
-  * These should be namespace-d under `api/benches` and return JSON by default.
-* Populate `seeds.rb` with bench seed data using [real coordinates in SF][maps-sf] (click around to get coordinates).
-* **Test your benches API in the Dev Tools console using `$.ajax` calls**.
+- Create a `Bench` model with required `description` (string) , `lat` (float) and `lng` (float) attributes.
+- Make a `BenchesController` to handle your API requests. It will need `index` and `create` actions to start.
+- Add routes for your `BenchesController` actions.
+  - These should be namespace-d under `api/benches` and return JSON by default.
+- Populate `seeds.rb` with bench seed data using [real coordinates in SF][maps-sf] (click around to get coordinates).
+- **Test your benches API in the Dev Tools console using `$.ajax` calls**.
 
 [maps-sf]: https://www.google.com/maps/place/San+Francisco,+CA/
 
@@ -25,7 +24,7 @@ In this phase, you will build the pieces necessary to display a basic index of b
 
 To start, let's create an API utility for our thunks to use that will request data via AJAX from our Rails server.
 
-+ Create a file, `/util/bench_api_util.js`, that exports a function, `fetchBenches`.
+- Create a file, `/util/bench_api_util.js`, that exports a function, `fetchBenches`.
 
 It should dispatch an `$.ajax` request and return a promise.
 As usual, the success function will be chained onto this promise in the thunk action creator.
@@ -84,13 +83,14 @@ Before we move on to the fun stuff -- populating a Google map with benches from 
 
 We need two `actions`: one to go fetch all the benches from our Rails API, and one that tells our `store` to change our application state to represent the bench data in our `action`.
 
-* Create an `actions` file: `actions/bench_actions`.
-+ Write `receiveBenches`. It should accept a single argument, `benches`, and produce an `action` with type `"RECEIVE_BENCHES"` and a `benches` property that represents all of our bench data.
-+ Write `fetchBenches`. It doesn't need to accept any arguments. It should just return a thunk which calls the `APIUtil` and `then` dispatches `receiveBenches`.
-+ Don't forget to define the corresponding action types.
-+ Export `fetchBenches` and your constants.
+- Create an `actions` file: `actions/bench_actions`.
 
-Before continuing, *test that they return the correct objects*.
+* Write `receiveBenches`. It should accept a single argument, `benches`, and produce an `action` with type `"RECEIVE_BENCHES"` and a `benches` property that represents all of our bench data.
+* Write `fetchBenches`. It doesn't need to accept any arguments. It should just return a thunk which calls the `APIUtil` and `then` dispatches `receiveBenches`.
+* Don't forget to define the corresponding action types.
+* Export `fetchBenches` and your constants.
+
+Before continuing, _test that they return the correct objects_.
 For example, add `fetchBenches` to the `window` for testing later!
 
 ```js
@@ -106,9 +106,10 @@ dispatch(fetchBenches()).then(console.log); //=> { "1": { id: 1, description: ..
 Remember to import `fetchBenches` for testing.
 
 ### Benches Reducer
+
 In this step, we're going to create a reducer that manages the `benches` section of our application state.
 
-* Create a file, `reducers/benches_reducer.js` that exports a `benchesReducer` function.
+- Create a file, `reducers/benches_reducer.js` that exports a `benchesReducer` function.
 
 Let's start by just setting up our `benchesReducer` to return its default state:
 Remember to use `Object.freeze` to prevent the state from being mutated.
@@ -119,11 +120,11 @@ Your reducer should look like this:
 ```js
 // frontend/reducers/benches_reducer.js
 
-import { RECEIVE_BENCHES } from '../actions/bench_actions';
+import { RECEIVE_BENCHES } from "../actions/bench_actions";
 
 const benchesReducer = (state = {}, action) => {
   Object.freeze(state);
-  switch(action.type) {
+  switch (action.type) {
     case RECEIVE_BENCHES:
       return action.benches;
     default:
@@ -133,24 +134,25 @@ const benchesReducer = (state = {}, action) => {
 ```
 
 ### Entities Reducer
+
 In this step, we are going to write an `entitiesReducer` that is responsible for combining any of the reducers that hold relational data from our database. This app only has a single entity, `benches`, but again, we will follow convention since most apps worth using will have multiple `entities`.
 
-* Create a file, `reducers/entities_reducer.js` that exports a `entitiesReducer` function.
-* Use `combineReducers` to incorporate the `benchesReducer` into the `entitiesReducer`.
+- Create a file, `reducers/entities_reducer.js` that exports a `entitiesReducer` function.
+- Use `combineReducers` to incorporate the `benchesReducer` into the `entitiesReducer`.
 
 Then add the `entitiesReducer` to your `root_reducer.js`.
 
 ```javascript
 // frontend/reducers/root_reducer.jsx
 
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
-import entitiesReducer from './entities_reducer';
-import sessionReducer from './session_reducer';
+import entitiesReducer from "./entities_reducer";
+import sessionReducer from "./session_reducer";
 
 const rootReducer = combineReducers({
   entities: entitiesReducer,
-  session: sessionReducer
+  session: sessionReducer,
 });
 
 export default rootReducer;
@@ -176,8 +178,8 @@ At this point, our default application state should look like this.
 
 Let's create a component that shows our benches.
 
-* First we'll start by making make two files:
-`components/bench_index.jsx` and `components/bench_index_container.js`
+- First we'll start by making make two files:
+  `components/bench_index.jsx` and `components/bench_index_container.js`
 
 After we've made both of these components, we'll add the container to our router in `root.jsx` to it's rendered when users visit our site.
 
@@ -202,14 +204,11 @@ Finally, let's use the `connect` function to export a new component that is conn
 ```javascript
 // frontend/components/bench_index_container.jsx
 
-import BenchIndex from './bench_index.jsx'
+import BenchIndex from "./bench_index.jsx";
 
 //...
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(BenchIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(BenchIndex);
 ```
 
 ### The Presentational Component
@@ -228,7 +227,7 @@ class BenchIndex extends React.Component {
   render() {
     // ...
   }
-};
+}
 ```
 
 Create another `BenchIndexItem`, to clean up your `BenchIndex` component's `render()` function.
@@ -248,11 +247,11 @@ const App = () => (
       <GreetingContainer />
     </header>
 
-    <AuthRoute exact path="/login" component={ SessionFormContainer } />
-    <AuthRoute exact path="/signup" component={ SessionFormContainer } />
-    <Route exact path="/" component={ BenchIndexContainer } />
+    <AuthRoute exact path="/login" component={SessionFormContainer} />
+    <AuthRoute exact path="/signup" component={SessionFormContainer} />
+    <Route exact path="/" component={BenchIndexContainer} />
   </div>
-)
+);
 ```
 
 Your app should now be populated with benches! **Confirm with a TA.**
@@ -267,56 +266,55 @@ This will allow us to search and display benches.
 
 ### Create a `BenchMap` component.
 
-* Create a new React component class `BenchMap`.
-* Its `render` function should return a `div` with `id='map-container'` and `ref='map'`.
-* In the `application.css` file, make sure to set the `width` and `height` of the `#map-container` to `500px`.
-* We'll return to this component in a bit.
+- Create a new React component class `BenchMap`.
+- Its `render` function should return a `div` with `id='map-container'` and `ref='map'`.
+- In the `application.css` file, make sure to set the `width` and `height` of the `#map-container` to `500px`.
+- We'll return to this component in a bit.
 
 ### Create a React component: `Search`
 
-* Create a new React component, `Search`.
-* `Search` should render a `div` containing a `BenchMap` and `BenchIndex`.
-* Remove your `BenchIndexContainer` and instead, create a `SearchContainer`.
-* `Search` should then pass the appropriate props to `BenchIndex`.
-* **You shouldn't have to change `BenchIndex`**.
+- Create a new React component, `Search`.
+- `Search` should render a `div` containing a `BenchMap` and `BenchIndex`.
+- Remove your `BenchIndexContainer` and instead, create a `SearchContainer`.
+- `Search` should then pass the appropriate props to `BenchIndex`.
+- **You shouldn't have to change `BenchIndex`**.
 
 Since our `Search` component only needs a render method, we can make it a [functional component][functional-comp-docs] with an implicit return!
 Make sure to deconstruct your props for cleaner syntax.
 
 ### Render your `SearchContainer`
 
-* In your `<Route exact path="/" .../>`, render the `SearchContainer` component instead of `BenchIndexContainer`.
-This should cause both the `BenchMap` and the `BenchIndex` to be rendered on the page.
-* Verify your work before moving on.
+- In your `<Route exact path="/" .../>`, render the `SearchContainer` component instead of `BenchIndexContainer`.
+  This should cause both the `BenchMap` and the `BenchIndex` to be rendered on the page.
+- Verify your work before moving on.
 
 ### Attach a Google Map to `BenchMap`
 
-* Read [the google maps documentation][google-map-doc].
-* Get a new API key for a JavaScript Google Map.
-* Add a script tag (including your API key) to your `application.html.erb`
-  * When including the google script tag, be sure to put it above `yield` and remove the `async defer` bit.
-  This way, the script will fully load before the rest of your page and be ready to use as soon as your app mounts.
+- Read [the google maps documentation][google-map-doc].
+- Get a new API key for a JavaScript Google Map.
+- Add a script tag (including your API key) to your `application.html.erb`
+  - When including the google script tag, be sure to put it above `yield` and remove the `async defer` bit.
+    This way, the script will fully load before the rest of your page and be ready to use as soon as your app mounts.
 
 ```html
 <!-- application.html.erb: -->
 <!DOCTYPE html>
-  <html>
+<html>
   <head>
     <title>BenchBnb</title>
 
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key={YOUR_API_KEY}" %>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= csrf_meta_tags %>
-    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag
+    "https://maps.googleapis.com/maps/api/js?key={YOUR_API_KEY}" %> <%=
+    stylesheet_link_tag 'application', media: 'all' %> <%= csrf_meta_tags %> <%=
+    javascript_include_tag 'application' %>
   </head>
   <body>
-
-  <%= yield %>
-
+    <%= yield %>
   </body>
-  </html>
+</html>
 ```
-* When the `Map` component mounts, instantiate the map as follows:
+
+- When the `Map` component mounts, instantiate the map as follows:
 
 ```jsx
 // frontend/components/bench_map/bench_map.jsx
@@ -353,7 +351,7 @@ class BenchMap extends React.Component {
 
 We're now going to implement map markers for our benches.
 
-  * Update the `Search` component to pass a 'benches' prop to `BenchMap`
+- Update the `Search` component to pass a 'benches' prop to `BenchMap`
 
 Managing the markers is going to require quite a bit of code, so we're going to create a helper class, `MarkerManager`.
 
@@ -362,9 +360,9 @@ Managing the markers is going to require quite a bit of code, so we're going to 
 This `MarkerManager` class will handle syncing the benches we maintain in state with the markers we display on our map.
 By maintaining references to our markers, we can add/remove them from the map more easily.
 
-* Create a new file `marker_manager.js`; it should live in your `util` folder.
-* In this file, create and export a new class, `MarkerManager`.
-* Define the constructor method to accept a map, and then create `map` and `markers` instance variables.
+- Create a new file `marker_manager.js`; it should live in your `util` folder.
+- In this file, create and export a new class, `MarkerManager`.
+- Define the constructor method to accept a map, and then create `map` and `markers` instance variables.
 
 ```js
 // frontend/util/marker_manager.js
@@ -387,7 +385,7 @@ Start with just a simple `console.log`
 export default class MarkerManager {
   //...
   updateMarkers(benches) {
-    console.log('time to update');
+    console.log("time to update");
   }
   //...
 }
@@ -400,8 +398,8 @@ We'll come back later.
 
 Let's see how the `BenchMap` is going to interact with our `MarkerManager`.
 
-  * Import the `MarkerManager` class.
-  * Update the `BenchMap#componentDidMount` lifecycle method to create a new `MarkerManager`.
+- Import the `MarkerManager` class.
+- Update the `BenchMap#componentDidMount` lifecycle method to create a new `MarkerManager`.
 
 ```jsx
 //frontend/components/bench_map/bench_map.jsx
@@ -435,10 +433,12 @@ Read the documentation on [map markers][map-markers] before continuing.
 
 To accomplish the goal of adding markers appropriately, we will want to expand upon our `updateMarkers` method.
 We will need to do the following:
-* For each `bench`, if the `id` is not a key in `this.markers`, create a new marker from it and add it to the map and this.markers
+
+- For each `bench`, if the `id` is not a key in `this.markers`, create a new marker from it and add it to the map and this.markers
 
 Add the following helper methods:
-* `createMarkerFromBench(bench)`: accepts a bench object as an argument; adds a marker to the map and to the markers object
+
+- `createMarkerFromBench(bench)`: accepts a bench object as an argument; adds a marker to the map and to the markers object
 
 ## Phase 9: Filtering by Map Location
 
@@ -447,8 +447,8 @@ First, let's prepare the back end to search by bounds.
 
 ### Back End Prep
 
-* On your `Bench` model, Write a `Bench.in_bounds` method that returns all the benches that are within the boundaries specified by the argument.
-See the example below for what arguments to expect.
+- On your `Bench` model, Write a `Bench.in_bounds` method that returns all the benches that are within the boundaries specified by the argument.
+  See the example below for what arguments to expect.
 
 ```ruby
 # /app/models/bench.rb
@@ -465,8 +465,8 @@ See the example below for what arguments to expect.
 #...
 ```
 
-* In the controller, we can expect that these boundaries will be passed in as a query string and therefore available in the `params` hash
-* Instead of rendering `Bench.all` in our `index` action,  we can instead use   `Bench.in_bounds(params[:bounds])`
+- In the controller, we can expect that these boundaries will be passed in as a query string and therefore available in the `params` hash
+- Instead of rendering `Bench.all` in our `index` action, we can instead use `Bench.in_bounds(params[:bounds])`
 
 ### Update `BenchApiUtil`
 
@@ -510,9 +510,9 @@ In addition to our benches and session, we'll also add a new slice of state to k
 
 ### Filter Actions
 
-  * Create a new file, `actions/filter_actions`
-  * Create and export an action type `UPDATE_BOUNDS`
-  * Make and export an action creator, `updateBounds`; this should accept a single   argument: `bounds`
+- Create a new file, `actions/filter_actions`
+- Create and export an action type `UPDATE_BOUNDS`
+- Make and export an action creator, `updateBounds`; this should accept a single argument: `bounds`
 
 #### `SearchContainer`
 
@@ -524,30 +524,30 @@ Update your `Search` presentational component to pass the `updateBounds` prop to
 
 #### `BenchMap`
 
-  * In the `BenchMap` component, add a listener to the map's idle event when `componentDidMount` is called.
-  * [Read this documentation][event-doc] to learn about Google Map events.
-  * Call `getBounds` on the map instance to get a `LatLngBounds` instance.
+- In the `BenchMap` component, add a listener to the map's idle event when `componentDidMount` is called.
+- [Read this documentation][event-doc] to learn about Google Map events.
+- Call `getBounds` on the map instance to get a `LatLngBounds` instance.
   Call `getNorthEast` and `getSouthWest` to get these coordinate pairs.
   Get their latitude and longitude and format these coordinates into exactly the format your API is expecting.
   Check [this documentation][lat-lng-docs] for more info.
-  * Package these coordinates into a `bounds` object.
-  * Invoke `this.props.updateBounds()`, and pass your newly constructed bounds object
+- Package these coordinates into a `bounds` object.
+- Invoke `this.props.updateBounds()`, and pass your newly constructed bounds object
 
 ### `filterReducer`
 
 We need to build out our application state to reflect the map's `bounds`.
 
-* Create a new file, `reducers/filter_reducer.js`
-* Build and export a `filterReducer`
-  * You're reducer should update the application state when an `UPDATE_BOUNDS` action is dispatched
+- Create a new file, `reducers/filter_reducer.js`
+- Build and export a `filterReducer`
+  - You're reducer should update the application state when an `UPDATE_BOUNDS` action is dispatched
 
 ### `uiReducer`
 
 The `uiReducer` will be used to combine any reducers in charge of managing information that influences our user's interactions, but is not relational data from our backend. For this project, it will just contain the `filterReducer`, but there are many other uses of this slice of state, for instance toggling a loading screen while waiting for an ajax request. Let's continue to follow our conventions.
 
-* Create a new file, `reducers/ui_reducer.js`
-* Use `combineReducers` to combine just the `filterReducer` and export it
-* Update your `rootReducer` to contain the `uiReducer`
+- Create a new file, `reducers/ui_reducer.js`
+- Use `combineReducers` to combine just the `filterReducer` and export it
+- Update your `rootReducer` to contain the `uiReducer`
 
 **Test** that the application is being successfully updated by moving the map around and then calling `window.getState()` in the console.
 
@@ -555,12 +555,12 @@ The `uiReducer` will be used to combine any reducers in charge of managing infor
 
 Now that we've handled our state, we need to beef up `MarkerManager/updateMarkers()` to handle removing markers for benches that have been moved outside our bounds.
 
-* Convert the `benches` array that was received as an argument into an object (we want constant time lookup by `id`)
-* For each `marker` in `this.markers`, if the marker does not have a corresponding `bench` in our constant time `bench` lookup object, then remove the marker from the map and `this.markers`
+- Convert the `benches` array that was received as an argument into an object (we want constant time lookup by `id`)
+- For each `marker` in `this.markers`, if the marker does not have a corresponding `bench` in our constant time `bench` lookup object, then remove the marker from the map and `this.markers`
 
 Add the following helper methods to your class:
 
-* `removeMarker()`: accepts a marker as an argument; removes marker from map and from `markers`
+- `removeMarker()`: accepts a marker as an argument; removes marker from map and from `markers`
 
 Call these methods in `updateMarkers()` to ensure that benches that leave our store have their markers removed from the map.
 RIP, benches.
@@ -572,10 +572,11 @@ Before moving on, remove the call to `fetchBenches()` from the `BenchIndex` comp
 Instead, we'll rely on `updateBounds` to `fetchBenches` after it dispatches the `UPDATE_BOUNDS` action.
 
 Turn your `updateBounds` action creator into a thunk
-  * Immediately dispatch the filter change
-  * import your `fetchBenches` action creator from Bench Actions
-  * Then, call fetchBenches passing in the current filters from `getState`
-  * Call the returned function with dispatch.
+
+- Immediately dispatch the filter change
+- import your `fetchBenches` action creator from Bench Actions
+- Then, call fetchBenches passing in the current filters from `getState`
+- Call the returned function with dispatch.
 
 This is a little tricky, try follow this example and think about the flow of data.
 
@@ -585,7 +586,7 @@ export function updateFilter(filter, value) {
     dispatch(changeFilter(filter, value));
     return fetchBenches(getState().filters)(dispatch);
     // delicious curry!
-  }
+  };
 }
 ```
 
@@ -602,17 +603,17 @@ Move the map around to prove this! **Show your TA!**
 
 ### Adding a `BenchForm`
 
-* Create a new React component & container, `BenchForm` &
-`BenchFormContainer`.   This should render a simple form with 4 fields:
-    * Description
-    * Number of seats
-    * Latitude
-    * Longitude
-* Add a new `seating` column to the `benches` table.
-  * This new column will store how many people can sit together on the bench at the same time.
-* Create a new `<Route>`, `/benches/new`, for your `BenchFormContainer` component.
-  *  Test the route by navigating to `/#/benches/new`; the map should disappear.
-* Write a `create` method on your `BenchesController` and give it a corresponding route in `routes.rb`.
+- Create a new React component & container, `BenchForm` &
+  `BenchFormContainer`. This should render a simple form with 4 fields:
+  _ Description
+  _ Number of seats
+  _ Latitude
+  _ Longitude
+- Add a new `seating` column to the `benches` table.
+  - This new column will store how many people can sit together on the bench at the same time.
+- Create a new `<Route>`, `/benches/new`, for your `BenchFormContainer` component.
+  - Test the route by navigating to `/#/benches/new`; the map should disappear.
+- Write a `create` method on your `BenchesController` and give it a corresponding route in `routes.rb`.
 
 ### Navigating to the `BenchForm`
 
@@ -635,12 +636,13 @@ Our `BenchMap` component will now have a `history` (router) prop.
 #### Redirecting with coordinates
 
 Add a `"click"` handler to the map. It should:
-  * Grab the coordinates from the click event.
-  * Use the router to redirect to the `BenchForm` URL, providing the `lat` and `lng` as query params.
+
+- Grab the coordinates from the click event.
+- Use the router to redirect to the `BenchForm` URL, providing the `lat` and `lng` as query params.
 
 To pass `lat` and `lng` as query params:
 
-  0.  Use `this.props.history.push` to send data along with the new `pathname`.
+0.  Use `this.props.history.push` to send data along with the new `pathname`.
 
 ```js
 // frontend/components/bench_map/bench_map.jsx
@@ -662,18 +664,19 @@ Test this before moving on. You should be able to click the map and make the bro
 ### Pre-filling the form
 
 Inside of the `BenchFormContainer`...
-  * Define a `mapStateToProps` function that accepts `state` and `ownProps` as arguments
-  * pass `lat` and `lng` props to the `BenchForm` component by deconstructing `ownProps.location.search`
-  * use [`URLSearchParams`][URLSearchParams-docs] to pull the `lat` and `lng` from the query string
+
+- Define a `mapStateToProps` function that accepts `state` and `ownProps` as arguments
+- pass `lat` and `lng` props to the `BenchForm` component by deconstructing `ownProps.location.search`
+- use [`URLSearchParams`][urlsearchparams-docs] to pull the `lat` and `lng` from the query string
 
 ```js
 // frontend/components/bench_form/bench_form_container.jsx
 
 //...
-  const mapStateToProps = (state, { location }) => ({
-    lat: new URLSearchParams(location.search).get("lat"),
-    lng: new URLSearchParams(location.search).get("lng")
-  });
+const mapStateToProps = (state, { location }) => ({
+  lat: new URLSearchParams(location.search).get("lat"),
+  lng: new URLSearchParams(location.search).get("lng"),
+});
 //...
 ```
 
@@ -685,12 +688,12 @@ Make the input tags disabled so that our users don't try to edit them!
 
 ### Api Util and Action Creators
 
-  * Add a `createBench` function to `bench_api_util.js`. It should make a `POST` request to your API.
-  * Create a `RECEIVE_BENCH` action type.
-  * Add the following action creators to `bench_actions.js`:
-    * `receiveBench` (regular action creator)
-    * `createBench` (thunk action creator)
-  * Add a `mapDispatchToProps` function to your `BenchFormContainer`; this should pass a `createBench` prop to `BenchForm`
+- Add a `createBench` function to `bench_api_util.js`. It should make a `POST` request to your API.
+- Create a `RECEIVE_BENCH` action type.
+- Add the following action creators to `bench_actions.js`:
+  - `receiveBench` (regular action creator)
+  - `createBench` (thunk action creator)
+- Add a `mapDispatchToProps` function to your `BenchFormContainer`; this should pass a `createBench` prop to `BenchForm`
 
 ### `benchesReducer`
 
@@ -706,16 +709,16 @@ Create a few benches!
 
 Let's make sure users can't get to our `"/#/benches/new"` route on the front-end unless they're logged in.
 
-* Define a `<ProtectedRoute>` helper method in your `route_util.js`.
-It should:
-  * Check to see if the application state has a `currentUser` property.
-You can use the `loggedIn` boolean like we did in our `AuthRoute` component.
-  * If true, render the component.
-  * Otherwise, `Redirect` to `"/login"`.
-* Add the route to our `App` component like so:
+- Define a `<ProtectedRoute>` helper method in your `route_util.js`.
+  It should:
+  - Check to see if the application state has a `currentUser` property.
+    You can use the `loggedIn` boolean like we did in our `AuthRoute` component.
+  - If true, render the component.
+  - Otherwise, `Redirect` to `"/login"`.
+- Add the route to our `App` component like so:
 
- ```html
- <ProtectedRoute exact path="benches/new" component={BenchFormContainer} />
+```html
+<ProtectedRoute exact path="benches/new" component="{BenchFormContainer}" />
 ```
 
 **Test that your routes are protected before moving on!**.
@@ -728,17 +731,18 @@ In this section, we want to build the functionality that will allow our users to
 
 ### Update your API
 
-* Update your `BenchesController#index` :
-  * Modify `bench_params` to accept `:max_seating` and `:min_seating`.
-  * Filter your `@benches` by `params[:max_seating]` and `params[:min_seating]`, if present.
+- Update your `BenchesController#index` :
+  - Modify `bench_params` to accept `:max_seating` and `:min_seating`.
+  - Filter your `@benches` by `params[:max_seating]` and `params[:min_seating]`, if present.
 
 ### Filter Actions
 
 Next, let's write a new action creator.
 We're going to define a single action creator, `updateFilter`, that will be invoked whenever we update one of the following:
-  * bounds
-  * min seating
-  * max seating
+
+- bounds
+- min seating
+- max seating
 
 It should look like this:
 
@@ -749,7 +753,7 @@ It should look like this:
 export const updateFilter = (filter, value) => ({
   type: UPDATE_FILTER,
   filter,
-  value
+  value,
 });
 //...
 ```
@@ -787,50 +791,52 @@ Create a `BenchShow` component.
 It should be a full-page component displaying a single bench's information and a map showing the bench.
 Your `BenchShow` page should mount whenever someone clicks on an item in your `BenchIndex` or a marker in your `BenchMap`.
 
-* Create a new `Route` for your `BenchShowContainer` that takes a `benchId` param.
-* Nest a `BenchMap` in your `BenchShow`, passing the bench as a prop.
-* Center the map on the single bench and prevent the map from being dragged.
+- Create a new `Route` for your `BenchShowContainer` that takes a `benchId` param.
+- Nest a `BenchMap` in your `BenchShow`, passing the bench as a prop.
+- Center the map on the single bench and prevent the map from being dragged.
 
 ## Phase 13: Reviews
 
 Show reviews of a bench on `BenchShow`.
 Reviews for a bench should comprise:
-* A rating from 1 to 5.
-* A comment field.
+
+- A rating from 1 to 5.
+- A comment field.
 
 Add a `ReviewIndex` and `ReviewForm`. `ReviewIndex` should show the average score for a bench and also list the reviews for that bench.
 Modify and add the appropriate API endpoints, actions, reducers, utils, and components.
 
 ## Phase 14: Pictures!
+
 When you create a new bench, allow a user to also add a photo.
 We'll do this in two steps.
 
 1. Create a new column in your benches table to store the image url.
-Add a text field in the bench form to allow the user to enter a url.
-Display these pictures on both the show page and the index.
+   Add a text field in the bench form to allow the user to enter a url.
+   Display these pictures on both the show page and the index.
 
 2. Each time the user adds an image, we actually want to store our own copy of that image.
-The image url in your database should point to that copy, rather than the original.
-We don't want to store the image in our database; that would take up too much space.
-Instead will use the web service [Cloudinary][cloudinary-js].
-Remove the url text-field from your form and replace it with an add-image button.
-The button should open the Cloudinary upload_widget which will allow you to drag-and-drop an image or supply a url, and will  return the url for your new copy of the image.
-Checkout the [Cloudinary video][cloudinary-video] and [corresponding code][cloudinary-demo] for details on how to create your own  Cloudinary account and add the widget to your app.
-If step (1) was working properly, you shouldn't have to change your backend at all.
-Test that everything works by adding a new bench with an image.
+   The image url in your database should point to that copy, rather than the original.
+   We don't want to store the image in our database; that would take up too much space.
+   Instead will use the web service [Cloudinary][cloudinary-js].
+   Remove the url text-field from your form and replace it with an add-image button.
+   The button should open the Cloudinary upload_widget which will allow you to drag-and-drop an image or supply a url, and will return the url for your new copy of the image.
+   Checkout the [Cloudinary video][cloudinary-video] and [corresponding code][cloudinary-demo] for details on how to create your own Cloudinary account and add the widget to your app.
+   If step (1) was working properly, you shouldn't have to change your backend at all.
+   Test that everything works by adding a new bench with an image.
 
- **Note:** Since this site isn't going on Heroku, you can just put the `upload_preset` and `cloud_name` straight into your jsx file; no need to use the Figaro gem.
-
+**Note:** Since this site isn't going on Heroku, you can just put the `upload_preset` and `cloud_name` straight into your jsx file; no need to use the Figaro gem.
 
 ## BONUSES!
-* When you hover over an index item it should highlight the marker on the map in a different color.
-This should require creating a new reducer.
-* Add a custom 404 component that renders when a user tries to go to a page that doesn't exist. Wrap your routes in a `Switch` so the component only renders if it doesn't match any other route.
-* Every bench can have multiple photos!
-* Show page should have a carousel!
-* Display the score as a list of star images!
-* Users can favorite benches!
-* Look at your app, then look at the real AirBNB. See any differences?
+
+- When you hover over an index item it should highlight the marker on the map in a different color.
+  This should require creating a new reducer.
+- Add a custom 404 component that renders when a user tries to go to a page that doesn't exist. Wrap your routes in a `Switch` so the component only renders if it doesn't match any other route.
+- Every bench can have multiple photos!
+- Show page should have a carousel!
+- Display the score as a list of star images!
+- Users can favorite benches!
+- Look at your app, then look at the real AirBNB. See any differences?
   Give your project a makeover and add a ton of CSS so that it resembles the REAL AirBNB.
 
 [google-map-doc]: https://developers.google.com/maps/documentation/javascript/tutorial
@@ -838,7 +844,7 @@ This should require creating a new reducer.
 [map-markers]: https://developers.google.com/maps/documentation/javascript/markers
 [lat-lng-docs]: https://developers.google.com/maps/documentation/javascript/reference#LatLngBounds
 [react-history]: https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/history.md
-[URLSearchParams-docs]: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
+[urlsearchparams-docs]: https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
 [jquery-ajax]: http://api.jquery.com/jquery.ajax/#jQuery-ajax-settings
 [cloudinary-js]: http://cloudinary.com/documentation/upload_widget
 [cloudinary-video]: https://vimeo.com/164612621

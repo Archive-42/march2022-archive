@@ -1,4 +1,4 @@
-# 065._Valid_Number
+# 065.\_Valid_Number
 
 ## [65. Valid Number](https://leetcode.com/problems/valid-number/description/)
 

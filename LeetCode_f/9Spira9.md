@@ -1,10 +1,10 @@
-# 059._Spiral_Matrix_II
+# 059.\_Spiral_Matrix_II
 
 ## [59. Spiral Matrix II](https://leetcode.com/problems/spiral-matrix-ii/description/)
 
 ### Problem:
 
-Given a positive integer *n*, generate a square matrix filled with elements from 1 to *n*2 in spiral order.
+Given a positive integer _n_, generate a square matrix filled with elements from 1 to *n*2 in spiral order.
 
 **Example:**
 

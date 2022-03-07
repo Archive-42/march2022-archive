@@ -4,7 +4,7 @@
 
 ### Problem:
 
-Implement [pow(*x*, *n*)](http://www.cplusplus.com/reference/valarray/pow/), which calculates *x* raised to the power *n* (xn).
+Implement [pow(_x_, _n_)](http://www.cplusplus.com/reference/valarray/pow/), which calculates *x* raised to the power _n_ (xn).
 
 **Example 1:**
 
@@ -30,8 +30,8 @@ Explanation: 2-2 = 1/22 = 1/4 = 0.25
 
 **Note:**
 
-- 100.0 < *x* < 100.0
-- *n* is a 32-bit signed integer, within the range [−231, 231 − 1]
+- 100.0 < _x_ < 100.0
+- _n_ is a 32-bit signed integer, within the range [−231, 231 − 1]
 
 ### Solution:
 
@@ -66,4 +66,4 @@ var myPow = function(x, n) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

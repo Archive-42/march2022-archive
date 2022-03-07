@@ -29,13 +29,12 @@ See [78. Subsets](./078.%20Subsets.md). Except:
 
 1. Sort input to group duplicates.
 2. Only consider each duplicate once, that is, when it is at the first slot.
-    
-    /**
-    
-    - @param {number[]} nums
-    - @return {number[][]} */ var subsetsWithDup = function(nums) { const result = [] _subsetsWithDup(nums.sort(), 0, [], result) return result };
-    
-    function _subsetsWithDup(nums, start, path, result) { result.push(path.slice()) for (let i = start; i < nums.length; i++) { if(i > start && nums[i] === nums[i-1]) { continue } path.push(nums[i]) _subsetsWithDup(nums, i + 1, path, result) path.pop() } }
-    
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+   /\*\*
+
+   - @param {number[]} nums
+   - @return {number[][]} \*/ var subsetsWithDup = function(nums) { const result = [] \_subsetsWithDup(nums.sort(), 0, [], result) return result };
+
+   function \_subsetsWithDup(nums, start, path, result) { result.push(path.slice()) for (let i = start; i < nums.length; i++) { if(i > start && nums[i] === nums[i-1]) { continue } path.push(nums[i]) \_subsetsWithDup(nums, i + 1, path, result) path.pop() } }
+
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

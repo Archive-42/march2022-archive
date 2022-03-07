@@ -1,13 +1,17 @@
 # Back to the Beginning: Hello World
-________________________________________________________________________________
+
+---
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
-________________________________________________________________________________
+
+---
 
 In the next few sections, you'll be learning the fundamentals of the Python
 programming language. You will find you can use many of the principles (and even
 some of code) that you learned in JavaScript to help you progress more quickly.
 
 When you finish this article, you should be able to
+
 - Use PEP 8 as a reference for how to write your code
 - `print` messages to the console terminal
 - Use `#` and `"""` to write code comments
@@ -142,8 +146,7 @@ offline documentation viewer.
 - Use `#` to write code comments
 - Use `"""` to document things
 
-
 [1]: https://www.python.org/dev/peps/pep-0008/
-[Octothorpe]: https://time.com/2870942/hashtag-oed-oxford-english-dictionary/
-[Commenting Python Code]: https://www.digitalocean.com/community/tutorials/how-to-write-comments-in-python-3
+[octothorpe]: https://time.com/2870942/hashtag-oed-oxford-english-dictionary/
+[commenting python code]: https://www.digitalocean.com/community/tutorials/how-to-write-comments-in-python-3
 [4]: https://www.python.org/dev/peps/

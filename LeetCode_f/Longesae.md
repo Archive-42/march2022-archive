@@ -6,7 +6,7 @@
 
 Given an unsorted array of integers, find the length of the longest consecutive elements sequence.
 
-Your algorithm should run in O(*n*) complexity.
+Your algorithm should run in O(_n_) complexity.
 
 **Example:**
 
@@ -46,4 +46,4 @@ var longestConsecutive = function(nums) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

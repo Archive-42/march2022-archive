@@ -1,5 +1,5 @@
+---
 
-________________________________________________________________________________
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -14,7 +14,9 @@ ________________________________________________________________________________
 - [See also...](#see-also)
 
 <!-- /code_chunk_output -->
-________________________________________________________________________________
+
+---
+
 # Store
 
 The **store** is the central element of Redux's architecture. It holds the
@@ -25,12 +27,12 @@ state.
 
 When you finish this article, you should be able to:
 
-* Describe the role of the store in the Redux architecture
-* Use the `createStore` method to create an instance of the Redux store
-* Use the `store.dispatch` method to dispatch an action to trigger a state
+- Describe the role of the store in the Redux architecture
+- Use the `createStore` method to create an instance of the Redux store
+- Use the `store.dispatch` method to dispatch an action to trigger a state
   update
-* Use the `store.subscribe` method to listen for state updates
-* Use the `store.getState` method to get the current state
+- Use the `store.subscribe` method to listen for state updates
+- Use the `store.getState` method to get the current state
 
 ## Creating the store
 
@@ -51,16 +53,16 @@ createStore(reducer, [preloadedState], [enhancer]);
 
 > You'll learn more about how to use the `preloadedState` and `enhancer`
 > parameters later in this lesson. For now you'll focus on creating a store with
-> just the single required `reducer` parameter. 
+> just the single required `reducer` parameter.
 
 Here is an example of how to create a store for a Fruit Stand application:
 
 ```js
-import { createStore } from 'redux';
+import { createStore } from "redux";
 
 const fruitReducer = (state = [], action) => {
   // TODO implement reducer
-}
+};
 
 const store = createStore(fruitReducer);
 ```
@@ -103,8 +105,8 @@ payload of 'orange':
 
 ```js
 const addOrange = {
-  type: 'ADD_FRUIT',
-  fruit: 'orange',
+  type: "ADD_FRUIT",
+  fruit: "orange",
 };
 ```
 
@@ -120,7 +122,7 @@ A `reducer` for the Fruit Stand application looks like this:
 ```js
 const fruitReducer = (state = [], action) => {
   switch (action.type) {
-    case 'ADD_FRUIT':
+    case "ADD_FRUIT":
       return [...state, action.fruit];
     default:
       return state;
@@ -185,12 +187,12 @@ a single example:
 ```js
 // app.js
 
-const { createStore } = require('redux');
+const { createStore } = require("redux");
 
 // Define the store's reducer.
 const fruitReducer = (state = [], action) => {
   switch (action.type) {
-    case 'ADD_FRUIT':
+    case "ADD_FRUIT":
       return [...state, action.fruit];
     default:
       return state;
@@ -202,8 +204,8 @@ const store = createStore(fruitReducer);
 
 // Define an 'ADD_FRUIT' action for adding an orange to the store.
 const addOrange = {
-  type: 'ADD_FRUIT',
-  fruit: 'orange',
+  type: "ADD_FRUIT",
+  fruit: "orange",
 };
 
 // Log to the console the store's state before and after

@@ -6,7 +6,7 @@
 
 The gray code is a binary numeral system where two successive values differ in only one bit.
 
-Given a non-negative integer *n* representing the total number of bits in the code, print the sequence of gray code. A gray code sequence must begin with 0.
+Given a non-negative integer _n_ representing the total number of bits in the code, print the sequence of gray code. A gray code sequence must begin with 0.
 
 **Example 1:**
 
@@ -68,4 +68,4 @@ var grayCode = function(n) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

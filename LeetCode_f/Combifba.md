@@ -1,10 +1,10 @@
-# 077._Combinations
+# 077.\_Combinations
 
 ## [77. Combinations](https://leetcode.com/problems/combinations/description/)
 
 ### Problem:
 
-Given two integers *n* and *k*, return all possible combinations of *k* numbers out of 1 … *n*.
+Given two integers _n_ and _k_, return all possible combinations of _k_ numbers out of 1 … _n_.
 
 **Example:**
 

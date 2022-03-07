@@ -1,7 +1,9 @@
+---
 
-________________________________________________________________________________
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
-________________________________________________________________________________
+
+---
+
 # Reducers
 
 As you saw in an earlier article, the Redux store has a **reducer** function for
@@ -11,10 +13,10 @@ returns the next state.
 
 When you finish this article, you should be able to:
 
-* Explain what a _reducer_ is
-* Use a `switch` statement within a reducer function to handle multiple action
+- Explain what a _reducer_ is
+- Use a `switch` statement within a reducer function to handle multiple action
   types
-* Describe why it's important for a reducer to avoid mutating the current state
+- Describe why it's important for a reducer to avoid mutating the current state
   when creating the next state
 
 ## Updating the reducer to handle additional action types
@@ -24,7 +26,7 @@ Recall the reducer from the Fruit Stand application:
 ```js
 const fruitReducer = (state = [], action) => {
   switch (action.type) {
-    case 'ADD_FRUIT':
+    case "ADD_FRUIT":
       return [...state, action.fruit];
     default:
       return state;
@@ -41,8 +43,7 @@ the reducer decides what logic to implement based on the `action.type` `switch`.
 Then, it creates and returns a new object representing the next state (after
 processing the action) if any of the information needs to be changed. The
 `state` is returned unchanged if no cases match the `action.type`, meaning that
-the reducer doesn't _care_ about that action (e.g. `{type:
-'NEW_TRANSFORMERS_SEQUEL'}`).
+the reducer doesn't _care_ about that action (e.g. `{type: 'NEW_TRANSFORMERS_SEQUEL'}`).
 
 In the above example, the reducer's initial state is set to an empty array (i.e.
 `[]`). The reducer returns a new array with `action.fruit` appended to the
@@ -60,18 +61,18 @@ following action types:
 ```js
 const fruitReducer = (state = [], action) => {
   switch (action.type) {
-    case 'ADD_FRUIT':
+    case "ADD_FRUIT":
       return [...state, action.fruit];
-    case 'ADD_FRUITS':
+    case "ADD_FRUITS":
       return [...state, ...action.fruits];
-    case 'SELL_FRUIT':
+    case "SELL_FRUIT":
       const index = state.indexOf(action.fruit);
       if (index !== -1) {
         // remove first instance of action.fruit
         return [...state.slice(0, index), ...state.slice(index + 1)];
       }
       return state; // if action.fruit is not in state, return previous state
-    case 'SELL_OUT':
+    case "SELL_OUT":
       return [];
     default:
       return state;
@@ -85,7 +86,7 @@ If you don't regularly use the [`Array#slice`] method, the following expression
 might look odd at first glance:
 
 ```js
-[...state.slice(0, index), ...state.slice(index + 1)]
+[...state.slice(0, index), ...state.slice(index + 1)];
 ```
 
 The [`Array#slice`] method returns a new array containing a shallow copy of the
@@ -110,10 +111,10 @@ array.
 Here's a complete example:
 
 ```js
-const fruits = ['apple', 'apple', 'orange', 'banana', 'watermelon'];
+const fruits = ["apple", "apple", "orange", "banana", "watermelon"];
 
 // The index of the 'orange' element is 2.
-const index = fruits.indexOf('orange');
+const index = fruits.indexOf("orange");
 
 // `...fruits.slice(0, index)` returns the array ['apple', 'apple']
 // `...fruits.slice(index + 1)` returns the array ['banana', 'watermelon']
@@ -136,7 +137,7 @@ Here's an example of a _bad_ reducer which mutates the previous state.
 ```js
 const badReducer = (state = { count: 0 }, action) => {
   switch (action.type) {
-    case 'INCREMENT_COUNTER':
+    case "INCREMENT_COUNTER":
       state.count++;
       return state;
     default:
@@ -151,7 +152,7 @@ shallow duplicate of the previous `state`:
 ```js
 const goodReducer = (state = { count: 0 }, action) => {
   switch (action.type) {
-    case 'INCREMENT_COUNTER':
+    case "INCREMENT_COUNTER":
       const nextState = Object.assign({}, state);
       nextState.count++;
       return nextState;
@@ -173,6 +174,6 @@ the next state.
 To learn more about reducers, see the official [Redux
 documentation][redux-js-reducers].
 
-[`Array#slice`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+[`array#slice`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
 [why-immutable]: https://github.com/reactjs/redux/issues/758
 [redux-js-reducers]: https://redux.js.org/basics/reducers

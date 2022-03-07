@@ -1,4 +1,4 @@
-# 049._Group_Anagrams
+# 049.\_Group_Anagrams
 
 ## [49. Group Anagrams](https://leetcode.com/problems/group-anagrams/description/)
 

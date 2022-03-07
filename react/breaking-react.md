@@ -15,25 +15,25 @@ Here's [a minimal example](https://codepen.io/chalarangelo/pen/jOEojVJ?editors=0
 
 ```jsx
 const destroyElement = () =>
-  document.getElementById('app').removeChild(document.getElementById('my-div'));
+  document.getElementById("app").removeChild(document.getElementById("my-div"));
 
 const App = () => {
   const [elementShown, updateElement] = React.useState(true);
 
   return (
-    <div id='app'>
+    <div id="app">
       <button onClick={() => destroyElement()}>
         Delete element via querySelector
       </button>
       <button onClick={() => updateElement(!elementShown)}>
         Update element and state
       </button>
-    { elementShown ? <div id="my-div">I am the element</div> : null }
+      {elementShown ? <div id="my-div">I am the element</div> : null}
     </div>
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
 ```
 
 This is a pretty simple React application, with a container, two buttons and a state variable. The problem is it will crash if you click the button that calls `destroyElement()` and then click the other one. _Why?_ you might ask. The issue here might not be immediately obvious, but if you look at your browser console you will notice the following exception:

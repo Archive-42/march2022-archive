@@ -10,7 +10,6 @@ seo:
 template: docs
 ---
 
-
 Regular expressions make light work of **single-character delimiters**, which is why it's so easy to remove markup from a string:
 
 ```
@@ -70,10 +69,10 @@ str = str.replace(/(<\!\[CDATA\[([^\]]|(\]+[^>]))*\]+>)/gm, '');
 The `replace` function can also be **passed a callback** as its second parameter, and this is invaluable in cases where the replacement you want can't be described in a simple expression. For example:
 
 ```
-isocode = isocode.replace(/^([a-z]+)(\-[a-z]+)?$/i, 
+isocode = isocode.replace(/^([a-z]+)(\-[a-z]+)?$/i,
   function(match, lang, country)
   {
-    return lang.toLowerCase() 
+    return lang.toLowerCase()
       + (country ? country.toUpperCase() : '');
   });
 ```
@@ -96,7 +95,7 @@ Here's another example, that combines the multi-line comment expression from the
 
 ```
 let comments = [];
-str.replace(/(\/\*([^*]|(\*+[^*\/]))*\*+\/)/gm, 
+str.replace(/(\/\*([^*]|(\*+[^*\/]))*\*+\/)/gm,
   function(match)
   {
     comments.push(match);
@@ -107,7 +106,7 @@ Since nothing is returned, the original string remains unchanged. Although if we
 
 ```
 let comments = [];
-str = str.replace(/(\/\*([^*]|(\*+[^*\/]))*\*+\/)/gm, 
+str = str.replace(/(\/\*([^*]|(\*+[^*\/]))*\*+\/)/gm,
   function(match)
   {
     comments.push(match);
@@ -129,7 +128,7 @@ So first we use a regex callback to extract and save the comments. The callback 
 
 ```
 let comments = [];
-csstext = csstext.replace(/(\/\*([^*]|(\*+([^*\/])))*\*+\/)/gm, 
+csstext = csstext.replace(/(\/\*([^*]|(\*+([^*\/])))*\*+\/)/gm,
   function(match)
   {
     comments.push(match);
@@ -142,7 +141,7 @@ That creates an array of comments in the same source-order as the spaces they le
 Then the originals can be restored simply by replacing each delimited space with its corresponding saved comment — and since the delimiters are single characters, we only need a **simple character class** to match each pair:
 
 ```
-csstext = csstext.replace(/(\ufddf[^\ufddf]+\ufddf)/gim, 
+csstext = csstext.replace(/(\ufddf[^\ufddf]+\ufddf)/gim,
   function()
   {
     return comments.shift();

@@ -1,7 +1,9 @@
+---
 
-________________________________________________________________________________
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
-________________________________________________________________________________
+
+---
+
 # React Builds
 
 A "build" is the process of converting code into something that can actually
@@ -14,10 +16,9 @@ process is automatically configured to do that and a lot more.
 
 When you finish this article, you should be able to:
 
-* Describe what front-end builds are and why they're needed;
-* Describe at a high level what happens in a Create React App when you run `npm
-  start`; and
-* Prepare to deploy a React application into a production environment.
+- Describe what front-end builds are and why they're needed;
+- Describe at a high level what happens in a Create React App when you run `npm start`; and
+- Prepare to deploy a React application into a production environment.
 
 ## Understanding front-end builds
 
@@ -92,8 +93,7 @@ sometimes have a dramatic positive impact on overall bundled file sizes.
 ### Configuration or code?
 
 Front-end build tools have come and gone over the years; sometimes very quickly,
-which helped bring about the phenomenon known as [JavaScript fatigue][js
-fatigue].
+which helped bring about the phenomenon known as [JavaScript fatigue][js fatigue].
 
 Configuration based tools allow you to create your build tasks by declaring
 (usually using JSON, XML, or YAML) what you want to be done, without explicitly
@@ -142,14 +142,14 @@ changes will (usually) automatically appear in the browser!
 
 At a high level, here's what happens when you run `npm start`:
 
-* Environment variables are loaded (more about this in a bit);
-* The list of browsers to support are checked (more about this too in a bit);
-* The configured HTTP port is checked to ensure that it's available;
-* The application compiler is configured and created;
-* [`webpack-dev-server`] is started;
-* [`webpack-dev-server`] compiles your application;
-* The `index.html` file is loaded into the browser; and
-* A file watcher is started to watch your files, waiting for changes.
+- Environment variables are loaded (more about this in a bit);
+- The list of browsers to support are checked (more about this too in a bit);
+- The configured HTTP port is checked to ensure that it's available;
+- The application compiler is configured and created;
+- [`webpack-dev-server`] is started;
+- [`webpack-dev-server`] compiles your application;
+- The `index.html` file is loaded into the browser; and
+- A file watcher is started to watch your files, waiting for changes.
 
 ### Ejecting
 
@@ -162,8 +162,7 @@ hidden stuff is exposed so that you can review and customize it.
 > been ejected, there's no going back (though you could always undo the ejection
 > process by reverting to an earlier commit if you're using source control).
 
-To eject your application from Create React App, run the command `npm run
-eject`. You'll be prompted if you want to continue; type "y" to continue with
+To eject your application from Create React App, run the command `npm run eject`. You'll be prompted if you want to continue; type "y" to continue with
 the ejection process. Once the ejection process has completed, you can review
 the files that were previously hidden from you.
 
@@ -228,11 +227,7 @@ browsers:
 ```json
 {
   "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
+    "production": [">0.2%", "not dead", "not op_mini all"],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
@@ -268,17 +263,16 @@ Now your application is ready to be deployed!
 
 In this article, you learned how to:
 
-* Describe what front-end builds are and why they're needed;
-* Describe at a high level what happens in a Create React App when you run `npm
-  start`; and
-* Prepare to deploy a React application into a production environment.
+- Describe what front-end builds are and why they're needed;
+- Describe at a high level what happens in a Create React App when you run `npm start`; and
+- Prepare to deploy a React application into a production environment.
 
 [coffeescript]: https://coffeescript.org/
 [typescript]: https://www.typescriptlang.org/
 [sass]: https://sass-lang.com/
 [eslint]: https://eslint.org/
 [es2019]: https://www.ecma-international.org/ecma-262/10.0/index.html
-[es2021]: https://tc39.es/ecma262/ 
+[es2021]: https://tc39.es/ecma262/
 [es2015]: http://www.ecma-international.org/ecma-262/6.0/
 [es5]: https://www.ecma-international.org/ecma-262/5.1/
 [es3]: https://www.ecma-international.org/publications/files/ECMA-ST-ARCH/ECMA-262,%203rd%20edition,%20December%201999.pdf
@@ -290,7 +284,7 @@ In this article, you learned how to:
 [json]: https://www.json.org/json-en.html
 [xml]: https://www.w3.org/XML/
 [yaml]: https://yaml.org/
-[babel]:https://babeljs.io/
+[babel]: https://babeljs.io/
 [`webpack-dev-server`]: https://webpack.js.org/configuration/dev-server/
 [browserl.ist]: https://browserl.ist
 [cra deployment]: https://facebook.github.io/create-react-app/docs/deployment

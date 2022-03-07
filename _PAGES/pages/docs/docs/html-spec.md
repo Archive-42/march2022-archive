@@ -3,10 +3,10 @@ title: HTML SPEC
 weight: 0
 excerpt: HTML SPEC
 seo:
-    title: ''
-    description: ''
-    robots: []
-    extra: []
+  title: ""
+  description: ""
+  robots: []
+  extra: []
 template: docs
 ---
 

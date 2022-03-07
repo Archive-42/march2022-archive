@@ -3,11 +3,11 @@ title: search
 weight: 0
 excerpt: search
 seo:
-    title: ''
-    description: ''
-    robots: []
-    extra: []
-    type: stackbit_page_meta
+  title: ""
+  description: ""
+  robots: []
+  extra: []
+  type: stackbit_page_meta
 template: docs
 ---
 

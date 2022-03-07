@@ -1,7 +1,9 @@
+---
 
-________________________________________________________________________________
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
-________________________________________________________________________________
+
+---
+
 # Middleware
 
 In Redux, middleware specifically refers to an `enhancer` passed to the store
@@ -34,17 +36,13 @@ middleware:
 ```js
 // ./src/store.js
 
-import { createStore, applyMiddleware } from 'redux';
-import logger from 'redux-logger';
+import { createStore, applyMiddleware } from "redux";
+import logger from "redux-logger";
 
-import rootReducer from './reducers/rootReducer';
+import rootReducer from "./reducers/rootReducer";
 
 const configureStore = (preloadedState = {}) => {
-  return createStore(
-    rootReducer,
-    preloadedState,
-    applyMiddleware(logger),
-  );
+  return createStore(rootReducer, preloadedState, applyMiddleware(logger));
 };
 
 export default configureStore;
@@ -67,24 +65,24 @@ A [**function signature**][signature] is the set of inputs and output of a
 function. A Redux middleware must always have the following signature:
 
 ```js
-const middleware = store => next => action => {
- // side effects, if any
- return next(action);
+const middleware = (store) => (next) => (action) => {
+  // side effects, if any
+  return next(action);
 };
 ```
 
 Every middleware receives the `store` as an argument and returns a function that
 takes the `next` link in the middleware chain as an argument. That function
-returns *another* function that receives the `action` and then triggers any side
+returns _another_ function that receives the `action` and then triggers any side
 effects before returning the result of `next(action)`. Side effects can include
 triggering AJAX requests, logging to the console, and more. Side effects can
 also happen after `next(action)` is called, like so:
 
 ```js
-const middleware = store => next => action => {
- const result = next(action);
- // side effect using `result`
- return result;
+const middleware = (store) => (next) => (action) => {
+  const result = next(action);
+  // side effect using `result`
+  return result;
 };
 ```
 
@@ -110,13 +108,13 @@ function should:
 - return the saved `result`
 
 ```js
-const logger = store => next => action => {
-  console.log('Action received:', action);
-  console.log('State pre-dispatch:', store.getState());
+const logger = (store) => (next) => (action) => {
+  console.log("Action received:", action);
+  console.log("State pre-dispatch:", store.getState());
 
   let result = next(action);
 
-  console.log('State post-dispatch:', store.getState());
+  console.log("State post-dispatch:", store.getState());
 
   return result;
 };
@@ -131,19 +129,19 @@ for debugging purposes. Including the `redux-logger` npm package and adding it
 as a middleware gives you access (through the console) to the previous state,
 action, and next state with each dispatch. This is incredibly convenient for
 debugging purposes and avoids such unpleasantness as attaching the `store` to
-the `window`. 
+the `window`.
 
 ![react-redux-logger]
 
 Follow the example below to include it in your projects:
 
-* Include the `redux-logger` package:
+- Include the `redux-logger` package:
 
 ```sh
 npm install redux-logger
 ```
 
-* Pass an instance of `redux-logger` to `applyMiddleware` when creating your
+- Pass an instance of `redux-logger` to `applyMiddleware` when creating your
   store:
 
 **Note: `logger` must be the last middleware passed into `applyMiddleware`**,
@@ -153,17 +151,17 @@ thunks and `react-thunk` in the next article.
 ```js
 // ./src/store.js
 
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import logger from 'redux-logger';
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import logger from "redux-logger";
 
-import rootReducer from './reducers/rootReducer';
+import rootReducer from "./reducers/rootReducer";
 
 const configureStore = (preloadedState = {}) => {
   return createStore(
     rootReducer,
     preloadedState,
-    applyMiddleware(thunk, logger),
+    applyMiddleware(thunk, logger)
   );
 };
 

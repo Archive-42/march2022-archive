@@ -4,7 +4,7 @@
 
 ### Problem:
 
-Given *s1*, *s2*, *s3*, find whether *s3* is formed by the interleaving of *s1* and *s2*.
+Given _s1_, _s2_, _s3_, find whether _s3_ is formed by the interleaving of _s1_ and _s2_.
 
 **Example 1:**
 
@@ -57,4 +57,4 @@ var isInterleave = function(s1, s2, s3) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

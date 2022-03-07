@@ -4,9 +4,9 @@
 
 ### Problem:
 
-Reverse a linked list from position *m* to *n*. Do it in one-pass.
+Reverse a linked list from position _m_ to _n_. Do it in one-pass.
 
-**Note:**1 ≤ *m* ≤ *n* ≤ length of list.
+**Note:**1 ≤ _m_ ≤ _n_ ≤ length of list.
 
 **Example:**
 
@@ -62,4 +62,4 @@ var reverseBetween = function(head, m, n) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

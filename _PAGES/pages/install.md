@@ -1,27 +1,27 @@
 ---
 title: Install
 excerpt: >-
-    Web-Dev-Hubis a Unibit theme created for project documentations. You can use
-    it for your project.
+  Web-Dev-Hubis a Unibit theme created for project documentations. You can use
+  it for your project.
 seo:
-    title: Install
-    description: This is the Install page
-    extra:
-        - name: 'og:type'
-          value: website
-          keyName: property
-        - name: 'og:title'
-          value: Install
-          keyName: property
-        - name: 'og:description'
-          value: This is the Install page
-          keyName: property
-        - name: 'twitter:card'
-          value: summary
-        - name: 'twitter:title'
-          value: Install
-        - name: 'twitter:description'
-          value: This is the Install page
+  title: Install
+  description: This is the Install page
+  extra:
+    - name: "og:type"
+      value: website
+      keyName: property
+    - name: "og:title"
+      value: Install
+      keyName: property
+    - name: "og:description"
+      value: This is the Install page
+      keyName: property
+    - name: "twitter:card"
+      value: summary
+    - name: "twitter:title"
+      value: Install
+    - name: "twitter:description"
+      value: This is the Install page
 template: docs
 ---
 

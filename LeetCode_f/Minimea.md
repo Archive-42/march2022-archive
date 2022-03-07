@@ -1,4 +1,4 @@
-# 111._Minimum_Depth_of_Binary_Tree
+# 111.\_Minimum_Depth_of_Binary_Tree
 
 ## [111. Minimum Depth of Binary Tree](https://leetcode.com/problems/minimum-depth-of-binary-tree/description/)
 

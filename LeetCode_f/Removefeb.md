@@ -4,7 +4,7 @@
 
 ### Problem:
 
-Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only *distinct* numbers from the original list.
+Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only _distinct_ numbers from the original list.
 
 **Example 1:**
 
@@ -60,4 +60,4 @@ var deleteDuplicates = function(head) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

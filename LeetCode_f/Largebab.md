@@ -1,10 +1,10 @@
-# 084._Largest_Rectangle_in_Histogram
+# 084.\_Largest_Rectangle_in_Histogram
 
 ## [84. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/description/)
 
 ### Problem:
 
-Given *n* non-negative integers representing the histogram’s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.
+Given _n_ non-negative integers representing the histogram’s bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.
 
 ![https://leetcode.com/static/images/problemset/histogram.png](https://leetcode.com/static/images/problemset/histogram.png)
 
@@ -37,7 +37,7 @@ Notice that if we just loop the bars from left to right, `b1` and `b2` of each b
 
 Observe how `i1` and `i2` changes depending on the height.
 
-To reduce O(*n^2*) to O(*n*), we use a stack to store incremental `b`s. Because `b1` and `b2` are both lower than `b`, whenever we reach a bar that is lower than the top of the stack, we know it’s a `b2`. So stack top is a `b`. Second top is a `b1`. Keep popping the `b` to calculate areas until `b2` is no longer lower than stack top.
+To reduce O(_n^2_) to O(_n_), we use a stack to store incremental `b`s. Because `b1` and `b2` are both lower than `b`, whenever we reach a bar that is lower than the top of the stack, we know it’s a `b2`. So stack top is a `b`. Second top is a `b1`. Keep popping the `b` to calculate areas until `b2` is no longer lower than stack top.
 
 ```
 /** * @param {number[]} heights * @return {number} */let largestRectangleArea = function (heights) {  const stack = [-1];  let max = 0;  for (let i2 = 0; i2 <= heights.length; i2++) {    while ((heights[i2] || 0) < heights[stack[stack.length - 1]]) {      const i = stack.pop();      const i1 = stack[stack.length - 1];      max = Math.max(max, heights[i] * (i2 - i1 - 1));    }    stack.push(i2);  }  return max;};

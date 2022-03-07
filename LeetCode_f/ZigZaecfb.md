@@ -1,4 +1,4 @@
-# 006._ZigZag_Conversion
+# 006.\_ZigZag_Conversion
 
 ## [6. ZigZag Conversion](https://leetcode.com/problems/zigzag-conversion/description/)
 

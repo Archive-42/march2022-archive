@@ -1,6 +1,7 @@
 # Component Lifecycle
 
-________________________________________________________________________________
+---
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -16,7 +17,8 @@ ________________________________________________________________________________
 - [See also...](#see-also)
 
 <!-- /code_chunk_output -->
-________________________________________________________________________________
+
+---
 
 When creating a React class component, you define its props and state, how it'll
 handle user generated events, and how it'll render, but you don't directly
@@ -32,10 +34,10 @@ unloading (i.e. unmounting).
 
 When you finish this article, you should be able to:
 
-* Describe the lifecycle of a React component;
-* Recall that the commonly used component lifecycle methods include
+- Describe the lifecycle of a React component;
+- Recall that the commonly used component lifecycle methods include
   `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`; and
-* Use the `componentDidMount` component lifecycle method to fetch data from an
+- Use the `componentDidMount` component lifecycle method to fetch data from an
   API.
 
 ## The lifecycle of a React component
@@ -43,11 +45,11 @@ When you finish this article, you should be able to:
 Each class component has several lifecycle methods that you can add to run code
 at specific points in a component's lifetime:
 
-* [`componentDidMount`][react docs componentdidmount] - This method is called
+- [`componentDidMount`][react docs componentdidmount] - This method is called
   after your component has been added to the component tree.
-* [`componentDidUpdate`][react docs componentdidupdate] - This method is called
+- [`componentDidUpdate`][react docs componentdidupdate] - This method is called
   after your component has been updated.
-* [`componentWillUnmount`][react docs componentwillunmount] - This method is
+- [`componentWillUnmount`][react docs componentwillunmount] - This method is
   called just before your component is removed from the component tree.
 
 Let's take a closer look the process that occurs when a component is mounting,
@@ -58,10 +60,10 @@ updating, and unmounting.
 When a class component is being added to the component tree, the following
 process occurs:
 
-* The `constructor` method is called;
-* The `render` method is called;
-* React updates the DOM; and
-* The `componentDidMount` lifecycle method is called.
+- The `constructor` method is called;
+- The `render` method is called;
+- React updates the DOM; and
+- The `componentDidMount` lifecycle method is called.
 
 ### Updating
 
@@ -70,15 +72,15 @@ called.
 
 When a component receives new props, the following process occurs:
 
-* The `render` method is called;
-* React updates DOM; and
-* The `componentDidUpdate` lifecycle method is called.
-  
+- The `render` method is called;
+- React updates DOM; and
+- The `componentDidUpdate` lifecycle method is called.
+
 When a the `setState` method is called, the following process occurs:
 
-* The `render` method is called;
-* React updates DOM; and
-* The `componentDidUpdate` lifecycle method is called.
+- The `render` method is called;
+- React updates DOM; and
+- The `componentDidUpdate` lifecycle method is called.
 
 ### Unmounting
 
@@ -96,14 +98,13 @@ could use. These methods are now deprecated and are marked as "unsafe" to use
 
 The legacy lifecycle methods are:
 
-* [`UNSAFE_componentWillMount`][react docs componentwillmount]
-* [`UNSAFE_componentWillReceiveProps`][react docs componentwillreceiveprops]
-* [`UNSAFE_componentWillUpdate`][react docs componentwillupdate]
+- [`UNSAFE_componentWillMount`][react docs componentwillmount]
+- [`UNSAFE_componentWillReceiveProps`][react docs componentwillreceiveprops]
+- [`UNSAFE_componentWillUpdate`][react docs componentwillupdate]
 
 Sometimes you'll encounter these lifecycle methods in older articles and code
 examples when researching React online. To learn more about these lifecycle
-methods, see the [official React documentation][react docs legacy lifecycle
-methods].
+methods, see the [official React documentation][react docs legacy lifecycle methods].
 
 ## Using the class component lifecycle methods
 
@@ -119,7 +120,7 @@ For the first class component, you'll define the `componentDidMount`,
 ```js
 // ./src/LifecycleMethods.js
 
-import React from 'react';
+import React from "react";
 
 class LifecycleMethods extends React.Component {
   componentDidMount() {
@@ -135,9 +136,7 @@ class LifecycleMethods extends React.Component {
   }
 
   render() {
-    return (
-    <h2>{this.props.text}</h2>
-    );
+    return <h2>{this.props.text}</h2>;
   }
 }
 
@@ -153,8 +152,8 @@ For the second class component, you'll create a component that'll use the
 ```js
 // ./src/Demo.js
 
-import React from 'react';
-import LifecycleMethods from './LifecycleMethods';
+import React from "react";
+import LifecycleMethods from "./LifecycleMethods";
 
 class Demo extends React.Component {
   constructor() {
@@ -168,33 +167,38 @@ class Demo extends React.Component {
 
   loadComponent = () => {
     this.setState({ displayComponent: true });
-  }
+  };
 
   unloadComponent = () => {
     this.setState({ displayComponent: false });
-  }
+  };
 
   updateComponent = () => {
     this.setState({
       componentText: new Date().toLocaleString(),
-    });    
-  }
+    });
+  };
 
   render() {
-    return this.state.displayComponent ?
-      (
+    return this.state.displayComponent ? (
+      <div>
         <div>
-          <div>
-            <button type='button' onClick={this.unloadComponent}>Unload Component</button>
-            <button type='button' onClick={this.updateComponent}>Update Component</button>
-          </div>
-          <LifecycleMethods text={this.state.componentText} />
+          <button type="button" onClick={this.unloadComponent}>
+            Unload Component
+          </button>
+          <button type="button" onClick={this.updateComponent}>
+            Update Component
+          </button>
         </div>
-      ) : (
-        <div>
-          <button type='button' onClick={this.loadComponent}>Load Component</button>
-        </div>
-      );
+        <LifecycleMethods text={this.state.componentText} />
+      </div>
+    ) : (
+      <div>
+        <button type="button" onClick={this.loadComponent}>
+          Load Component
+        </button>
+      </div>
+    );
   }
 }
 
@@ -212,15 +216,15 @@ point to render the `Demo` component:
 ```js
 // ./src/index.js
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Demo from './Demo';
+import React from "react";
+import ReactDOM from "react-dom";
+import Demo from "./Demo";
 
 ReactDOM.render(
   <React.StrictMode>
     <Demo />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 ```
 
@@ -242,7 +246,7 @@ repositories as an unordered list of links:
 ```js
 // ./src/FetchingData.js
 
-import React from 'react';
+import React from "react";
 
 class FetchingData extends React.Component {
   constructor() {
@@ -265,24 +269,20 @@ class FetchingData extends React.Component {
     const { repositories } = this.state;
 
     if (repositories.length === 0) {
-      return (
-        <div>Fetching data...</div>
-      );
+      return <div>Fetching data...</div>;
     } else {
-     return (
-       <div>
-         <h2>GitHub Repositories for {this.props.gitHubUsername}</h2>
-         <ul>
-           {
-             repositories.map((repo) => (
-               <li key={repo.id}>
-                 <a href={repo.html_url}>{repo.name}</a>
-               </li>
-             ))
-           }
-         </ul>
-       </div>
-     );
+      return (
+        <div>
+          <h2>GitHub Repositories for {this.props.gitHubUsername}</h2>
+          <ul>
+            {repositories.map((repo) => (
+              <li key={repo.id}>
+                <a href={repo.html_url}>{repo.name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
     }
   }
 }
@@ -304,15 +304,15 @@ point to render the `FetchingData` component and to set the `gitHubUsername`
 prop on the component to a valid GitHub username:
 
 ```js
-import React from 'react';
-import ReactDOM from 'react-dom';
-import FetchingData from './FetchingData';
+import React from "react";
+import ReactDOM from "react-dom";
+import FetchingData from "./FetchingData";
 
 ReactDOM.render(
   <React.StrictMode>
-    <FetchingData gitHubUsername='appacademy' />
+    <FetchingData gitHubUsername="appacademy" />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 ```
 
@@ -325,10 +325,10 @@ GitHub username:
 
 In this article, you learned how to:
 
-* Describe the lifecycle of a React component;
-* Recall that the commonly used component lifecycle methods include
+- Describe the lifecycle of a React component;
+- Recall that the commonly used component lifecycle methods include
   `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`; and
-* Use the `componentDidMount` component lifecycle method to fetch data from an
+- Use the `componentDidMount` component lifecycle method to fetch data from an
   API.
 
 ## See also...

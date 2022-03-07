@@ -3,10 +3,10 @@ title: Git Bash
 weight: 0
 excerpt: Git Bash
 seo:
-    title: ''
-    description: ''
-    robots: []
-    extra: []
+  title: ""
+  description: ""
+  robots: []
+  extra: []
 template: docs
 ---
 

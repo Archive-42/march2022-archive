@@ -16,7 +16,7 @@ Explanation: [4,-1,2,1] has the largest sum = 6.
 
 **Follow up:**
 
-If you have figured out the O(*n*) solution, try coding another solution using the divide and conquer approach, which is more subtle.
+If you have figured out the O(_n_) solution, try coding another solution using the divide and conquer approach, which is more subtle.
 
 ### Solution:
 
@@ -66,4 +66,4 @@ var maxSubArray = function(nums) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

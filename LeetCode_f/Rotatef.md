@@ -4,7 +4,7 @@
 
 ### Problem:
 
-Given a linked list, rotate the list to the right by *k* places, where *k* is non-negative.
+Given a linked list, rotate the list to the right by _k_ places, where _k_ is non-negative.
 
 **Example 1:**
 
@@ -86,4 +86,4 @@ var rotateRight = function(head, k) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

@@ -56,19 +56,15 @@ For every `node`:
 
 - Left child: points to `node.right`.
 - Right child: points to `node.next.left` if `node.next` exists.
-    
-    /**
-    
-    - Definition for binary tree with next pointer.
-    - function TreeLinkNode(val) {
-    - this.val = val;
-    - this.left = this.right = this.next = null;
-    - } */
-    
-    /**
-    
-    - @param {TreeLinkNode} root
-    - @return {void} Do not return anything, modify tree in-place instead. */ var connect = function(root) { if (!root) { return } if (root.left !== null) { root.left.next = root.right connect(root.left) } if (root.right !== null) { if (root.next !== null) { root.right.next = root.next.left } connect(root.right) } };
+  /\*\*
+  - Definition for binary tree with next pointer.
+  - function TreeLinkNode(val) {
+  - this.val = val;
+  - this.left = this.right = this.next = null;
+  - } \*/
+  /\*\*
+  - @param {TreeLinkNode} root
+  - @return {void} Do not return anything, modify tree in-place instead. \*/ var connect = function(root) { if (!root) { return } if (root.left !== null) { root.left.next = root.right connect(root.left) } if (root.right !== null) { if (root.next !== null) { root.right.next = root.next.left } connect(root.right) } };
 
 ### TWO
 
@@ -106,4 +102,4 @@ var connect = function(root) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

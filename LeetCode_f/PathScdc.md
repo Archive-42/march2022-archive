@@ -67,4 +67,4 @@ var pathSum = function(root, sum, path = [], result = []) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

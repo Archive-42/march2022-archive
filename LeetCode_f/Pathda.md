@@ -1,4 +1,4 @@
-# 113._Path_Sum_II
+# 113.\_Path_Sum_II
 
 ## [113. Path Sum II](https://leetcode.com/problems/path-sum-ii/description/)
 

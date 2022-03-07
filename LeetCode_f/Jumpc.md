@@ -1,4 +1,4 @@
-# 055._Jump_Game
+# 055.\_Jump_Game
 
 ## [55. Jump Game](https://leetcode.com/problems/jump-game/description/)
 

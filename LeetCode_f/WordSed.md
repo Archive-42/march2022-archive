@@ -76,4 +76,4 @@ function _exist (board, word, iWord, directions, row, col) {
 }
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

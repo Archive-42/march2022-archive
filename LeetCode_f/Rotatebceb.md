@@ -4,7 +4,7 @@
 
 ### Problem:
 
-You are given an *n* x *n* 2D matrix representing an image.
+You are given an _n_ x _n_ 2D matrix representing an image.
 
 Rotate the image by 90 degrees (clockwise).
 
@@ -80,4 +80,4 @@ var rotate = function(matrix) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

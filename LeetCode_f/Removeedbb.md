@@ -4,7 +4,7 @@
 
 ### Problem:
 
-Given a sorted linked list, delete all duplicates such that each element appear only *once*.
+Given a sorted linked list, delete all duplicates such that each element appear only _once_.
 
 **Example 1:**
 
@@ -92,4 +92,4 @@ var deleteDuplicates = function(head) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

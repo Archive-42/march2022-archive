@@ -1,4 +1,4 @@
-# 017._Letter_Combinations_of_a_Phone_Number
+# 017.\_Letter_Combinations_of_a_Phone_Number
 
 ## [17. Letter Combinations of a Phone Number](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/)
 

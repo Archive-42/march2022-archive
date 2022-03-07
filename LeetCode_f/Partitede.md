@@ -4,7 +4,7 @@
 
 ### Problem:
 
-Given a linked list and a value *x*, partition it such that all nodes less than *x* come before nodes greater than or equal to *x*.
+Given a linked list and a value _x_, partition it such that all nodes less than _x_ come before nodes greater than or equal to _x_.
 
 You should preserve the original relative order of the nodes in each of the two partitions.
 
@@ -59,4 +59,4 @@ var partition = function(head, x) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

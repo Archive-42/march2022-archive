@@ -1,7 +1,9 @@
+---
 
-________________________________________________________________________________
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
-________________________________________________________________________________
+
+---
+
 # React Router Nested Routes
 
 Now you know how to create front-end routes and add navigation with React
@@ -15,9 +17,9 @@ components!
 In this article, let's dive into [nested routes]! When you finish the article,
 you should:
 
-* Describe what nested routes are; and
-* Be able to use React Router to create and navigate nested routes; and
-* Know how to use the React Router `match` prop to generate links and routes.
+- Describe what nested routes are; and
+- Be able to use React Router to create and navigate nested routes; and
+- Know how to use the React Router `match` prop to generate links and routes.
 
 ## Why nested routes?
 
@@ -62,8 +64,8 @@ const Profile = (props) => {
       <Link to={`/users/${id}/photos`}>{name}'s Photos</Link>
 
       {/* Routes to a specific user's posts and photos */}
-      <Route path='/users/:userId/posts' component={UserPosts} />
-      <Route path='/users/:userId/photos' component={UserPhotos} />
+      <Route path="/users/:userId/posts" component={UserPosts} />
+      <Route path="/users/:userId/photos" component={UserPhotos} />
     </div>
   );
 };
@@ -110,9 +112,8 @@ application's routes organized within related components.
 
 In this article, you learned:
 
-* What nested routes are; and
-* About creating and navigating nested routes with React Router; and
-* How to use the React Router props to generate nested links and routes.
+- What nested routes are; and
+- About creating and navigating nested routes with React Router; and
+- How to use the React Router props to generate nested links and routes.
 
-[nested routes]:
-  https://reacttraining.com/react-router/core/guides/philosophy/nested-routes
+[nested routes]: https://reacttraining.com/react-router/core/guides/philosophy/nested-routes

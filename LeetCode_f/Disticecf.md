@@ -1,4 +1,4 @@
-# 115._Distinct_Subsequences
+# 115.\_Distinct_Subsequences
 
 ## [115. Distinct Subsequences](https://leetcode.com/problems/distinct-subsequences/description/)
 

@@ -1,4 +1,4 @@
-# 041._First_Missing_Positive
+# 041.\_First_Missing_Positive
 
 ## [41. First Missing Positive](https://leetcode.com/problems/first-missing-positive/description/)
 
@@ -29,13 +29,13 @@ Output: 1
 
 **Note:**
 
-Your algorithm should run in *O*(*n*) time and uses constant extra space.
+Your algorithm should run in _O_(_n_) time and uses constant extra space.
 
 ### Solution:
 
 The last requirement is why this problem is marked “hard”. Though the solution feels like cheating: it modifies the array to mark numbers.
 
-So the algorithm still requires *O*(*n*) space but *O*(*1*) **extra** space.
+So the algorithm still requires _O_(_n_) space but _O_(_1_) **extra** space.
 
 The core idea of the solution is, if the length of the array is n, then the smallest missing positive integer must be within [1, n+1].
 

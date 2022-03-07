@@ -1,4 +1,4 @@
-# 029._Divide_Two_Integers
+# 029.\_Divide_Two_Integers
 
 ## [29. Divide Two Integers](https://leetcode.com/problems/divide-two-integers/description/)
 

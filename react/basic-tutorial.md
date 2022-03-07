@@ -74,20 +74,20 @@ First we need to make the `store` available to our app. To do this, we wrap our 
 
 ```jsx
 // index.js
-import React from 'react'
-import ReactDOM from 'react-dom'
-import TodoApp from './TodoApp'
+import React from "react";
+import ReactDOM from "react-dom";
+import TodoApp from "./TodoApp";
 
-import { Provider } from 'react-redux'
-import store from './redux/store'
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
-const rootElement = document.getElementById('root')
+const rootElement = document.getElementById("root");
 ReactDOM.render(
   <Provider store={store}>
     <TodoApp />
   </Provider>,
   rootElement
-)
+);
 ```
 
 Notice how our `<TodoApp />` is now wrapped with the `<Provider />` with `store` passed in as a prop.
@@ -111,19 +111,19 @@ Normally, you’ll call `connect` in this way:
 ```js
 const mapStateToProps = (state, ownProps) => ({
   // ... computed data from state and optionally ownProps
-})
+});
 
 const mapDispatchToProps = {
   // ... normally is an object full of action creators
-}
+};
 
 // `connect` returns a new function that accepts the component to wrap:
-const connectToStore = connect(mapStateToProps, mapDispatchToProps)
+const connectToStore = connect(mapStateToProps, mapDispatchToProps);
 // and that function returns the connected, wrapper component:
-const ConnectedComponent = connectToStore(Component)
+const ConnectedComponent = connectToStore(Component);
 
 // We normally do both in one step, like this:
-connect(mapStateToProps, mapDispatchToProps)(Component)
+connect(mapStateToProps, mapDispatchToProps)(Component);
 ```
 
 Let’s work on `<AddTodo />` first. It needs to trigger changes to the `store` to add new todos. Therefore, it needs to be able to `dispatch` actions to the store. Here’s how we do it.
@@ -132,16 +132,16 @@ Our `addTodo` action creator looks like this:
 
 ```js
 // redux/actions.js
-import { ADD_TODO } from './actionTypes'
+import { ADD_TODO } from "./actionTypes";
 
-let nextTodoId = 0
+let nextTodoId = 0;
 export const addTodo = (content) => ({
   type: ADD_TODO,
   payload: {
     id: ++nextTodoId,
     content,
   },
-})
+});
 
 // ... other actions
 ```
@@ -152,14 +152,14 @@ By passing it to `connect`, our component receives it as a prop, and it will aut
 // components/AddTodo.js
 
 // ... other imports
-import { connect } from 'react-redux'
-import { addTodo } from '../redux/actions'
+import { connect } from "react-redux";
+import { addTodo } from "../redux/actions";
 
 class AddTodo extends React.Component {
   // ... component implementation
 }
 
-export default connect(null, { addTodo })(AddTodo)
+export default connect(null, { addTodo })(AddTodo);
 ```
 
 Notice now that `<AddTodo />` is wrapped with a parent component called `<Connect(AddTodo) />`. Meanwhile, `<AddTodo />` now gains one prop: the `addTodo` action.
@@ -171,20 +171,20 @@ We also need to implement the `handleAddTodo` function to let it dispatch the `a
 ```jsx
 // components/AddTodo.js
 
-import React from 'react'
-import { connect } from 'react-redux'
-import { addTodo } from '../redux/actions'
+import React from "react";
+import { connect } from "react-redux";
+import { addTodo } from "../redux/actions";
 
 class AddTodo extends React.Component {
   // ...
 
   handleAddTodo = () => {
     // dispatches actions to add todo
-    this.props.addTodo(this.state.input)
+    this.props.addTodo(this.state.input);
 
     // sets state back to empty string
-    this.setState({ input: '' })
-  }
+    this.setState({ input: "" });
+  };
 
   render() {
     return (
@@ -197,11 +197,11 @@ class AddTodo extends React.Component {
           Add Todo
         </button>
       </div>
-    )
+    );
   }
 }
 
-export default connect(null, { addTodo })(AddTodo)
+export default connect(null, { addTodo })(AddTodo);
 ```
 
 Now our `<AddTodo />` is connected to the store. When we add a todo it would dispatch an action to change the store. We are not seeing it in the app because the other components are not connected yet. If you have the Redux DevTools Extension hooked up, you should see the action being dispatched:
@@ -241,16 +241,16 @@ Luckily we have a selector that does exactly this. We may simply import the sele
 ```js
 // redux/selectors.js
 
-export const getTodosState = (store) => store.todos
+export const getTodosState = (store) => store.todos;
 
 export const getTodoList = (store) =>
-  getTodosState(store) ? getTodosState(store).allIds : []
+  getTodosState(store) ? getTodosState(store).allIds : [];
 
 export const getTodoById = (store, id) =>
-  getTodosState(store) ? { ...getTodosState(store).byIds[id], id } : {}
+  getTodosState(store) ? { ...getTodosState(store).byIds[id], id } : {};
 
 export const getTodos = (store) =>
-  getTodoList(store).map((id) => getTodoById(store, id))
+  getTodoList(store).map((id) => getTodoById(store, id));
 ```
 
 ```js
@@ -291,7 +291,7 @@ If you call `connect` without providing any arguments, your component will:
 
 ```js
 // ... Component
-export default connect()(Component) // Component will receive `dispatch` (just like our <TodoList />!)
+export default connect()(Component); // Component will receive `dispatch` (just like our <TodoList />!)
 ```
 
 #### Subscribe to the store and do not inject action creators
@@ -303,8 +303,8 @@ If you call `connect` with only `mapStateToProps`, your component will:
 
 ```js
 // ... Component
-const mapStateToProps = (state) => state.partOfState
-export default connect(mapStateToProps)(Component)
+const mapStateToProps = (state) => state.partOfState;
+export default connect(mapStateToProps)(Component);
 ```
 
 #### Do not subscribe to the store and inject action creators
@@ -315,9 +315,9 @@ If you call `connect` with only `mapDispatchToProps`, your component will:
 - receive each of the action creators you inject with `mapDispatchToProps` as props and automatically dispatch the actions upon being called
 
 ```js
-import { addTodo } from './actionCreators'
+import { addTodo } from "./actionCreators";
 // ... Component
-export default connect(null, { addTodo })(Component)
+export default connect(null, { addTodo })(Component);
 ```
 
 #### Subscribe to the store and inject action creators
@@ -328,10 +328,10 @@ If you call `connect` with both `mapStateToProps` and `mapDispatchToProps`, your
 - receive all of the action creators you inject with `mapDispatchToProps` as props and automatically dispatch the actions upon being called.
 
 ```js
-import * as actionCreators from './actionCreators'
+import * as actionCreators from "./actionCreators";
 // ... Component
-const mapStateToProps = (state) => state.partOfState
-export default connect(mapStateToProps, actionCreators)(Component)
+const mapStateToProps = (state) => state.partOfState;
+export default connect(mapStateToProps, actionCreators)(Component);
 ```
 
 These four cases cover the most basic usages of `connect`. To read more about `connect`, continue reading our [API section](../api/api.md) that explains it in more detail.
@@ -392,17 +392,17 @@ Meanwhile, we also need to update our `<TodoList />` component to filter todos a
 
 // ... other selectors
 export const getTodosByVisibilityFilter = (store, visibilityFilter) => {
-  const allTodos = getTodos(store)
+  const allTodos = getTodos(store);
   switch (visibilityFilter) {
     case VISIBILITY_FILTERS.COMPLETED:
-      return allTodos.filter((todo) => todo.completed)
+      return allTodos.filter((todo) => todo.completed);
     case VISIBILITY_FILTERS.INCOMPLETE:
-      return allTodos.filter((todo) => !todo.completed)
+      return allTodos.filter((todo) => !todo.completed);
     case VISIBILITY_FILTERS.ALL:
     default:
-      return allTodos
+      return allTodos;
   }
-}
+};
 ```
 
 And connecting to the store with the help of the selector:
@@ -413,12 +413,12 @@ And connecting to the store with the help of the selector:
 // ...
 
 const mapStateToProps = (state) => {
-  const { visibilityFilter } = state
-  const todos = getTodosByVisibilityFilter(state, visibilityFilter)
-  return { todos }
-}
+  const { visibilityFilter } = state;
+  const todos = getTodosByVisibilityFilter(state, visibilityFilter);
+  return { todos };
+};
 
-export default connect(mapStateToProps)(TodoList)
+export default connect(mapStateToProps)(TodoList);
 ```
 
 Now we've finished a very simple example of a todo app with React-Redux. All our components are connected! Isn't that nice? 🎉🎊

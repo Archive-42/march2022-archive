@@ -1,7 +1,9 @@
+---
 
-________________________________________________________________________________
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
-________________________________________________________________________________
+
+---
+
 # Advanced Containers
 
 While you learned in an earlier article that you should aim to have very few
@@ -32,7 +34,7 @@ Here's the presentational component, `PostForm`:
 ```js
 // PostForm.js
 
-import React from 'react';
+import React from "react";
 
 class PostForm extends React.Component {
   constructor(props) {
@@ -52,13 +54,13 @@ class PostForm extends React.Component {
     return (e) => {
       this.setState({ [field]: e.target.value });
     };
-  }
+  };
 
   handleSubmit = (e) => {
     e.preventDefault();
     // `submit` will be a thunk action that presumably creates or edits a post
     this.props.submit(this.state);
-  }
+  };
 
   render() {
     return (
@@ -97,26 +99,23 @@ now, this form can't actually do anything. Give it the ability to create a post:
 ```js
 // CreatePostFormContainer.js
 
-import { connect } from 'react-redux';
-import PostForm from './PostForm';
-import { createPost } from '../actions/postActions';
+import { connect } from "react-redux";
+import PostForm from "./PostForm";
+import { createPost } from "../actions/postActions";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    post: { title: '', body: '' } // a default blank object
+    post: { title: "", body: "" }, // a default blank object
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    submit: post => dispatch(createPost(post))
+    submit: (post) => dispatch(createPost(post)),
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(PostForm);
+export default connect(mapStateToProps, mapDispatchToProps)(PostForm);
 ```
 
 So far, this is nothing new. Now, wherever you need a form to create a post, you
@@ -133,14 +132,14 @@ edit and pass it into the `PostForm`:
 ```js
 // EditPostFormContainer.js
 
-import React from 'react';
-import { connect } from 'react-redux';
-import PostForm from './PostForm';
-import { fetchPost, updatePost } from '../actions/postActions';
-import { selectPost } from '../reducers/postSelectors';
+import React from "react";
+import { connect } from "react-redux";
+import PostForm from "./PostForm";
+import { fetchPost, updatePost } from "../actions/postActions";
+import { selectPost } from "../reducers/postSelectors";
 
 const mapStateToProps = (state, ownProps) => {
-  const defaultPost = { title: '', body: '' };
+  const defaultPost = { title: "", body: "" };
   const post = selectPost(ownProps.match.params.postId) || defaultPost;
   // get the post this route is asking for
   // (assuming here that this component is being rendered by a route)
@@ -148,12 +147,12 @@ const mapStateToProps = (state, ownProps) => {
   return { post };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   // an edit form will need to fetch the relevant post, but the PostForm shouldn't handle that
   // you'll handle this problem with a higher-order component, EditPostFormContainer
   return {
-    fetchPost: id => dispatch(fetchPost(id)),
-    submit: post => dispatch(updatePost(post))
+    fetchPost: (id) => dispatch(fetchPost(id)),
+    submit: (post) => dispatch(updatePost(post)),
   };
 };
 
@@ -174,10 +173,7 @@ class EditPostForm extends React.Component {
 
 // now `connect` it to the Redux store
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(EditPostForm);
+export default connect(mapStateToProps, mapDispatchToProps)(EditPostForm);
 ```
 
 The result here is that we can render a `CreatePostFormContainer` wherever you

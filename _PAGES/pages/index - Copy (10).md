@@ -3,14 +3,13 @@ title: Css
 weight: 0
 excerpt: Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.
 seo:
-    title: 'Cascading Style Sheets'
-    description: 'Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.'
-    robots: []
-    extra: []
-    type: stackbit_page_meta
+  title: "Cascading Style Sheets"
+  description: "Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). CSS describes how elements should be rendered on screen, on paper, in speech, or on other media."
+  robots: []
+  extra: []
+  type: stackbit_page_meta
 template: docs
 ---
-
 
 CSS is among the core languages of the **open web** and is standardized across Web browsers according to [W3C specifications](https://w3.org/Style/CSS/#specs). Previously, development of various parts of CSS specification was done synchronously, which allowed versioning of the latest recommendations. You might have heard about CSS1, CSS2.1, CSS3. However, CSS4 has never become an official version.
 
@@ -58,11 +57,8 @@ With the basics of the CSS language covered, the next CSS topic for you to conce
 
 At this point we've already looked at CSS fundamentals, how to style text, and how to style and manipulate the boxes that your content sits inside. Now it's time to look at how to place your boxes in the right place in relation to the viewport, and to each other. We have covered the necessary prerequisites so we can now dive deep into CSS layout, looking at different display settings, modern layout tools like flexbox, CSS grid, and positioning, and some of the legacy techniques you might still want to know about.
 
-
-
-
--   The **property** which is an identifier, that is a human-readable _name_, that defines which feature is considered.
--   The **value** which describe how the feature must be handled by the engine. Each property has a set of valid values, defined by a formal grammar, as well as a semantic meaning, implemented by the browser engine.
+- The **property** which is an identifier, that is a human-readable _name_, that defines which feature is considered.
+- The **value** which describe how the feature must be handled by the engine. Each property has a set of valid values, defined by a formal grammar, as well as a semantic meaning, implemented by the browser engine.
 
 ## [CSS declarations](https://developer.mozilla.org/en-US/docs/Web/CSS/Syntax#css_declarations "Permalink to CSS declarations")
 
@@ -114,8 +110,8 @@ A **statement** is a building block that begins with any non-space characters an
 
 There are two kinds of statements:
 
--   **Rulesets** (or _rules_) that, as seen, associate a collection of CSS declarations to a condition described by a [selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
--   **At-rules** that start with an at sign, '`@`' (`U+0040 COMMERCIAL AT`), followed by an identifier and then continuing up to the end of the statement, that is up to the next semi-colon (;) outside of a block, or the end of the next block. Each type of [at-rules](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule), defined by the identifier, may have its own internal syntax, and semantics of course. They are used to convey meta-data information (like [`@charset`](https://developer.mozilla.org/en-US/docs/Web/CSS/@charset) or [`@import`](https://developer.mozilla.org/en-US/docs/Web/CSS/@import)), conditional information (like [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) or [`@document`](https://developer.mozilla.org/en-US/docs/Web/CSS/@document)), or descriptive information (like [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)).
+- **Rulesets** (or _rules_) that, as seen, associate a collection of CSS declarations to a condition described by a [selector](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
+- **At-rules** that start with an at sign, '`@`' (`U+0040 COMMERCIAL AT`), followed by an identifier and then continuing up to the end of the statement, that is up to the next semi-colon (;) outside of a block, or the end of the next block. Each type of [at-rules](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule), defined by the identifier, may have its own internal syntax, and semantics of course. They are used to convey meta-data information (like [`@charset`](https://developer.mozilla.org/en-US/docs/Web/CSS/@charset) or [`@import`](https://developer.mozilla.org/en-US/docs/Web/CSS/@import)), conditional information (like [`@media`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media) or [`@document`](https://developer.mozilla.org/en-US/docs/Web/CSS/@document)), or descriptive information (like [`@font-face`](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)).
 
 Any statement which isn't a ruleset or an at-rule is invalid and ignored.
 

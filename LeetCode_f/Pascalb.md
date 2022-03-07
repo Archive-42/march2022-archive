@@ -4,7 +4,7 @@
 
 ### Problem:
 
-Given a non-negative integer *numRows*, generate the first *numRows* of Pascal’s triangle.
+Given a non-negative integer *numRows*, generate the first _numRows_ of Pascal’s triangle.
 
 ![https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif](https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif)
 
@@ -53,4 +53,4 @@ var generate = function(numRows) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

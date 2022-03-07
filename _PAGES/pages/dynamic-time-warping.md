@@ -3,10 +3,10 @@ title: dynamic-time-warping
 weight: 0
 excerpt: dynamic-time-warping
 seo:
-    title: 'dynamic-time-warping'
-    description: 'dynamic-time-warping'
-    robots: []
-    extra: []
+  title: "dynamic-time-warping"
+  description: "dynamic-time-warping"
+  robots: []
+  extra: []
 template: docs
 ---
 

@@ -1,5 +1,7 @@
 # JavaScript eXtension
-________________________________________________________________________________
+
+---
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -14,7 +16,8 @@ ________________________________________________________________________________
 - [What you've learned](#what-youve-learned)
 
 <!-- /code_chunk_output -->
-________________________________________________________________________________
+
+---
 
 Using `React.createElement` is a bore and a chore when creating React-powered
 applications. The developers that used React, both inside and outside of
@@ -24,9 +27,9 @@ language that sits on top of JavaScript called _JavaScript eXtension_, or JSX.
 
 In this article, you will learn
 
-* How to use JSX in your application
-* The syntax of JSX, and
-* How JSX transforms into `React.createElement` calls
+- How to use JSX in your application
+- The syntax of JSX, and
+- How JSX transforms into `React.createElement` calls
 
 ## How to use JSX
 
@@ -40,8 +43,8 @@ features of JavaScript into modern JavaScript. It can convert JSX into modern
 However, using Babel by itself is like building a house with just a hammer. It'd
 be nice to have fancier tools to help you build that house. That's where tools
 like [Create React App] come into play. **Create React App** uses Babel
-underneath and, then, adds a whole lot more. You'll see more of **Create React
-App* as you progress through the course.
+underneath and, then, adds a whole lot more. You'll see more of \*_Create React
+App_ as you progress through the course.
 
 ## JSX Syntax
 
@@ -50,13 +53,14 @@ element with the content "Hello!", a placeholder image, and a link to
 some search engine passed in through props.
 
 ```js
-const ExampleComponent = props => React.createElement(
-  React.Fragment,
-  null,
-  React.createElement('h1', null, 'Hello!'),
-  React.createElement('img', { src: 'images/150' }),
-  React.createElement('a', { href: props.searchUrl }, props.searchText),
-);
+const ExampleComponent = (props) =>
+  React.createElement(
+    React.Fragment,
+    null,
+    React.createElement("h1", null, "Hello!"),
+    React.createElement("img", { src: "images/150" }),
+    React.createElement("a", { href: props.searchUrl }, props.searchText)
+  );
 ```
 
 You've likely seen that before. JSX allows you to get rid of all of the calls
@@ -64,13 +68,13 @@ to `React.createElement` and replace them with almost HTML-looking tags. Here's
 what the above content looks like in JSX.
 
 ```jsx
-const ExampleComponent = props =>
+const ExampleComponent = (props) => (
   <React.Fragment>
     <h1>Hello!</h1>
     <img src="images/150" />
     <a href={props.searchUrl}>{props.searchText}</a>
   </React.Fragment>
-;
+);
 ```
 
 You can see Babel in action converting that JSX code above. Here's a [link to
@@ -91,7 +95,7 @@ slash. The following table shows some common tags that you'd use and their
 JSX equivalent.
 
 | HTML self-closing tag | JSX equivalent |
-|-----------------------|----------------|
+| --------------------- | -------------- |
 | `<br>`                | `<br />`       |
 | `<hr>`                | `<hr />`       |
 | `<img>`               | `<img />`      |
@@ -113,10 +117,7 @@ When you want to use a static value, just use a string literal like this.
 becomes
 
 ```js
-React.createElement(
-  'img',
-  { src: "https://via.placeholder.com/150" }
-)
+React.createElement("img", { src: "https://via.placeholder.com/150" });
 ```
 
 And, when you want to pass in some data rather than a sting literal like above,
@@ -129,20 +130,14 @@ you use curly braces to turn
 into
 
 ```js
-React.createElement(
-  'a',
-  { href: props.searchUrl },
-  props.searchText
-)
+React.createElement("a", { href: props.searchUrl }, props.searchText);
 ```
 
 The stuff inside the curly braces is just a JavaScript expression, so you could
 do something like this, if you wanted, to make the search text uppercase:
 
 ```jsx
-<a href={props.searchUrl}>
-  {props.searchText.toUpperCase()}
-</a>
+<a href={props.searchUrl}>{props.searchText.toUpperCase()}</a>
 ```
 
 ### Comments
@@ -163,13 +158,13 @@ Please read [DOM Elements] in the React documentation to understand how property
 names work, as well as the special property names that React supports. You can
 be assessed on the following special attributes:
 
-* `checked`
-* `className`
-* `dangerouslySetInnerHTML`
-* `htmlFor`
-* `onChange`
-* `style`
-* `value`
+- `checked`
+- `className`
+- `dangerouslySetInnerHTML`
+- `htmlFor`
+- `onChange`
+- `style`
+- `value`
 
 Also, you can be assessed on knowing that React uses camel-case for its
 attribute names so attributes like `maxlength` in HTML are `maxLength` in React.
@@ -198,8 +193,8 @@ a "trick question".)
 
 ```js
 function sum(i, j) {
-  return
-    i + j;
+  return;
+  i + j;
 }
 ```
 
@@ -213,20 +208,20 @@ following lines valid JavaScript expressions? If the answer is "yes", then it
 will add a semicolon at the end of the line _for you_. When it reads the above
 "sum" function, the JavaScript runner "thinks" to itself:
 
-* Ok, I have two lines:
-  * `return`
-  * `i + j;`
-* Are each of those valid JavaScript expressions? Yes!
-* Now, I will put semicolons at the end of the lines that don't have any
-  * `return;`
-  * `i + j;`
+- Ok, I have two lines:
+  - `return`
+  - `i + j;`
+- Are each of those valid JavaScript expressions? Yes!
+- Now, I will put semicolons at the end of the lines that don't have any
+  - `return;`
+  - `i + j;`
 
 Now, your function, in the eyes of JavaScript, looks like this.
 
 ```js
 function sum(i, j) {
   return; // <- There's a new semicolon!
-    i + j;
+  i + j;
 }
 ```
 
@@ -238,9 +233,7 @@ coming".
 
 ```js
 function sum(i, j) {
-  return (
-    i + j
-  );
+  return i + j;
 }
 ```
 
@@ -265,13 +258,11 @@ is equivalent to
 
 ```js
 function App() {
-  return (
-    React.createElement(
-      'div',
-      null,
-      React.createElement('h1', null, 'Hello!'),
-      React.createElement('div', null, 'Welcome to JSX.'),
-    )
+  return React.createElement(
+    "div",
+    null,
+    React.createElement("h1", null, "Hello!"),
+    React.createElement("div", null, "Welcome to JSX.")
   );
 }
 ```
@@ -291,11 +282,11 @@ knowledge of `React.createElement` to allow the Babel tool to turn your code
 into plain old JavaScript for you. Specifically, you have seen the following
 conversions:
 
-| Conversion type | JSX                    | JavaScript                                       |
-|-----------------|------------------------|--------------------------------------------------|
-| tags            | `<h1></h1>`            | `React.createElement('h1', null)`                |
+| Conversion type | JSX                           | JavaScript                                       |
+| --------------- | ----------------------------- | ------------------------------------------------ |
+| tags            | `<h1></h1>`                   | `React.createElement('h1', null)`                |
 | attributes      | `<img src="images/foo.png"/>` | `React.createElement('img', { src: "foo.png" })` |
-| variables       | `<h1>{message}</h1>`   | `React.createElement('h1', null, message)`       |
+| variables       | `<h1>{message}</h1>`          | `React.createElement('h1', null, message)`       |
 
 You've also read about the special property names that React supports.
 
@@ -304,8 +295,8 @@ insertion" and, if you do use the `return` keyword in your functions, that you
 should wrap the JSX in parentheses to prevent JavaScript from _not_ returning
 your code.
 
-[Babel]: https://babeljs.io/
-[Create React App]: https://github.com/facebook/create-react-app
-[link to Babel]: https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.4.3
-[DOM Elements]: https://reactjs.org/docs/dom-elements.html
+[babel]: https://babeljs.io/
+[create react app]: https://github.com/facebook/create-react-app
+[link to babel]: https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.4.3
+[dom elements]: https://reactjs.org/docs/dom-elements.html
 ["automatic semicolon insertion"]: https://www.ecma-international.org/ecma-262/#sec-rules-of-automatic-semicolon-insertion

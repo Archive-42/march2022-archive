@@ -1,4 +1,4 @@
-# 047._Permutations_II
+# 047.\_Permutations_II
 
 ## [47. Permutations II](https://leetcode.com/problems/permutations-ii/description/)
 

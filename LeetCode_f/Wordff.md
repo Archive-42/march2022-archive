@@ -1,4 +1,4 @@
-# 079._Word_Search
+# 079.\_Word_Search
 
 ## [79. Word Search](https://leetcode.com/problems/word-search/description/)
 

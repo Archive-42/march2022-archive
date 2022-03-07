@@ -4,7 +4,7 @@
 
 ### Problem:
 
-Given two words *word1* and *word2*, find the minimum number of operations required to convert *word1* to *word2*.
+Given two words _word1_ and _word2_, find the minimum number of operations required to convert _word1_ to _word2_.
 
 You have the following 3 operations permitted on a word:
 
@@ -89,4 +89,4 @@ var minDistance = function(word1, word2) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

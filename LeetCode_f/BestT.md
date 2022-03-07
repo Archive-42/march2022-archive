@@ -4,9 +4,9 @@
 
 ### Problem:
 
-Say you have an array for which the *i*th element is the price of a given stock on day *i*.
+Say you have an array for which the *i*th element is the price of a given stock on day _i_.
 
-Design an algorithm to find the maximum profit. You may complete at most *two* transactions.
+Design an algorithm to find the maximum profit. You may complete at most _two_ transactions.
 
 **Note:**You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).
 
@@ -39,7 +39,7 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 
 ### Solution:
 
-Multiple transactions may not be engaged in at the same time. That means if we view the days that involed in the same transaction as a group, there won’t be any intersection. We may complete at most *two* transactions, so divide the days into two groups, `[0...k]` and `[k...n-1]`. Notice `k` exists in both groups because technically we can sell out then immediately buy in at the same day.
+Multiple transactions may not be engaged in at the same time. That means if we view the days that involed in the same transaction as a group, there won’t be any intersection. We may complete at most _two_ transactions, so divide the days into two groups, `[0...k]` and `[k...n-1]`. Notice `k` exists in both groups because technically we can sell out then immediately buy in at the same day.
 
 Define `p1(i)` to be the max profit of day `[0...i]`. This is just like the problem of [121. Best Time to Buy and Sell Stock](./121.%20Best%20Time%20to%20Buy%20and%20Sell%20Stock.md).
 
@@ -86,4 +86,4 @@ var maxProfit = function(prices) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

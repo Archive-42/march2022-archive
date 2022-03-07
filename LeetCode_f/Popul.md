@@ -1,4 +1,4 @@
-# 116._Populating_Next_Right_Pointers_in_Each_Node
+# 116.\_Populating_Next_Right_Pointers_in_Each_Node
 
 ## [116. Populating Next Right Pointers in Each Node](https://leetcode.com/problems/populating-next-right-pointers-in-each-node/description/)
 

@@ -69,4 +69,4 @@ function _buildTree (preorder, inorder, pStart, pEnd, iStart, iEnd) {
 }
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

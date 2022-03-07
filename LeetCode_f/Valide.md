@@ -20,21 +20,17 @@ JavaScript specific solutions:
 
 - `Math.abs` will first convert the argument to number.
 - `Math.abs(' ') === 0`.
-    
-    /**
-    
-    - @param {string} s
-    - @return {boolean} */ var isNumber = function(s) { return !!s.trim() && Math.abs(s) >= 0 };
+  /\*\*
+  - @param {string} s
+  - @return {boolean} \*/ var isNumber = function(s) { return !!s.trim() && Math.abs(s) >= 0 };
 
 ### TWO
 
 - `isNaN` will first convert the argument to number.
 - `isNaN(' ') === false`.
-    
-    /**
-    
-    - @param {string} s
-    - @return {boolean} */ var isNumber = function(s) { return !!s.trim() && !isNaN(s) };
+  /\*\*
+  - @param {string} s
+  - @return {boolean} \*/ var isNumber = function(s) { return !!s.trim() && !isNaN(s) };
 
 ### THREE
 
@@ -179,4 +175,4 @@ function parseExponentPart (s, start) {
 }
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

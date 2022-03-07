@@ -1,4 +1,4 @@
-# 040._Combination_Sum_II
+# 040.\_Combination_Sum_II
 
 ## [40. Combination Sum II](https://leetcode.com/problems/combination-sum-ii/description/)
 

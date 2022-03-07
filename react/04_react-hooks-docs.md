@@ -1,7 +1,9 @@
+---
 
-________________________________________________________________________________
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
-________________________________________________________________________________
+
+---
+
 # React Hooks Documentation
 
 You now know how to manage information in a React application through `state`,
@@ -19,40 +21,30 @@ your own learning.
 
 ## Why hooks?
 
-* [The Motivation Behind Hooks]
-* [Hooks at a Glance]
+- [The Motivation Behind Hooks]
+- [Hooks at a Glance]
 
 ## Hook basics
 
-* [Rules of Hooks]
-* [Hooks API Reference]
-* [useState]
-* [useEffect]
-* [useContext]
-* [Optimizing Performance by Skipping Effects]
+- [Rules of Hooks]
+- [Hooks API Reference]
+- [useState]
+- [useEffect]
+- [useContext]
+- [Optimizing Performance by Skipping Effects]
 
 ## More about hooks
 
-* [Custom Hooks]
-* [Hooks FAQ]
+- [Custom Hooks]
+- [Hooks FAQ]
 
-[The Motivation Behind Hooks]:
-  https://reactjs.org/docs/hooks-intro.html#motivation
-[Hooks at a Glance]:
-  https://reactjs.org/docs/hooks-overview.html
-[Rules of Hooks]:
-  https://reactjs.org/docs/hooks-rules.html
-[Hooks API Reference]:
-  https://reactjs.org/docs/hooks-reference.html
-[useState]:
-  https://reactjs.org/docs/hooks-state.html
-[useEffect]:
-  https://reactjs.org/docs/hooks-effect.html
-[useContext]:
-  https://reactjs.org/docs/hooks-reference.html#usecontext
-[Optimizing Performance by Skipping Effects]:
-  https://reactjs.org/docs/hooks-effect.html#tip-optimizing-performance-by-skipping-effects
-[Custom Hooks]:
-  https://reactjs.org/docs/hooks-custom.html
-[Hooks FAQ]:
-  https://reactjs.org/docs/hooks-faq.html
+[the motivation behind hooks]: https://reactjs.org/docs/hooks-intro.html#motivation
+[hooks at a glance]: https://reactjs.org/docs/hooks-overview.html
+[rules of hooks]: https://reactjs.org/docs/hooks-rules.html
+[hooks api reference]: https://reactjs.org/docs/hooks-reference.html
+[usestate]: https://reactjs.org/docs/hooks-state.html
+[useeffect]: https://reactjs.org/docs/hooks-effect.html
+[usecontext]: https://reactjs.org/docs/hooks-reference.html#usecontext
+[optimizing performance by skipping effects]: https://reactjs.org/docs/hooks-effect.html#tip-optimizing-performance-by-skipping-effects
+[custom hooks]: https://reactjs.org/docs/hooks-custom.html
+[hooks faq]: https://reactjs.org/docs/hooks-faq.html

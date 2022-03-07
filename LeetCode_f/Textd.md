@@ -1,12 +1,12 @@
-# 068._Text_Justification
+# 068.\_Text_Justification
 
 ## [68. Text Justification](https://leetcode.com/problems/text-justification/description/)
 
 ### Problem:
 
-Given an array of words and a width *maxWidth*, format the text such that each line has exactly *maxWidth* characters and is fully (left and right) justified.
+Given an array of words and a width *maxWidth*, format the text such that each line has exactly _maxWidth_ characters and is fully (left and right) justified.
 
-You should pack your words in a greedy approach; that is, pack as many words as you can in each line. Pad extra spaces `' '` when necessary so that each line has exactly *maxWidth* characters.
+You should pack your words in a greedy approach; that is, pack as many words as you can in each line. Pad extra spaces `' '` when necessary so that each line has exactly _maxWidth_ characters.
 
 Extra spaces between words should be distributed as evenly as possible. If the number of spaces on a line do not divide evenly between words, the empty slots on the left will be assigned more spaces than the slots on the right.
 
@@ -15,7 +15,7 @@ For the last line of text, it should be left justified and no **extra** space is
 **Note:**
 
 - A word is defined as a character sequence consisting of non-space characters only.
-- Each word's length is guaranteed to be greater than 0 and not exceed *maxWidth*.
+- Each word's length is guaranteed to be greater than 0 and not exceed _maxWidth_.
 - The input array `words` contains at least one word.
 
 **Example 1:**
@@ -71,8 +71,8 @@ Output:
 
 - Count the current line width (plus 1 space between each two words).
 - When a line is full:
-    - If there is only one word, pad spaces at the end.
-    - Otherwise calculate the gap length using `Math.ceil`.
+  - If there is only one word, pad spaces at the end.
+  - Otherwise calculate the gap length using `Math.ceil`.
 - Handle the last line.
 
 ```

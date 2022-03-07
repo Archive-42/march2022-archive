@@ -21,7 +21,7 @@ The minimum path sum from top to bottom is `11` (i.e., **2** + **3** + **5** + *
 
 **Note:**
 
-Bonus point if you are able to do this using only *O*(*n*) extra space, where *n* is the total number of rows in the triangle.
+Bonus point if you are able to do this using only _O_(_n_) extra space, where _n_ is the total number of rows in the triangle.
 
 ### Solution:
 
@@ -55,4 +55,4 @@ var minimumTotal = function(triangle) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

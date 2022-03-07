@@ -4,7 +4,7 @@
 
 ### Problem:
 
-Given two integers *n* and *k*, return all possible combinations of *k* numbers out of 1 … *n*.
+Given two integers _n_ and _k_, return all possible combinations of _k_ numbers out of 1 … _n_.
 
 **Example:**
 
@@ -50,4 +50,4 @@ function _combine (cur, path, n, k, result) {
 }
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

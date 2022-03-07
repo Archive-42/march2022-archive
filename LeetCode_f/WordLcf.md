@@ -4,10 +4,10 @@
 
 ### Problem:
 
-Given two words (*beginWord* and *endWord*), and a dictionary's word list, find all shortest transformation sequence(s) from *beginWord* to *endWord*, such that:
+Given two words (_beginWord_ and _endWord_), and a dictionary's word list, find all shortest transformation sequence(s) from _beginWord_ to _endWord_, such that:
 
 1. Only one letter can be changed at a time
-2. Each transformed word must exist in the word list. Note that *beginWord* is *not* a transformed word.
+2. Each transformed word must exist in the word list. Note that _beginWord_ is _not_ a transformed word.
 
 **Note:**
 
@@ -15,7 +15,7 @@ Given two words (*beginWord* and *endWord*), and a dictionary's word list, find 
 - All words have the same length.
 - All words contain only lowercase alphabetic characters.
 - You may assume no duplicates in the word list.
-- You may assume *beginWord* and *endWord* are non-empty and are not the same.
+- You may assume _beginWord_ and _endWord_ are non-empty and are not the same.
 
 **Example 1:**
 
@@ -113,4 +113,4 @@ function findLadders (beginWord, endWord, wordList) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

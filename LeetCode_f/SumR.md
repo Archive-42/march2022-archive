@@ -1,4 +1,4 @@
-# 129._Sum_Root_to_Leaf_Numbers
+# 129.\_Sum_Root_to_Leaf_Numbers
 
 ## [129. Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers/description/)
 

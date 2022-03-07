@@ -1,7 +1,9 @@
+---
 
-________________________________________________________________________________
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
-________________________________________________________________________________
+
+---
+
 # Thunks
 
 One of the most common problems you need middleware to solve is asynchronicity.
@@ -25,17 +27,22 @@ This function, when called with an argument of `dispatch`, can then dispatch one
 or more actions, immediately, or later. Here's an example:
 
 ```js
-const thunkActionCreator = () => dispatch => {
+const thunkActionCreator = () => (dispatch) => {
   dispatch({
-    type: 'RECEIVE_MESSAGE',
-    message: 'This will be dispatched immediately.'
+    type: "RECEIVE_MESSAGE",
+    message: "This will be dispatched immediately.",
   });
 
-  setTimeout(() => dispatch({
-    type: 'RECEIVE_MESSAGE',
-    message: 'This will be dispatched 1 second later.'
-  }, 1000));
-}
+  setTimeout(() =>
+    dispatch(
+      {
+        type: "RECEIVE_MESSAGE",
+        message: "This will be dispatched 1 second later.",
+      },
+      1000
+    )
+  );
+};
 ```
 
 This is great, but without custom middleware it will break as soon as the
@@ -45,35 +52,38 @@ of type `function` and then trigger the dispatch:
 ```js
 // ./src/middleware/thunkMiddleware.js
 
-const thunk = ({ dispatch, getState }) => next => action => {
-  if (typeof action === 'function') {
-    return action(dispatch, getState);
-  }
-  return next(action);
-};
+const thunk =
+  ({ dispatch, getState }) =>
+  (next) =>
+  (action) => {
+    if (typeof action === "function") {
+      return action(dispatch, getState);
+    }
+    return next(action);
+  };
 
 export default thunk;
 ```
 
 Notice how the `getState` function is passed into the `action` in case your
-asynchronous action creators need access to your application state. 
+asynchronous action creators need access to your application state.
 
 Then you'd apply your custom middleware to your store:
 
 ```js
 // ./src/store.js
 
-import { createStore, applyMiddleware } from 'redux';
-import logger from 'redux-logger';
+import { createStore, applyMiddleware } from "redux";
+import logger from "redux-logger";
 
-import rootReducer from './reducers/rootReducer';
-import thunk from './middleware/thunkMiddleware';
+import rootReducer from "./reducers/rootReducer";
+import thunk from "./middleware/thunkMiddleware";
 
 const configureStore = (preloadedState = {}) => {
   return createStore(
     rootReducer,
     preloadedState,
-    applyMiddleware(thunk, logger),
+    applyMiddleware(thunk, logger)
   );
 };
 
@@ -104,17 +114,17 @@ Then apply the middleware to your store:
 ```js
 // ./src/store.js
 
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import logger from 'redux-logger';
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import logger from "redux-logger";
 
-import rootReducer from './reducers/rootReducer';
+import rootReducer from "./reducers/rootReducer";
 
 const configureStore = (preloadedState = {}) => {
   return createStore(
     rootReducer,
     preloadedState,
-    applyMiddleware(thunk, logger),
+    applyMiddleware(thunk, logger)
   );
 };
 
@@ -128,17 +138,16 @@ retrieve the list of fruits from the API:
 ```js
 // ./src/actions/fruitActions.js
 
-import { FRUIT_STAND_API_BASE_URL } from '../config';
+import { FRUIT_STAND_API_BASE_URL } from "../config";
 
-export const RECEIVE_FRUITS = 'RECEIVE_FRUITS';
+export const RECEIVE_FRUITS = "RECEIVE_FRUITS";
 
-export const fetchFruits = () => (dispatch) => (
+export const fetchFruits = () => (dispatch) =>
   fetch(`${FRUIT_STAND_API_BASE_URL}/fruits`)
     .then((res) => res.json())
     .then((data) => {
       dispatch(receiveFruits(data.fruits));
-    })
-);
+    });
 
 const receiveFruits = (fruits) => {
   return {
@@ -161,7 +170,7 @@ In the `fruitReducer`, the `RECEIVE_FRUITS` case clause simply returns the
 ```js
 // ./src/reducers/fruitReducer.js
 
-import { RECEIVE_FRUITS } from '../actions/fruitActions';
+import { RECEIVE_FRUITS } from "../actions/fruitActions";
 
 const fruitReducer = (state = [], action) => {
   Object.freeze(state);
@@ -183,14 +192,14 @@ after creating the store:
 ```js
 // ./src/index.js
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 
-import './index.css';
-import App from './App';
-import configureStore from './store';
-import { fetchFruits } from './actions/fruitActions';
+import "./index.css";
+import App from "./App";
+import configureStore from "./store";
+import { fetchFruits } from "./actions/fruitActions";
 
 const store = configureStore();
 store.dispatch(fetchFruits());
@@ -201,7 +210,7 @@ ReactDOM.render(
       <App />
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 ```
 
@@ -211,7 +220,8 @@ The `FRUIT_STAND_API_BASE_URL` variable (imported at the top of the
 `fruitActions.js` file) is defined in the `config.js` file:
 
 ```js
-export const FRUIT_STAND_API_BASE_URL = process.env.REACT_APP_FRUIT_STAND_API_BASE_URL;
+export const FRUIT_STAND_API_BASE_URL =
+  process.env.REACT_APP_FRUIT_STAND_API_BASE_URL;
 ```
 
 And the `REACT_APP_FRUIT_STAND_API_BASE_URL` environment variable is defined in

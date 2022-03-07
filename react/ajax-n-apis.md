@@ -3,20 +3,21 @@ title: AJAX and APIs
 weight: 0
 excerpt: AJAX and APIs
 seo:
-    title: 'AJAX and APIs'
-    description: 'You can use any AJAX library you like with React. Some popular ones are Axios, jQuery AJAX, and the browser built-in window.fetch.'
-    robots: []
-    extra: []
+  title: "AJAX and APIs"
+  description: "You can use any AJAX library you like with React. Some popular ones are Axios, jQuery AJAX, and the browser built-in window.fetch."
+  robots: []
+  extra: []
 template: docs
 ---
-
 
 # AJAX and APIs - React
 
 > ## Excerpt
+>
 > A JavaScript library for building user interfaces
 
 ---
+
 ### [](https://reactjs.org/docs/lists-and-keys.html#how-can-i-make-an-ajax-call)How can I make an AJAX call?
 
 You can use any AJAX library you like with React. Some popular ones are [Axios](https://github.com/axios/axios), [jQuery AJAX](https://api.jquery.com/jQuery.ajax/), and the browser built-in [window.fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
@@ -36,7 +37,7 @@ The example API returns a JSON object like this:
   "items": [
     { "id": 1, "name": "Apples",  "price": "$2" },
     { "id": 2, "name": "Peaches", "price": "$5" }
-  ] 
+  ]
 }
 ```
 
@@ -47,30 +48,28 @@ class MyComponent extends React.Component {
     this.state = {
       error: null,
       isLoaded: false,
-      items: []
+      items: [],
     };
   }
 
   componentDidMount() {
     fetch("https://api.example.com/items")
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(
         (result) => {
           this.setState({
             isLoaded: true,
-            items: result.items
+            items: result.items,
           });
         },
-        
-        
-        
+
         (error) => {
           this.setState({
             isLoaded: true,
-            error
+            error,
           });
         }
-      )
+      );
   }
 
   render() {
@@ -82,7 +81,7 @@ class MyComponent extends React.Component {
     } else {
       return (
         <ul>
-          {items.map(item => (
+          {items.map((item) => (
             <li key={item.id}>
               {item.name} {item.price}
             </li>
@@ -102,26 +101,21 @@ function MyComponent() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
 
-  
-  
-  
   useEffect(() => {
     fetch("https://api.example.com/items")
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(
         (result) => {
           setIsLoaded(true);
           setItems(result);
         },
-        
-        
-        
+
         (error) => {
           setIsLoaded(true);
           setError(error);
         }
-      )
-  }, [])
+      );
+  }, []);
 
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -130,7 +124,7 @@ function MyComponent() {
   } else {
     return (
       <ul>
-        {items.map(item => (
+        {items.map((item) => (
           <li key={item.id}>
             {item.name} {item.price}
           </li>

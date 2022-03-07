@@ -1,10 +1,10 @@
-# 118._Pascal_s_Triangle
+# 118.\_Pascal_s_Triangle
 
 ## [118. Pascal’s Triangle](https://leetcode.com/problems/pascals-triangle/description/)
 
 ### Problem:
 
-Given a non-negative integer *numRows*, generate the first *numRows* of Pascal’s triangle.
+Given a non-negative integer *numRows*, generate the first _numRows_ of Pascal’s triangle.
 
 ![https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif](https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif)
 

@@ -1,5 +1,7 @@
 # React Forms
-________________________________________________________________________________
+
+---
+
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
@@ -18,7 +20,8 @@ ________________________________________________________________________________
 - [What you learned](#what-you-learned)
 
 <!-- /code_chunk_output -->
-________________________________________________________________________________
+
+---
 
 As you've learned in earlier lessons, HTML forms are an essential and ubiquitous
 part of the web. Forms are used to search, create resources (i.e. account,
@@ -27,12 +30,12 @@ an invaluable skill for you to learn and practice.
 
 When you finish this article, you should be able to:
 
-* Create a React class component containing a simple form; 
-* Define a single event handler method to handle `onChange` events for multiple
+- Create a React class component containing a simple form;
+- Define a single event handler method to handle `onChange` events for multiple
   `<input>` elements;
-* Add a `<textarea>` element to a form;
-* Add a `<select>` element to a form; and
-* Implement form validations.
+- Add a `<textarea>` element to a form;
+- Add a `<select>` element to a form; and
+- Implement form validations.
 
 ## Creating a simple form
 
@@ -40,9 +43,9 @@ To learn how to create an HTML form in React, you'll create a `ContactUs` class
 component that'll contain a simple "Contact Us" form. The form will initially
 contain just three fields:
 
-* Name - The name of the user filling out the form;
-* Email - The user's email; and
-* Phone - The user's phone number.
+- Name - The name of the user filling out the form;
+- Email - The user's email; and
+- Phone - The user's phone number.
 
 ### Defining the `render` method
 
@@ -52,7 +55,7 @@ to render the HTML form:
 ```js
 // ./src/ContactUs.js
 
-import React from 'react';
+import React from "react";
 
 class ContactUs extends React.Component {
   render() {
@@ -61,16 +64,16 @@ class ContactUs extends React.Component {
         <h2>Contact Us</h2>
         <form>
           <div>
-            <label htmlFor='name'>Name:</label>
-            <input id='name' type='text' />
+            <label htmlFor="name">Name:</label>
+            <input id="name" type="text" />
           </div>
           <div>
-            <label htmlFor='email'>Email:</label>
-            <input id='email' type='text' />
+            <label htmlFor="email">Email:</label>
+            <input id="email" type="text" />
           </div>
           <div>
-            <label htmlFor='phone'>Phone:</label>
-            <input id='phone' type='text' />
+            <label htmlFor="phone">Phone:</label>
+            <input id="phone" type="text" />
           </div>
           <div>
             <button>Submit</button>
@@ -100,15 +103,15 @@ point to render the `ContactUs` component:
 ```js
 // ./src/index.js
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import ContactUs from './ContactUs';
+import React from "react";
+import ReactDOM from "react-dom";
+import ContactUs from "./ContactUs";
 
 ReactDOM.render(
   <React.StrictMode>
     <ContactUs />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 ```
 
@@ -127,16 +130,16 @@ attributes on the corresponding form field `<input>` elements:
 ```js
 // ./src/ContactUs.js
 
-import React from 'react';
+import React from "react";
 
 class ContactUs extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      name: '',
-      email: '',
-      phone: '',
+      name: "",
+      email: "",
+      phone: "",
     };
   }
 
@@ -148,16 +151,16 @@ class ContactUs extends React.Component {
         <h2>Contact Us</h2>
         <form>
           <div>
-            <label htmlFor='name'>Name:</label>
-            <input id='name' type='text' value={name} />
+            <label htmlFor="name">Name:</label>
+            <input id="name" type="text" value={name} />
           </div>
           <div>
-            <label htmlFor='email'>Email:</label>
-            <input id='email' type='text' value={email} />
+            <label htmlFor="email">Email:</label>
+            <input id="email" type="text" value={email} />
           </div>
           <div>
-            <label htmlFor='phone'>Phone:</label>
-            <input id='phone' type='text' value={phone} />
+            <label htmlFor="phone">Phone:</label>
+            <input id="phone" type="text" value={phone} />
           </div>
           <div>
             <button>Submit</button>
@@ -177,7 +180,7 @@ element raises the `onChange` event, which makes it a natural choice for keeping
 the component state in sync:
 
 ```js
-<input id='name' type='text' onChange={this.nameOnChange} value={name} />
+<input id="name" type="text" onChange={this.nameOnChange} value={name} />
 ```
 
 Remember that when an event is raised, the associated event handler method is
@@ -188,7 +191,7 @@ form field:
 ```js
 nameOnChange = (e) => {
   // `e` is a `SyntheticEvent` object.
-}
+};
 ```
 
 A reference to the element that raised the event is available through the
@@ -198,7 +201,7 @@ field element, you can retrieve the current value like this:
 ```js
 nameOnChange = (e) => {
   const name = e.target.value;
-}
+};
 ```
 
 With the current form field value in hand, call the `this.setState` method to
@@ -208,7 +211,7 @@ update the corresponding state value:
 nameOnChange = (e) => {
   const name = e.target.value;
   this.setState({ name });
-}
+};
 ```
 
 With a little refactoring, you can condense the event handler method to a single
@@ -217,7 +220,7 @@ line of code:
 ```js
 nameOnChange = (e) => {
   this.setState({ name: e.target.value });
-}
+};
 ```
 
 Using the same approach to add an `onChange` event handler to the "Email" and
@@ -226,30 +229,30 @@ Using the same approach to add an `onChange` event handler to the "Email" and
 ```js
 // ./src/ContactUs.js
 
-import React from 'react';
+import React from "react";
 
 class ContactUs extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      name: '',
-      email: '',
-      phone: '',
+      name: "",
+      email: "",
+      phone: "",
     };
   }
 
   nameOnChange = (e) => {
     this.setState({ name: e.target.value });
-  }
+  };
 
   emailOnChange = (e) => {
     this.setState({ email: e.target.value });
-  }
+  };
 
   phoneOnChange = (e) => {
     this.setState({ phone: e.target.value });
-  }
+  };
 
   render() {
     const { name, email, phone } = this.state;
@@ -259,16 +262,31 @@ class ContactUs extends React.Component {
         <h2>Contact Us</h2>
         <form>
           <div>
-            <label htmlFor='name'>Name:</label>
-            <input id='name' type='text' onChange={this.nameOnChange} value={name} />
+            <label htmlFor="name">Name:</label>
+            <input
+              id="name"
+              type="text"
+              onChange={this.nameOnChange}
+              value={name}
+            />
           </div>
           <div>
-            <label htmlFor='email'>Email:</label>
-            <input id='email' type='text' onChange={this.emailOnChange} value={email} />
+            <label htmlFor="email">Email:</label>
+            <input
+              id="email"
+              type="text"
+              onChange={this.emailOnChange}
+              value={email}
+            />
           </div>
           <div>
-            <label htmlFor='phone'>Phone:</label>
-            <input id='phone' type='text' onChange={this.phoneOnChange} value={phone} />
+            <label htmlFor="phone">Phone:</label>
+            <input
+              id="phone"
+              type="text"
+              onChange={this.phoneOnChange}
+              value={phone}
+            />
           </div>
           <div>
             <button>Submit</button>
@@ -304,7 +322,7 @@ onSubmit = (e) => {
   // Prevent the default form behavior
   // so the page doesn't reload.
   e.preventDefault();
-}
+};
 ```
 
 Then retrieve the `name`, `email`, and `phone` values from state and use those
@@ -317,7 +335,7 @@ onSubmit = (e) => {
   e.preventDefault();
 
   // Retrieve the contact us information from state.
-  const { name, email, phone } = this.state; 
+  const { name, email, phone } = this.state;
 
   // Create a new object for the contact us information.
   const contactUsInformation = {
@@ -331,7 +349,7 @@ onSubmit = (e) => {
   // though ideally, we'd persist this information to a database
   // using a REST API.
   console.log(contactUsInformation);
-}
+};
 ```
 
 Notice that an additional property, `submittedOn`, is being added to the
@@ -350,7 +368,7 @@ onSubmit = (e) => {
   e.preventDefault();
 
   // Retrieve the contact us information from state.
-  const { name, email, phone } = this.state; 
+  const { name, email, phone } = this.state;
 
   // Create a new object for the contact us information.
   const contactUsInformation = {
@@ -367,11 +385,11 @@ onSubmit = (e) => {
 
   // Reset the form state.
   this.setState({
-    name: '',
-    email: '',
-    phone: '',
+    name: "",
+    email: "",
+    phone: "",
   });
-}
+};
 ```
 
 Putting all of that together gives you this:
@@ -379,30 +397,30 @@ Putting all of that together gives you this:
 ```js
 // ./src/ContactUs.js
 
-import React from 'react';
+import React from "react";
 
 class ContactUs extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      name: '',
-      email: '',
-      phone: '',
+      name: "",
+      email: "",
+      phone: "",
     };
   }
 
   nameOnChange = (e) => {
     this.setState({ name: e.target.value });
-  }
+  };
 
   emailOnChange = (e) => {
     this.setState({ email: e.target.value });
-  }
+  };
 
   phoneOnChange = (e) => {
     this.setState({ phone: e.target.value });
-  }
+  };
 
   onSubmit = (e) => {
     // Prevent the default form behavior
@@ -410,7 +428,7 @@ class ContactUs extends React.Component {
     e.preventDefault();
 
     // Retrieve the contact us information from state.
-    const { name, email, phone } = this.state; 
+    const { name, email, phone } = this.state;
 
     // Create a new object for the contact us information.
     const contactUsInformation = {
@@ -427,11 +445,11 @@ class ContactUs extends React.Component {
 
     // Reset the form state.
     this.setState({
-      name: '',
-      email: '',
-      phone: '',
+      name: "",
+      email: "",
+      phone: "",
     });
-  }
+  };
 
   render() {
     const { name, email, phone } = this.state;
@@ -441,16 +459,31 @@ class ContactUs extends React.Component {
         <h2>Contact Us</h2>
         <form onSubmit={this.onSubmit}>
           <div>
-            <label htmlFor='name'>Name:</label>
-            <input id='name' type='text' onChange={this.nameOnChange} value={name} />
+            <label htmlFor="name">Name:</label>
+            <input
+              id="name"
+              type="text"
+              onChange={this.nameOnChange}
+              value={name}
+            />
           </div>
           <div>
-            <label htmlFor='email'>Email:</label>
-            <input id='email' type='text' onChange={this.emailOnChange} value={email} />
+            <label htmlFor="email">Email:</label>
+            <input
+              id="email"
+              type="text"
+              onChange={this.emailOnChange}
+              value={email}
+            />
           </div>
           <div>
-            <label htmlFor='phone'>Phone:</label>
-            <input id='phone' type='text' onChange={this.phoneOnChange} value={phone} />
+            <label htmlFor="phone">Phone:</label>
+            <input
+              id="phone"
+              type="text"
+              onChange={this.phoneOnChange}
+              value={phone}
+            />
           </div>
           <div>
             <button>Submit</button>
@@ -467,7 +500,7 @@ export default ContactUs;
 If you run your application again and view the form in the browser, you can fill
 out each form field and click "Submit" to submit the form. Notice that the page
 doesn't reload! And if you look in the developer tool's console, you'll see an
-object containing your contact us information. 
+object containing your contact us information.
 
 ### Controlled components
 
@@ -486,15 +519,15 @@ called "controlled components".
 
 To help understand how this works, here's an overview of the flow:
 
-* A user types a character within a form `<input>` element;
-* The `<input>` element's `onChange` event is raised;
-* The event handler method associated with the `<input>` element's `onChange`
+- A user types a character within a form `<input>` element;
+- The `<input>` element's `onChange` event is raised;
+- The event handler method associated with the `<input>` element's `onChange`
   event is called;
-* The event handler method calls the `this.setState` method to update the form
+- The event handler method calls the `this.setState` method to update the form
   field's value in state;
-* Updating the component's state causes React to re-render the component (i.e.
+- Updating the component's state causes React to re-render the component (i.e.
   the `render` method is called); and
-* The form `<input>` element is rendered with its `value` attribute set to the
+- The form `<input>` element is rendered with its `value` attribute set to the
   associated value from `this.state`.
 
 While all of the above steps might _feel_ like a lot, in reality, the entire
@@ -516,7 +549,7 @@ value and _name_ of the element like this:
 ```js
 onChange = (e) => {
   const { name, value } = e.target;
-}
+};
 ```
 
 If the form field element's `name` attribute matches the state property name
@@ -526,7 +559,7 @@ then you can use it to index into the state object to update its value:
 onChange = (e) => {
   const { name, value } = e.target;
   this.setState({ [name]: value });
-}
+};
 ```
 
 This one event handler method can replace all three of the existing `onChange`
@@ -538,23 +571,23 @@ elements and update the `onChange` attributes to reference the new
 ```js
 // ./src/ContactUs.js
 
-import React from 'react';
+import React from "react";
 
 class ContactUs extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      name: '',
-      email: '',
-      phone: '',
+      name: "",
+      email: "",
+      phone: "",
     };
   }
 
   onChange = (e) => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
-  }
+  };
 
   onSubmit = (e) => {
     // Prevent the default form behavior
@@ -562,7 +595,7 @@ class ContactUs extends React.Component {
     e.preventDefault();
 
     // Retrieve the contact us information from state.
-    const { name, email, phone } = this.state; 
+    const { name, email, phone } = this.state;
 
     // Create a new object for the contact us information.
     const contactUsInformation = {
@@ -579,11 +612,11 @@ class ContactUs extends React.Component {
 
     // Reset the form state.
     this.setState({
-      name: '',
-      email: '',
-      phone: '',
+      name: "",
+      email: "",
+      phone: "",
     });
-  }
+  };
 
   render() {
     const { name, email, phone } = this.state;
@@ -593,16 +626,34 @@ class ContactUs extends React.Component {
         <h2>Contact Us</h2>
         <form onSubmit={this.onSubmit}>
           <div>
-            <label htmlFor='name'>Name:</label>
-            <input id='name' name='name' type='text' onChange={this.onChange} value={name} />
+            <label htmlFor="name">Name:</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              onChange={this.onChange}
+              value={name}
+            />
           </div>
           <div>
-            <label htmlFor='email'>Email:</label>
-            <input id='email' name='email' type='text' onChange={this.onChange} value={email} />
+            <label htmlFor="email">Email:</label>
+            <input
+              id="email"
+              name="email"
+              type="text"
+              onChange={this.onChange}
+              value={email}
+            />
           </div>
           <div>
-            <label htmlFor='phone'>Phone:</label>
-            <input id='phone' name='phone' type='text' onChange={this.onChange} value={phone} />
+            <label htmlFor="phone">Phone:</label>
+            <input
+              id="phone"
+              name="phone"
+              type="text"
+              onChange={this.onChange}
+              value={phone}
+            />
           </div>
           <div>
             <button>Submit</button>
@@ -636,8 +687,13 @@ To see this in action, add a "Comments" field to the form:
 
 ```js
 <div>
-  <label htmlFor='comments'>Comments:</label>
-  <textarea id='comments' name='comments' onChange={this.onChange} value={comments} />
+  <label htmlFor="comments">Comments:</label>
+  <textarea
+    id="comments"
+    name="comments"
+    onChange={this.onChange}
+    value={comments}
+  />
 </div>
 ```
 
@@ -647,24 +703,24 @@ To support this new form field, you'll need to also update the `constructor`,
 ```js
 // ./src/ContactUs.js
 
-import React from 'react';
+import React from "react";
 
 class ContactUs extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      name: '',
-      email: '',
-      phone: '',
-      comments: '',
+      name: "",
+      email: "",
+      phone: "",
+      comments: "",
     };
   }
 
   onChange = (e) => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
-  }
+  };
 
   onSubmit = (e) => {
     // Prevent the default form behavior
@@ -672,7 +728,7 @@ class ContactUs extends React.Component {
     e.preventDefault();
 
     // Retrieve the contact us information from state.
-    const { name, email, phone, comments } = this.state; 
+    const { name, email, phone, comments } = this.state;
 
     // Create a new object for the contact us information.
     const contactUsInformation = {
@@ -690,12 +746,12 @@ class ContactUs extends React.Component {
 
     // Reset the form state.
     this.setState({
-      name: '',
-      email: '',
-      phone: '',
-      comments: '',
+      name: "",
+      email: "",
+      phone: "",
+      comments: "",
     });
-  }
+  };
 
   render() {
     const { name, email, phone, comments } = this.state;
@@ -705,20 +761,43 @@ class ContactUs extends React.Component {
         <h2>Contact Us</h2>
         <form onSubmit={this.onSubmit}>
           <div>
-            <label htmlFor='name'>Name:</label>
-            <input id='name' name='name' type='text' onChange={this.onChange} value={name} />
+            <label htmlFor="name">Name:</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              onChange={this.onChange}
+              value={name}
+            />
           </div>
           <div>
-            <label htmlFor='email'>Email:</label>
-            <input id='email' name='email' type='text' onChange={this.onChange} value={email} />
+            <label htmlFor="email">Email:</label>
+            <input
+              id="email"
+              name="email"
+              type="text"
+              onChange={this.onChange}
+              value={email}
+            />
           </div>
           <div>
-            <label htmlFor='phone'>Phone:</label>
-            <input id='phone' name='phone' type='text' onChange={this.onChange} value={phone} />
+            <label htmlFor="phone">Phone:</label>
+            <input
+              id="phone"
+              name="phone"
+              type="text"
+              onChange={this.onChange}
+              value={phone}
+            />
           </div>
           <div>
-            <label htmlFor='comments'>Comments:</label>
-            <textarea id='comments' name='comments' onChange={this.onChange} value={comments} />
+            <label htmlFor="comments">Comments:</label>
+            <textarea
+              id="comments"
+              name="comments"
+              onChange={this.onChange}
+              value={comments}
+            />
           </div>
           <div>
             <button>Submit</button>
@@ -742,10 +821,16 @@ of phone number they're providing:
 
 ```js
 <div>
-  <label htmlFor='phone'>Phone:</label>
-  <input id='phone' name='phone' type='text' onChange={this.onChange} value={phone} />
-  <select name='phoneType' onChange={this.onChange} value={phoneType}>
-    <option value=''>Select a phone type...</option>
+  <label htmlFor="phone">Phone:</label>
+  <input
+    id="phone"
+    name="phone"
+    type="text"
+    onChange={this.onChange}
+    value={phone}
+  />
+  <select name="phoneType" onChange={this.onChange} value={phoneType}>
+    <option value="">Select a phone type...</option>
     <option>Home</option>
     <option>Work</option>
     <option>Mobile</option>
@@ -760,11 +845,7 @@ the array of phone type option values, define a default value for a prop named
 
 ```js
 ContactUs.defaultProps = {
-  phoneTypes: [
-    'Home',
-    'Work',
-    'Mobile',
-  ],
+  phoneTypes: ["Home", "Work", "Mobile"],
 };
 ```
 
@@ -772,15 +853,19 @@ Then render the `<select>` list options using the `this.props.phoneTypes` array:
 
 ```js
 <div>
-  <label htmlFor='phone'>Phone:</label>
-  <input id='phone' name='phone' type='text' onChange={this.onChange} value={phone} />
-  <select name='phoneType' onChange={this.onChange} value={phoneType}>
-    <option value=''>Select a phone type...</option>
-    {
-      this.props.phoneTypes.map(phoneType =>
-        <option key={phoneType}>{phoneType}</option>
-      )
-    }
+  <label htmlFor="phone">Phone:</label>
+  <input
+    id="phone"
+    name="phone"
+    type="text"
+    onChange={this.onChange}
+    value={phone}
+  />
+  <select name="phoneType" onChange={this.onChange} value={phoneType}>
+    <option value="">Select a phone type...</option>
+    {this.props.phoneTypes.map((phoneType) => (
+      <option key={phoneType}>{phoneType}</option>
+    ))}
   </select>
 </div>
 ```
@@ -794,25 +879,25 @@ methods just like you did when adding the "Comments" form field:
 ```js
 // ./src/ContactUs.js
 
-import React from 'react';
+import React from "react";
 
 class ContactUs extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      name: '',
-      email: '',
-      phone: '',
-      phoneType: '',
-      comments: '',
+      name: "",
+      email: "",
+      phone: "",
+      phoneType: "",
+      comments: "",
     };
   }
 
   onChange = (e) => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
-  }
+  };
 
   onSubmit = (e) => {
     // Prevent the default form behavior
@@ -820,13 +905,7 @@ class ContactUs extends React.Component {
     e.preventDefault();
 
     // Retrieve the contact us information from state.
-    const {
-      name,
-      email,
-      phone,
-      phoneType,
-      comments,
-    } = this.state; 
+    const { name, email, phone, phoneType, comments } = this.state;
 
     // Create a new object for the contact us information.
     const contactUsInformation = {
@@ -845,13 +924,13 @@ class ContactUs extends React.Component {
 
     // Reset the form state.
     this.setState({
-      name: '',
-      email: '',
-      phone: '',
-      phoneType: '',
-      comments: '',
+      name: "",
+      email: "",
+      phone: "",
+      phoneType: "",
+      comments: "",
     });
-  }
+  };
 
   render() {
     const { name, email, phone, phoneType, comments } = this.state;
@@ -861,28 +940,49 @@ class ContactUs extends React.Component {
         <h2>Contact Us</h2>
         <form onSubmit={this.onSubmit}>
           <div>
-            <label htmlFor='name'>Name:</label>
-            <input id='name' name='name' type='text' onChange={this.onChange} value={name} />
+            <label htmlFor="name">Name:</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              onChange={this.onChange}
+              value={name}
+            />
           </div>
           <div>
-            <label htmlFor='email'>Email:</label>
-            <input id='email' name='email' type='text' onChange={this.onChange} value={email} />
+            <label htmlFor="email">Email:</label>
+            <input
+              id="email"
+              name="email"
+              type="text"
+              onChange={this.onChange}
+              value={email}
+            />
           </div>
           <div>
-            <label htmlFor='phone'>Phone:</label>
-            <input id='phone' name='phone' type='text' onChange={this.onChange} value={phone} />
-            <select name='phoneType' onChange={this.onChange} value={phoneType}>
-              <option value=''>Select a phone type...</option>
-              {
-                this.props.phoneTypes.map(phoneType =>
-                  <option key={phoneType}>{phoneType}</option>
-                )
-              }
+            <label htmlFor="phone">Phone:</label>
+            <input
+              id="phone"
+              name="phone"
+              type="text"
+              onChange={this.onChange}
+              value={phone}
+            />
+            <select name="phoneType" onChange={this.onChange} value={phoneType}>
+              <option value="">Select a phone type...</option>
+              {this.props.phoneTypes.map((phoneType) => (
+                <option key={phoneType}>{phoneType}</option>
+              ))}
             </select>
           </div>
           <div>
-            <label htmlFor='comments'>Comments:</label>
-            <textarea id='comments' name='comments' onChange={this.onChange} value={comments} />
+            <label htmlFor="comments">Comments:</label>
+            <textarea
+              id="comments"
+              name="comments"
+              onChange={this.onChange}
+              value={comments}
+            />
           </div>
           <div>
             <button>Submit</button>
@@ -894,11 +994,7 @@ class ContactUs extends React.Component {
 }
 
 ContactUs.defaultProps = {
-  phoneTypes: [
-    'Home',
-    'Work',
-    'Mobile',
-  ],
+  phoneTypes: ["Home", "Work", "Mobile"],
 };
 
 export default ContactUs;
@@ -929,7 +1025,7 @@ validate(name, email) {
   if (!email) {
     validationErrors.push('Please provide an Email');
   }
-  
+
   return validationErrors;
 }
 ```
@@ -957,14 +1053,17 @@ operator to conditionally render an unordered list of validation messages if the
 `validationErrors` array has a `length` greater than `0`:
 
 ```js
-{ validationErrors.length > 0 && (
+{
+  validationErrors.length > 0 && (
     <div>
       The following errors were found:
       <ul>
-        {validationErrors.map(error => <li key={error}>{error}</li>)}
+        {validationErrors.map((error) => (
+          <li key={error}>{error}</li>
+        ))}
       </ul>
     </div>
-  )
+  );
 }
 ```
 
@@ -992,18 +1091,18 @@ component should look like now:
 ```js
 // ./src/ContactUs.js
 
-import React from 'react';
+import React from "react";
 
 class ContactUs extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      name: '',
-      email: '',
-      phone: '',
-      phoneType: '',
-      comments: '',
+      name: "",
+      email: "",
+      phone: "",
+      phoneType: "",
+      comments: "",
       validationErrors: [],
     };
   }
@@ -1011,19 +1110,19 @@ class ContactUs extends React.Component {
   onChange = (e) => {
     const { name, value } = e.target;
     this.setState({ [name]: value });
-  }
+  };
 
   validate(name, email) {
     const validationErrors = [];
 
     if (!name) {
-      validationErrors.push('Please provide a Name');
+      validationErrors.push("Please provide a Name");
     }
 
     if (!email) {
-      validationErrors.push('Please provide an Email');
+      validationErrors.push("Please provide an Email");
     }
-    
+
     return validationErrors;
   }
 
@@ -1033,13 +1132,7 @@ class ContactUs extends React.Component {
     e.preventDefault();
 
     // Retrieve the contact us information from state.
-    const {
-      name,
-      email,
-      phone,
-      phoneType,
-      comments,
-    } = this.state; 
+    const { name, email, phone, phoneType, comments } = this.state;
 
     // Get validation errors.
     const validationErrors = this.validate(name, email);
@@ -1066,62 +1159,78 @@ class ContactUs extends React.Component {
 
       // Reset the form state.
       this.setState({
-        name: '',
-        email: '',
-        phone: '',
-        phoneType: '',
-        comments: '',
+        name: "",
+        email: "",
+        phone: "",
+        phoneType: "",
+        comments: "",
         validationErrors: [],
       });
     }
-  }
+  };
 
   render() {
-    const {
-      name,
-      email,
-      phone,
-      phoneType,
-      comments,
-      validationErrors,
-    } = this.state;
+    const { name, email, phone, phoneType, comments, validationErrors } =
+      this.state;
 
     return (
       <div>
         <h2>Contact Us</h2>
-        { validationErrors.length > 0 && (
-            <div>
-              The following errors were found:
-              <ul>
-                {validationErrors.map(error => <li key={error}>{error}</li>)}
-              </ul>
-            </div>
-          )
-        }
+        {validationErrors.length > 0 && (
+          <div>
+            The following errors were found:
+            <ul>
+              {validationErrors.map((error) => (
+                <li key={error}>{error}</li>
+              ))}
+            </ul>
+          </div>
+        )}
         <form onSubmit={this.onSubmit}>
           <div>
-            <label htmlFor='name'>Name:</label>
-            <input id='name' name='name' type='text' onChange={this.onChange} value={name} />
+            <label htmlFor="name">Name:</label>
+            <input
+              id="name"
+              name="name"
+              type="text"
+              onChange={this.onChange}
+              value={name}
+            />
           </div>
           <div>
-            <label htmlFor='email'>Email:</label>
-            <input id='email' name='email' type='text' onChange={this.onChange} value={email} />
+            <label htmlFor="email">Email:</label>
+            <input
+              id="email"
+              name="email"
+              type="text"
+              onChange={this.onChange}
+              value={email}
+            />
           </div>
           <div>
-            <label htmlFor='phone'>Phone:</label>
-            <input id='phone' name='phone' type='text' onChange={this.onChange} value={phone} />
-            <select name='phoneType' onChange={this.onChange} value={phoneType}>
-              <option value=''>Select a phone type...</option>
-              {
-                this.props.phoneTypes.map(phoneType =>
-                  <option key={phoneType}>{phoneType}</option>
-                )
-              }
+            <label htmlFor="phone">Phone:</label>
+            <input
+              id="phone"
+              name="phone"
+              type="text"
+              onChange={this.onChange}
+              value={phone}
+            />
+            <select name="phoneType" onChange={this.onChange} value={phoneType}>
+              <option value="">Select a phone type...</option>
+              {this.props.phoneTypes.map((phoneType) => (
+                <option key={phoneType}>{phoneType}</option>
+              ))}
             </select>
           </div>
           <div>
-            <label htmlFor='comments'>Comments:</label>
-            <textarea id='comments' name='comments' onChange={this.onChange} value={comments} />
+            <label htmlFor="comments">Comments:</label>
+            <textarea
+              id="comments"
+              name="comments"
+              onChange={this.onChange}
+              value={comments}
+            />
           </div>
           <div>
             <button>Submit</button>
@@ -1133,11 +1242,7 @@ class ContactUs extends React.Component {
 }
 
 ContactUs.defaultProps = {
-  phoneTypes: [
-    'Home',
-    'Work',
-    'Mobile',
-  ],
+  phoneTypes: ["Home", "Work", "Mobile"],
 };
 
 export default ContactUs;
@@ -1175,7 +1280,7 @@ npm install validator
 Then import the email validator into the `./src/ContactUs.js` module:
 
 ```js
-import isEmail from 'validator/es/lib/isEmail';
+import isEmail from "validator/es/lib/isEmail";
 ```
 
 Now you can use the `isEmail` validator function to check if the provided
@@ -1194,7 +1299,7 @@ validate(name, email) {
   } else if (!isEmail(email)) {
     validationErrors.push('Please provide a valid Email');
   }
-  
+
   return validationErrors;
 }
 ```
@@ -1230,12 +1335,12 @@ of validating user provided data.
 
 In this article, you learned how to:
 
-* Create a React class component containing a simple form; 
-* Define a single event handler method to handle `onChange` events for multiple
+- Create a React class component containing a simple form;
+- Define a single event handler method to handle `onChange` events for multiple
   `<input>` elements;
-* Add a `<textarea>` element to a form;
-* Add a `<select>` element to a form; and
-* Implement form validations.
+- Add a `<textarea>` element to a form;
+- Add a `<select>` element to a form; and
+- Implement form validations.
 
 [onchange event handler]: https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Modular-Curriculum/content/react-redux/topics/react-class-components/assets/react-forms-onchange-event-handler.png
 [bootstrap]: https://getbootstrap.com/

@@ -1,4 +1,4 @@
-# 039._Combination_Sum
+# 039.\_Combination_Sum
 
 ## [39. Combination Sum](https://leetcode.com/problems/combination-sum/description/)
 

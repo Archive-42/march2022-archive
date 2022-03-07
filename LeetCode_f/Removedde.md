@@ -4,7 +4,7 @@
 
 ### Problem:
 
-Given a sorted array *nums*, remove the duplicates **[in-place](https://en.wikipedia.org/wiki/In-place_algorithm)** such that duplicates appeared at most *twice* and return the new length.
+Given a sorted array _nums_, remove the duplicates **[in-place](https://en.wikipedia.org/wiki/In-place_algorithm)** such that duplicates appeared at most *twice* and return the new length.
 
 Do not allocate extra space for another array, you must do this by **modifying the input array in-place** with O(1) extra memory.
 
@@ -67,4 +67,4 @@ var removeDuplicates = function(nums) {
 };
 ```
 
-*Template generated via [Leetmark](https://github.com/crimx/crx-leetmark).*
+_Template generated via [Leetmark](https://github.com/crimx/crx-leetmark)._

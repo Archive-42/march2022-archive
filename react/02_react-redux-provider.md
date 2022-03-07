@@ -1,7 +1,9 @@
+---
 
-________________________________________________________________________________
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
-________________________________________________________________________________
+
+---
+
 # React-Redux: `<Provider/>`
 
 As you learned in earlier articles, the integration techniques that you were
@@ -27,13 +29,9 @@ Consider the example below:
 ```js
 // App.js
 
-import React from 'react';
+import React from "react";
 
-const UserInfo = ({ store }) => (
-  <div>
-    {store.getState().username}
-  </div>
-);
+const UserInfo = ({ store }) => <div>{store.getState().username}</div>;
 
 const Header = ({ store }) => (
   <div>
@@ -53,12 +51,12 @@ export default App;
 ```js
 // index.js
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import { createStore } from 'redux';
-import reducer from './reducer';
-import App from './App';
+import { createStore } from "redux";
+import reducer from "./reducer";
+import App from "./App";
 
 const store = createStore(reducer);
 
@@ -66,7 +64,7 @@ ReactDOM.render(
   <React.StrictMode>
     <App store={store} />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 ```
 
@@ -102,8 +100,8 @@ Then, in the entry point for your application (typically the `index.js` file),
 import the `Provider` component and your Redux `store`:
 
 ```js
-import { Provider } from 'react-redux';
-import store from './store';
+import { Provider } from "react-redux";
+import store from "./store";
 ```
 
 Then use the `Provider` component to wrap your `App` component and set its
@@ -120,12 +118,12 @@ Here's what your completed `index.js` file will look like:
 ```js
 // ./src/index.js
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import './index.css';
-import App from './App';
-import store from './store';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import "./index.css";
+import App from "./App";
+import store from "./store";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -133,7 +131,7 @@ ReactDOM.render(
       <App />
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 ```
 
@@ -156,15 +154,15 @@ can see this in action by reviewing the `react-redux` source code on GitHub:
 ```js
 // https://github.com/reduxjs/react-redux/blob/master/src/components/Context.js
 
-import React from 'react'
+import React from "react";
 
-export const ReactReduxContext = /*#__PURE__*/ React.createContext(null)
+export const ReactReduxContext = /*#__PURE__*/ React.createContext(null);
 
-if (process.env.NODE_ENV !== 'production') {
-  ReactReduxContext.displayName = 'ReactRedux'
+if (process.env.NODE_ENV !== "production") {
+  ReactReduxContext.displayName = "ReactRedux";
 }
 
-export default ReactReduxContext
+export default ReactReduxContext;
 ```
 
 And while it's rarely used, it's possible to import the context from React-Redux

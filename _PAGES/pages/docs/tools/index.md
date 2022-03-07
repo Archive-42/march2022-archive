@@ -1,37 +1,37 @@
 ---
 title: Tools
 excerpt: >-
-    See some interesting tools developed by the Web-Dev-Hubcommunity to help
-    automate parts of your workflow.
+  See some interesting tools developed by the Web-Dev-Hubcommunity to help
+  automate parts of your workflow.
 seo:
-    title: Tools
-    description: >-
-        paste to markdown, excel table to markdown, excel to html, cloud storage,
-        text manipulation, ternary converter, github html preview, form builder,
-        border
-    extra:
-        - name: 'og:type'
-          value: website
-          keyName: property
-        - name: 'og:title'
-          value: Tools
-          keyName: property
-        - name: 'og:description'
-          value: >-
-              paste to markdown, excel table to markdown, excel to html, cloud
-              storage, text manipulation, ternary converter, github html preview, form
-              builder, border
-          keyName: property
-        - name: 'twitter:card'
-          value: summary
-        - name: 'twitter:title'
-          value: Tools
-        - name: 'twitter:description'
-          value: This is the tools page
-        - name: 'og:image'
-          value: images/tex.PNG
-          keyName: property
-          relativeUrl: true
+  title: Tools
+  description: >-
+    paste to markdown, excel table to markdown, excel to html, cloud storage,
+    text manipulation, ternary converter, github html preview, form builder,
+    border
+  extra:
+    - name: "og:type"
+      value: website
+      keyName: property
+    - name: "og:title"
+      value: Tools
+      keyName: property
+    - name: "og:description"
+      value: >-
+        paste to markdown, excel table to markdown, excel to html, cloud
+        storage, text manipulation, ternary converter, github html preview, form
+        builder, border
+      keyName: property
+    - name: "twitter:card"
+      value: summary
+    - name: "twitter:title"
+      value: Tools
+    - name: "twitter:description"
+      value: This is the tools page
+    - name: "og:image"
+      value: images/tex.PNG
+      keyName: property
+      relativeUrl: true
 template: docs
 ---
 
@@ -40,7 +40,6 @@ template: docs
 <h1>   Markdown tools  </h1>
 <br>
 <iframe  style="z-index:-1!important; overflow:scroll;resize:both;" class="block-content" src="https://random-static-html-deploys.netlify.app/markdow-tools-embed.html" height="1000px" style="width: 1300px; scrolling="yes" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"  frameborder="0" ></iframe>
-
 
 <iframe src="https://drive.google.com/embeddedfolderview?id=1DHyQsPLziqSUODclplhnNX1eknzbZrL8#grid" style="width:100%; height:600px; border:0;"></iframe>
 
@@ -81,7 +80,7 @@ template: docs
   <h1>  Text Tools </h1>
 <br>
 <iframe  style="z-index:-1!important; overflow:scroll;resize:both;" class="block-content" src="https://devtools42.netlify.app/" height="1000px" style="width: 1300px; scrolling="yes" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"  frameborder="0" ></iframe>      
-        
+
 
 <h1>   Paste excel to HTML</h1>
 <iframe  style="z-index:-1!important; overflow:scroll;resize:both;" class="block-content" src="https://codepen.io/bgoonz/embed/JjNaPpL?default-tab=result&theme-id=light" height="1000px" style="width: 1300px; scrolling="yes" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"  frameborder="0" ></iframe>
@@ -98,7 +97,6 @@ template: docs
 <br>
 <br>
 <br>
-
 
 <h1>  Github HTML Render from link </h1>
 <br>

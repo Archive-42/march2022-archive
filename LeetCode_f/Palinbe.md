@@ -1,4 +1,4 @@
-# 009._Palindrome_Number
+# 009.\_Palindrome_Number
 
 ## [9. Palindrome Number](https://leetcode.com/problems/palindrome-number/description/)
 

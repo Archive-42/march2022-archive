@@ -1,4 +1,5 @@
 # You Don't Know JS Yet: Scope & Closures - 2nd Edition
+
 # Chapter 6: Limiting Scope Exposure
 
 So far our focus has been explaining the mechanics of how scopes and variables work. With that foundation now firmly in place, our attention raises to a higher level of thinking: decisions and patterns we apply across the whole program.
@@ -9,29 +10,29 @@ To begin, we're going to look at how and why we should be using different levels
 
 It makes sense that functions define their own scopes. But why do we need blocks to create scopes as well?
 
-Software engineering articulates a fundamental discipline, typically applied to software security, called "The Principle of Least Privilege" (POLP). [^POLP] And a variation of this principle that applies to our current discussion is typically labeled as "Least Exposure" (POLE).
+Software engineering articulates a fundamental discipline, typically applied to software security, called "The Principle of Least Privilege" (POLP). [^polp] And a variation of this principle that applies to our current discussion is typically labeled as "Least Exposure" (POLE).
 
 POLP expresses a defensive posture to software architecture: components of the system should be designed to function with least privilege, least access, least exposure. If each piece is connected with minimum-necessary capabilities, the overall system is stronger from a security standpoint, because a compromise or failure of one piece has a minimized impact on the rest of the system.
 
-If POLP focuses on system-level component design, the POLE *Exposure* variant focuses on a lower level; we'll apply it to how scopes interact with each other.
+If POLP focuses on system-level component design, the POLE _Exposure_ variant focuses on a lower level; we'll apply it to how scopes interact with each other.
 
 In following POLE, what do we want to minimize the exposure of? Simply: the variables registered in each scope.
 
 Think of it this way: why shouldn't you just place all the variables of your program out in the global scope? That probably immediately feels like a bad idea, but it's worth considering why that is. When variables used by one part of the program are exposed to another part of the program, via scope, there are three main hazards that often arise:
 
-* **Naming Collisions**: if you use a common and useful variable/function name in two different parts of the program, but the identifier comes from one shared scope (like the global scope), then name collision occurs, and it's very likely that bugs will occur as one part uses the variable/function in a way the other part doesn't expect.
+- **Naming Collisions**: if you use a common and useful variable/function name in two different parts of the program, but the identifier comes from one shared scope (like the global scope), then name collision occurs, and it's very likely that bugs will occur as one part uses the variable/function in a way the other part doesn't expect.
 
-    For example, imagine if all your loops used a single global `i` index variable, and then it happens that one loop in a function is running during an iteration of a loop from another function, and now the shared `i` variable gets an unexpected value.
+  For example, imagine if all your loops used a single global `i` index variable, and then it happens that one loop in a function is running during an iteration of a loop from another function, and now the shared `i` variable gets an unexpected value.
 
-* **Unexpected Behavior**: if you expose variables/functions whose usage is otherwise *private* to a piece of the program, it allows other developers to use them in ways you didn't intend, which can violate expected behavior and cause bugs.
+- **Unexpected Behavior**: if you expose variables/functions whose usage is otherwise _private_ to a piece of the program, it allows other developers to use them in ways you didn't intend, which can violate expected behavior and cause bugs.
 
-    For example, if your part of the program assumes an array contains all numbers, but someone else's code accesses and modifies the array to include booleans and strings, your code may then misbehave in unexpected ways.
+  For example, if your part of the program assumes an array contains all numbers, but someone else's code accesses and modifies the array to include booleans and strings, your code may then misbehave in unexpected ways.
 
-    Worse, exposure of *private* details invites those with mal-intent to try to work around limitations you have imposed, to do things with your part of the software that shouldn't be allowed.
+  Worse, exposure of _private_ details invites those with mal-intent to try to work around limitations you have imposed, to do things with your part of the software that shouldn't be allowed.
 
-* **Unintended Dependency**: if you expose variables/functions unnecessarily, it invites other developers to use and depend on those otherwise *private* pieces. While that doesn't break your program today, it creates a refactoring hazard in the future, because now you cannot as easily refactor that variable or function without potentially breaking other parts of the software that you don't control.
+- **Unintended Dependency**: if you expose variables/functions unnecessarily, it invites other developers to use and depend on those otherwise _private_ pieces. While that doesn't break your program today, it creates a refactoring hazard in the future, because now you cannot as easily refactor that variable or function without potentially breaking other parts of the software that you don't control.
 
-    For example, if your code relies on an array of numbers, and you later decide it's better to use some other data structure instead of an array, you now must take on the liability of adjusting other affected parts of the software.
+  For example, if your code relies on an array of numbers, and you later decide it's better to use some other data structure instead of an array, you now must take on the liability of adjusting other affected parts of the software.
 
 POLE, as applied to variable/function scoping, essentially says, default to exposing the bare minimum necessary, keeping everything else as private as possible. Declare variables in as small and deeply nested of scopes as possible, rather than placing everything in the global (or even outer function) scope.
 
@@ -40,18 +41,18 @@ If you design your software accordingly, you have a much greater chance of avoid
 Consider:
 
 ```js
-function diff(x,y) {
-    if (x > y) {
-        let tmp = x;
-        x = y;
-        y = tmp;
-    }
+function diff(x, y) {
+  if (x > y) {
+    let tmp = x;
+    x = y;
+    y = tmp;
+  }
 
-    return y - x;
+  return y - x;
 }
 
-diff(3,7);      // 4
-diff(7,5);      // 2
+diff(3, 7); // 4
+diff(7, 5); // 2
 ```
 
 In this `diff(..)` function, we want to ensure that `y` is greater than or equal to `x`, so that when we subtract (`y - x`), the result is `0` or larger. If `x` is initially larger (the result would be negative!), we swap `x` and `y` using a `tmp` variable, to keep the result positive.
@@ -66,7 +67,7 @@ We've already seen the `let` and `const` keywords, which are block scoped declar
 
 Let's consider an example where `function` scoping can be useful.
 
-The mathematical operation "factorial" (notated as "6!") is the multiplication of a given integer against all successively lower integers down to `1`—actually, you can stop at `2` since multiplying `1` does nothing. In other words, "6!" is the same as "6 * 5!", which is the same as "6 * 5 * 4!", and so on. Because of the nature of the math involved, once any given integer's factorial (like "4!") has been calculated, we shouldn't need to do that work again, as it'll always be the same answer.
+The mathematical operation "factorial" (notated as "6!") is the multiplication of a given integer against all successively lower integers down to `1`—actually, you can stop at `2` since multiplying `1` does nothing. In other words, "6!" is the same as "6 _ 5!", which is the same as "6 _ 5 \* 4!", and so on. Because of the nature of the math involved, once any given integer's factorial (like "4!") has been calculated, we shouldn't need to do that work again, as it'll always be the same answer.
 
 So if you naively calculate factorial for `6`, then later want to calculate factorial for `7`, you might unnecessarily re-calculate the factorials of all the integers from 2 up to 6. If you're willing to trade memory for speed, you can solve that wasted computation by caching each integer's factorial as it's calculated:
 
@@ -74,11 +75,11 @@ So if you naively calculate factorial for `6`, then later want to calculate fact
 var cache = {};
 
 function factorial(x) {
-    if (x < 2) return 1;
-    if (!(x in cache)) {
-        cache[x] = x * factorial(x - 1);
-    }
-    return cache[x];
+  if (x < 2) return 1;
+  if (!(x in cache)) {
+    cache[x] = x * factorial(x - 1);
+  }
+  return cache[x];
 }
 
 factorial(6);
@@ -97,10 +98,10 @@ factorial(7);
 // 5040
 ```
 
-We're storing all the computed factorials in `cache` so that across multiple calls to `factorial(..)`, the previous computations remain. But the `cache` variable is pretty obviously a *private* detail of how `factorial(..)` works, not something that should be exposed in an outer scope—especially not the global scope.
+We're storing all the computed factorials in `cache` so that across multiple calls to `factorial(..)`, the previous computations remain. But the `cache` variable is pretty obviously a _private_ detail of how `factorial(..)` works, not something that should be exposed in an outer scope—especially not the global scope.
 
-| NOTE: |
-| :--- |
+| NOTE:                                                                                                                                                                                                          |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `factorial(..)` here is recursive—a call to itself is made from inside—but that's just for brevity of code sake; a non-recursive implementation would yield the same scoping analysis with respect to `cache`. |
 
 However, fixing this over-exposure issue is not as simple as hiding the `cache` variable inside `factorial(..)`, as it might seem. Since we need `cache` to survive multiple calls, it must be located in a scope outside that function. So what can we do?
@@ -111,21 +112,21 @@ Define another middle scope (between the outer/global scope and the inside of `f
 // outer/global scope
 
 function hideTheCache() {
-    // "middle scope", where we hide `cache`
-    var cache = {};
+  // "middle scope", where we hide `cache`
+  var cache = {};
 
-    return factorial;
+  return factorial;
 
-    // **********************
+  // **********************
 
-    function factorial(x) {
-        // inner scope
-        if (x < 2) return 1;
-        if (!(x in cache)) {
-            cache[x] = x * factorial(x - 1);
-        }
-        return cache[x];
+  function factorial(x) {
+    // inner scope
+    if (x < 2) return 1;
+    if (!(x in cache)) {
+      cache[x] = x * factorial(x - 1);
     }
+    return cache[x];
+  }
 }
 
 var factorial = hideTheCache();
@@ -141,25 +142,25 @@ The `hideTheCache()` function serves no other purpose than to create a scope for
 
 OK, but... it's going to be tedious to define (and name!) a `hideTheCache(..)` function scope each time such a need for variable/function hiding occurs, especially since we'll likely want to avoid name collisions with this function by giving each occurrence a unique name. Ugh.
 
-| NOTE: |
-| :--- |
-| The illustrated technique—caching a function's computed output to optimize performance when repeated calls of the same inputs are expected—is quite common in the Functional Programming (FP) world, canonically referred to as "memoization"; this caching relies on closure (see Chapter 7). Also, there are memory usage concerns (addressed in "A Word About Memory" in Appendix B). FP libraries will usually provide an optimized and vetted utility for memoization of functions, which would take the place of `hideTheCache(..)` here. Memoization is beyond the *scope* (pun intended!) of our discussion, but see my *Functional-Light JavaScript* book for more information. |
+| NOTE:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| The illustrated technique—caching a function's computed output to optimize performance when repeated calls of the same inputs are expected—is quite common in the Functional Programming (FP) world, canonically referred to as "memoization"; this caching relies on closure (see Chapter 7). Also, there are memory usage concerns (addressed in "A Word About Memory" in Appendix B). FP libraries will usually provide an optimized and vetted utility for memoization of functions, which would take the place of `hideTheCache(..)` here. Memoization is beyond the _scope_ (pun intended!) of our discussion, but see my _Functional-Light JavaScript_ book for more information. |
 
 Rather than defining a new and uniquely named function each time one of those scope-only-for-the-purpose-of-hiding-a-variable situations occurs, a perhaps better solution is to use a function expression:
 
 ```js
 var factorial = (function hideTheCache() {
-    var cache = {};
+  var cache = {};
 
-    function factorial(x) {
-        if (x < 2) return 1;
-        if (!(x in cache)) {
-            cache[x] = x * factorial(x - 1);
-        }
-        return cache[x];
+  function factorial(x) {
+    if (x < 2) return 1;
+    if (!(x in cache)) {
+      cache[x] = x * factorial(x - 1);
     }
+    return cache[x];
+  }
 
-    return factorial;
+  return factorial;
 })();
 
 factorial(6);
@@ -175,7 +176,7 @@ Recall from "Function Name Scope" (in Chapter 3), what happens to the name ident
 
 That means we can name every single occurrence of such a function expression the exact same name, and never have any collision. More appropriately, we can name each occurrence semantically based on whatever it is we're trying to hide, and not worry that whatever name we choose is going to collide with any other `function` expression scope in the program.
 
-In fact, we *could* just leave off the name entirely—thus defining an "anonymous `function` expression" instead. But Appendix A will discuss the importance of names even for such scope-only functions.
+In fact, we _could_ just leave off the name entirely—thus defining an "anonymous `function` expression" instead. But Appendix A will discuss the importance of names even for such scope-only functions.
 
 ### Invoking Function Expressions Immediately
 
@@ -192,8 +193,8 @@ For comparison, here's an example of a standalone IIFE:
 ```js
 // outer scope
 
-(function(){
-    // inner hidden scope
+(function () {
+  // inner hidden scope
 })();
 
 // more outer scope
@@ -201,15 +202,15 @@ For comparison, here's an example of a standalone IIFE:
 
 Unlike earlier with `hideTheCache()`, where the outer surrounding `(..)` were noted as being an optional stylistic choice, for a standalone IIFE they're **required**; they distinguish the `function` as an expression, not a statement. For consistency, however, always surround an IIFE `function` with `( .. )`.
 
-| NOTE: |
-| :--- |
+| NOTE:                                                                                                                                                                                                         |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Technically, the surrounding `( .. )` aren't the only syntactic way to ensure the `function` in an IIFE is treated by the JS parser as a function expression. We'll look at some other options in Appendix A. |
 
 #### Function Boundaries
 
 Beware that using an IIFE to define a scope can have some unintended consequences, depending on the code around it. Because an IIFE is a full function, the function boundary alters the behavior of certain statements/constructs.
 
-For example, a `return` statement in some piece of code would change its meaning if an IIFE is wrapped around it, because now the `return` would refer to the IIFE's function. Non-arrow function IIFEs also change the binding of a `this` keyword—more on that in the *Objects & Classes* book. And statements like `break` and `continue` won't operate across an IIFE function boundary to control an outer loop or block.
+For example, a `return` statement in some piece of code would change its meaning if an IIFE is wrapped around it, because now the `return` would refer to the IIFE's function. Non-arrow function IIFEs also change the binding of a `this` keyword—more on that in the _Objects & Classes_ book. And statements like `break` and `continue` won't operate across an IIFE function boundary to control an outer loop or block.
 
 So, if the code you need to wrap a scope around has `return`, `this`, `break`, or `continue` in it, an IIFE is probably not the best approach. In that case, you might look to create the scope with a block instead of a function.
 
@@ -223,34 +224,34 @@ A block only becomes a scope if necessary, to contain its block-scoped declarati
 
 ```js
 {
-    // not necessarily a scope (yet)
+  // not necessarily a scope (yet)
 
-    // ..
+  // ..
 
-    // now we know the block needs to be a scope
-    let thisIsNowAScope = true;
+  // now we know the block needs to be a scope
+  let thisIsNowAScope = true;
 
-    for (let i = 0; i < 5; i++) {
-        // this is also a scope, activated each
-        // iteration
-        if (i % 2 == 0) {
-            // this is just a block, not a scope
-            console.log(i);
-        }
+  for (let i = 0; i < 5; i++) {
+    // this is also a scope, activated each
+    // iteration
+    if (i % 2 == 0) {
+      // this is just a block, not a scope
+      console.log(i);
     }
+  }
 }
 // 0 2 4
 ```
 
 Not all `{ .. }` curly-brace pairs create blocks (and thus are eligible to become scopes):
 
-* Object literals use `{ .. }` curly-brace pairs to delimit their key-value lists, but such object values are **not** scopes.
+- Object literals use `{ .. }` curly-brace pairs to delimit their key-value lists, but such object values are **not** scopes.
 
-* `class` uses `{ .. }` curly-braces around its body definition, but this is not a block or scope.
+- `class` uses `{ .. }` curly-braces around its body definition, but this is not a block or scope.
 
-* A `function` uses `{ .. } ` around its body, but this is not technically a block—it's a single statement for the function body. It *is*, however, a (function) scope.
+- A `function` uses `{ .. } ` around its body, but this is not technically a block—it's a single statement for the function body. It _is_, however, a (function) scope.
 
-* The `{ .. }` curly-brace pair on a `switch` statement (around the set of `case` clauses) does not define a block/scope.
+- The `{ .. }` curly-brace pair on a `switch` statement (around the set of `case` clauses) does not define a block/scope.
 
 Other than such non-block examples, a `{ .. }` curly-brace pair can define a block attached to a statement (like an `if` or `for`), or stand alone by itself—see the outermost `{ .. }` curly brace pair in the previous snippet. An explicit block of this sort—if it has no declarations, it's not actually a scope—serves no operational purpose, though it can still be useful as a semantic signal.
 
@@ -264,18 +265,18 @@ For example:
 
 ```js
 if (somethingHappened) {
-    // this is a block, but not a scope
+  // this is a block, but not a scope
 
-    {
-        // this is both a block and an
-        // explicit scope
-        let msg = somethingHappened.message();
-        notifyOthers(msg);
-    }
+  {
+    // this is both a block and an
+    // explicit scope
+    let msg = somethingHappened.message();
+    notifyOthers(msg);
+  }
 
-    // ..
+  // ..
 
-    recoverFromSomething();
+  recoverFromSomething();
 }
 ```
 
@@ -291,25 +292,21 @@ Another example with an explicit block scope:
 
 ```js
 function getNextMonthStart(dateStr) {
-    var nextMonth, year;
+  var nextMonth, year;
 
-    {
-        let curMonth;
-        [ , year, curMonth ] = dateStr.match(
-                /(\d{4})-(\d{2})-\d{2}/
-            ) || [];
-        nextMonth = (Number(curMonth) % 12) + 1;
-    }
+  {
+    let curMonth;
+    [, year, curMonth] = dateStr.match(/(\d{4})-(\d{2})-\d{2}/) || [];
+    nextMonth = (Number(curMonth) % 12) + 1;
+  }
 
-    if (nextMonth == 1) {
-        year++;
-    }
+  if (nextMonth == 1) {
+    year++;
+  }
 
-    return `${ year }-${
-            String(nextMonth).padStart(2,"0")
-        }-01`;
+  return `${year}-${String(nextMonth).padStart(2, "0")}-01`;
 }
-getNextMonthStart("2019-12-25");   // 2020-01-01
+getNextMonthStart("2019-12-25"); // 2020-01-01
 ```
 
 Let's first identify the scopes and their identifiers:
@@ -328,45 +325,35 @@ Let's now look at an even more substantial example:
 
 ```js
 function sortNamesByLength(names) {
-    var buckets = [];
+  var buckets = [];
 
-    for (let firstName of names) {
-        if (buckets[firstName.length] == null) {
-            buckets[firstName.length] = [];
-        }
-        buckets[firstName.length].push(firstName);
+  for (let firstName of names) {
+    if (buckets[firstName.length] == null) {
+      buckets[firstName.length] = [];
+    }
+    buckets[firstName.length].push(firstName);
+  }
+
+  // a block to narrow the scope
+  {
+    let sortedNames = [];
+
+    for (let bucket of buckets) {
+      if (bucket) {
+        // sort each bucket alphanumerically
+        bucket.sort();
+
+        // append the sorted names to our
+        // running list
+        sortedNames = [...sortedNames, ...bucket];
+      }
     }
 
-    // a block to narrow the scope
-    {
-        let sortedNames = [];
-
-        for (let bucket of buckets) {
-            if (bucket) {
-                // sort each bucket alphanumerically
-                bucket.sort();
-
-                // append the sorted names to our
-                // running list
-                sortedNames = [
-                    ...sortedNames,
-                    ...bucket
-                ];
-            }
-        }
-
-        return sortedNames;
-    }
+    return sortedNames;
+  }
 }
 
-sortNamesByLength([
-    "Sally",
-    "Suzy",
-    "Frank",
-    "John",
-    "Jennifer",
-    "Scott"
-]);
+sortNamesByLength(["Sally", "Suzy", "Frank", "John", "Jennifer", "Scott"]);
 // [ "John", "Suzy", "Frank", "Sally",
 //   "Scott", "Jennifer" ]
 ```
@@ -377,12 +364,12 @@ We split them out into each inner nested scope as appropriate. Each variable is 
 
 `sortedNames` could have been defined in the top-level function scope, but it's only needed for the second half of this function. To avoid over-exposing that variable in a higher level scope, we again follow POLE and block-scope it in the inner explicit block scope.
 
-### `var` *and* `let`
+### `var` _and_ `let`
 
 Next, let's talk about the declaration `var buckets`. That variable is used across the entire function (except the final `return` statement). Any variable that is needed across all (or even most) of a function should be declared so that such usage is obvious.
 
-| NOTE: |
-| :--- |
+| NOTE:                                                                                                                                                                   |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | The parameter `names` isn't used across the whole function, but there's no way limit the scope of a parameter, so it behaves as a function-wide declaration regardless. |
 
 So why did we use `var` instead of `let` to declare the `buckets` variable? There's both semantic and technical reasons to choose `var` here.
@@ -390,14 +377,14 @@ So why did we use `var` instead of `let` to declare the `buckets` variable? Ther
 Stylistically, `var` has always, from the earliest days of JS, signaled "variable that belongs to a whole function." As we asserted in "Lexical Scope" (Chapter 1), `var` attaches to the nearest enclosing function scope, no matter where it appears. That's true even if `var` appears inside a block:
 
 ```js
-function diff(x,y) {
-    if (x > y) {
-        var tmp = x;    // `tmp` is function-scoped
-        x = y;
-        y = tmp;
-    }
+function diff(x, y) {
+  if (x > y) {
+    var tmp = x; // `tmp` is function-scoped
+    x = y;
+    y = tmp;
+  }
 
-    return y - x;
+  return y - x;
 }
 ```
 
@@ -407,13 +394,13 @@ While you can declare `var` inside a block (and still have it be function-scoped
 
 Why not just use `let` in that same location? Because `var` is visually distinct from `let` and therefore signals clearly, "this variable is function-scoped." Using `let` in the top-level scope, especially if not in the first few lines of a function, and when all the other declarations in blocks use `let`, does not visually draw attention to the difference with the function-scoped declaration.
 
-In other words, I feel `var` better communicates function-scoped than `let` does, and `let` both communicates (and achieves!) block-scoping where `var` is insufficient. As long as your programs are going to need both function-scoped and block-scoped variables, the most sensible and readable approach is to use both `var` *and* `let` together, each for their own best purpose.
+In other words, I feel `var` better communicates function-scoped than `let` does, and `let` both communicates (and achieves!) block-scoping where `var` is insufficient. As long as your programs are going to need both function-scoped and block-scoped variables, the most sensible and readable approach is to use both `var` _and_ `let` together, each for their own best purpose.
 
-There are other semantic and operational reasons to choose `var` or `let` in different scenarios. We'll explore the case for `var` *and* `let` in more detail in Appendix A.
+There are other semantic and operational reasons to choose `var` or `let` in different scenarios. We'll explore the case for `var` _and_ `let` in more detail in Appendix A.
 
-| WARNING: |
-| :--- |
-| My recommendation to use both `var` *and* `let` is clearly controversial and contradicts the majority. It's far more common to hear assertions like, "var is broken, let fixes it" and, "never use var, let is the replacement." Those opinions are valid, but they're merely opinions, just like mine. `var` is not factually broken or deprecated; it has worked since early JS and it will continue to work as long as JS is around. |
+| WARNING:                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| My recommendation to use both `var` _and_ `let` is clearly controversial and contradicts the majority. It's far more common to hear assertions like, "var is broken, let fixes it" and, "never use var, let is the replacement." Those opinions are valid, but they're merely opinions, just like mine. `var` is not factually broken or deprecated; it has worked since early JS and it will continue to work as long as JS is around. |
 
 ### Where To `let`?
 
@@ -428,35 +415,35 @@ If a declaration belongs in a block scope, use `let`. If it belongs in the funct
 But another way to sort of visualize this decision making is to consider the pre-ES6 version of a program. For example, let's recall `diff(..)` from earlier:
 
 ```js
-function diff(x,y) {
-    var tmp;
+function diff(x, y) {
+  var tmp;
 
-    if (x > y) {
-        tmp = x;
-        x = y;
-        y = tmp;
-    }
+  if (x > y) {
+    tmp = x;
+    x = y;
+    y = tmp;
+  }
 
-    return y - x;
+  return y - x;
 }
 ```
 
 In this version of `diff(..)`, `tmp` is clearly declared in the function scope. Is that appropriate for `tmp`? I would argue, no. `tmp` is only needed for those few statements. It's not needed for the `return` statement. It should therefore be block-scoped.
 
-Prior to ES6, we didn't have `let` so we couldn't *actually* block-scope it. But we could do the next-best thing in signaling our intent:
+Prior to ES6, we didn't have `let` so we couldn't _actually_ block-scope it. But we could do the next-best thing in signaling our intent:
 
 ```js
-function diff(x,y) {
-    if (x > y) {
-        // `tmp` is still function-scoped, but
-        // the placement here semantically
-        // signals block-scoping
-        var tmp = x;
-        x = y;
-        y = tmp;
-    }
+function diff(x, y) {
+  if (x > y) {
+    // `tmp` is still function-scoped, but
+    // the placement here semantically
+    // signals block-scoping
+    var tmp = x;
+    x = y;
+    y = tmp;
+  }
 
-    return y - x;
+  return y - x;
 }
 ```
 
@@ -468,7 +455,7 @@ Another example that was historically based on `var` but which should now pretty
 
 ```js
 for (var i = 0; i < 5; i++) {
-    // do something
+  // do something
 }
 ```
 
@@ -476,7 +463,7 @@ No matter where such a loop is defined, the `i` should basically always be used 
 
 ```js
 for (let i = 0; i < 5; i++) {
-    // do something
+  // do something
 }
 ```
 
@@ -484,13 +471,13 @@ Almost the only case where switching a `var` to a `let` in this way would "break
 
 ```js
 for (var i = 0; i < 5; i++) {
-    if (checkValue(i)) {
-        break;
-    }
+  if (checkValue(i)) {
+    break;
+  }
 }
 
 if (i < 5) {
-    console.log("The loop stopped early!");
+  console.log("The loop stopped early!");
 }
 ```
 
@@ -500,14 +487,14 @@ This usage pattern is not terribly uncommon, but most feel it smells like poor c
 var lastI;
 
 for (let i = 0; i < 5; i++) {
-    lastI = i;
-    if (checkValue(i)) {
-        break;
-    }
+  lastI = i;
+  if (checkValue(i)) {
+    break;
+  }
 }
 
 if (lastI < 5) {
-    console.log("The loop stopped early!");
+  console.log("The loop stopped early!");
 }
 ```
 
@@ -521,18 +508,17 @@ Since the introduction of `try..catch` back in ES3 (in 1999), the `catch` clause
 
 ```js
 try {
-    doesntExist();
-}
-catch (err) {
-    console.log(err);
-    // ReferenceError: 'doesntExist' is not defined
-    // ^^^^ message printed from the caught exception
+  doesntExist();
+} catch (err) {
+  console.log(err);
+  // ReferenceError: 'doesntExist' is not defined
+  // ^^^^ message printed from the caught exception
 
-    let onlyHere = true;
-    var outerVariable = true;
+  let onlyHere = true;
+  var outerVariable = true;
 }
 
-console.log(outerVariable);     // true
+console.log(outerVariable); // true
 
 console.log(err);
 // ReferenceError: 'err' is not defined
@@ -543,14 +529,14 @@ The `err` variable declared by the `catch` clause is block-scoped to that block.
 
 ES2019 (recently, at the time of writing) changed `catch` clauses so their declaration is optional; if the declaration is omitted, the `catch` block is no longer (by default) a scope; it's still a block, though!
 
-So if you need to react to the condition *that an exception occurred* (so you can gracefully recover), but you don't care about the error value itself, you can omit the `catch` declaration:
+So if you need to react to the condition _that an exception occurred_ (so you can gracefully recover), but you don't care about the error value itself, you can omit the `catch` declaration:
 
 ```js
 try {
-    doOptionOne();
-}
-catch {   // catch-declaration omitted
-    doOptionTwoInstead();
+  doOptionOne();
+} catch {
+  // catch-declaration omitted
+  doOptionTwoInstead();
 }
 ```
 
@@ -566,9 +552,9 @@ No and yes. I know... that's confusing. Let's dig in:
 
 ```js
 if (false) {
-    function ask() {
-        console.log("Does this run?");
-    }
+  function ask() {
+    console.log("Does this run?");
+  }
 }
 ask();
 ```
@@ -587,57 +573,55 @@ The JS specification says that `function` declarations inside of blocks are bloc
 
 Why are browser JS engines allowed to behave contrary to the specification? Because these engines already had certain behaviors around FiB before ES6 introduced block scoping, and there was concern that changing to adhere to the specification might break some existing website JS code. As such, an exception was made in Appendix B of the JS specification, which allows certain deviations for browser JS engines (only!).
 
-| NOTE: |
-| :--- |
+| NOTE:                                                                                                                                                                                                                                                                                                                 |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | You wouldn't typically categorize Node as a browser JS environment, since it usually runs on a server. But Node's v8 engine is shared with Chrome (and Edge) browsers. Since v8 is first a browser JS engine, it adopts this Appendix B exception, which then means that the browser exceptions are extended to Node. |
 
 One of the most common use cases for placing a `function` declaration in a block is to conditionally define a function one way or another (like with an `if..else` statement) depending on some environment state. For example:
 
 ```js
 if (typeof Array.isArray != "undefined") {
-    function isArray(a) {
-        return Array.isArray(a);
-    }
-}
-else {
-    function isArray(a) {
-        return Object.prototype.toString.call(a)
-            == "[object Array]";
-    }
+  function isArray(a) {
+    return Array.isArray(a);
+  }
+} else {
+  function isArray(a) {
+    return Object.prototype.toString.call(a) == "[object Array]";
+  }
 }
 ```
 
 It's tempting to structure code this way for performance reasons, since the `typeof Array.isArray` check is only performed once, as opposed to defining just one `isArray(..)` and putting the `if` statement inside it—the check would then run unnecessarily on every call.
 
-| WARNING: |
-| :--- |
-| In addition to the risks of FiB deviations, another problem with conditional-definition of functions is it's harder to debug such a program. If you end up with a bug in the `isArray(..)` function, you first have to figure out *which* `isArray(..)` implementation is actually running! Sometimes, the bug is that the wrong one was applied because the conditional check was incorrect! If you define multiple versions of a function, that program is always harder to reason about and maintain. |
+| WARNING:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| In addition to the risks of FiB deviations, another problem with conditional-definition of functions is it's harder to debug such a program. If you end up with a bug in the `isArray(..)` function, you first have to figure out _which_ `isArray(..)` implementation is actually running! Sometimes, the bug is that the wrong one was applied because the conditional check was incorrect! If you define multiple versions of a function, that program is always harder to reason about and maintain. |
 
 In addition to the previous snippets, several other FiB corner cases are lurking; such behaviors in various browsers and non-browser JS environments (JS engines that aren't browser based) will likely vary. For example:
 
 ```js
 if (true) {
-    function ask() {
-        console.log("Am I called?");
-    }
+  function ask() {
+    console.log("Am I called?");
+  }
 }
 
 if (true) {
-    function ask() {
-        console.log("Or what about me?");
-    }
+  function ask() {
+    console.log("Or what about me?");
+  }
 }
 
 for (let i = 0; i < 5; i++) {
-    function ask() {
-        console.log("Or is it one of these?");
-    }
+  function ask() {
+    console.log("Or is it one of these?");
+  }
 }
 
 ask();
 
 function ask() {
-    console.log("Wait, maybe, it's this one?");
+  console.log("Wait, maybe, it's this one?");
 }
 ```
 
@@ -653,13 +637,11 @@ So for the earlier `if..else` example, my suggestion is to avoid conditionally d
 
 ```js
 function isArray(a) {
-    if (typeof Array.isArray != "undefined") {
-        return Array.isArray(a);
-    }
-    else {
-        return Object.prototype.toString.call(a)
-            == "[object Array]";
-    }
+  if (typeof Array.isArray != "undefined") {
+    return Array.isArray(a);
+  } else {
+    return Object.prototype.toString.call(a) == "[object Array]";
+  }
 }
 ```
 
@@ -667,15 +649,14 @@ If that performance hit becomes a critical path issue for your application, I su
 
 ```js
 var isArray = function isArray(a) {
-    return Array.isArray(a);
+  return Array.isArray(a);
 };
 
 // override the definition, if you must
 if (typeof Array.isArray == "undefined") {
-    isArray = function isArray(a) {
-        return Object.prototype.toString.call(a)
-            == "[object Array]";
-    };
+  isArray = function isArray(a) {
+    return Object.prototype.toString.call(a) == "[object Array]";
+  };
 }
 ```
 
@@ -693,4 +674,4 @@ And one of the most important organizational techniques is to ensure that no var
 
 Hopefully by now you feel like you're standing on much more solid ground with understanding lexical scope. From that base, the next chapter jumps into the weighty topic of closure.
 
-[^POLP]: *Principle of Least Privilege*, https://en.wikipedia.org/wiki/Principle_of_least_privilege, 3 March 2020.
+[^polp]: _Principle of Least Privilege_, https://en.wikipedia.org/wiki/Principle_of_least_privilege, 3 March 2020.

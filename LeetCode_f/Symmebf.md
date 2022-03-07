@@ -1,4 +1,4 @@
-# 101._Symmetric_Tree
+# 101.\_Symmetric_Tree
 
 ## [101. Symmetric Tree](https://leetcode.com/problems/symmetric-tree/description/)
 

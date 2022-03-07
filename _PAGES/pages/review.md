@@ -2,15 +2,13 @@
 title: review
 sections: []
 seo:
-    title: 'review'
-    description: ''
-    robots: []
-    extra: []
-    type: stackbit_page_meta
+  title: "review"
+  description: ""
+  robots: []
+  extra: []
+  type: stackbit_page_meta
 template: advanced
 ---
-
-
 
 <div id="search"></div>
 

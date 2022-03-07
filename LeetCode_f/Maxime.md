@@ -1,4 +1,4 @@
-# 085._Maximal_Rectangle
+# 085.\_Maximal_Rectangle
 
 ## [85. Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/description/)
 
